@@ -1,0 +1,201 @@
+---
+layout: base.njk
+title: 
+lang: zh
+permalink: /zh/unit1/case-studies/
+unit: unit1
+chapter: chapter8
+---
+
+{% set unit = units | findBy("id", "unit1") %}
+{% set chapter = unit.chapters | findBy("id", "chapter8") %}
+
+<div class="breadcrumb">
+    <a href="/{{ lang }}/">首页</a> / 
+    <a href="/{{ lang }}/{{ unit.id }}/">{{ unit.title[lang] }}</a> / 
+    {{ chapter.title[lang] }}
+</div>
+
+<h1>{{ chapter.icon }} {{ chapter.title[lang] }}</h1>
+
+<div class="tags">
+    {% for tag in chapter.tags %}
+    <a href="/{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+    {% endfor %}
+</div>
+
+<div class="content">
+    <h2>8.1 亚马逊 (Amazon) 的崛起</h2>
+    <ul>
+        <li><strong>当时情况</strong>：
+            <ul>
+                <li>1997 年上市，主营图书电商。</li>
+                <li>长期不盈利，亏损多年。</li>
+            </ul>
+        </li>
+        <li><strong>问题</strong>：
+            <ul>
+                <li>投资人质疑：到底是"互联网泡沫"，还是"未来零售巨头"？</li>
+            </ul>
+        </li>
+        <li><strong>公司应对</strong>：
+            <ul>
+                <li>坚持再投资，把利润投入物流、仓储和 AWS 云计算。</li>
+                <li>建立强大的供应链护城河 + 云计算新增长点。</li>
+            </ul>
+        </li>
+        <li><strong>投资启示</strong>：
+            <ul>
+                <li><strong>亏损 ≠ 没价值</strong>。要看财报里的营收增长和未来现金流潜力。</li>
+                <li>长期持有优质成长股 → 回报惊人（1997 年 $10,000 → 2023 年超 $1,000,000）。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8.2 柯达 (Kodak) 的衰落</h2>
+    <ul>
+        <li><strong>当时情况</strong>：
+            <ul>
+                <li>曾是全球胶卷巨头，1970–1990 年几乎垄断市场。</li>
+                <li>毛利率极高，品牌知名度顶级。</li>
+            </ul>
+        </li>
+        <li><strong>问题</strong>：
+            <ul>
+                <li>数码相机技术兴起 → 柯达自己发明却不敢推广（担心蚕食胶卷业务）。</li>
+            </ul>
+        </li>
+        <li><strong>公司应对</strong>：
+            <ul>
+                <li>转型失败，错过数码浪潮，最终 2012 年破产。</li>
+            </ul>
+        </li>
+        <li><strong>投资启示</strong>：
+            <ul>
+                <li>护城河不代表永远安全。<strong>如果行业趋势变了，公司必须创新。</strong></li>
+                <li>行业生命周期 > 单个公司的意志。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8.3 英伟达 (Nvidia) 的转折</h2>
+    <ul>
+        <li><strong>当时情况</strong>：
+            <ul>
+                <li>1999–2010 年主要做显卡，游戏市场。</li>
+                <li>股价长期平平。</li>
+            </ul>
+        </li>
+        <li><strong>问题</strong>：
+            <ul>
+                <li>GPU 市场天花板有限，如何寻找新增长点？</li>
+            </ul>
+        </li>
+        <li><strong>公司应对</strong>：
+            <ul>
+                <li>押注 CUDA 平台，把 GPU 用于 AI 训练和数据中心。</li>
+                <li>2016 年起，AI 需求爆发，英伟达变成"AI 芯片霸主"。</li>
+            </ul>
+        </li>
+        <li><strong>投资启示</strong>：
+            <ul>
+                <li><strong>技术型护城河 + 行业趋势</strong> = 爆发式增长。</li>
+                <li>投资人要看公司如何在拐点抓住新机会。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8.4 Netflix 的转型</h2>
+    <ul>
+        <li><strong>当时情况</strong>：
+            <ul>
+                <li>1997 年创立，最初是 DVD 租赁业务。</li>
+                <li>2000 年代早期：和 Blockbuster 竞争，市场不看好。</li>
+            </ul>
+        </li>
+        <li><strong>问题</strong>：
+            <ul>
+                <li>流媒体技术兴起，DVD 租赁模式会被淘汰。</li>
+            </ul>
+        </li>
+        <li><strong>公司应对</strong>：
+            <ul>
+                <li>大胆转型流媒体平台，投资原创内容。</li>
+                <li>打造算法推荐 + 订阅模式护城河。</li>
+            </ul>
+        </li>
+        <li><strong>投资启示</strong>：
+            <ul>
+                <li><strong>敢于自我革命</strong>，才能避免被时代淘汰。</li>
+                <li>成功转型的公司，会获得新的估值溢价。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8.5 茅台 (Kweichow Moutai) 的护城河</h2>
+    <ul>
+        <li><strong>当时情况</strong>：
+            <ul>
+                <li>中国白酒龙头，产量有限。</li>
+                <li>毛利率 > 90%，净利率 ~50%。</li>
+            </ul>
+        </li>
+        <li><strong>问题</strong>：
+            <ul>
+                <li>酒企很多，为什么茅台能独霸高端市场？</li>
+            </ul>
+        </li>
+        <li><strong>公司应对</strong>：
+            <ul>
+                <li>稀缺性（地理标志 + 酿造工艺独特）。</li>
+                <li>强品牌溢价 → 成为"身份象征"，而不仅仅是饮品。</li>
+            </ul>
+        </li>
+        <li><strong>投资启示</strong>：
+            <ul>
+                <li><strong>品牌护城河</strong> 可以让公司维持超高毛利。</li>
+                <li>投资人买的不是酒，而是品牌和文化。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8.6 小结：投资与创业的启发</h2>
+    <ol>
+        <li><strong>亚马逊</strong> → 看未来现金流和营收增长，而不只是利润。</li>
+        <li><strong>柯达</strong> → 护城河可能被行业趋势摧毁。</li>
+        <li><strong>英伟达</strong> → 技术突破 + 行业风口 = 爆发式回报。</li>
+        <li><strong>Netflix</strong> → 自我革命，才能延续增长。</li>
+        <li><strong>茅台</strong> → 品牌护城河的力量。</li>
+    </ol>
+    
+    <p>👉 投资要问：</p>
+    <ul>
+        <li>这家公司有长期护城河吗？</li>
+        <li>它能顺应行业趋势吗？</li>
+        <li>它有没有可能在关键时刻转型？</li>
+    </ul>
+    
+    <h2>📘 全课程总结</h2>
+    <ul>
+        <li><strong>如何挑选好公司</strong>：看基本面、财务报表、估值、护城河、行业趋势。</li>
+        <li><strong>投资方法论</strong>：价值投资、成长投资、指数投资 → Alpha 与 Beta。</li>
+        <li><strong>全球市场</strong>：美国三大指数是投资基准，新兴市场波动更大。</li>
+        <li><strong>创业与投资结合</strong>：投资人看公司，创业者要学会反向打造公司。</li>
+        <li><strong>历史案例</strong>：长期持有优质公司，能获得复利奇迹；忽视趋势和护城河，公司会衰落。</li>
+    </ul>
+</div>
+
+<div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+    <h3>相关章节</h3>
+    <ul class="chapter-list">
+        {% for ch in unit.chapters %}
+            {% if ch.id != chapter.id %}
+            <li>
+                <a href="/{{ lang }}/{{ unit.id }}/{{ ch.slug }}/">
+                    {{ ch.icon }} {{ ch.title[lang] }}
+                </a>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

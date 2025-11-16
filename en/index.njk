@@ -1,0 +1,133 @@
+---
+layout: base.njk
+title: 
+lang: en
+permalink: /en/
+---
+
+<h1>{{ site.title[lang] }}</h1>
+<p>{{ site.description[lang] }}</p>
+
+<div class="global-search">
+    <form action="/{{ lang }}/search/" method="get" class="global-search-form">
+        <div class="global-search-box-wrapper">
+            <div class="global-search-box">
+                <input type="text" name="q" id="mainSearchInput" placeholder="Search tags, units, chapters..." autofocus autocomplete="off">
+                <button type="submit">🔍</button>
+            </div>
+            <div id="searchSuggestions" class="search-suggestions"></div>
+        </div>
+    </form>
+    <div class="tags-container" style="margin-top: 1rem;">
+        <div class="tags">
+            {% for tag in tags %}
+            <a href="/{{ lang }}/tags/{{ tag.id }}/" class="tag">{{ tag.name }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+const searchIndex = {{ searchIndex | dump | safe }};
+const tags = {{ tags | dump | safe }};
+
+function getSuggestions(query) {
+    if (!query || query.trim().length < 1) {
+        return [];
+    }
+    
+    const searchTerm = query.toLowerCase().trim();
+    const suggestions = [];
+    const seen = new Set();
+    
+    // Search in tags
+    tags.forEach(tag => {
+        if (tag.name.toLowerCase().includes(searchTerm) && !seen.has(tag.name)) {
+            const lang = '{{ lang }}';
+            suggestions.push({
+                type: 'tag',
+                text: tag.name,
+                url: `/${lang}/tags/${tag.id}/`
+            });
+            seen.add(tag.name);
+        }
+    });
+    
+    // Search in units and chapters
+    const currentLang = '{{ lang }}';
+    searchIndex.forEach(item => {
+        const title = item.title[currentLang] || item.title.zh || item.title.en;
+        const searchableText = item.searchableText || '';
+        
+        if ((title.toLowerCase().includes(searchTerm) || searchableText.toLowerCase().includes(searchTerm)) && !seen.has(title)) {
+            suggestions.push({
+                type: item.type,
+                text: title,
+                url: item.url[currentLang]
+            });
+            seen.add(title);
+        }
+    });
+    
+    return suggestions.slice(0, 8); // Limit to 8 suggestions
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('mainSearchInput');
+    const suggestionsDiv = document.getElementById('searchSuggestions');
+    
+    if (!searchInput || !suggestionsDiv) return;
+    
+    searchInput.addEventListener('input', function(e) {
+        const query = e.target.value;
+        const suggestions = getSuggestions(query);
+        
+        if (suggestions.length === 0 || !query.trim()) {
+            suggestionsDiv.style.display = 'none';
+            suggestionsDiv.innerHTML = '';
+            return;
+        }
+        
+        suggestionsDiv.style.display = 'block';
+        const lang = '{{ lang }}';
+        suggestionsDiv.innerHTML = suggestions.map(s => {
+            const typeLabel = s.type === 'tag' ? 'Tag' : s.type === 'unit' ? 'Unit' : 'Chapter';
+            return `<a href="${s.url}" class="suggestion-item">
+                <span class="suggestion-type">${typeLabel}</span>
+                <span class="suggestion-text">${s.text}</span>
+            </a>`;
+        }).join('');
+    });
+    
+    // Hide suggestions when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!searchInput.contains(e.target) && !suggestionsDiv.contains(e.target)) {
+            suggestionsDiv.style.display = 'none';
+        }
+    });
+    
+    // Handle keyboard navigation
+    searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp' || e.key === 'Enter') {
+            const visibleSuggestions = suggestionsDiv.querySelectorAll('.suggestion-item');
+            if (visibleSuggestions.length > 0) {
+                e.preventDefault();
+                // Simple implementation: just focus first suggestion
+                if (e.key === 'Enter' && visibleSuggestions[0]) {
+                    window.location.href = visibleSuggestions[0].href;
+                }
+            }
+        }
+    });
+});
+</script>
+
+<div class="unit-grid">
+{% for unit in units %}
+    <a href="/{{ lang }}/{{ unit.id }}/" class="unit-card">
+        <h2>{{ unit.icon }} {{ unit.title[lang] }}</h2>
+        <p>{{ unit.description[lang] }}</p>
+    </a>
+{% endfor %}
+</div>
+

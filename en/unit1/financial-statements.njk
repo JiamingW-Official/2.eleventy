@@ -1,0 +1,477 @@
+---
+layout: base.njk
+title: 
+lang: en
+permalink: /en/unit1/financial-statements/
+unit: unit1
+chapter: chapter2
+---
+
+{% set unit = units | findBy("id", "unit1") %}
+{% set chapter = unit.chapters | findBy("id", "chapter2") %}
+
+<div class="breadcrumb">
+    <a href="/{{ lang }}/">Home</a> / 
+    <a href="/{{ lang }}/{{ unit.id }}/">{{ unit.title[lang] }}</a> / 
+    {{ chapter.title[lang] }}
+</div>
+
+<h1>{{ chapter.icon }} {{ chapter.title[lang] }}</h1>
+
+<div class="tags">
+    {% for tag in chapter.tags %}
+    <a href="/{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+    {% endfor %}
+</div>
+
+<div class="content">
+    <h2>2.1 Why is Tesla's P/E Ratio Much Higher Than Apple's?</h2>
+    
+    <h3>📌 The Reasons</h3>
+    <ul>
+        <li><strong>Apple (AAPL)</strong>：
+            <ul>
+                <li>Mature company with slowing growth but stable profits.</li>
+                <li>P/E ratio typically ranges between 25–30.</li>
+            </ul>
+        </li>
+        <li><strong>Tesla (TSLA)</strong>：
+            <ul>
+                <li>High-growth company with high investor expectations for the future.</li>
+                <li>Even with modest profits, the market gives it <strong>a very high P/E multiple (40–60+)</strong> because investors believe it will expand rapidly in the future.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <p>👉 <strong>Summary</strong>：</p>
+    <p>High P/E ≠ the company is necessarily more profitable, but rather the market is willing to pay a higher premium for "future growth".</p>
+    
+    <h2>2.2 The Three Major Financial Statements: The Company's "Health Report"</h2>
+    
+    <figure>
+        <img src="/images/unit1/financial-statements/IMG_5756.jpeg" alt="Financial Statements Overview" style="max-width: 600px;">
+    </figure>
+    
+    <p><a href="https://www.xiaohongshu.com/explore/65969c1a000000001d02aa27">How to Quickly Read a Public Company's Financial Report in 5 Minutes?</a></p>
+    
+    <h1>📊 Income Statement</h1>
+    <p><a href="https://www.xiaohongshu.com/explore/67ed2394000000001e005063">Understanding a Public Company's Income Statement in 2 Minutes</a></p>
+    
+    <ul>
+        <li>Shows: <strong>how much money the company made during a specific period</strong>.</li>
+        <li>Main structure:
+            <ol>
+                <li>Revenue</li>
+                <li>Gross Profit (Revenue – Cost)</li>
+                <li>Operating Income</li>
+                <li><strong>Operating Expenses</strong></li>
+                <li>Net Income</li>
+            </ol>
+        </li>
+    </ul>
+    
+    <h3>📌 Gross Profit Margin</h3>
+    <ul>
+        <li><strong>Formula</strong>：
+            <figure>
+                <img src="/images/unit1/financial-statements/image.png" alt="Gross Profit Margin Formula" style="max-width: 288px;">
+            </figure>
+        </li>
+        <li><strong>Gross Profit</strong> = Revenue – Cost of Goods Sold (e.g., production costs, material costs).</li>
+        <li><strong>Significance</strong>：
+            <ul>
+                <li>Measures <strong>the profitability of the product itself</strong>.</li>
+                <li>High gross margin → the product has pricing power, indicating strong brand or technological moat.</li>
+            </ul>
+        </li>
+        <li><strong>Examples</strong>：
+            <ul>
+                <li>Apple (iPhone): Gross margin ~43%</li>
+                <li>Costco: Gross margin ~12%, but wins through scale</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>📌 Net Profit Margin</h3>
+    <ul>
+        <li><strong>Formula</strong>：
+            <figure>
+                <img src="/images/unit1/financial-statements/image%201.png" alt="Net Profit Margin Formula" style="max-width: 288px;">
+            </figure>
+        </li>
+        <li><strong>Net Profit</strong> = Gross Profit – Operating Expenses – Financial Expenses – Taxes.</li>
+        <li><strong>Significance</strong>：
+            <ul>
+                <li>Measures how much money the company <strong>can ultimately retain</strong>.</li>
+                <li>High net margin → good cost control, healthier business model.</li>
+            </ul>
+        </li>
+        <li><strong>Examples</strong>：
+            <ul>
+                <li>Microsoft: Net margin ~30% (low marginal cost for software)</li>
+                <li>Walmart: Net margin ~2–3% (intense competition in retail)</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>❌ Common Misconceptions</h3>
+    <ul>
+        <li>Misconception 1: Higher gross margin = the company must be more profitable.
+            <ul>
+                <li>Example: Luxury companies have high gross margins, but may have low net profits due to high advertising and R&D expenses.</li>
+            </ul>
+        </li>
+        <li>Misconception 2: Low net margin = bad company.
+            <ul>
+                <li>Example: Walmart's net margin is only 2–3%, but due to its massive scale, it's still one of the world's most profitable retail companies.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>✅ Correct Understanding</h3>
+    <ul>
+        <li><strong>Gross Margin</strong>: Reflects the "per-unit profitability" of products, indicating whether the company has pricing power.</li>
+        <li><strong>Net Margin</strong>: Reflects how much money the company "ultimately retains", indicating management and cost control levels.</li>
+        <li><strong>Investment Logic</strong>: You need to look at both gross margin and net margin together to judge the true quality of a company's profitability.</li>
+    </ul>
+    
+    <h1>💵 Cash Flow Statement</h1>
+    
+    <p><a href="http://xhslink.com/o/TvJhkd0zax">One Video to Understand Corporate Cash Flow Statement</a><br>
+    <a href="https://www.xiaohongshu.com/explore/67f099f7000000001d01916c">Understanding Cash Flow Statement in 3 Minutes</a></p>
+    
+    <h2>📌 Definition</h2>
+    <ul>
+        <li>The Cash Flow Statement reflects the company's <strong>cash receipts and payments</strong> during a specific period.</li>
+        <li>It answers the question:
+            <ul>
+                <li>Is the money the company earned real cash?</li>
+                <li>Or just "paper profits"?</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <p>👉 Analogy: The Income Statement is like a "report card", while the Cash Flow Statement is a "bank statement". The report card can look good, but the bank balance is what matters.</p>
+    
+    <h2>📊 Three Main Components</h2>
+    
+    <h3>1️⃣ Operating Cash Flow (OCF)</h3>
+    <ul>
+        <li><strong>Source</strong>: Cash generated from core business operations.</li>
+        <li><strong>Formula</strong> (simplified): <strong>Operating Cash Flow = Net Income + Non-cash Expenses (e.g., depreciation) + Changes in Working Capital</strong></li>
+        <li><strong>Significance</strong>: Measures whether the core business is "generating cash".</li>
+        <li><strong>Examples</strong>：
+            <ul>
+                <li>Apple: Operating cash flow ~ $110 billion/year → very healthy.</li>
+                <li>Some startups: Net income is positive, but OCF is negative → can't collect cash, relying on credit.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <figure>
+        <img src="/images/unit1/financial-statements/image%202.png" alt="Operating Cash Flow" style="max-width: 100%;">
+    </figure>
+    
+    <h3>2️⃣ Investing Cash Flow (ICF)</h3>
+    <ul>
+        <li><strong>Source</strong>: Investment, acquisition, and asset disposal activities.</li>
+        <li><strong>Formula</strong> (simplified): Investing Cash Flow = Cash Inflow from Investment Recovery − Capital Expenditure</li>
+        <li><strong>Significance</strong>: Reflects the company's investment in expansion, M&A, and R&D.</li>
+        <li><strong>Examples</strong>：
+            <ul>
+                <li>Tesla: Invests heavily in building Gigafactories each year → investing cash flow is usually negative.</li>
+                <li>TSMC: Massive capital expenditure (CapEx) → investing cash flow is negative long-term, but future capacity increases.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>3️⃣ Financing Cash Flow (FCF)</h3>
+    <ul>
+        <li><strong>Source</strong>: Company financing and dividends.</li>
+        <li><strong>Formula</strong> (simplified): Financing Cash Flow = Borrowing + Stock Issuance − Debt Repayment − Dividends</li>
+        <li><strong>Significance</strong>: Shows whether the company relies on "borrowing" to survive.</li>
+        <li><strong>Examples</strong>：
+            <ul>
+                <li>SoFi: Continuously raised funds in early stages (cash inflow), but as business stabilizes, gradually relies on its own cash flow.</li>
+                <li>Coca-Cola: Stable long-term dividends → financing cash flow is often negative.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <figure>
+        <img src="/images/unit1/financial-statements/image%203.png" alt="Investing and Financing Cash Flow" style="max-width: 100%;">
+    </figure>
+    
+    <h2>📌 Free Cash Flow (FCF)</h2>
+    <ul>
+        <li><strong>Formula</strong>: Free Cash Flow = Operating Cash Flow − Capital Expenditure</li>
+        <li><strong>Significance</strong>：
+            <ul>
+                <li>The cash the company can "freely use".</li>
+                <li>Investors pay special attention → because this is the real cash that can be used for dividends, buybacks, and reinvestment.</li>
+            </ul>
+        </li>
+        <li><strong>Examples</strong>：
+            <ul>
+                <li>Apple: Free cash flow $100 billion → enough for dividends + stock buybacks.</li>
+                <li>Netflix: Had negative free cash flow for a long time due to investment in original content, but later turned positive.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>⚠️ Common Misconceptions</h2>
+    <ol>
+        <li><strong>Misconception 1: Positive net income = cash flow must be good</strong>
+            <ul>
+                <li>❌ Wrong: Some companies use "accounting tricks" to make profits look good, but actually can't collect cash.</li>
+                <li>Example: Some real estate companies show paper profits, but cash flow is negative long-term.</li>
+            </ul>
+        </li>
+        <li><strong>Misconception 2: Negative investing cash flow = bad company</strong>
+            <ul>
+                <li>❌ Wrong: Many growth companies in expansion phase have negative investing cash flow, which is actually good (shows they're building factories/R&D).</li>
+            </ul>
+        </li>
+        <li><strong>Misconception 3: Positive financing cash flow = healthy</strong>
+            <ul>
+                <li>❌ Wrong: Some companies rely on debt to maintain operations, which actually increases risk.</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h2>✅ Correct Understanding</h2>
+    <ul>
+        <li><strong>Priority order for cash flow</strong>：
+            <ul>
+                <li><strong>Operating Cash Flow > 0</strong> = healthy core business.</li>
+                <li><strong>Investing Cash Flow < 0</strong> = investing in the future.</li>
+                <li><strong>Free Cash Flow > 0</strong> = can really give money to shareholders.</li>
+            </ul>
+        </li>
+        <li><strong>Investment Logic</strong>：
+            <ul>
+                <li>If a company has <strong>high profits but poor cash flow</strong> → be careful.</li>
+                <li>If a company has low profits but strong cash flow → the model may be more stable.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h1>📘 Balance Sheet</h1>
+    
+    <h2>📌 Definition</h2>
+    <ul>
+        <li><strong>Balance Sheet</strong> = a snapshot of the company's financial position at a specific point in time.</li>
+        <li>It answers the questions:
+            <ul>
+                <li>What "assets" does the company have now? (Assets)</li>
+                <li>How much debt does it owe? (Liabilities)</li>
+                <li>How much do shareholders actually own? (Shareholders' Equity)</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <p>👉 Analogy: The Income Statement is like a "report card" (performance over a period), while the Balance Sheet is a "bankbook + IOUs" (the company's real financial position today).</p>
+    
+    <figure>
+        <img src="/images/unit1/financial-statements/image%204.png" alt="Balance Sheet Structure" style="max-width: 100%;">
+    </figure>
+    <figure>
+        <img src="/images/unit1/financial-statements/image%205.png" alt="Balance Sheet Example" style="max-width: 100%;">
+    </figure>
+    <figure>
+        <img src="/images/unit1/financial-statements/image%206.png" alt="Balance Sheet Analysis" style="max-width: 100%;">
+    </figure>
+    <figure>
+        <img src="/images/unit1/financial-statements/image%207.png" alt="Balance Sheet Case Study" style="max-width: 100%;">
+    </figure>
+    
+    <h2>📊 Structure</h2>
+    
+    <h3>1️⃣ Assets</h3>
+    <p>Resources <strong>owned by the company</strong>, can be divided into:</p>
+    <ul>
+        <li><strong>Current Assets</strong> (can be converted to cash within one year): Cash, Accounts Receivable, Inventory</li>
+        <li><strong>Non-current Assets</strong> (held long-term): Plant, Equipment, Patents, Long-term Investments</li>
+    </ul>
+    
+    <h3>2️⃣ Liabilities</h3>
+    <p>Money <strong>owed to others</strong>, obligations to repay:</p>
+    <ul>
+        <li><strong>Current Liabilities</strong> (due within one year): Accounts Payable, Short-term Debt</li>
+        <li><strong>Long-term Liabilities</strong> (due after one year): Long-term Loans, Bonds</li>
+    </ul>
+    
+    <h3>3️⃣ Shareholders' Equity</h3>
+    <p>Company's "net worth" → shareholders' true share.</p>
+    
+    <figure>
+        <img src="/images/unit1/financial-statements/image%208.png" alt="Shareholders' Equity" style="max-width: 100%;">
+    </figure>
+    
+    <p>👉 Simple understanding:</p>
+    <ul>
+        <li>You buy a house worth $1 million (asset), take a loan of $700,000 (liability), and you put in $300,000 yourself (shareholders' equity).</li>
+    </ul>
+    
+    <h2>📌 Important Formulas</h2>
+    
+    <h3><strong>Accounting Equation</strong></h3>
+    <figure>
+        <img src="/images/unit1/financial-statements/image%209.png" alt="Accounting Equation" style="max-width: 100%;">
+    </figure>
+    <p>This is the fundamental law of accounting, always true.</p>
+    
+    <h3><strong>Debt Ratio</strong></h3>
+    <figure>
+        <img src="/images/unit1/financial-statements/image%2010.png" alt="Debt Ratio Formula" style="max-width: 100%;">
+    </figure>
+    <ul>
+        <li>Measures the company's leverage level.</li>
+        <li>High → high risk; Low → stable.</li>
+    </ul>
+    
+    <h3><strong>Current Ratio</strong></h3>
+    <figure>
+        <img src="/images/unit1/financial-statements/image%2011.png" alt="Current Ratio Formula" style="max-width: 100%;">
+    </figure>
+    <ul>
+        <li>Measures the company's short-term debt-paying ability.</li>
+        <li>1 → theoretically can pay off short-term debt.</li>
+    </ul>
+    
+    <h3><strong>Quick Ratio</strong></h3>
+    <figure>
+        <img src="/images/unit1/financial-statements/image%2012.png" alt="Quick Ratio Formula" style="max-width: 100%;">
+    </figure>
+    <ul>
+        <li>A stricter short-term debt-paying indicator (because inventory may not be sellable).</li>
+    </ul>
+    
+    <h2>📌 Case Studies</h2>
+    
+    <h3>🍏 Apple (2023)</h3>
+    <ul>
+        <li>Total Assets: $352 billion</li>
+        <li>Total Liabilities: $294 billion</li>
+        <li>Shareholders' Equity: $58 billion</li>
+        <li>Debt Ratio: ≈ 83%</li>
+        <li><strong>Conclusion</strong>: Apple has significant debt, but strong cash flow can fully cover it.</li>
+    </ul>
+    
+    <h3>🚗 Tesla (2023)</h3>
+    <ul>
+        <li>Total Assets: $105 billion</li>
+        <li>Total Liabilities: $36 billion</li>
+        <li>Shareholders' Equity: $69 billion</li>
+        <li>Debt Ratio: ≈ 34%</li>
+        <li><strong>Conclusion</strong>: Tesla has relatively low debt, expansion relies more on equity financing.</li>
+    </ul>
+    
+    <h3>🏦 Ping An of China (A-share financial company)</h3>
+    <ul>
+        <li>Characteristic: Financial companies generally have high debt ratios (banks and insurance companies essentially "borrow short and lend long").</li>
+        <li>Debt ratio > 90%, but this is an industry characteristic.</li>
+    </ul>
+    
+    <h2>⚠️ Common Misconceptions</h2>
+    <ol>
+        <li><strong>Misconception 1: High debt ratio = dangerous company</strong>
+            <ul>
+                <li>❌ Wrong: Some industries are naturally high-debt (banks, real estate), which doesn't mean unhealthy.</li>
+                <li>Correct: Need to consider cash flow and industry characteristics.</li>
+            </ul>
+        </li>
+        <li><strong>Misconception 2: Small shareholders' equity = company is worthless</strong>
+            <ul>
+                <li>❌ Wrong: Light-asset companies (like Google, Meta) have valuable brands and data, but assets aren't significant on the balance sheet.</li>
+            </ul>
+        </li>
+        <li><strong>Misconception 3: Higher current ratio is always better</strong>
+            <ul>
+                <li>❌ Wrong: Too high may indicate the company has too much idle cash, low efficiency.</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h2>✅ Correct Understanding</h2>
+    <ul>
+        <li><strong>Debt is not bad</strong>: Reasonable debt can amplify returns.</li>
+        <li><strong>Look at structure</strong>: Short-term debt vs long-term debt, which has a higher proportion?</li>
+        <li><strong>Combine the three statements</strong>：
+            <ul>
+                <li>Income Statement tells you if it's profitable.</li>
+                <li>Cash Flow Statement tells you if money is coming in.</li>
+                <li>Balance Sheet tells you if the foundation is stable.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>🎯 Classroom Activity</h2>
+    <ol>
+        <li>Open Yahoo Finance → search <code>AAPL</code> (Apple).
+            <ul>
+                <li>Find the Balance Sheet.</li>
+                <li>Calculate: Debt Ratio, Current Ratio.</li>
+            </ul>
+        </li>
+        <li>Think: Why does Apple have high debt, but the market still confidently buys its stock?</li>
+    </ol>
+    
+    <h2>📘 Summary</h2>
+    <ul>
+        <li><strong>Balance Sheet = snapshot of company health</strong>.</li>
+        <li>Three core indicators: Debt Ratio, Current Ratio, Quick Ratio.</li>
+        <li>Investment should consider industry characteristics, don't mechanically look at numbers.</li>
+        <li>An excellent company is often not "debt-free", but "uses debt in the right places".</li>
+        <li>Reflects: what the company <strong>owns (assets)</strong>, what it <strong>owes (liabilities)</strong>, and what belongs to shareholders (shareholders' equity).</li>
+    </ul>
+    
+    <h2>2.3 Relationships Between the Three Statements</h2>
+    <ul>
+        <li>The "Net Income" from the Income Statement flows into the "Operating Cash Flow" of the Cash Flow Statement.</li>
+        <li>The "Capital Expenditure" in the Cash Flow Statement affects "Fixed Assets" in the Balance Sheet.</li>
+        <li>The "Shareholders' Equity" in the Balance Sheet corresponds to "Retained Earnings" from the Income Statement.</li>
+    </ul>
+    
+    <p>👉 <strong>Simple understanding</strong>：</p>
+    <ul>
+        <li>Income Statement = company's profit report card</li>
+        <li>Cash Flow Statement = whether money actually came in</li>
+        <li>Balance Sheet = how much "assets" the company has now</li>
+    </ul>
+    
+    <h2>2.4 Case Studies</h2>
+    
+    <h3>🍏 Apple (2023 Financial Report Simplified)</h3>
+    <ul>
+        <li>Revenue: $383 billion</li>
+        <li>Gross Margin: 43%</li>
+        <li>Net Margin: 25%</li>
+        <li>Free Cash Flow: $100+ billion</li>
+        <li><strong>Conclusion</strong>: High profits + strong cash flow → "cash machine".</li>
+    </ul>
+    
+    <h3>🚗 Tesla (2023 Financial Report Simplified)</h3>
+    <ul>
+        <li>Revenue: $96.1 billion</li>
+        <li>Gross Margin: 25% (lower than Apple)</li>
+        <li>Net Margin: 11%</li>
+        <li>Free Cash Flow: $9 billion</li>
+        <li><strong>Conclusion</strong>: Profit margin lower than Apple, but fast growth rate → market gives higher valuation.</li>
+    </ul>
+</div>
+
+<div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+    <h3>Related Chapters</h3>
+    <ul class="chapter-list">
+        {% for ch in unit.chapters %}
+            {% if ch.id != chapter.id %}
+            <li>
+                <a href="/{{ lang }}/{{ unit.id }}/{{ ch.slug }}/">
+                    {{ ch.icon }} {{ ch.title[lang] }}
+                </a>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

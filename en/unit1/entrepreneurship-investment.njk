@@ -1,0 +1,179 @@
+---
+layout: base.njk
+title: 
+lang: en
+permalink: /en/unit1/entrepreneurship-investment/
+unit: unit1
+chapter: chapter7
+---
+
+{% set unit = units | findBy("id", "unit1") %}
+{% set chapter = unit.chapters | findBy("id", "chapter7") %}
+
+<div class="breadcrumb">
+    <a href="/{{ lang }}/">Home</a> / 
+    <a href="/{{ lang }}/{{ unit.id }}/">{{ unit.title[lang] }}</a> / 
+    {{ chapter.title[lang] }}
+</div>
+
+<h1>{{ chapter.icon }} {{ chapter.title[lang] }}</h1>
+
+<div class="tags">
+    {% for tag in chapter.tags %}
+    <a href="/{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+    {% endfor %}
+</div>
+
+<div class="content">
+    <h2>7.1 How Do Investors Evaluate a Company?</h2>
+    <p>When investors buy stocks, the most important questions are:</p>
+    <ol>
+        <li><strong>Can this company make money consistently?</strong>
+            <ul>
+                <li>Metrics: Gross margin, net margin, ROE.</li>
+                <li>Investors want companies that not only make money but can maintain profits.</li>
+            </ul>
+        </li>
+        <li><strong>Does this company have a moat?</strong>
+            <ul>
+                <li>Does it have advantages that are hard to imitate (brand, patents, network effects)?</li>
+            </ul>
+        </li>
+        <li><strong>Can this company grow in the future?</strong>
+            <ul>
+                <li>Is the industry trend upward (AI, electric vehicles, medical tech)?</li>
+                <li>What position is the company in the industry?</li>
+            </ul>
+        </li>
+        <li><strong>Is this company expensive now?</strong>
+            <ul>
+                <li>Use valuation metrics (P/E, P/B, PEG, DCF) to judge if stock price is reasonable.</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <p>👉 Conclusion: Investors pick companies not based on how hot they are today, but whether they <strong>can survive 10+ years</strong>.</p>
+    
+    <h2>7.2 How Can Entrepreneurs Build an "Investment-Worthy Company"?</h2>
+    <p>If you're an entrepreneur, think in reverse: How to get investors to pick you?</p>
+    <ul>
+        <li><strong>Gross Margin</strong>：
+            <ul>
+                <li>Startups should avoid "manual labor", preferably have high margins (like software, subscription models).</li>
+                <li>Example: Adobe transitioned to subscription model → gross margin 80%+.</li>
+            </ul>
+        </li>
+        <li><strong>Net Margin</strong>：
+            <ul>
+                <li>Can lose money early, but need clear path to profitability.</li>
+                <li>Example: Amazon lost money in early years, but financial reports showed rapid revenue growth, investors believed it could make money in the future.</li>
+            </ul>
+        </li>
+        <li><strong>Moat</strong>：
+            <ul>
+                <li>Build unique advantages.</li>
+                <li>Example: Tesla's moat is batteries + autonomous driving data; TSMC's moat is chip manufacturing process.</li>
+            </ul>
+        </li>
+        <li><strong>Growth Story</strong>：
+            <ul>
+                <li>Investors buy the future, not the present.</li>
+                <li>Example: SoFi tells "financial supermarket" story, Meta tells "metaverse" story.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>7.3 "Red Flags" in Investors' Eyes 🚩</h2>
+    <ul>
+        <li>Business model too easy to copy → no moat.</li>
+        <li>Cash flow negative long-term → surviving on financing.</li>
+        <li>Low industry ceiling → insufficient market space.</li>
+        <li>Overvalued → hype concept, no profit realization.</li>
+    </ul>
+    
+    <p>👉 Example: Bike-sharing (ofo, Mobike) → fast user growth, but no moat, funds exhausted.</p>
+    
+    <h2>7.4 Mirror Comparison: Investors vs Entrepreneurs</h2>
+    
+    <table class="simple-table">
+        <thead>
+            <tr>
+                <th>Role</th>
+                <th>Focus</th>
+                <th>Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Investor</td>
+                <td>Does the company have a moat?</td>
+                <td>Buffett picks Coca-Cola because brand moat is deep</td>
+            </tr>
+            <tr>
+                <td>Entrepreneur</td>
+                <td>How do I build a moat?</td>
+                <td>Coca-Cola locked in the world through advertising + channels</td>
+            </tr>
+            <tr>
+                <td>Investor</td>
+                <td>Do the financials look good?</td>
+                <td>Look at Apple's high margins and cash flow</td>
+            </tr>
+            <tr>
+                <td>Entrepreneur</td>
+                <td>How do I design the model?</td>
+                <td>Apple formed high-margin ecosystem through App Store</td>
+            </tr>
+            <tr>
+                <td>Investor</td>
+                <td>Industry growth potential?</td>
+                <td>Nvidia exploded due to AI industry's rapid growth</td>
+            </tr>
+            <tr>
+                <td>Entrepreneur</td>
+                <td>Can I catch the trend?</td>
+                <td>Nvidia bet on CUDA + AI ecosystem</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2>🎯 Activity</h2>
+    <ol>
+        <li>Choose a startup direction you like (e.g., AI applications, consumer goods, cultural products).</li>
+        <li>Answer from investor perspective:
+            <ul>
+                <li>Does this company have a moat?</li>
+                <li>What might the gross margin be?</li>
+                <li>Is future growth space large?</li>
+            </ul>
+        </li>
+        <li>Then answer from entrepreneur perspective:
+            <ul>
+                <li>How do I build a moat?</li>
+                <li>How do I increase gross margin?</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h2>📘 Summary</h2>
+    <ul>
+        <li>Investors and entrepreneurs focus on the same core: <strong>long-term profitability + moat + growth potential</strong>.</li>
+        <li>Investors pick companies that can make money long-term; entrepreneurs need to build companies into such businesses.</li>
+        <li>A company that can both attract consumers and investors has a chance for long-term success.</li>
+    </ul>
+</div>
+
+<div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+    <h3>Related Chapters</h3>
+    <ul class="chapter-list">
+        {% for ch in unit.chapters %}
+            {% if ch.id != chapter.id %}
+            <li>
+                <a href="/{{ lang }}/{{ unit.id }}/{{ ch.slug }}/">
+                    {{ ch.icon }} {{ ch.title[lang] }}
+                </a>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

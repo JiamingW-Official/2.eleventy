@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Learning Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: #34495e;
+        }
+        
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .lang-switcher a {
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .lang-switcher a.active {
+            background-color: #34495e;
+        }
+        
+        main {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            min-height: 60vh;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        
+        h3 {
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        ul, ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: #666;
+            font-style: italic;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+        
+        figure {
+            margin: 1.5rem 0;
+        }
+        
+        figcaption {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+            align-items: center;
+        }
+        
+        .tag {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            padding: 0.4rem 0.9rem;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+            border: 1px solid transparent;
+            line-height: 1.4;
+            min-height: 28px;
+            box-sizing: border-box;
+        }
+        
+        .tag:hover {
+            background-color: #3498db;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 6px rgba(52, 152, 219, 0.3);
+            border-color: #2980b9;
+        }
+        
+        .tag:visited {
+            color: #2c3e50;
+        }
+        
+        .tag:visited:hover {
+            color: white;
+        }
+        
+        .tag-search-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .tag-search-section h2 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .tag-search-section p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .tags-container {
+            max-height: 70px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 0.75rem 1rem;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .tags-container .tags {
+            display: inline-flex;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            margin: 0;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .tags-container .tag {
+            flex-shrink: 0;
+        }
+        
+        .tags-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .tags-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        .tags-container::-webkit-scrollbar-thumb {
+            background: #bdc3c7;
+            border-radius: 4px;
+        }
+        
+        .tags-container::-webkit-scrollbar-thumb:hover {
+            background: #95a5a6;
+        }
+        
+        .global-search {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            border: 1px solid #dee2e6;
+            text-align: center;
+        }
+        
+        .global-search-form {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .global-search-box-wrapper {
+            position: relative;
+        }
+        
+        .global-search-box {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 24px;
+            padding: 0.5rem 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .global-search-box-wrapper:focus-within .global-search-box {
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+        
+        .global-search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            padding: 0.5rem;
+        }
+        
+        .global-search-box button {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.25rem;
+            color: #7f8c8d;
+        }
+        
+        .global-search-box button:hover {
+            color: #3498db;
+        }
+        
+        .search-suggestions {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-top: 0.5rem;
+            max-height: 400px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        
+        .suggestion-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.2s;
+        }
+        
+        .suggestion-item:last-child {
+            border-bottom: none;
+        }
+        
+        .suggestion-item:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .suggestion-type {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            background-color: #ecf0f1;
+            color: #7f8c8d;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            margin-right: 0.75rem;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .suggestion-text {
+            flex: 1;
+            font-size: 0.95rem;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            color: white;
+            margin: 0;
+        }
+        
+        .unit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .unit-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .unit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .unit-card h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        
+        .unit-card .tags {
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+        
+        .unit-card .tag {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.7rem;
+        }
+        
+        .chapter-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .chapter-list li {
+            margin-bottom: 1rem;
+        }
+        
+        .chapter-list a {
+            display: block;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-decoration: none;
+            color: inherit;
+            transition: background-color 0.3s;
+        }
+        
+        .chapter-list a:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/en/" class="logo">Investment Learning Platform</a>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/search/">Search</a>
+                <a href="/en/tags/">Tags</a>
+                <div class="lang-switcher">
+                    
+                        <a href="/zh/search/">中文</a>
+                        <a href="/en/search/" class="active">English</a>
+                    
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        
+        
+        
+<h1>Search</h1>
+
+<div class="search-container">
+    <form action="/en/search/" method="get" class="search-form">
+        <div class="search-box">
+            <input type="text" name="q" id="searchInput" value="" placeholder="Search tags, units, chapters..." autofocus>
+            <button type="submit">🔍</button>
+        </div>
+    </form>
+</div>
+
+<div id="searchResults" class="search-results">
+    
+        <p>Please enter a search term</p>
+    
+</div>
+
+<script>
+// Search functionality
+const searchIndex = [{&quot;type&quot;:&quot;unit&quot;,&quot;id&quot;:&quot;unit0&quot;,&quot;title&quot;:{&quot;zh&quot;:&quot;Unit 0: 经济机器是如何运行的&quot;,&quot;en&quot;:&quot;Unit 0: How the Economic Machine Works&quot;},&quot;description&quot;:{&quot;zh&quot;:&quot;这是2008年美国金融危机之后，Ray Dalio在Youtube上分享的30分钟视频《How The Economic Machine Works》《经济机器是如何运行的》，目前已经播放了五百多万次。&quot;,&quot;en&quot;:&quot;This is a 30-minute video shared by Ray Dalio on YouTube after the 2008 US financial crisis, &#39;How The Economic Machine Works&#39;, which has been viewed over 5 million times.&quot;},&quot;tags&quot;:[&quot;economics&quot;,&quot;finance&quot;,&quot;debt-cycle&quot;,&quot;economic-machine&quot;],&quot;url&quot;:{&quot;zh&quot;:&quot;/zh/unit0/&quot;,&quot;en&quot;:&quot;/en/unit0/&quot;},&quot;searchableText&quot;:&quot;Unit 0: 经济机器是如何运行的 Unit 0: How the Economic Machine Works 这是2008年美国金融危机之后，Ray Dalio在Youtube上分享的30分钟视频《How The Economic Machine Works》《经济机器是如何运行的》，目前已经播放了五百多万次。 This is a 30-minute video shared by Ray Dalio on YouTube after the 2008 US financial crisis, &#39;How The Economic Machine Works&#39;, which has been viewed over 5 million times. economics finance debt-cycle economic-machine&quot;},{&quot;type&quot;:&quot;unit&quot;,&quot;id&quot;:&quot;unit1&quot;,&quot;title&quot;:{&quot;zh&quot;:&quot;Unit 1: 挑选一家好公司&quot;,&quot;en&quot;:&quot;Unit 1: How to Pick a Good Company&quot;},&quot;description&quot;:{&quot;zh&quot;:&quot;学会如何像巴菲特一样筛选优质公司。掌握财务报表解读、估值方法、护城河分析。&quot;,&quot;en&quot;:&quot;Learn how to screen quality companies like Buffett. Master financial statement analysis, valuation methods, and moat analysis.&quot;},&quot;tags&quot;:[&quot;investment&quot;,&quot;value-investing&quot;,&quot;fundamental-analysis&quot;,&quot;valuation&quot;],&quot;url&quot;:{&quot;zh&quot;:&quot;/zh/unit1/&quot;,&quot;en&quot;:&quot;/en/unit1/&quot;},&quot;searchableText&quot;:&quot;Unit 1: 挑选一家好公司 Unit 1: How to Pick a Good Company 学会如何像巴菲特一样筛选优质公司。掌握财务报表解读、估值方法、护城河分析。 Learn how to screen quality companies like Buffett. Master financial statement analysis, valuation methods, and moat analysis. investment value-investing fundamental-analysis valuation&quot;},{&quot;type&quot;:&quot;chapter&quot;,&quot;id&quot;:&quot;chapter1&quot;,&quot;unitId&quot;:&quot;unit1&quot;,&quot;title&quot;:{&quot;zh&quot;:&quot;基本面分析（Fundamental Analysis）&quot;,&quot;en&quot;:&quot;Fundamental Analysis&quot;},&quot;tags&quot;:[&quot;fundamental-analysis&quot;,&quot;financial-analysis&quot;],&quot;url&quot;:{&quot;zh&quot;:&quot;/zh/unit1/fundamental-analysis/&quot;,&quot;en&quot;:&quot;/en/unit1/fundamental-analysis/&quot;},&quot;searchableText&quot;:&quot;基本面分析（Fundamental Analysis） Fundamental Analysis 首页 / / 1.1 为什么要看基本面而不是只看技术面 📌 技术面（Technical Analysis） 定义 ：通过股价和成交量的图表，预测未来走势。 优点 ：直观、能看市场情绪，短期交易者常用。 缺点 ： 过度依赖图表，可能忽视公司真实情况。 短期涨跌难以预测，容易&#92;&quot;追涨杀跌&#92;&quot;。 错过长期机会 ：如果只看图，2000 年你可能觉得亚马逊崩盘，而忽视了它后来成长为世界巨头。 📌 基本面（Fundamental Analysis） 定义 ：研究公司的经营状况、财务健康、行业前景，判断&#92;&quot;公司值不值得投资&#92;&quot;。 优点 ： 长期可持续，避免炒短线。 让投资变成&#92;&quot;买生意&#92;&quot;，而不是&#92;&quot;买彩票&#92;&quot;。 帮助发现被低估的好公司。 ⚠️ 案例： 2000 年互联网泡沫：很多公司股价飙升，但没有盈利，结果崩盘。 亚马逊虽然亏损多年，但财报显示营收持续高速增长，基本面支撑了它的长期成功。 👉 小总结 ：技术面是&#92;&quot;情绪温度计&#92;&quot;，基本面才是&#92;&quot;体检报告&#92;&quot;。投资要以基本面为主，技术面为辅。 1.2 如何查询公司的基本面 🔍 Step 1: 用 Google 搜索公司财报 搜索关键词： Apple investo Home / / 1.1 Why Focus on Fundamentals Instead of Just Technical Analysis 📌 Technical Analysis Definition : Predicting future trends through charts of stock prices and trading volume. Advantages : Intuitive, can see market sentiment, commonly used by short-term traders. Disadvantages : Over-reliance on charts may ignore the real situation of the company. Short-term price movements are difficult to predict, easy to &#92;&quot;chase rising and falling prices&#92;&quot;. Miss long-term opportunities : If you only loo fundamental-analysis financial-analysis&quot;},{&quot;type&quot;:&quot;chapter&quot;,&quot;id&quot;:&quot;chapter2&quot;,&quot;unitId&quot;:&quot;unit1&quot;,&quot;title&quot;:{&quot;zh&quot;:&quot;财务报表与核心指标&quot;,&quot;en&quot;:&quot;Financial Statements and Key Metrics&quot;},&quot;tags&quot;:[&quot;financial-statements&quot;,&quot;metrics&quot;,&quot;accounting&quot;],&quot;url&quot;:{&quot;zh&quot;:&quot;/zh/unit1/financial-statements/&quot;,&quot;en&quot;:&quot;/en/unit1/financial-statements/&quot;},&quot;searchableText&quot;:&quot;财务报表与核心指标 Financial Statements and Key Metrics 首页 / / 2.1 为什么特斯拉的市盈率比苹果高很多？ 📌 背后原因 苹果（AAPL） ： 成熟型公司，增长速度放缓，但利润稳定。 市盈率（P/E）一般在 25–30 之间。 特斯拉（TSLA） ： 高成长型公司，投资人对未来有很高的预期。 即使利润不大，市场给它 很高的 P/E 倍数（40–60+） ，因为大家相信未来它能快速扩张。 👉 小结 ： P/E 高 ≠ 公司一定更赚钱，而是市场愿意为&#92;&quot;未来的增长&#92;&quot;付更高的溢价。 2.2 三大财务报表：公司经营的&#92;&quot;体检报告&#92;&quot; 如何5分钟内快速读懂上市公司财报？ 📊 利润表（Income Statement） 2分钟读懂上市公司利润表 反映： 公司某一时期内赚了多少钱 。 主要结构： 营收（Revenue） 毛利润（Gross Profit = Revenue – 成本） 营业利润（Operating Income） 营业成本 Operating Expense 净利润（Net Income） 📌 毛利率（Gross Profit Margin） 公式 ： 毛利润 = 营业收入 – 营业成本（比如生产成本、材料成本）。 意义 ： 衡量 Home / / 2.1 Why is Tesla&#39;s P/E Ratio Much Higher Than Apple&#39;s? 📌 The Reasons Apple AAPL ： Mature company with slowing growth but stable profits. P/E ratio typically ranges between 25–30. Tesla TSLA ： High-growth company with high investor expectations for the future. Even with modest profits, the market gives it a very high P/E multiple 40–60+ because investors believe it will expand rapidly in the future. 👉 Summary ： High P/E ≠ the company is necessarily more profitable, but rather the marke financial-statements metrics accounting&quot;},{&quot;type&quot;:&quot;chapter&quot;,&quot;id&quot;:&quot;chapter3&quot;,&quot;unitId&quot;:&quot;unit1&quot;,&quot;title&quot;:{&quot;zh&quot;:&quot;估值方法（Valuation）&quot;,&quot;en&quot;:&quot;Valuation Methods&quot;},&quot;tags&quot;:[&quot;valuation&quot;,&quot;dcf&quot;,&quot;pe-ratio&quot;],&quot;url&quot;:{&quot;zh&quot;:&quot;/zh/unit1/valuation/&quot;,&quot;en&quot;:&quot;/en/unit1/valuation/&quot;},&quot;searchableText&quot;:&quot;估值方法（Valuation） Valuation Methods 首页 / / 常见基础面分析&amp;估值方法 3.1 📊 每股收益（EPS, Earnings Per Share） 1. 定义与公式 公式 ： 简单理解：EPS 代表公司每一股股票为股东赚到的利润。 2. 为什么重要？ EPS 是很多估值方法（如 P/E 市盈率 ）的基础。 高 EPS 表示公司赚钱能力强。 持续增长的 EPS 说明公司盈利在稳定扩大。 3. 使用场景 投资者经常用 EPS 与股价比较，判断股票是否&#92;&quot;贵&#92;&quot;或&#92;&quot;便宜&#92;&quot;。 分析 EPS 的趋势比单一年更重要（例如过去 5 年 EPS 是不是逐年增长）。 4. 行业差异 消费必需品 ：EPS 稳定但增长缓慢。 科技行业 ：EPS 可能波动大，但增长潜力更高。 金融业 ：EPS 会受利率和经济周期影响 3.2 📈 盈利增长率（Earnings Growth Rate） 1. 定义与公式 公式 ： 它表示公司利润的增长速度。 2. 为什么重要？ 决定公司未来价值。即使当前利润不大，只要增长率高，也可能是好投资。 PEG 比率 就是把 P/E 和增长率结合，用来判断估值是否合理。 3. 使用场景 成长型公司（如英伟达、Meta）通常 Home / / Common Fundamental Analysis &amp; Valuation Methods 3.1 📊 Earnings Per Share EPS 1. Definition and Formula Formula ： Simple understanding: EPS represents the profit earned per share for shareholders. 2. Why is it Important? EPS is the foundation for many valuation methods such as P/E ratio . High EPS indicates strong profitability. Consistently growing EPS shows the company&#39;s profits are steadily expanding. 3. Usage Investors often compare EPS with stock price to judge if a stock is &#92;&quot;expen valuation dcf pe-ratio&quot;},{&quot;type&quot;:&quot;chapter&quot;,&quot;id&quot;:&quot;chapter4&quot;,&quot;unitId&quot;:&quot;unit1&quot;,&quot;title&quot;:{&quot;zh&quot;:&quot;护城河与行业壁垒&quot;,&quot;en&quot;:&quot;Economic Moats and Industry Barriers&quot;},&quot;tags&quot;:[&quot;competitive-advantage&quot;,&quot;moat&quot;,&quot;barriers&quot;],&quot;url&quot;:{&quot;zh&quot;:&quot;/zh/unit1/economic-moats/&quot;,&quot;en&quot;:&quot;/en/unit1/economic-moats/&quot;},&quot;searchableText&quot;:&quot;护城河与行业壁垒 Economic Moats and Industry Barriers 首页 / / 4.1 什么是护城河？ 概念来自 巴菲特 ：像中世纪的城堡一样，公司需要护城河保护自己不被竞争对手轻易攻破。 护城河越宽，越深，公司越能长期保持竞争优势。 没有护城河的公司，即使短期增长很快，也会很快被模仿、超越。 👉 例子 ： 苹果 Apple ：护城河是生态系统（iPhone + Mac + iCloud + App Store）。 诺基亚 Nokia ：当年是手机巨头，但护城河不够深，被 iPhone 颠覆。 4.2 五种常见的护城河 🏷 1. 品牌优势（Brand Power） 定义 ：消费者愿意为品牌多付钱。 案例 ： 可口可乐（Coca-Cola）：配方不是秘密，但品牌价值让它保持 100 多年。 Louis Vuitton：包的生产成本不高，但品牌溢价极高。 🌐 2. 网络效应（Network Effects） 定义 ：用户越多，产品越有价值。 案例 ： Meta：朋友都在用 → 你也必须用。 Visa / Mastercard：商户和用户越多，网络价值越大。 🔄 3. 转换成本（Switching Costs） 定义 ：用户一旦用了产品，转移到其他 Home / / 4.1 What is an Economic Moat? Concept from Warren Buffett : Like medieval castles, companies need moats to protect themselves from being easily breached by competitors. The wider and deeper the moat, the longer a company can maintain its competitive advantage. Companies without moats, even if they grow quickly in the short term, will soon be imitated and surpassed. 👉 Examples ： Apple : Moat is the ecosystem iPhone + Mac + iCloud + App Store . Nokia : Was once a mobile phone giant, but  competitive-advantage moat barriers&quot;},{&quot;type&quot;:&quot;chapter&quot;,&quot;id&quot;:&quot;chapter5&quot;,&quot;unitId&quot;:&quot;unit1&quot;,&quot;title&quot;:{&quot;zh&quot;:&quot;投资方法论&quot;,&quot;en&quot;:&quot;Investment Methodology&quot;},&quot;tags&quot;:[&quot;investment-strategy&quot;,&quot;methodology&quot;],&quot;url&quot;:{&quot;zh&quot;:&quot;/zh/unit1/investment-methodology/&quot;,&quot;en&quot;:&quot;/en/unit1/investment-methodology/&quot;},&quot;searchableText&quot;:&quot;投资方法论 Investment Methodology 首页 / / 5.1 投资的三种主要流派 📌 价值投资（Value Investing） 代表人物 ：格雷厄姆、巴菲特。 核心思想 ： 股票 = 生意的一部分。 用低于真实价值的价格买入 → 安全边际。 案例 ： 巴菲特买可口可乐（Coca-Cola），几十年不卖，依靠品牌护城河持续获得高回报。 📌 成长投资（Growth Investing） 代表人物 ：彼得·林奇、凯茜·伍德。 核心思想 ： 买高速成长的公司，即使估值高也愿意支付溢价。 重点是未来盈利，而不是当下财报。 案例 ： 早期买入 Amazon 或 Tesla → 短期 P/E 高得离谱，但长期回报惊人。 📌 指数投资（Passive Investing） 代表人物 ：约翰·博格（Vanguard 创始人）。 核心思想 ： 不要去选股，直接买整个市场（指数基金、ETF）。 长期下来，大多数主动基金都跑不赢指数。 案例 ： 标普 500 指数过去 100 年年化回报率 ~8–10%。 绝大多数人长期持有指数基金，比选股更稳定。 5.2 Alpha 与 Beta 📌 Beta（β） 衡量：股票或基金相对于大盘的波动性。 Home / / 5.1 Three Major Investment Approaches 📌 Value Investing Representatives : Benjamin Graham, Warren Buffett. Core Philosophy ： Stocks = part of a business. Buy at prices below intrinsic value → margin of safety. Example ： Buffett bought Coca-Cola, held for decades, continuously earning high returns through brand moat. 📌 Growth Investing Representatives : Peter Lynch, Cathie Wood. Core Philosophy ： Buy high-growth companies, willing to pay premium even if valuation is high. Focus on futu investment-strategy methodology&quot;},{&quot;type&quot;:&quot;chapter&quot;,&quot;id&quot;:&quot;chapter6&quot;,&quot;unitId&quot;:&quot;unit1&quot;,&quot;title&quot;:{&quot;zh&quot;:&quot;世界主要指数与历史回报&quot;,&quot;en&quot;:&quot;Major World Indices and Historical Returns&quot;},&quot;tags&quot;:[&quot;indices&quot;,&quot;returns&quot;,&quot;market-history&quot;],&quot;url&quot;:{&quot;zh&quot;:&quot;/zh/unit1/indices-returns/&quot;,&quot;en&quot;:&quot;/en/unit1/indices-returns/&quot;},&quot;searchableText&quot;:&quot;世界主要指数与历史回报 Major World Indices and Historical Returns 首页 / / 6.1 什么是指数？ 定义 ：指数是用来衡量一组股票整体表现的&#92;&quot;篮子&#92;&quot;。 作用 ： 投资者常用来判断市场整体涨跌。 可以通过指数基金（ETF）直接投资整个市场。 类比 ： 单只股票 = 一道菜 股票指数 = 整个菜单（市场的平均水平） 6.2 美国三大指数 指数 成分 特点 历史回报 适合人群 道琼斯工业指数（DJIA） 30 家蓝筹股 老牌大公司，工业/金融为主 长期年化 ~5–7% 保守投资者 标普 500（S&amp;P 500） 500 家大公司 最能代表美国经济 长期年化 ~8–10% 长期投资者 纳斯达克综合指数（Nasdaq） 3000+ 家公司 科技股权重高 长期年化 ~10–12%，波动大 喜欢科技成长 👉 案例 ： 2008 金融危机 → 三大指数都暴跌。 2010–2021 科技牛市 → 纳斯达克涨幅远超标普。 6.3 其他全球主要指数 地区 指数 特点 风险 🇭🇰 香港 恒生指数（HSI） 金融 &amp; 地产占比大，波动受政策影响 高波动，高政策风险 🇨🇳 中国 上证综合指数（SSE） 大型国企、银行、能源为主 政策主导明显 🇯🇵 日本 日经 2 Home / / 6.1 What is an Index? Definition : An index is a &#92;&quot;basket&#92;&quot; used to measure the overall performance of a group of stocks. Function ： Investors commonly use it to judge overall market movements. Can directly invest in the entire market through index funds ETFs . Analogy ： Single stock = one dish Stock index = entire menu market average level 6.2 Three Major US Indices Index Components Characteristics Historical Returns Suitable For Dow Jones Industrial Average DJIA 30 blue-chip stocks Esta indices returns market-history&quot;},{&quot;type&quot;:&quot;chapter&quot;,&quot;id&quot;:&quot;chapter7&quot;,&quot;unitId&quot;:&quot;unit1&quot;,&quot;title&quot;:{&quot;zh&quot;:&quot;创业与投资的结合&quot;,&quot;en&quot;:&quot;Combining Entrepreneurship and Investment&quot;},&quot;tags&quot;:[&quot;entrepreneurship&quot;,&quot;startup&quot;,&quot;investment&quot;],&quot;url&quot;:{&quot;zh&quot;:&quot;/zh/unit1/entrepreneurship-investment/&quot;,&quot;en&quot;:&quot;/en/unit1/entrepreneurship-investment/&quot;},&quot;searchableText&quot;:&quot;创业与投资的结合 Combining Entrepreneurship and Investment 首页 / / 7.1 投资人怎么看一家公司？ 投资人买股票时，最关心的问题： 这家公司能不能持续赚钱？ 指标：毛利率、净利率、ROE。 投资人希望公司不仅能赚到钱，还能保住利润。 这家公司有没有护城河？ 有没有别人难以模仿的优势（品牌、专利、网络效应）。 这家公司未来能不能成长？ 行业趋势是否向上（AI、电动车、医疗科技）。 公司在行业里处于什么位置？ 这家公司现在贵不贵？ 用估值指标（P/E、P/B、PEG、DCF）判断股价是否合理。 👉 结论：投资人挑公司，不是看它今天热不热，而是看它 能不能活 10 年以上 。 7.2 创业者如何打造&#92;&quot;值得投资的公司&#92;&quot;？ 如果你是创业者，要反过来思考：怎么让投资人挑中你？ 毛利率 ： 创业公司要避免做&#92;&quot;苦力活&#92;&quot;，最好有高毛利（如软件、订阅模式）。 案例：Adobe 转型订阅制 → 毛利率 80%+。 净利率 ： 早期可以亏损，但要有明确的盈利路径。 案例：Amazon 前几年亏损，但财报显示营收增长很快，投资人相信未来能赚钱。 护城河 ： 打造独特优势。 案例：Tesla 的护城河是电池 + 自动驾驶数据；TSMC 的护城河是芯片制程。 增长故 Home / / 7.1 How Do Investors Evaluate a Company? When investors buy stocks, the most important questions are: Can this company make money consistently? Metrics: Gross margin, net margin, ROE. Investors want companies that not only make money but can maintain profits. Does this company have a moat? Does it have advantages that are hard to imitate brand, patents, network effects ? Can this company grow in the future? Is the industry trend upward AI, electric vehicles, medical tech ? What position entrepreneurship startup investment&quot;},{&quot;type&quot;:&quot;chapter&quot;,&quot;id&quot;:&quot;chapter8&quot;,&quot;unitId&quot;:&quot;unit1&quot;,&quot;title&quot;:{&quot;zh&quot;:&quot;历史案例与启发&quot;,&quot;en&quot;:&quot;Historical Cases and Insights&quot;},&quot;tags&quot;:[&quot;case-studies&quot;,&quot;history&quot;,&quot;lessons&quot;],&quot;url&quot;:{&quot;zh&quot;:&quot;/zh/unit1/case-studies/&quot;,&quot;en&quot;:&quot;/en/unit1/case-studies/&quot;},&quot;searchableText&quot;:&quot;历史案例与启发 Historical Cases and Insights 首页 / / 8.1 亚马逊 Amazon 的崛起 当时情况 ： 1997 年上市，主营图书电商。 长期不盈利，亏损多年。 问题 ： 投资人质疑：到底是&#92;&quot;互联网泡沫&#92;&quot;，还是&#92;&quot;未来零售巨头&#92;&quot;？ 公司应对 ： 坚持再投资，把利润投入物流、仓储和 AWS 云计算。 建立强大的供应链护城河 + 云计算新增长点。 投资启示 ： 亏损 ≠ 没价值 。要看财报里的营收增长和未来现金流潜力。 长期持有优质成长股 → 回报惊人（1997 年 $10,000 → 2023 年超 $1,000,000）。 8.2 柯达 Kodak 的衰落 当时情况 ： 曾是全球胶卷巨头，1970–1990 年几乎垄断市场。 毛利率极高，品牌知名度顶级。 问题 ： 数码相机技术兴起 → 柯达自己发明却不敢推广（担心蚕食胶卷业务）。 公司应对 ： 转型失败，错过数码浪潮，最终 2012 年破产。 投资启示 ： 护城河不代表永远安全。 如果行业趋势变了，公司必须创新。 行业生命周期 &gt; 单个公司的意志。 8.3 英伟达 Nvidia 的转折 当时情况 ： 1999–2010 年主要做显卡，游戏市场。 股价长期平平。 问题 ： G Home / / 8.1 Amazon&#39;s Rise Background ： IPO in 1997, primarily online book retail. Long-term unprofitable, lost money for many years. Problem ： Investors questioned: Was it an &#92;&quot;internet bubble&#92;&quot; or &#92;&quot;future retail giant&#92;&quot;? Company Response ： Persisted in reinvestment, put profits into logistics, warehousing, and AWS cloud computing. Built strong supply chain moat + cloud computing new growth point. Investment Insight ： Losses ≠ no value . Look at revenue growth in financial reports and future cash  case-studies history lessons&quot;},{&quot;type&quot;:&quot;page&quot;,&quot;id&quot;:&quot;project&quot;,&quot;title&quot;:{&quot;zh&quot;:&quot;项目&quot;,&quot;en&quot;:&quot;项目&quot;},&quot;url&quot;:{&quot;zh&quot;:&quot;/zh/project/&quot;,&quot;en&quot;:&quot;/en/project/&quot;},&quot;searchableText&quot;:&quot;项目 项目展示 这里展示了一些有趣的项目。 项目列表 项目一 这是一个示例项目的描述。你可以在这里添加更多关于项目的信息。 项目二 另一个项目的介绍和说明。 项目三 第三个项目的详细信息。&quot;},{&quot;type&quot;:&quot;page&quot;,&quot;id&quot;:&quot;README&quot;,&quot;title&quot;:{&quot;zh&quot;:&quot;README&quot;,&quot;en&quot;:&quot;README&quot;},&quot;url&quot;:{&quot;zh&quot;:&quot;/zh/README/&quot;,&quot;en&quot;:&quot;/en/README/&quot;},&quot;searchableText&quot;:&quot;README 投资学习平台 - Investment Learning Platform 这是一个使用 Eleventy 构建的多语言投资学习平台，包含 Unit 0 和 Unit 1 的学习内容。 This is a multilingual investment learning platform built with Eleventy, containing learning content for Unit 0 and Unit 1. 功能特点 Features - ✅ 多语言支持（中文/英文）Multilingual support Chinese/English - ✅ 响应式设计 Responsive design - ✅ 标签系统 Tag system - ✅ 章节导航 Chapter navigation - ✅ 内容互联 Content interlinking - ✅ 图片支持 Image support 项目结构 Project Structure . ├── data/ 数据文件 Data files │ ├── units.js Units 和章节定义 Units and&quot;}];
+
+function performSearch(query) {
+    if (!query || query.trim() === '') {
+        return [];
+    }
+    
+    const searchTerm = query.toLowerCase().trim();
+    const results = [];
+    
+    searchIndex.forEach(item => {
+        let score = 0;
+        const title = (item.title['en'] || item.title.zh || item.title.en || '').toLowerCase();
+        const searchableText = (item.searchableText || '').toLowerCase();
+        const description = (item.description?.['en'] || item.description?.zh || item.description?.en || '').toLowerCase();
+        const tags = (item.tags || []).map(t => t.toLowerCase()).join(' ');
+        
+        // Title match (highest priority)
+        if (title.includes(searchTerm)) {
+            score += 20;
+            // Exact match bonus
+            if (title === searchTerm) {
+                score += 10;
+            }
+        }
+        
+        // Tag match
+        if (tags.includes(searchTerm)) {
+            score += 8;
+        }
+        
+        // Description match
+        if (description.includes(searchTerm)) {
+            score += 5;
+        }
+        
+        // Content match (searchableText includes actual content)
+        if (searchableText.includes(searchTerm)) {
+            score += 3;
+            // Count occurrences for better ranking
+            const occurrences = (searchableText.match(new RegExp(searchTerm, 'g')) || []).length;
+            score += Math.min(occurrences, 5);
+        }
+        
+        if (score > 0) {
+            results.push({ ...item, score });
+        }
+    });
+    
+    // Sort by score
+    results.sort((a, b) => b.score - a.score);
+    return results;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get('q');
+    
+    if (query) {
+        const results = performSearch(query);
+        const container = document.getElementById('resultsContainer');
+        
+        if (results.length === 0) {
+            container.innerHTML = '<p>No results found</p>';
+        } else {
+            let html = '';
+            results.forEach(item => {
+                const title = item.title['en'] || item.title.zh || item.title.en;
+                const description = item.description ? (item.description['en'] || item.description.zh || item.description.en) : '';
+                const url = item.url['en'];
+                const typeLabel = item.type === 'unit' ? 'Unit' : 'Chapter';
+                
+                html += `
+                    <div class="search-result-item">
+                        <div class="result-type">${typeLabel}</div>
+                        <h3><a href="${url}">${title}</a></h3>
+                        ${description ? `<p>${description}</p>` : ''}
+                        ${item.tags && item.tags.length > 0 ? `
+                            <div class="tags">
+                                ${item.tags.map(tag => `<a href="/en/tags/${tag}/" class="tag">${tag}</a>`).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+    }
+});
+</script>
+
+<style>
+.search-container {
+    margin: 2rem 0;
+}
+
+.search-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-box {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 24px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.search-box button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #2980b9;
+}
+
+.search-results {
+    margin-top: 2rem;
+}
+
+.search-result-item {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: box-shadow 0.3s;
+}
+
+.search-result-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.result-type {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    background-color: #ecf0f1;
+    color: #7f8c8d;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.search-result-item h3 {
+    margin: 0.5rem 0;
+}
+
+.search-result-item h3 a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.search-result-item h3 a:hover {
+    text-decoration: underline;
+}
+</style>
+
+
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Investment Learning Platform</p>
+    </footer>
+</body>
+</html>
+

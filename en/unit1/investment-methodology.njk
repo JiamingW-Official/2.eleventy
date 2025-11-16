@@ -1,0 +1,200 @@
+---
+layout: base.njk
+title: 
+lang: en
+permalink: /en/unit1/investment-methodology/
+unit: unit1
+chapter: chapter5
+---
+
+{% set unit = units | findBy("id", "unit1") %}
+{% set chapter = unit.chapters | findBy("id", "chapter5") %}
+
+<div class="breadcrumb">
+    <a href="/{{ lang }}/">Home</a> / 
+    <a href="/{{ lang }}/{{ unit.id }}/">{{ unit.title[lang] }}</a> / 
+    {{ chapter.title[lang] }}
+</div>
+
+<h1>{{ chapter.icon }} {{ chapter.title[lang] }}</h1>
+
+<div class="tags">
+    {% for tag in chapter.tags %}
+    <a href="/{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+    {% endfor %}
+</div>
+
+<div class="content">
+    <h2>5.1 Three Major Investment Approaches</h2>
+    
+    <h3>📌 Value Investing</h3>
+    <ul>
+        <li><strong>Representatives</strong>: Benjamin Graham, Warren Buffett.</li>
+        <li><strong>Core Philosophy</strong>：
+            <ol>
+                <li>Stocks = part of a business.</li>
+                <li>Buy at prices below intrinsic value → margin of safety.</li>
+            </ol>
+        </li>
+        <li><strong>Example</strong>：
+            <ul>
+                <li>Buffett bought Coca-Cola, held for decades, continuously earning high returns through brand moat.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>📌 Growth Investing</h3>
+    <ul>
+        <li><strong>Representatives</strong>: Peter Lynch, Cathie Wood.</li>
+        <li><strong>Core Philosophy</strong>：
+            <ol>
+                <li>Buy high-growth companies, willing to pay premium even if valuation is high.</li>
+                <li>Focus on future earnings, not current financial reports.</li>
+            </ol>
+        </li>
+        <li><strong>Example</strong>：
+            <ul>
+                <li>Early investment in Amazon or Tesla → short-term P/E was ridiculously high, but long-term returns were amazing.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>📌 Passive Investing (Index Investing)</h3>
+    <ul>
+        <li><strong>Representatives</strong>: John Bogle (Vanguard founder).</li>
+        <li><strong>Core Philosophy</strong>：
+            <ol>
+                <li>Don't pick stocks, buy the entire market (index funds, ETFs).</li>
+                <li>Long-term, most active funds underperform the index.</li>
+            </ol>
+        </li>
+        <li><strong>Example</strong>：
+            <ul>
+                <li>S&P 500 index has ~8–10% annualized return over the past 100 years.</li>
+                <li>Most people holding index funds long-term is more stable than stock picking.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>5.2 Alpha and Beta</h2>
+    
+    <h3>📌 Beta (β)</h3>
+    <ul>
+        <li>Measures: Volatility of a stock or fund relative to the market.</li>
+        <li><strong>Formula</strong>: β = Covariance(Asset Returns, Market Returns) / Variance(Market Returns)
+            <figure>
+                <img src="/images/unit1/investment-methodology/image.png" alt="Beta Formula" style="max-width: 288px;">
+            </figure>
+        </li>
+        <li><strong>Intuitive Explanation</strong>：
+            <ul>
+                <li>β = 1: Moves in sync with the market.</li>
+                <li>β > 1: More volatile than the market (higher risk, higher potential returns).</li>
+                <li>β < 1: More stable than the market.</li>
+            </ul>
+        </li>
+        <li><strong>Examples</strong>：
+            <ul>
+                <li>Utility companies → β < 1</li>
+                <li>Tech stocks (Nvidia, Tesla) → β > 1</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>📌 Alpha (α)</h3>
+    <ul>
+        <li>Measures: "Excess returns" of active investors relative to the market.</li>
+        <li><strong>Formula</strong>: α = Actual Return − (Risk-free Rate + β × (Market Return − Risk-free Rate))</li>
+        <li><strong>Intuitive Explanation</strong>：
+            <ul>
+                <li>α = 0: Same performance as the market.</li>
+                <li>α > 0: Outperforms the market.</li>
+                <li>α < 0: Underperforms the market.</li>
+            </ul>
+        </li>
+        <li><strong>Example</strong>：
+            <ul>
+                <li>Assume S&P 500 annual return is 10%, your fund manager gets 12%, Alpha = +2%.</li>
+                <li>But statistics show: <strong>90% of fund managers underperform the market long-term</strong>.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>5.3 Active vs Passive Investing</h2>
+    <ul>
+        <li><strong>Active Investing</strong>
+            <ul>
+                <li>Pursues Alpha (outperform the market).</li>
+                <li>Advantages: If you pick right, can significantly outperform the market.</li>
+                <li>Disadvantages: Extremely difficult, most people underperform the market.</li>
+            </ul>
+        </li>
+        <li><strong>Passive Investing</strong>
+            <ul>
+                <li>Follows Beta (market average returns).</li>
+                <li>Advantages: Stable, time-saving, low fees.</li>
+                <li>Disadvantages: Won't get "excess returns", only enjoy market average.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>5.4 Case Studies</h2>
+    
+    <h3>Buffett's Long-term Value Investing</h3>
+    <ul>
+        <li>Investment in Coca-Cola → 30+ years annualized return > 12%.</li>
+        <li>Buffett's conclusion: Ordinary investors buying index funds is better than chasing fund managers.</li>
+    </ul>
+    
+    <h3>Tesla's Growth Investing</h3>
+    <ul>
+        <li>2010 IPO → $17/share</li>
+        <li>2021 → Over $1000/share</li>
+        <li>Investors earned excess returns through "growth story", but risk was extremely high.</li>
+    </ul>
+    
+    <h3>Index Funds' Long-term Victory</h3>
+    <ul>
+        <li>Over the past 30 years, <strong>over 85%</strong> of US active funds underperformed the S&P 500.</li>
+        <li>Index funds (Vanguard S&P 500 ETF) → ~10% annualized.</li>
+    </ul>
+    
+    <h2>🎯 Activity</h2>
+    <ol>
+        <li>Open Moomoo, search <code>VOO</code> (Vanguard S&P 500 ETF).
+            <ul>
+                <li>Record the annualized return over the past 10 years.</li>
+                <li>Compare with a stock you're familiar with (like Tesla).</li>
+            </ul>
+        </li>
+        <li>Think:
+            <ul>
+                <li>Do you prefer <strong>stable index investing</strong>, or <strong>high-risk growth stocks</strong>?</li>
+                <li>Why?</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h2>📘 Summary</h2>
+    <ul>
+        <li>There are three investment approaches: Value, Growth, Index.</li>
+        <li><strong>Beta</strong> → represents market volatility, <strong>Alpha</strong> → active investment excess returns.</li>
+        <li>Long-term, most people can't beat the market → index investing is more suitable for ordinary investors.</li>
+        <li>But if you can find growth companies with deep moats, long-term holding can also yield amazing returns.</li>
+    </ul>
+</div>
+
+<div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+    <h3>Related Chapters</h3>
+    <ul class="chapter-list">
+        {% for ch in unit.chapters %}
+            {% if ch.id != chapter.id %}
+            <li>
+                <a href="/{{ lang }}/{{ unit.id }}/{{ ch.slug }}/">
+                    {{ ch.icon }} {{ ch.title[lang] }}
+                </a>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

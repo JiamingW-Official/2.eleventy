@@ -1,0 +1,208 @@
+---
+layout: base.njk
+title: 
+lang: en
+permalink: /en/search/
+---
+
+<h1>Search</h1>
+
+<div class="search-container">
+    <form action="/{{ lang }}/search/" method="get" class="search-form">
+        <div class="search-box">
+            <input type="text" name="q" id="searchInput" value="{{ query or '' }}" placeholder="Search tags, units, chapters..." autofocus>
+            <button type="submit">🔍</button>
+        </div>
+    </form>
+</div>
+
+<div id="searchResults" class="search-results">
+    {% if query %}
+        <p>Search results for "{{ query }}":</p>
+        <div id="resultsContainer"></div>
+    {% else %}
+        <p>Please enter a search term</p>
+    {% endif %}
+</div>
+
+<script>
+// Search functionality
+const searchIndex = {{ searchIndex | dump }};
+
+function performSearch(query) {
+    if (!query || query.trim() === '') {
+        return [];
+    }
+    
+    const searchTerm = query.toLowerCase().trim();
+    const results = [];
+    
+    searchIndex.forEach(item => {
+        let score = 0;
+        const title = (item.title['{{ lang }}'] || item.title.zh || item.title.en || '').toLowerCase();
+        const searchableText = (item.searchableText || '').toLowerCase();
+        const description = (item.description?.['{{ lang }}'] || item.description?.zh || item.description?.en || '').toLowerCase();
+        const tags = (item.tags || []).map(t => t.toLowerCase()).join(' ');
+        
+        // Title match (highest priority)
+        if (title.includes(searchTerm)) {
+            score += 20;
+            // Exact match bonus
+            if (title === searchTerm) {
+                score += 10;
+            }
+        }
+        
+        // Tag match
+        if (tags.includes(searchTerm)) {
+            score += 8;
+        }
+        
+        // Description match
+        if (description.includes(searchTerm)) {
+            score += 5;
+        }
+        
+        // Content match (searchableText includes actual content)
+        if (searchableText.includes(searchTerm)) {
+            score += 3;
+            // Count occurrences for better ranking
+            const occurrences = (searchableText.match(new RegExp(searchTerm, 'g')) || []).length;
+            score += Math.min(occurrences, 5);
+        }
+        
+        if (score > 0) {
+            results.push({ ...item, score });
+        }
+    });
+    
+    // Sort by score
+    results.sort((a, b) => b.score - a.score);
+    return results;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get('q');
+    
+    if (query) {
+        const results = performSearch(query);
+        const container = document.getElementById('resultsContainer');
+        
+        if (results.length === 0) {
+            container.innerHTML = '<p>No results found</p>';
+        } else {
+            let html = '';
+            results.forEach(item => {
+                const title = item.title['{{ lang }}'] || item.title.zh || item.title.en;
+                const description = item.description ? (item.description['{{ lang }}'] || item.description.zh || item.description.en) : '';
+                const url = item.url['{{ lang }}'];
+                const typeLabel = item.type === 'unit' ? 'Unit' : 'Chapter';
+                
+                html += `
+                    <div class="search-result-item">
+                        <div class="result-type">${typeLabel}</div>
+                        <h3><a href="${url}">${title}</a></h3>
+                        ${description ? `<p>${description}</p>` : ''}
+                        ${item.tags && item.tags.length > 0 ? `
+                            <div class="tags">
+                                ${item.tags.map(tag => `<a href="/{{ lang }}/tags/${tag}/" class="tag">${tag}</a>`).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+    }
+});
+</script>
+
+<style>
+.search-container {
+    margin: 2rem 0;
+}
+
+.search-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-box {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 24px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.search-box button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #2980b9;
+}
+
+.search-results {
+    margin-top: 2rem;
+}
+
+.search-result-item {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: box-shadow 0.3s;
+}
+
+.search-result-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.result-type {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    background-color: #ecf0f1;
+    color: #7f8c8d;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.search-result-item h3 {
+    margin: 0.5rem 0;
+}
+
+.search-result-item h3 a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.search-result-item h3 a:hover {
+    text-decoration: underline;
+}
+</style>
+

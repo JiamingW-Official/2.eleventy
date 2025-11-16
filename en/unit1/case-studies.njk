@@ -1,0 +1,201 @@
+---
+layout: base.njk
+title: 
+lang: en
+permalink: /en/unit1/case-studies/
+unit: unit1
+chapter: chapter8
+---
+
+{% set unit = units | findBy("id", "unit1") %}
+{% set chapter = unit.chapters | findBy("id", "chapter8") %}
+
+<div class="breadcrumb">
+    <a href="/{{ lang }}/">Home</a> / 
+    <a href="/{{ lang }}/{{ unit.id }}/">{{ unit.title[lang] }}</a> / 
+    {{ chapter.title[lang] }}
+</div>
+
+<h1>{{ chapter.icon }} {{ chapter.title[lang] }}</h1>
+
+<div class="tags">
+    {% for tag in chapter.tags %}
+    <a href="/{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+    {% endfor %}
+</div>
+
+<div class="content">
+    <h2>8.1 Amazon's Rise</h2>
+    <ul>
+        <li><strong>Background</strong>：
+            <ul>
+                <li>IPO in 1997, primarily online book retail.</li>
+                <li>Long-term unprofitable, lost money for many years.</li>
+            </ul>
+        </li>
+        <li><strong>Problem</strong>：
+            <ul>
+                <li>Investors questioned: Was it an "internet bubble" or "future retail giant"?</li>
+            </ul>
+        </li>
+        <li><strong>Company Response</strong>：
+            <ul>
+                <li>Persisted in reinvestment, put profits into logistics, warehousing, and AWS cloud computing.</li>
+                <li>Built strong supply chain moat + cloud computing new growth point.</li>
+            </ul>
+        </li>
+        <li><strong>Investment Insight</strong>：
+            <ul>
+                <li><strong>Losses ≠ no value</strong>. Look at revenue growth in financial reports and future cash flow potential.</li>
+                <li>Long-term holding of quality growth stocks → amazing returns ($10,000 in 1997 → over $1,000,000 in 2023).</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8.2 Kodak's Decline</h2>
+    <ul>
+        <li><strong>Background</strong>：
+            <ul>
+                <li>Was global film giant, almost monopolized market 1970–1990.</li>
+                <li>Extremely high gross margins, top brand recognition.</li>
+            </ul>
+        </li>
+        <li><strong>Problem</strong>：
+            <ul>
+                <li>Digital camera technology emerged → Kodak invented it but didn't dare promote it (worried about cannibalizing film business).</li>
+            </ul>
+        </li>
+        <li><strong>Company Response</strong>：
+            <ul>
+                <li>Transformation failed, missed digital wave, finally bankrupt in 2012.</li>
+            </ul>
+        </li>
+        <li><strong>Investment Insight</strong>：
+            <ul>
+                <li>Moats don't mean forever safe. <strong>If industry trends change, companies must innovate.</strong></li>
+                <li>Industry lifecycle > individual company's will.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8.3 Nvidia's Turnaround</h2>
+    <ul>
+        <li><strong>Background</strong>：
+            <ul>
+                <li>1999–2010 mainly made graphics cards, gaming market.</li>
+                <li>Stock price flat long-term.</li>
+            </ul>
+        </li>
+        <li><strong>Problem</strong>：
+            <ul>
+                <li>GPU market ceiling limited, how to find new growth point?</li>
+            </ul>
+        </li>
+        <li><strong>Company Response</strong>：
+            <ul>
+                <li>Bet on CUDA platform, used GPUs for AI training and data centers.</li>
+                <li>From 2016, AI demand exploded, Nvidia became "AI chip king".</li>
+            </ul>
+        </li>
+        <li><strong>Investment Insight</strong>：
+            <ul>
+                <li><strong>Technological moat + industry trend</strong> = explosive growth.</li>
+                <li>Investors should see how companies seize new opportunities at inflection points.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8.4 Netflix's Transformation</h2>
+    <ul>
+        <li><strong>Background</strong>：
+            <ul>
+                <li>Founded 1997, initially DVD rental business.</li>
+                <li>Early 2000s: Competed with Blockbuster, market wasn't optimistic.</li>
+            </ul>
+        </li>
+        <li><strong>Problem</strong>：
+            <ul>
+                <li>Streaming technology emerged, DVD rental model would be obsolete.</li>
+            </ul>
+        </li>
+        <li><strong>Company Response</strong>：
+            <ul>
+                <li>Boldly transformed to streaming platform, invested in original content.</li>
+                <li>Built algorithm recommendation + subscription model moat.</li>
+            </ul>
+        </li>
+        <li><strong>Investment Insight</strong>：
+            <ul>
+                <li><strong>Dare to self-revolutionize</strong> to avoid being eliminated by the times.</li>
+                <li>Companies that successfully transform gain new valuation premiums.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8.5 Kweichow Moutai's Moat</h2>
+    <ul>
+        <li><strong>Background</strong>：
+            <ul>
+                <li>China's baijiu leader, limited production.</li>
+                <li>Gross margin > 90%, net margin ~50%.</li>
+            </ul>
+        </li>
+        <li><strong>Problem</strong>：
+            <ul>
+                <li>Many liquor companies, why can Moutai dominate the high-end market?</li>
+            </ul>
+        </li>
+        <li><strong>Company Response</strong>：
+            <ul>
+                <li>Scarcity (geographic indication + unique brewing process).</li>
+                <li>Strong brand premium → became "status symbol", not just a beverage.</li>
+            </ul>
+        </li>
+        <li><strong>Investment Insight</strong>：
+            <ul>
+                <li><strong>Brand moat</strong> can allow companies to maintain ultra-high margins.</li>
+                <li>Investors buy not the liquor, but the brand and culture.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8.6 Summary: Investment and Entrepreneurship Insights</h2>
+    <ol>
+        <li><strong>Amazon</strong> → Look at future cash flow and revenue growth, not just profits.</li>
+        <li><strong>Kodak</strong> → Moats can be destroyed by industry trends.</li>
+        <li><strong>Nvidia</strong> → Technological breakthrough + industry trend = explosive returns.</li>
+        <li><strong>Netflix</strong> → Self-revolution to sustain growth.</li>
+        <li><strong>Moutai</strong> → The power of brand moat.</li>
+    </ol>
+    
+    <p>👉 When investing, ask:</p>
+    <ul>
+        <li>Does this company have a long-term moat?</li>
+        <li>Can it adapt to industry trends?</li>
+        <li>Can it transform at critical moments?</li>
+    </ul>
+    
+    <h2>📘 Full Course Summary</h2>
+    <ul>
+        <li><strong>How to Pick Good Companies</strong>: Look at fundamentals, financial statements, valuation, moats, industry trends.</li>
+        <li><strong>Investment Methodology</strong>: Value investing, growth investing, index investing → Alpha and Beta.</li>
+        <li><strong>Global Markets</strong>: Three major US indices are investment benchmarks, emerging markets are more volatile.</li>
+        <li><strong>Combining Entrepreneurship and Investment</strong>: Investors evaluate companies, entrepreneurs should learn to build companies in reverse.</li>
+        <li><strong>Historical Cases</strong>: Long-term holding of quality companies can achieve compound miracles; ignoring trends and moats leads to company decline.</li>
+    </ul>
+</div>
+
+<div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+    <h3>Related Chapters</h3>
+    <ul class="chapter-list">
+        {% for ch in unit.chapters %}
+            {% if ch.id != chapter.id %}
+            <li>
+                <a href="/{{ lang }}/{{ unit.id }}/{{ ch.slug }}/">
+                    {{ ch.icon }} {{ ch.title[lang] }}
+                </a>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,120 @@
+---
+layout: base.njk
+title: 
+lang: zh
+permalink: /zh/unit1/
+unit: unit1
+---
+
+{% set unit = units | findBy("id", "unit1") %}
+
+<h1>{{ unit.icon }} {{ unit.title[lang] }}</h1>
+<p>{{ unit.description[lang] }}</p>
+
+<div class="tags">
+    {% for tag in unit.tags %}
+    <a href="/{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+    {% endfor %}
+</div>
+
+<h2>📖 投资的核心问题</h2>
+<ul>
+    <li>投资的本质是 <strong>今天放弃消费 → 未来获得更多回报</strong>。</li>
+    <li>成功投资 = 找到能够 <strong>长期创造现金流</strong> 的优质公司。</li>
+    <li>失败投资 = 追热点、炒概念，最终股价回归价值。</li>
+</ul>
+
+<h2>💡 价值投资的理论</h2>
+<ul>
+    <li><strong>价值投资（Value Investing）</strong> 最早由本杰明·格雷厄姆（Benjamin Graham）提出，他被称为"证券分析之父"。
+        <ul>
+            <li>理论核心：
+                <ol>
+                    <li><strong>公司 = 生意</strong>，买股票就等于买下生意的一部分。</li>
+                    <li><strong>价格 vs 价值</strong>：市场价格每天波动，但公司的长期价值相对稳定。</li>
+                    <li><strong>安全边际（Margin of Safety）</strong>：只有当价格远低于价值时，才值得买。</li>
+                </ol>
+            </li>
+        </ul>
+    </li>
+    <li>巴菲特在格雷厄姆的基础上改进：
+        <ul>
+            <li>不仅要低价买，还要买"好公司" → 护城河深、现金流强、能长期增长。</li>
+        </ul>
+    </li>
+</ul>
+
+<blockquote>
+    📌 小总结：价值投资不是追短期涨跌，而是挑选"能持续赚钱"的公司，长期持有。
+</blockquote>
+
+<h2>📈 长期持有优质公司的回报率</h2>
+<ul>
+    <li><strong>标普 500（S&P 500）</strong> → 过去 100 年平均年化回报率 <strong>8–10%</strong>。</li>
+    <li>如果你 20 岁开始投资 $10,000，到 65 岁退休：
+        <ul>
+            <li>年化 <strong>10%</strong> → 最终超过 <strong>1,000,000 美元</strong>。</li>
+        </ul>
+    </li>
+    <li><strong>巴菲特案例</strong>：
+        <ul>
+            <li>1965–2022 年，伯克希尔·哈撒韦年化回报率 <strong>19.8%</strong>，远超标普。</li>
+        </ul>
+    </li>
+    <li><strong>个股例子</strong>：
+        <ul>
+            <li>1997 年买苹果股票 $10,000 → 今天超过 <strong>700 万美元</strong>。</li>
+        </ul>
+    </li>
+</ul>
+
+<p>👉 说明：挑中一家真正的好公司并长期持有，回报可以远超大盘和通胀。</p>
+
+<h2>⚠️ 投资失败的常见原因</h2>
+<ol>
+    <li><strong>盲目跟风</strong>：追涨杀跌，买在高点。
+        <ul>
+            <li>案例：2017 年比特币狂热，很多人高位入场，之后腰斩。</li>
+        </ul>
+    </li>
+    <li><strong>只看题材，不看基本面</strong>：
+        <ul>
+            <li>案例：新能源概念股中，很多小企业没有盈利，最终退市。</li>
+        </ul>
+    </li>
+    <li><strong>过度使用杠杆</strong>：
+        <ul>
+            <li>案例：2021 年中概股"爆仓潮"，很多基金因杠杆过高而清盘。</li>
+        </ul>
+    </li>
+    <li><strong>短期投机</strong>：
+        <ul>
+            <li>市场短期是"投票机"，长期是"称重机"。（格雷厄姆名言）</li>
+        </ul>
+    </li>
+    <li><strong>忽视行业生命周期</strong>：
+        <ul>
+            <li>案例：柯达在数码相机时代被淘汰。</li>
+        </ul>
+    </li>
+</ol>
+
+<h2>🎯 本课程的目标</h2>
+<ul>
+    <li>学会如何像巴菲特一样 <strong>筛选优质公司</strong>。</li>
+    <li>掌握 <strong>财务报表解读</strong>、<strong>估值方法</strong>、<strong>护城河分析</strong>。</li>
+    <li>理解 <strong>大盘投资 vs 主动投资</strong> 的区别。</li>
+    <li>不仅会挑公司，还能从 <strong>创业者的角度</strong> 反推：什么样的公司能被投资人认可。</li>
+</ul>
+
+<h2>章节列表</h2>
+<ul class="chapter-list">
+{% for chapter in unit.chapters %}
+    <li>
+        <a href="/{{ lang }}/{{ unit.id }}/{{ chapter.slug }}/">
+            <strong>{{ chapter.icon }} {{ chapter.title[lang] }}</strong>
+        </a>
+    </li>
+{% endfor %}
+</ul>
+

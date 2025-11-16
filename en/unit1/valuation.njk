@@ -1,0 +1,236 @@
+---
+layout: base.njk
+title: 
+lang: en
+permalink: /en/unit1/valuation/
+unit: unit1
+chapter: chapter3
+---
+
+{% set unit = units | findBy("id", "unit1") %}
+{% set chapter = unit.chapters | findBy("id", "chapter3") %}
+
+<div class="breadcrumb">
+    <a href="/{{ lang }}/">Home</a> / 
+    <a href="/{{ lang }}/{{ unit.id }}/">{{ unit.title[lang] }}</a> / 
+    {{ chapter.title[lang] }}
+</div>
+
+<h1>{{ chapter.icon }} {{ chapter.title[lang] }}</h1>
+
+<div class="tags">
+    {% for tag in chapter.tags %}
+    <a href="/{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+    {% endfor %}
+</div>
+
+<div class="content">
+    <h1>Common Fundamental Analysis & Valuation Methods</h1>
+    
+    <h2>3.1 📊 Earnings Per Share (EPS)</h2>
+    
+    <h3>1. Definition and Formula</h3>
+    <ul>
+        <li><strong>Formula</strong>：</li>
+    </ul>
+    <figure>
+        <img src="/images/unit1/valuation/image.png" alt="EPS Formula" style="max-width: 672px;">
+    </figure>
+    <ul>
+        <li>Simple understanding: EPS represents the profit earned per share for shareholders.</li>
+    </ul>
+    
+    <h3>2. Why is it Important?</h3>
+    <ul>
+        <li>EPS is the foundation for many valuation methods (such as <strong>P/E ratio</strong>).</li>
+        <li>High EPS indicates strong profitability.</li>
+        <li>Consistently growing EPS shows the company's profits are steadily expanding.</li>
+    </ul>
+    
+    <h3>3. Usage</h3>
+    <ul>
+        <li>Investors often compare EPS with stock price to judge if a stock is "expensive" or "cheap".</li>
+        <li>Analyzing EPS trends is more important than a single year (e.g., has EPS grown year-over-year over the past 5 years?).</li>
+    </ul>
+    
+    <h3>4. Industry Differences</h3>
+    <ul>
+        <li><strong>Consumer Staples</strong>: EPS is stable but grows slowly.</li>
+        <li><strong>Technology Industry</strong>: EPS may fluctuate significantly, but has higher growth potential.</li>
+        <li><strong>Financial Industry</strong>: EPS is affected by interest rates and economic cycles.</li>
+    </ul>
+    
+    <h2>3.2 📈 Earnings Growth Rate</h2>
+    
+    <h3>1. Definition and Formula</h3>
+    <ul>
+        <li><strong>Formula</strong>：</li>
+    </ul>
+    <figure>
+        <img src="/images/unit1/valuation/image%201.png" alt="Earnings Growth Rate Formula" style="max-width: 768px;">
+    </figure>
+    <ul>
+        <li>It represents the growth rate of the company's profits.</li>
+    </ul>
+    
+    <h3>2. Why is it Important?</h3>
+    <ul>
+        <li>Determines the company's future value. Even if current profits are modest, high growth rate can make it a good investment.</li>
+        <li><strong>PEG Ratio</strong> combines P/E with growth rate to judge if valuation is reasonable.</li>
+    </ul>
+    
+    <h3>3. Usage</h3>
+    <ul>
+        <li>Growth companies (like Nvidia, Meta) typically attract investors with high growth rates.</li>
+        <li>Mature companies (like Coca-Cola) have lower growth rates but are more stable.</li>
+    </ul>
+    
+    <h3>4. Industry Differences</h3>
+    <ul>
+        <li><strong>Tech Stocks</strong>: Growth rate may be >20%, but volatile.</li>
+        <li><strong>Consumer Staples</strong>: Growth rate typically <10%, but resilient.</li>
+        <li><strong>Financial Industry</strong>: Growth rate is closely related to economic cycles and interest rate environment.</li>
+    </ul>
+    
+    <h2>📝 Summary</h2>
+    <ul>
+        <li><strong>EPS</strong> = profit per share → reflects current profitability.</li>
+        <li><strong>Earnings Growth Rate</strong> = profit growth speed → reflects future growth potential.</li>
+        <li>When investing, look at both <strong>EPS level</strong> and <strong>growth rate trends</strong>.</li>
+        <li>👉 Example: Nvidia has high EPS + fast growth → high valuation is reasonable.</li>
+        <li>Coca-Cola has stable EPS + low growth → suitable for defensive investment.</li>
+    </ul>
+    
+    <h2>3.3a 📊 Price-to-Earnings Ratio (P/E)</h2>
+    
+    <h3>1. Definition and Formula</h3>
+    <ul>
+        <li><strong>Formula</strong>：</li>
+    </ul>
+    <figure>
+        <img src="/images/unit1/valuation/image%202.png" alt="P/E Formula" style="max-width: 528px;">
+    </figure>
+    <ul>
+        <li>Represents how much investors are willing to pay per share for each $1 of current earnings.</li>
+    </ul>
+    
+    <h3>2. Why is it Important?</h3>
+    <ul>
+        <li>P/E is the most common valuation metric.</li>
+        <li>Can quickly judge if a company is "cheap" or "expensive".</li>
+    </ul>
+    
+    <h3>3. Usage</h3>
+    <ul>
+        <li>Most suitable for mature industries and companies with stable profits.</li>
+        <li>If a company is losing money or profits fluctuate significantly, P/E is less accurate.</li>
+    </ul>
+    
+    <h3>4. Industry Differences</h3>
+    <ul>
+        <li><strong>Consumer Staples</strong>: P/E typically 15–25x.</li>
+        <li><strong>Tech Growth Stocks</strong>: P/E may be 25–40x or even higher.</li>
+        <li><strong>Banking/Finance</strong>: P/E is relatively low, typically 10–15x.</li>
+    </ul>
+    
+    <p>Advantages: Simple and intuitive, most common.</p>
+    <p>Disadvantages: P/E can be distorted when profits fluctuate significantly. Not suitable for companies losing money.</p>
+    
+    <h2>3.3b 📊 Price-to-Book Ratio (P/B)</h2>
+    
+    <h3>1. Definition and Formula</h3>
+    <ul>
+        <li><strong>Formula</strong>：</li>
+    </ul>
+    <figure>
+        <img src="/images/unit1/valuation/image%203.png" alt="P/B Formula" style="max-width: 528px;">
+    </figure>
+    <ul>
+        <li>Represents the multiple of stock price relative to the company's book value.</li>
+    </ul>
+    
+    <h3>2. Why is it Important?</h3>
+    <ul>
+        <li>Reflects the market's recognition of the company's asset value.</li>
+        <li>If P/B < 1, it means the stock price may be below the company's book value (possibly undervalued, or the market thinks asset quality is poor).</li>
+    </ul>
+    
+    <h3>3. Usage</h3>
+    <ul>
+        <li>Especially suitable for <strong>banks, insurance, real estate</strong> - asset-driven companies.</li>
+        <li>For light-asset tech companies, P/B has limited reference value.</li>
+    </ul>
+    
+    <h3>4. Industry Differences</h3>
+    <ul>
+        <li><strong>Banking</strong>: P/B typically 1–2x, high ROE banks command a premium.</li>
+        <li><strong>Manufacturing/Cyclical Stocks</strong>: P/B typically 1–3x.</li>
+        <li><strong>Tech/Platform Companies</strong>: P/B is relatively high, not suitable as sole valuation basis.</li>
+    </ul>
+    
+    <h2>3.4 📊 PEG Ratio (Price/Earnings to Growth)</h2>
+    
+    <h3>1. Definition and Formula</h3>
+    <ul>
+        <li><strong>Formula</strong>：</li>
+    </ul>
+    <figure>
+        <img src="/images/unit1/valuation/image%204.png" alt="PEG Formula" style="max-width: 432px;">
+    </figure>
+    <ul>
+        <li>Combines valuation with the company's earnings growth rate.</li>
+    </ul>
+    
+    <h3>2. Why is it Important?</h3>
+    <ul>
+        <li>Looking at P/E alone, high-growth companies may seem "expensive"; PEG can measure if growth is worth the premium.</li>
+        <li>Generally, PEG ≈ 1 is considered reasonable valuation.</li>
+    </ul>
+    
+    <h3>3. Usage</h3>
+    <ul>
+        <li>Especially suitable for <strong>high-growth companies</strong> (like Nvidia, Meta, Google).</li>
+        <li>Used to compare growth and valuation matching within the same industry.</li>
+    </ul>
+    
+    <h3>4. Industry Differences</h3>
+    <ul>
+        <li><strong>Technology Industry</strong>: PEG often > 1, but still reasonable if growth rate is very high.</li>
+        <li><strong>Consumer Staples</strong>: Low growth, PEG often > 2, indicating expensive valuation but stable.</li>
+        <li><strong>Financial Industry</strong>: Growth related to economic cycles, PEG should be interpreted with macro environment.</li>
+    </ul>
+    
+    <h2>3.5 Common Investor Misconceptions</h2>
+    <ul>
+        <li>❌ Misconception 1: High P/E = must be expensive.
+            <ul>
+                <li>→ Correct: High-growth companies reasonably enjoy high P/E.</li>
+            </ul>
+        </li>
+        <li>❌ Misconception 2: DCF calculation gives accurate value.
+            <ul>
+                <li>→ Correct: DCF is very sensitive to growth rate and discount rate, it's a "range judgment", not a single answer.</li>
+            </ul>
+        </li>
+        <li>❌ Misconception 3: All industries can use the same valuation method.
+            <ul>
+                <li>→ Correct: Banks look at P/B, tech companies look at P/E + PEG, startups focus more on DCF assumptions.</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+    <h3>Related Chapters</h3>
+    <ul class="chapter-list">
+        {% for ch in unit.chapters %}
+            {% if ch.id != chapter.id %}
+            <li>
+                <a href="/{{ lang }}/{{ unit.id }}/{{ ch.slug }}/">
+                    {{ ch.icon }} {{ ch.title[lang] }}
+                </a>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,53 @@
+---
+layout: base.njk
+title: 
+lang: zh
+permalink: /zh/tags/
+---
+
+<h1>标签搜索</h1>
+<p>浏览所有标签，找到相关内容</p>
+
+<div class="tag-search">
+    <input type="text" id="tagSearch" placeholder="搜索标签..." style="width: 100%; padding: 0.75rem 1rem; font-size: 1rem; border: 2px solid #ddd; border-radius: 8px; margin-bottom: 2rem; box-sizing: border-box; transition: border-color 0.3s;">
+</div>
+
+<div class="all-tags">
+    <h2>所有标签 ({{ tags.length }})</h2>
+    <div class="tags-container">
+        <div class="tags">
+            {% for tag in tags %}
+            <a href="/{{ lang }}/tags/{{ tag.id }}/" class="tag">{{ tag.name }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<style>
+#tagSearch:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('tagSearch');
+    const tagLinks = document.querySelectorAll('.all-tags .tag');
+    
+    searchInput.addEventListener('input', function(e) {
+        const searchTerm = e.target.value.toLowerCase();
+        
+        tagLinks.forEach(link => {
+            const tagName = link.textContent.toLowerCase();
+            if (tagName.includes(searchTerm)) {
+                link.style.display = 'inline-block';
+            } else {
+                link.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
+

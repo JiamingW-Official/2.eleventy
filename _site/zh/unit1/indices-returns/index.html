@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投资学习平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: #34495e;
+        }
+        
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .lang-switcher a {
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .lang-switcher a.active {
+            background-color: #34495e;
+        }
+        
+        main {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            min-height: 60vh;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        
+        h3 {
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        ul, ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: #666;
+            font-style: italic;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+        
+        figure {
+            margin: 1.5rem 0;
+        }
+        
+        figcaption {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+            align-items: center;
+        }
+        
+        .tag {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            padding: 0.4rem 0.9rem;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+            border: 1px solid transparent;
+            line-height: 1.4;
+            min-height: 28px;
+            box-sizing: border-box;
+        }
+        
+        .tag:hover {
+            background-color: #3498db;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 6px rgba(52, 152, 219, 0.3);
+            border-color: #2980b9;
+        }
+        
+        .tag:visited {
+            color: #2c3e50;
+        }
+        
+        .tag:visited:hover {
+            color: white;
+        }
+        
+        .tag-search-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .tag-search-section h2 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .tag-search-section p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .tags-container {
+            max-height: 70px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 0.75rem 1rem;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .tags-container .tags {
+            display: inline-flex;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            margin: 0;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .tags-container .tag {
+            flex-shrink: 0;
+        }
+        
+        .tags-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .tags-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        .tags-container::-webkit-scrollbar-thumb {
+            background: #bdc3c7;
+            border-radius: 4px;
+        }
+        
+        .tags-container::-webkit-scrollbar-thumb:hover {
+            background: #95a5a6;
+        }
+        
+        .global-search {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            border: 1px solid #dee2e6;
+            text-align: center;
+        }
+        
+        .global-search-form {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .global-search-box-wrapper {
+            position: relative;
+        }
+        
+        .global-search-box {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 24px;
+            padding: 0.5rem 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .global-search-box-wrapper:focus-within .global-search-box {
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+        
+        .global-search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            padding: 0.5rem;
+        }
+        
+        .global-search-box button {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.25rem;
+            color: #7f8c8d;
+        }
+        
+        .global-search-box button:hover {
+            color: #3498db;
+        }
+        
+        .search-suggestions {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-top: 0.5rem;
+            max-height: 400px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        
+        .suggestion-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.2s;
+        }
+        
+        .suggestion-item:last-child {
+            border-bottom: none;
+        }
+        
+        .suggestion-item:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .suggestion-type {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            background-color: #ecf0f1;
+            color: #7f8c8d;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            margin-right: 0.75rem;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .suggestion-text {
+            flex: 1;
+            font-size: 0.95rem;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            color: white;
+            margin: 0;
+        }
+        
+        .unit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .unit-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .unit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .unit-card h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        
+        .unit-card .tags {
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+        
+        .unit-card .tag {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.7rem;
+        }
+        
+        .chapter-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .chapter-list li {
+            margin-bottom: 1rem;
+        }
+        
+        .chapter-list a {
+            display: block;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-decoration: none;
+            color: inherit;
+            transition: background-color 0.3s;
+        }
+        
+        .chapter-list a:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/zh/" class="logo">投资学习平台</a>
+            <nav>
+                <a href="/zh/">首页</a>
+                <a href="/zh/search/">搜索</a>
+                <a href="/zh/tags/">标签</a>
+                <div class="lang-switcher">
+                    
+                        <a href="/en/unit1/indices-returns/" class="active">中文</a>
+                        <a href="/en/unit1/indices-returns/">English</a>
+                    
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        
+        
+        
+
+
+
+<div class="breadcrumb">
+    <a href="/zh/">首页</a> / 
+    <a href="/zh/unit1/">Unit 1: 挑选一家好公司</a> / 
+    世界主要指数与历史回报
+</div>
+
+<h1>🌍 世界主要指数与历史回报</h1>
+
+<div class="tags">
+    
+    <a href="/zh/tags/indices/" class="tag">indices</a>
+    
+    <a href="/zh/tags/returns/" class="tag">returns</a>
+    
+    <a href="/zh/tags/market-history/" class="tag">market-history</a>
+    
+</div>
+
+<div class="content">
+    <h2>6.1 什么是指数？</h2>
+    <ul>
+        <li><strong>定义</strong>：指数是用来衡量一组股票整体表现的"篮子"。</li>
+        <li><strong>作用</strong>：
+            <ol>
+                <li>投资者常用来判断市场整体涨跌。</li>
+                <li>可以通过指数基金（ETF）直接投资整个市场。</li>
+            </ol>
+        </li>
+        <li><strong>类比</strong>：
+            <ul>
+                <li>单只股票 = 一道菜</li>
+                <li>股票指数 = 整个菜单（市场的平均水平）</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>6.2 美国三大指数</h2>
+    
+    <table class="simple-table">
+        <thead>
+            <tr>
+                <th>指数</th>
+                <th>成分</th>
+                <th>特点</th>
+                <th>历史回报</th>
+                <th>适合人群</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>道琼斯工业指数（DJIA）</strong></td>
+                <td>30 家蓝筹股</td>
+                <td>老牌大公司，工业/金融为主</td>
+                <td>长期年化 ~5–7%</td>
+                <td>保守投资者</td>
+            </tr>
+            <tr>
+                <td><strong>标普 500（S&P 500）</strong></td>
+                <td>500 家大公司</td>
+                <td>最能代表美国经济</td>
+                <td>长期年化 ~8–10%</td>
+                <td>长期投资者</td>
+            </tr>
+            <tr>
+                <td><strong>纳斯达克综合指数（Nasdaq）</strong></td>
+                <td>3000+ 家公司</td>
+                <td>科技股权重高</td>
+                <td>长期年化 ~10–12%，波动大</td>
+                <td>喜欢科技成长</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <p>👉 <strong>案例</strong>：</p>
+    <ul>
+        <li>2008 金融危机 → 三大指数都暴跌。</li>
+        <li>2010–2021 科技牛市 → 纳斯达克涨幅远超标普。</li>
+    </ul>
+    
+    <h2>6.3 其他全球主要指数</h2>
+    
+    <table class="simple-table">
+        <thead>
+            <tr>
+                <th>地区</th>
+                <th>指数</th>
+                <th>特点</th>
+                <th>风险</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>🇭🇰 香港</td>
+                <td>恒生指数（HSI）</td>
+                <td>金融 & 地产占比大，波动受政策影响</td>
+                <td>高波动，高政策风险</td>
+            </tr>
+            <tr>
+                <td>🇨🇳 中国</td>
+                <td>上证综合指数（SSE）</td>
+                <td>大型国企、银行、能源为主</td>
+                <td>政策主导明显</td>
+            </tr>
+            <tr>
+                <td>🇯🇵 日本</td>
+                <td>日经 225（Nikkei 225）</td>
+                <td>制造业 & 科技（索尼、丰田）</td>
+                <td>日本长期通缩</td>
+            </tr>
+            <tr>
+                <td>🌍 全球</td>
+                <td>MSCI 世界指数</td>
+                <td>覆盖 23 个发达市场，1600+ 公司</td>
+                <td>全球分散，受美元波动影响</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <p>👉 <strong>投资启示</strong>：</p>
+    <ul>
+        <li>美国市场最适合长期持有 → 增长稳定 + 创新能力强。</li>
+        <li>新兴市场（中国、香港） → 高波动，需谨慎。</li>
+        <li>全球指数（MSCI） → 分散风险，适合稳健投资者。</li>
+    </ul>
+    
+    <h2>📌 拓展：中国 A股与创业板</h2>
+    
+    <h2>🀄 什么是 A股？</h2>
+    <ul>
+        <li><strong>定义</strong>：A股是指 <strong>在中国大陆上市、以人民币计价和交易的股票</strong>。</li>
+        <li><strong>名字由来</strong>：
+            <ul>
+                <li>最早中国证券市场分成 <strong>A股（人民币）</strong> 和 <strong>B股（外币，美元/港币计价）</strong>。</li>
+                <li>A股 = 本地投资者（主要是中国大陆居民）参与的市场。</li>
+                <li>B股 = 早期给外国人投资中国用的渠道（现在意义不大）。</li>
+            </ul>
+        </li>
+        <li><strong>主要交易所</strong>：
+            <ul>
+                <li>上海证券交易所（上证）</li>
+                <li>深圳证券交易所（深证）</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <p>👉 可以理解为：A股就是"国内人民币股"，与国际市场的港股、美股相区分。</p>
+    
+    <h2>🚀 什么是创业板？</h2>
+    <ul>
+        <li><strong>定义</strong>：创业板是中国的 <strong>高成长企业融资平台</strong>，主要上市的是科技、创新、成长型公司。</li>
+        <li><strong>特点</strong>：
+            <ul>
+                <li>成立于 2009 年，类似美国的 <strong>纳斯达克（Nasdaq）</strong>。</li>
+                <li>适合规模较小、但有潜力的企业。</li>
+                <li>风险较高，但回报潜力也更大。</li>
+            </ul>
+        </li>
+        <li><strong>交易所</strong>：在 <strong>深圳证券交易所（深交所）</strong>。</li>
+    </ul>
+    
+    <p>👉 创业板可以看作中国的"创新试验场"，给投资者提供投资小型成长股的机会。</p>
+    
+    <h2>6.4 历史回报对比</h2>
+    <ul>
+        <li><strong>标普 500</strong>：
+            <ul>
+                <li>1928–2023 → 年化回报 ~9.8%</li>
+                <li>复利效果惊人：长期持有 10,000 美元 → 上百万</li>
+            </ul>
+        </li>
+        <li><strong>纳斯达克</strong>：
+            <ul>
+                <li>1990–2023 → 年化回报 ~11%+</li>
+                <li>但 2000 年互联网泡沫曾跌去 70%</li>
+            </ul>
+        </li>
+        <li><strong>恒生指数</strong>：
+            <ul>
+                <li>1987–2023 → 年化回报 ~5%</li>
+                <li>波动大，受中国经济和政策影响。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <p>👉 <strong>关键结论</strong>：</p>
+    <ul>
+        <li><strong>美国市场 → 最稳健的长期回报来源</strong></li>
+        <li><strong>新兴市场 → 有机会，但风险更高</strong></li>
+        <li><strong>全球分散投资 → 平衡增长与风险</strong></li>
+    </ul>
+    
+    <h2>6.5 投资者常见误区</h2>
+    <ul>
+        <li>❌ 误解 1：指数投资没回报。
+            <ul>
+                <li>→ 正解：指数长期年化 ~8–10%，超过绝大多数主动基金。</li>
+            </ul>
+        </li>
+        <li>❌ 误解 2：只投一个国家最安全。
+            <ul>
+                <li>→ 正解：地缘政治和政策风险存在，全球分散更稳健。</li>
+            </ul>
+        </li>
+        <li>❌ 误解 3：指数 = 没风险。
+            <ul>
+                <li>→ 正解：短期波动仍然剧烈（例：2008 金融危机标普下跌 40%+）。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>🎯 Activity</h2>
+    <ol>
+        <li>任务：
+            <ul>
+                <li>打开 Moomoo，搜索 <code>VOO</code>（标普 500 ETF）、<code>QQQ</code>（纳斯达克 ETF）、<code>EWH</code>（香港 ETF）。</li>
+                <li>记录过去 5 年的回报。</li>
+            </ul>
+        </li>
+        <li>讨论：
+            <ul>
+                <li>如果只能选一个指数投资，你会选哪一个？为什么？</li>
+                <li>更喜欢 <strong>稳定复利</strong> 还是 <strong>高风险高回报</strong>？</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h2>📘 小总结</h2>
+    <ul>
+        <li><strong>美国三大指数</strong> → 最重要的参考标准。</li>
+        <li><strong>其他指数（香港、中国、日本、全球）</strong> → 提供分散投资机会。</li>
+        <li><strong>历史经验</strong> → 标普 500 长期回报率 ~10%，是财富积累的"黄金标准"。</li>
+        <li>投资指数 ≠ 没风险，但长期来看，是最稳健的投资方式之一。</li>
+    </ul>
+</div>
+
+<div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+    <h3>相关章节</h3>
+    <ul class="chapter-list">
+        
+            
+            <li>
+                <a href="/zh/unit1/fundamental-analysis/">
+                    📊 基本面分析（Fundamental Analysis）
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/zh/unit1/financial-statements/">
+                    📑 财务报表与核心指标
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/zh/unit1/valuation/">
+                    💵 估值方法（Valuation）
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/zh/unit1/economic-moats/">
+                    🏰 护城河与行业壁垒
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/zh/unit1/investment-methodology/">
+                    📈 投资方法论
+                </a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a href="/zh/unit1/entrepreneurship-investment/">
+                    🏭 创业与投资的结合
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/zh/unit1/case-studies/">
+                    📘 历史案例与启发
+                </a>
+            </li>
+            
+        
+    </ul>
+</div>
+
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 投资学习平台</p>
+    </footer>
+</body>
+</html>
+

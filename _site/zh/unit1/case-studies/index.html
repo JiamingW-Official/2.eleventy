@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投资学习平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: #34495e;
+        }
+        
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .lang-switcher a {
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .lang-switcher a.active {
+            background-color: #34495e;
+        }
+        
+        main {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            min-height: 60vh;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        
+        h3 {
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        ul, ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: #666;
+            font-style: italic;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+        
+        figure {
+            margin: 1.5rem 0;
+        }
+        
+        figcaption {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+            align-items: center;
+        }
+        
+        .tag {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            padding: 0.4rem 0.9rem;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+            border: 1px solid transparent;
+            line-height: 1.4;
+            min-height: 28px;
+            box-sizing: border-box;
+        }
+        
+        .tag:hover {
+            background-color: #3498db;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 6px rgba(52, 152, 219, 0.3);
+            border-color: #2980b9;
+        }
+        
+        .tag:visited {
+            color: #2c3e50;
+        }
+        
+        .tag:visited:hover {
+            color: white;
+        }
+        
+        .tag-search-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .tag-search-section h2 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .tag-search-section p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .tags-container {
+            max-height: 70px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 0.75rem 1rem;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .tags-container .tags {
+            display: inline-flex;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            margin: 0;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .tags-container .tag {
+            flex-shrink: 0;
+        }
+        
+        .tags-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .tags-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        .tags-container::-webkit-scrollbar-thumb {
+            background: #bdc3c7;
+            border-radius: 4px;
+        }
+        
+        .tags-container::-webkit-scrollbar-thumb:hover {
+            background: #95a5a6;
+        }
+        
+        .global-search {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            border: 1px solid #dee2e6;
+            text-align: center;
+        }
+        
+        .global-search-form {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .global-search-box-wrapper {
+            position: relative;
+        }
+        
+        .global-search-box {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 24px;
+            padding: 0.5rem 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .global-search-box-wrapper:focus-within .global-search-box {
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+        
+        .global-search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            padding: 0.5rem;
+        }
+        
+        .global-search-box button {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.25rem;
+            color: #7f8c8d;
+        }
+        
+        .global-search-box button:hover {
+            color: #3498db;
+        }
+        
+        .search-suggestions {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-top: 0.5rem;
+            max-height: 400px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        
+        .suggestion-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.2s;
+        }
+        
+        .suggestion-item:last-child {
+            border-bottom: none;
+        }
+        
+        .suggestion-item:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .suggestion-type {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            background-color: #ecf0f1;
+            color: #7f8c8d;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            margin-right: 0.75rem;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .suggestion-text {
+            flex: 1;
+            font-size: 0.95rem;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            color: white;
+            margin: 0;
+        }
+        
+        .unit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .unit-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .unit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .unit-card h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        
+        .unit-card .tags {
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+        
+        .unit-card .tag {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.7rem;
+        }
+        
+        .chapter-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .chapter-list li {
+            margin-bottom: 1rem;
+        }
+        
+        .chapter-list a {
+            display: block;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-decoration: none;
+            color: inherit;
+            transition: background-color 0.3s;
+        }
+        
+        .chapter-list a:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/zh/" class="logo">投资学习平台</a>
+            <nav>
+                <a href="/zh/">首页</a>
+                <a href="/zh/search/">搜索</a>
+                <a href="/zh/tags/">标签</a>
+                <div class="lang-switcher">
+                    
+                        <a href="/en/unit1/case-studies/" class="active">中文</a>
+                        <a href="/en/unit1/case-studies/">English</a>
+                    
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        
+        
+        
+
+
+
+<div class="breadcrumb">
+    <a href="/zh/">首页</a> / 
+    <a href="/zh/unit1/">Unit 1: 挑选一家好公司</a> / 
+    历史案例与启发
+</div>
+
+<h1>📘 历史案例与启发</h1>
+
+<div class="tags">
+    
+    <a href="/zh/tags/case-studies/" class="tag">case-studies</a>
+    
+    <a href="/zh/tags/history/" class="tag">history</a>
+    
+    <a href="/zh/tags/lessons/" class="tag">lessons</a>
+    
+</div>
+
+<div class="content">
+    <h2>8.1 亚马逊 (Amazon) 的崛起</h2>
+    <ul>
+        <li><strong>当时情况</strong>：
+            <ul>
+                <li>1997 年上市，主营图书电商。</li>
+                <li>长期不盈利，亏损多年。</li>
+            </ul>
+        </li>
+        <li><strong>问题</strong>：
+            <ul>
+                <li>投资人质疑：到底是"互联网泡沫"，还是"未来零售巨头"？</li>
+            </ul>
+        </li>
+        <li><strong>公司应对</strong>：
+            <ul>
+                <li>坚持再投资，把利润投入物流、仓储和 AWS 云计算。</li>
+                <li>建立强大的供应链护城河 + 云计算新增长点。</li>
+            </ul>
+        </li>
+        <li><strong>投资启示</strong>：
+            <ul>
+                <li><strong>亏损 ≠ 没价值</strong>。要看财报里的营收增长和未来现金流潜力。</li>
+                <li>长期持有优质成长股 → 回报惊人（1997 年 $10,000 → 2023 年超 $1,000,000）。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8.2 柯达 (Kodak) 的衰落</h2>
+    <ul>
+        <li><strong>当时情况</strong>：
+            <ul>
+                <li>曾是全球胶卷巨头，1970–1990 年几乎垄断市场。</li>
+                <li>毛利率极高，品牌知名度顶级。</li>
+            </ul>
+        </li>
+        <li><strong>问题</strong>：
+            <ul>
+                <li>数码相机技术兴起 → 柯达自己发明却不敢推广（担心蚕食胶卷业务）。</li>
+            </ul>
+        </li>
+        <li><strong>公司应对</strong>：
+            <ul>
+                <li>转型失败，错过数码浪潮，最终 2012 年破产。</li>
+            </ul>
+        </li>
+        <li><strong>投资启示</strong>：
+            <ul>
+                <li>护城河不代表永远安全。<strong>如果行业趋势变了，公司必须创新。</strong></li>
+                <li>行业生命周期 > 单个公司的意志。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8.3 英伟达 (Nvidia) 的转折</h2>
+    <ul>
+        <li><strong>当时情况</strong>：
+            <ul>
+                <li>1999–2010 年主要做显卡，游戏市场。</li>
+                <li>股价长期平平。</li>
+            </ul>
+        </li>
+        <li><strong>问题</strong>：
+            <ul>
+                <li>GPU 市场天花板有限，如何寻找新增长点？</li>
+            </ul>
+        </li>
+        <li><strong>公司应对</strong>：
+            <ul>
+                <li>押注 CUDA 平台，把 GPU 用于 AI 训练和数据中心。</li>
+                <li>2016 年起，AI 需求爆发，英伟达变成"AI 芯片霸主"。</li>
+            </ul>
+        </li>
+        <li><strong>投资启示</strong>：
+            <ul>
+                <li><strong>技术型护城河 + 行业趋势</strong> = 爆发式增长。</li>
+                <li>投资人要看公司如何在拐点抓住新机会。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8.4 Netflix 的转型</h2>
+    <ul>
+        <li><strong>当时情况</strong>：
+            <ul>
+                <li>1997 年创立，最初是 DVD 租赁业务。</li>
+                <li>2000 年代早期：和 Blockbuster 竞争，市场不看好。</li>
+            </ul>
+        </li>
+        <li><strong>问题</strong>：
+            <ul>
+                <li>流媒体技术兴起，DVD 租赁模式会被淘汰。</li>
+            </ul>
+        </li>
+        <li><strong>公司应对</strong>：
+            <ul>
+                <li>大胆转型流媒体平台，投资原创内容。</li>
+                <li>打造算法推荐 + 订阅模式护城河。</li>
+            </ul>
+        </li>
+        <li><strong>投资启示</strong>：
+            <ul>
+                <li><strong>敢于自我革命</strong>，才能避免被时代淘汰。</li>
+                <li>成功转型的公司，会获得新的估值溢价。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8.5 茅台 (Kweichow Moutai) 的护城河</h2>
+    <ul>
+        <li><strong>当时情况</strong>：
+            <ul>
+                <li>中国白酒龙头，产量有限。</li>
+                <li>毛利率 > 90%，净利率 ~50%。</li>
+            </ul>
+        </li>
+        <li><strong>问题</strong>：
+            <ul>
+                <li>酒企很多，为什么茅台能独霸高端市场？</li>
+            </ul>
+        </li>
+        <li><strong>公司应对</strong>：
+            <ul>
+                <li>稀缺性（地理标志 + 酿造工艺独特）。</li>
+                <li>强品牌溢价 → 成为"身份象征"，而不仅仅是饮品。</li>
+            </ul>
+        </li>
+        <li><strong>投资启示</strong>：
+            <ul>
+                <li><strong>品牌护城河</strong> 可以让公司维持超高毛利。</li>
+                <li>投资人买的不是酒，而是品牌和文化。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8.6 小结：投资与创业的启发</h2>
+    <ol>
+        <li><strong>亚马逊</strong> → 看未来现金流和营收增长，而不只是利润。</li>
+        <li><strong>柯达</strong> → 护城河可能被行业趋势摧毁。</li>
+        <li><strong>英伟达</strong> → 技术突破 + 行业风口 = 爆发式回报。</li>
+        <li><strong>Netflix</strong> → 自我革命，才能延续增长。</li>
+        <li><strong>茅台</strong> → 品牌护城河的力量。</li>
+    </ol>
+    
+    <p>👉 投资要问：</p>
+    <ul>
+        <li>这家公司有长期护城河吗？</li>
+        <li>它能顺应行业趋势吗？</li>
+        <li>它有没有可能在关键时刻转型？</li>
+    </ul>
+    
+    <h2>📘 全课程总结</h2>
+    <ul>
+        <li><strong>如何挑选好公司</strong>：看基本面、财务报表、估值、护城河、行业趋势。</li>
+        <li><strong>投资方法论</strong>：价值投资、成长投资、指数投资 → Alpha 与 Beta。</li>
+        <li><strong>全球市场</strong>：美国三大指数是投资基准，新兴市场波动更大。</li>
+        <li><strong>创业与投资结合</strong>：投资人看公司，创业者要学会反向打造公司。</li>
+        <li><strong>历史案例</strong>：长期持有优质公司，能获得复利奇迹；忽视趋势和护城河，公司会衰落。</li>
+    </ul>
+</div>
+
+<div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+    <h3>相关章节</h3>
+    <ul class="chapter-list">
+        
+            
+            <li>
+                <a href="/zh/unit1/fundamental-analysis/">
+                    📊 基本面分析（Fundamental Analysis）
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/zh/unit1/financial-statements/">
+                    📑 财务报表与核心指标
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/zh/unit1/valuation/">
+                    💵 估值方法（Valuation）
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/zh/unit1/economic-moats/">
+                    🏰 护城河与行业壁垒
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/zh/unit1/investment-methodology/">
+                    📈 投资方法论
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/zh/unit1/indices-returns/">
+                    🌍 世界主要指数与历史回报
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/zh/unit1/entrepreneurship-investment/">
+                    🏭 创业与投资的结合
+                </a>
+            </li>
+            
+        
+            
+        
+    </ul>
+</div>
+
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 投资学习平台</p>
+    </footer>
+</body>
+</html>
+

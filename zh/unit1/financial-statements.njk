@@ -1,0 +1,477 @@
+---
+layout: base.njk
+title: 
+lang: zh
+permalink: /zh/unit1/financial-statements/
+unit: unit1
+chapter: chapter2
+---
+
+{% set unit = units | findBy("id", "unit1") %}
+{% set chapter = unit.chapters | findBy("id", "chapter2") %}
+
+<div class="breadcrumb">
+    <a href="/{{ lang }}/">首页</a> / 
+    <a href="/{{ lang }}/{{ unit.id }}/">{{ unit.title[lang] }}</a> / 
+    {{ chapter.title[lang] }}
+</div>
+
+<h1>{{ chapter.icon }} {{ chapter.title[lang] }}</h1>
+
+<div class="tags">
+    {% for tag in chapter.tags %}
+    <a href="/{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+    {% endfor %}
+</div>
+
+<div class="content">
+    <h2>2.1 为什么特斯拉的市盈率比苹果高很多？</h2>
+    
+    <h3>📌 背后原因</h3>
+    <ul>
+        <li><strong>苹果（AAPL）</strong>：
+            <ul>
+                <li>成熟型公司，增长速度放缓，但利润稳定。</li>
+                <li>市盈率（P/E）一般在 25–30 之间。</li>
+            </ul>
+        </li>
+        <li><strong>特斯拉（TSLA）</strong>：
+            <ul>
+                <li>高成长型公司，投资人对未来有很高的预期。</li>
+                <li>即使利润不大，市场给它 <strong>很高的 P/E 倍数（40–60+）</strong>，因为大家相信未来它能快速扩张。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <p>👉 <strong>小结</strong>：</p>
+    <p>P/E 高 ≠ 公司一定更赚钱，而是市场愿意为"未来的增长"付更高的溢价。</p>
+    
+    <h2>2.2 三大财务报表：公司经营的"体检报告"</h2>
+    
+    <figure>
+        <img src="/images/unit1/financial-statements/IMG_5756.jpeg" alt="财务报表概览" style="max-width: 600px;">
+    </figure>
+    
+    <p><a href="https://www.xiaohongshu.com/explore/65969c1a000000001d02aa27">如何5分钟内快速读懂上市公司财报？</a></p>
+    
+    <h1>📊 利润表（Income Statement）</h1>
+    <p><a href="https://www.xiaohongshu.com/explore/67ed2394000000001e005063">2分钟读懂上市公司利润表</a></p>
+    
+    <ul>
+        <li>反映：<strong>公司某一时期内赚了多少钱</strong>。</li>
+        <li>主要结构：
+            <ol>
+                <li>营收（Revenue）</li>
+                <li>毛利润（Gross Profit = Revenue – 成本）</li>
+                <li>营业利润（Operating Income）</li>
+                <li><strong>营业成本</strong> (Operating Expense)</li>
+                <li>净利润（Net Income）</li>
+            </ol>
+        </li>
+    </ul>
+    
+    <h3>📌 毛利率（Gross Profit Margin）</h3>
+    <ul>
+        <li><strong>公式</strong>：
+            <figure>
+                <img src="/images/unit1/financial-statements/image.png" alt="毛利率公式" style="max-width: 288px;">
+            </figure>
+        </li>
+        <li><strong>毛利润</strong> = 营业收入 – 营业成本（比如生产成本、材料成本）。</li>
+        <li><strong>意义</strong>：
+            <ul>
+                <li>衡量 <strong>产品本身的赚钱能力</strong>。</li>
+                <li>毛利率高 → 产品有定价权，说明品牌或技术护城河强。</li>
+            </ul>
+        </li>
+        <li><strong>案例</strong>：
+            <ul>
+                <li>Apple（iPhone）：毛利率 ~43%</li>
+                <li>Costco：毛利率 ~12%，但靠规模取胜</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>📌 净利率（Net Profit Margin）</h3>
+    <ul>
+        <li><strong>公式</strong>：
+            <figure>
+                <img src="/images/unit1/financial-statements/image%201.png" alt="净利率公式" style="max-width: 288px;">
+            </figure>
+        </li>
+        <li><strong>净利润</strong> = 毛利润 – 营业费用 – 财务费用 – 税收。</li>
+        <li><strong>意义</strong>：
+            <ul>
+                <li>衡量公司最终 <strong>能留下多少钱</strong>。</li>
+                <li>净利率高 → 成本控制好，商业模式更健康。</li>
+            </ul>
+        </li>
+        <li><strong>案例</strong>：
+            <ul>
+                <li>Microsoft：净利率 ~30%（软件边际成本低）</li>
+                <li>Walmart：净利率 ~2–3%（零售行业竞争激烈）</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>❌ 错误理解</h3>
+    <ul>
+        <li>误解 1：毛利率越高，公司就一定更赚钱。
+            <ul>
+                <li>举例：奢侈品公司毛利率高，但可能因为广告和研发支出太大，最终净利润很低。</li>
+            </ul>
+        </li>
+        <li>误解 2：净利率低 = 公司差。
+            <ul>
+                <li>举例：沃尔玛的净利率只有 2–3%，但因为规模巨大，依然是世界最赚钱的零售公司之一。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>✅ 正确理解</h3>
+    <ul>
+        <li><strong>毛利率</strong>：反映产品"单品的赚钱能力"，说明公司是否有定价权。</li>
+        <li><strong>净利率</strong>：反映公司"最终留下多少钱"，说明管理和成本控制水平。</li>
+        <li><strong>投资逻辑</strong>：要结合毛利率和净利率一起看，才能判断公司真正的盈利质量</li>
+    </ul>
+    
+    <h1>💵 现金流量表（Cash Flow Statement）</h1>
+    
+    <p><a href="http://xhslink.com/o/TvJhkd0zax">1条视频教你看懂企业现金流量表</a><br>
+    <a href="https://www.xiaohongshu.com/explore/67f099f7000000001d01916c">三分钟搞懂现金流量表</a></p>
+    
+    <h2>📌 定义</h2>
+    <ul>
+        <li>现金流量表是反映公司在某一时期内 <strong>现金收支情况</strong> 的报表。</li>
+        <li>它回答的问题是：
+            <ul>
+                <li>公司赚的钱是不是实打实的现金？</li>
+                <li>还是只是"账面利润"？</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <p>👉 类比：利润表像是"成绩单"，而现金流量表是"银行卡流水"。成绩单能写得好看，但银行卡余额才是关键。</p>
+    
+    <h2>📊 三大部分</h2>
+    
+    <h3>1️⃣ 经营活动现金流（Operating Cash Flow, OCF）</h3>
+    <ul>
+        <li><strong>来源</strong>：主营业务产生的现金。</li>
+        <li><strong>公式</strong>（简化）：<strong>经营性现金流=净利润+非现金费用（如折旧）+营运资金变动</strong></li>
+        <li><strong>意义</strong>：衡量主营业务是否"造血"。</li>
+        <li><strong>案例</strong>：
+            <ul>
+                <li>Apple：经营性现金流 ~ 1,100 亿美元/年 → 非常健康。</li>
+                <li>某些初创企业：净利润为正，但 OCF 为负 → 收不到现金，依靠赊账。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <figure>
+        <img src="/images/unit1/financial-statements/image%202.png" alt="经营活动现金流" style="max-width: 100%;">
+    </figure>
+    
+    <h3>2️⃣ 投资活动现金流（Investing Cash Flow, ICF）</h3>
+    <ul>
+        <li><strong>来源</strong>：投资、收购、出售资产等活动。</li>
+        <li><strong>公式</strong>（简化）：投资性现金流=收回投资的现金流入−购置固定资产支出</li>
+        <li><strong>意义</strong>：反映公司在扩张、并购、研发上的投入。</li>
+        <li><strong>案例</strong>：
+            <ul>
+                <li>Tesla：每年投入巨资建超级工厂 → 投资性现金流通常为负。</li>
+                <li>TSMC：巨额资本开支（CapEx） → 投资性现金流长期为负，但未来产能增加。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>3️⃣ 融资活动现金流（Financing Cash Flow, FCF）</h3>
+    <ul>
+        <li><strong>来源</strong>：公司融资与分红。</li>
+        <li><strong>公式</strong>（简化）：融资性现金流=借款+发行股票−偿还债务−分红</li>
+        <li><strong>意义</strong>：看公司是不是依赖"借钱"活下去。</li>
+        <li><strong>案例</strong>：
+            <ul>
+                <li>SoFi：早期不断融资（现金流入），但随着业务稳定，逐渐依赖自有现金流。</li>
+                <li>可口可乐：长期稳定分红 → 融资性现金流经常为负。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <figure>
+        <img src="/images/unit1/financial-statements/image%203.png" alt="投资和融资活动现金流" style="max-width: 100%;">
+    </figure>
+    
+    <h2>📌 自由现金流（Free Cash Flow, FCF）</h2>
+    <ul>
+        <li><strong>公式</strong>：自由现金流=经营性现金流−资本支出</li>
+        <li><strong>意义</strong>：
+            <ul>
+                <li>公司最终能"自由支配"的现金。</li>
+                <li>投资人特别关注 → 因为这是能分红、回购、再投资的真正现金。</li>
+            </ul>
+        </li>
+        <li><strong>案例</strong>：
+            <ul>
+                <li>Apple：自由现金流 1,000 亿美元 → 足够分红 + 回购股票。</li>
+                <li>Netflix：曾长期自由现金流为负，因为投入原创内容，但后来转正。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>⚠️ 常见误解</h2>
+    <ol>
+        <li><strong>误解 1：净利润为正 = 现金流一定好</strong>
+            <ul>
+                <li>❌ 错误：有些公司通过"会计操作"让利润看起来很好，但实际上收不到现金。</li>
+                <li>案例：某些地产公司账面盈利，但现金流长期为负。</li>
+            </ul>
+        </li>
+        <li><strong>误解 2：投资性现金流为负 = 公司不好</strong>
+            <ul>
+                <li>❌ 错误：很多成长型公司在扩张期，投资现金流为负是好事（说明在建厂/研发）。</li>
+            </ul>
+        </li>
+        <li><strong>误解 3：融资性现金流为正 = 健康</strong>
+            <ul>
+                <li>❌ 错误：有些公司靠借债维持运营，风险反而更大。</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h2>✅ 正确理解</h2>
+    <ul>
+        <li><strong>看现金流优先顺序</strong>：
+            <ul>
+                <li><strong>经营性现金流 > 0</strong> = 主业健康。</li>
+                <li><strong>投资性现金流 < 0</strong> = 投入未来。</li>
+                <li><strong>自由现金流 > 0</strong> = 真的能给股东钱。</li>
+            </ul>
+        </li>
+        <li><strong>投资逻辑</strong>：
+            <ul>
+                <li>如果公司 <strong>利润高但现金流差</strong> → 要小心。</li>
+                <li>如果公司 利润低但现金流强 → 说明模式可能更稳健。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h1>📘 资产负债表（Balance Sheet）</h1>
+    
+    <h2>📌 定义</h2>
+    <ul>
+        <li><strong>资产负债表</strong> = 公司在某一时点的财务状况快照。</li>
+        <li>它回答的问题是：
+            <ul>
+                <li>公司现在"有多少家底"？（资产）</li>
+                <li>欠了多少债？（负债）</li>
+                <li>股东真正拥有多少？（股东权益）</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <p>👉 类比：利润表像是"成绩单"（一段时间的表现），而资产负债表是"存折 + 借条"（今天公司真实的财务位置）。</p>
+    
+    <figure>
+        <img src="/images/unit1/financial-statements/image%204.png" alt="资产负债表结构" style="max-width: 100%;">
+    </figure>
+    <figure>
+        <img src="/images/unit1/financial-statements/image%205.png" alt="资产负债表示例" style="max-width: 100%;">
+    </figure>
+    <figure>
+        <img src="/images/unit1/financial-statements/image%206.png" alt="资产负债表分析" style="max-width: 100%;">
+    </figure>
+    <figure>
+        <img src="/images/unit1/financial-statements/image%207.png" alt="资产负债表案例" style="max-width: 100%;">
+    </figure>
+    
+    <h2>📊 结构</h2>
+    
+    <h3>1️⃣ 资产（Assets）</h3>
+    <p>公司 <strong>拥有的资源</strong>，可以分成：</p>
+    <ul>
+        <li><strong>流动资产</strong>（一年内可变现）：现金、应收账款、存货</li>
+        <li><strong>非流动资产</strong>（长期持有）：厂房、设备、专利、长期投资</li>
+    </ul>
+    
+    <h3>2️⃣ 负债（Liabilities）</h3>
+    <p>公司 <strong>欠别人的钱</strong>，要还的义务：</p>
+    <ul>
+        <li><strong>流动负债</strong>（一年内要还）：应付账款、短期借款</li>
+        <li><strong>长期负债</strong>（超过一年）：长期贷款、债券</li>
+    </ul>
+    
+    <h3>3️⃣ 股东权益（Equity）</h3>
+    <p>公司"净值" → 股东真正的份额。</p>
+    
+    <figure>
+        <img src="/images/unit1/financial-statements/image%208.png" alt="股东权益" style="max-width: 100%;">
+    </figure>
+    
+    <p>👉 简单理解：</p>
+    <ul>
+        <li>你买了一套 100 万的房子（资产），贷款 70 万（负债），你自己出 30 万（股东权益）。</li>
+    </ul>
+    
+    <h2>📌 重要公式</h2>
+    
+    <h3><strong>资产负债恒等式</strong></h3>
+    <figure>
+        <img src="/images/unit1/financial-statements/image%209.png" alt="资产负债恒等式" style="max-width: 100%;">
+    </figure>
+    <p>这是会计的基本定律，永远成立。</p>
+    
+    <h3><strong>资产负债率</strong>（Debt Ratio）</h3>
+    <figure>
+        <img src="/images/unit1/financial-statements/image%2010.png" alt="资产负债率公式" style="max-width: 100%;">
+    </figure>
+    <ul>
+        <li>衡量公司杠杆水平。</li>
+        <li>高 → 风险大；低 → 稳健。</li>
+    </ul>
+    
+    <h3><strong>流动比率</strong>（Current Ratio）</h3>
+    <figure>
+        <img src="/images/unit1/financial-statements/image%2011.png" alt="流动比率公式" style="max-width: 100%;">
+    </figure>
+    <ul>
+        <li>衡量公司短期偿债能力。</li>
+        <li>1 → 理论上能还清短期债务。</li>
+    </ul>
+    
+    <h3><strong>速动比率</strong>（Quick Ratio）</h3>
+    <figure>
+        <img src="/images/unit1/financial-statements/image%2012.png" alt="速动比率公式" style="max-width: 100%;">
+    </figure>
+    <ul>
+        <li>更严格的短期偿债指标（因为存货可能卖不掉）。</li>
+    </ul>
+    
+    <h2>📌 案例分析</h2>
+    
+    <h3>🍏 Apple (2023)</h3>
+    <ul>
+        <li>总资产：3,520 亿美元</li>
+        <li>总负债：2,940 亿美元</li>
+        <li>股东权益：580 亿美元</li>
+        <li>资产负债率：≈ 83%</li>
+        <li><strong>结论</strong>：苹果负债不少，但现金流强大，完全能覆盖。</li>
+    </ul>
+    
+    <h3>🚗 Tesla (2023)</h3>
+    <ul>
+        <li>总资产：1,050 亿美元</li>
+        <li>总负债：360 亿美元</li>
+        <li>股东权益：690 亿美元</li>
+        <li>资产负债率：≈ 34%</li>
+        <li><strong>结论</strong>：Tesla 相对低负债，扩张靠股权融资居多。</li>
+    </ul>
+    
+    <h3>🏦 中国平安（A股金融企业）</h3>
+    <ul>
+        <li>特点：金融公司负债率普遍高（银行、保险本质上"借短放长"）。</li>
+        <li>资产负债率 > 90%，但属于行业特性。</li>
+    </ul>
+    
+    <h2>⚠️ 常见误解</h2>
+    <ol>
+        <li><strong>误解 1：负债率高 = 公司危险</strong>
+            <ul>
+                <li>❌ 错误：有些行业天生高负债（银行、地产），并不代表不健康。</li>
+                <li>正解：要结合现金流和行业特性。</li>
+            </ul>
+        </li>
+        <li><strong>误解 2：股东权益小 = 公司不值钱</strong>
+            <ul>
+                <li>❌ 错误：轻资产公司（如 Google、Meta），品牌和数据很值钱，但报表上资产不显著。</li>
+            </ul>
+        </li>
+        <li><strong>误解 3：流动比率越高越好</strong>
+            <ul>
+                <li>❌ 错误：太高可能说明公司闲置现金太多，效率低。</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h2>✅ 正确理解</h2>
+    <ul>
+        <li><strong>负债不是坏事</strong>：合理负债可以放大回报。</li>
+        <li><strong>要看结构</strong>：短期债 vs 长期债，哪一个占比高？</li>
+        <li><strong>结合三大报表</strong>：
+            <ul>
+                <li>利润表告诉你赚不赚钱。</li>
+                <li>现金流量表告诉你钱是不是进来了。</li>
+                <li>资产负债表告诉你家底稳不稳。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>🎯 课堂互动</h2>
+    <ol>
+        <li>打开 Yahoo Finance → 搜索 <code>AAPL</code>（Apple）。
+            <ul>
+                <li>找到资产负债表。</li>
+                <li>计算：资产负债率、流动比率。</li>
+            </ul>
+        </li>
+        <li>思考：为什么 Apple 负债高，但市场仍然放心买它的股票？</li>
+    </ol>
+    
+    <h2>📘 小结</h2>
+    <ul>
+        <li><strong>资产负债表 = 公司健康的快照</strong>。</li>
+        <li>三大核心指标：资产负债率、流动比率、速动比率。</li>
+        <li>投资要结合行业特点，不要机械地看数字。</li>
+        <li>一家优秀的公司，往往不是"没负债"，而是"能把负债用在正确的地方"。</li>
+        <li>反映：公司 <strong>拥有什么（资产）</strong>、<strong>欠了什么（负债）</strong>，最后属于股东的部分（股东权益）。</li>
+    </ul>
+    
+    <h2>2.3 三大报表的关联</h2>
+    <ul>
+        <li>利润表的"净利润"会流入现金流量表的"经营活动现金流"。</li>
+        <li>现金流量表中的"资本支出"会影响资产负债表中的"固定资产"。</li>
+        <li>资产负债表中的"股东权益"会和利润表中的"净利润留存"对应。</li>
+    </ul>
+    
+    <p>👉 <strong>简单理解</strong>：</p>
+    <ul>
+        <li>利润表 = 公司赚钱的成绩单</li>
+        <li>现金流量表 = 钱有没有真的到手</li>
+        <li>资产负债表 = 公司现在有多少"家底"</li>
+    </ul>
+    
+    <h2>2.4 案例分析</h2>
+    
+    <h3>🍏 Apple (2023 财报简化)</h3>
+    <ul>
+        <li>营收：3830 亿美元</li>
+        <li>毛利率：43%</li>
+        <li>净利率：25%</li>
+        <li>自由现金流：1000 亿美元+</li>
+        <li><strong>结论</strong>：利润高 + 现金流强 → "现金机器"。</li>
+    </ul>
+    
+    <h3>🚗 Tesla (2023 财报简化)</h3>
+    <ul>
+        <li>营收：961 亿美元</li>
+        <li>毛利率：25%（低于苹果）</li>
+        <li>净利率：11%</li>
+        <li>自由现金流：90 亿美元</li>
+        <li><strong>结论</strong>：利润率低于苹果，但增长速度快 → 市场给更高估值。</li>
+    </ul>
+</div>
+
+<div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+    <h3>相关章节</h3>
+    <ul class="chapter-list">
+        {% for ch in unit.chapters %}
+            {% if ch.id != chapter.id %}
+            <li>
+                <a href="/{{ lang }}/{{ unit.id }}/{{ ch.slug }}/">
+                    {{ ch.icon }} {{ ch.title[lang] }}
+                </a>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,257 @@
+---
+layout: base.njk
+title: 
+lang: zh
+permalink: /zh/unit1/indices-returns/
+unit: unit1
+chapter: chapter6
+---
+
+{% set unit = units | findBy("id", "unit1") %}
+{% set chapter = unit.chapters | findBy("id", "chapter6") %}
+
+<div class="breadcrumb">
+    <a href="/{{ lang }}/">首页</a> / 
+    <a href="/{{ lang }}/{{ unit.id }}/">{{ unit.title[lang] }}</a> / 
+    {{ chapter.title[lang] }}
+</div>
+
+<h1>{{ chapter.icon }} {{ chapter.title[lang] }}</h1>
+
+<div class="tags">
+    {% for tag in chapter.tags %}
+    <a href="/{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+    {% endfor %}
+</div>
+
+<div class="content">
+    <h2>6.1 什么是指数？</h2>
+    <ul>
+        <li><strong>定义</strong>：指数是用来衡量一组股票整体表现的"篮子"。</li>
+        <li><strong>作用</strong>：
+            <ol>
+                <li>投资者常用来判断市场整体涨跌。</li>
+                <li>可以通过指数基金（ETF）直接投资整个市场。</li>
+            </ol>
+        </li>
+        <li><strong>类比</strong>：
+            <ul>
+                <li>单只股票 = 一道菜</li>
+                <li>股票指数 = 整个菜单（市场的平均水平）</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>6.2 美国三大指数</h2>
+    
+    <table class="simple-table">
+        <thead>
+            <tr>
+                <th>指数</th>
+                <th>成分</th>
+                <th>特点</th>
+                <th>历史回报</th>
+                <th>适合人群</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>道琼斯工业指数（DJIA）</strong></td>
+                <td>30 家蓝筹股</td>
+                <td>老牌大公司，工业/金融为主</td>
+                <td>长期年化 ~5–7%</td>
+                <td>保守投资者</td>
+            </tr>
+            <tr>
+                <td><strong>标普 500（S&P 500）</strong></td>
+                <td>500 家大公司</td>
+                <td>最能代表美国经济</td>
+                <td>长期年化 ~8–10%</td>
+                <td>长期投资者</td>
+            </tr>
+            <tr>
+                <td><strong>纳斯达克综合指数（Nasdaq）</strong></td>
+                <td>3000+ 家公司</td>
+                <td>科技股权重高</td>
+                <td>长期年化 ~10–12%，波动大</td>
+                <td>喜欢科技成长</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <p>👉 <strong>案例</strong>：</p>
+    <ul>
+        <li>2008 金融危机 → 三大指数都暴跌。</li>
+        <li>2010–2021 科技牛市 → 纳斯达克涨幅远超标普。</li>
+    </ul>
+    
+    <h2>6.3 其他全球主要指数</h2>
+    
+    <table class="simple-table">
+        <thead>
+            <tr>
+                <th>地区</th>
+                <th>指数</th>
+                <th>特点</th>
+                <th>风险</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>🇭🇰 香港</td>
+                <td>恒生指数（HSI）</td>
+                <td>金融 & 地产占比大，波动受政策影响</td>
+                <td>高波动，高政策风险</td>
+            </tr>
+            <tr>
+                <td>🇨🇳 中国</td>
+                <td>上证综合指数（SSE）</td>
+                <td>大型国企、银行、能源为主</td>
+                <td>政策主导明显</td>
+            </tr>
+            <tr>
+                <td>🇯🇵 日本</td>
+                <td>日经 225（Nikkei 225）</td>
+                <td>制造业 & 科技（索尼、丰田）</td>
+                <td>日本长期通缩</td>
+            </tr>
+            <tr>
+                <td>🌍 全球</td>
+                <td>MSCI 世界指数</td>
+                <td>覆盖 23 个发达市场，1600+ 公司</td>
+                <td>全球分散，受美元波动影响</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <p>👉 <strong>投资启示</strong>：</p>
+    <ul>
+        <li>美国市场最适合长期持有 → 增长稳定 + 创新能力强。</li>
+        <li>新兴市场（中国、香港） → 高波动，需谨慎。</li>
+        <li>全球指数（MSCI） → 分散风险，适合稳健投资者。</li>
+    </ul>
+    
+    <h2>📌 拓展：中国 A股与创业板</h2>
+    
+    <h2>🀄 什么是 A股？</h2>
+    <ul>
+        <li><strong>定义</strong>：A股是指 <strong>在中国大陆上市、以人民币计价和交易的股票</strong>。</li>
+        <li><strong>名字由来</strong>：
+            <ul>
+                <li>最早中国证券市场分成 <strong>A股（人民币）</strong> 和 <strong>B股（外币，美元/港币计价）</strong>。</li>
+                <li>A股 = 本地投资者（主要是中国大陆居民）参与的市场。</li>
+                <li>B股 = 早期给外国人投资中国用的渠道（现在意义不大）。</li>
+            </ul>
+        </li>
+        <li><strong>主要交易所</strong>：
+            <ul>
+                <li>上海证券交易所（上证）</li>
+                <li>深圳证券交易所（深证）</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <p>👉 可以理解为：A股就是"国内人民币股"，与国际市场的港股、美股相区分。</p>
+    
+    <h2>🚀 什么是创业板？</h2>
+    <ul>
+        <li><strong>定义</strong>：创业板是中国的 <strong>高成长企业融资平台</strong>，主要上市的是科技、创新、成长型公司。</li>
+        <li><strong>特点</strong>：
+            <ul>
+                <li>成立于 2009 年，类似美国的 <strong>纳斯达克（Nasdaq）</strong>。</li>
+                <li>适合规模较小、但有潜力的企业。</li>
+                <li>风险较高，但回报潜力也更大。</li>
+            </ul>
+        </li>
+        <li><strong>交易所</strong>：在 <strong>深圳证券交易所（深交所）</strong>。</li>
+    </ul>
+    
+    <p>👉 创业板可以看作中国的"创新试验场"，给投资者提供投资小型成长股的机会。</p>
+    
+    <h2>6.4 历史回报对比</h2>
+    <ul>
+        <li><strong>标普 500</strong>：
+            <ul>
+                <li>1928–2023 → 年化回报 ~9.8%</li>
+                <li>复利效果惊人：长期持有 10,000 美元 → 上百万</li>
+            </ul>
+        </li>
+        <li><strong>纳斯达克</strong>：
+            <ul>
+                <li>1990–2023 → 年化回报 ~11%+</li>
+                <li>但 2000 年互联网泡沫曾跌去 70%</li>
+            </ul>
+        </li>
+        <li><strong>恒生指数</strong>：
+            <ul>
+                <li>1987–2023 → 年化回报 ~5%</li>
+                <li>波动大，受中国经济和政策影响。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <p>👉 <strong>关键结论</strong>：</p>
+    <ul>
+        <li><strong>美国市场 → 最稳健的长期回报来源</strong></li>
+        <li><strong>新兴市场 → 有机会，但风险更高</strong></li>
+        <li><strong>全球分散投资 → 平衡增长与风险</strong></li>
+    </ul>
+    
+    <h2>6.5 投资者常见误区</h2>
+    <ul>
+        <li>❌ 误解 1：指数投资没回报。
+            <ul>
+                <li>→ 正解：指数长期年化 ~8–10%，超过绝大多数主动基金。</li>
+            </ul>
+        </li>
+        <li>❌ 误解 2：只投一个国家最安全。
+            <ul>
+                <li>→ 正解：地缘政治和政策风险存在，全球分散更稳健。</li>
+            </ul>
+        </li>
+        <li>❌ 误解 3：指数 = 没风险。
+            <ul>
+                <li>→ 正解：短期波动仍然剧烈（例：2008 金融危机标普下跌 40%+）。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>🎯 Activity</h2>
+    <ol>
+        <li>任务：
+            <ul>
+                <li>打开 Moomoo，搜索 <code>VOO</code>（标普 500 ETF）、<code>QQQ</code>（纳斯达克 ETF）、<code>EWH</code>（香港 ETF）。</li>
+                <li>记录过去 5 年的回报。</li>
+            </ul>
+        </li>
+        <li>讨论：
+            <ul>
+                <li>如果只能选一个指数投资，你会选哪一个？为什么？</li>
+                <li>更喜欢 <strong>稳定复利</strong> 还是 <strong>高风险高回报</strong>？</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h2>📘 小总结</h2>
+    <ul>
+        <li><strong>美国三大指数</strong> → 最重要的参考标准。</li>
+        <li><strong>其他指数（香港、中国、日本、全球）</strong> → 提供分散投资机会。</li>
+        <li><strong>历史经验</strong> → 标普 500 长期回报率 ~10%，是财富积累的"黄金标准"。</li>
+        <li>投资指数 ≠ 没风险，但长期来看，是最稳健的投资方式之一。</li>
+    </ul>
+</div>
+
+<div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+    <h3>相关章节</h3>
+    <ul class="chapter-list">
+        {% for ch in unit.chapters %}
+            {% if ch.id != chapter.id %}
+            <li>
+                <a href="/{{ lang }}/{{ unit.id }}/{{ ch.slug }}/">
+                    {{ ch.icon }} {{ ch.title[lang] }}
+                </a>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

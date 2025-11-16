@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投资学习平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: #34495e;
+        }
+        
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .lang-switcher a {
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .lang-switcher a.active {
+            background-color: #34495e;
+        }
+        
+        main {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            min-height: 60vh;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        
+        h3 {
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        ul, ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: #666;
+            font-style: italic;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+        
+        figure {
+            margin: 1.5rem 0;
+        }
+        
+        figcaption {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+            align-items: center;
+        }
+        
+        .tag {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            padding: 0.4rem 0.9rem;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+            border: 1px solid transparent;
+            line-height: 1.4;
+            min-height: 28px;
+            box-sizing: border-box;
+        }
+        
+        .tag:hover {
+            background-color: #3498db;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 6px rgba(52, 152, 219, 0.3);
+            border-color: #2980b9;
+        }
+        
+        .tag:visited {
+            color: #2c3e50;
+        }
+        
+        .tag:visited:hover {
+            color: white;
+        }
+        
+        .tag-search-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .tag-search-section h2 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .tag-search-section p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .tags-container {
+            max-height: 70px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 0.75rem 1rem;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .tags-container .tags {
+            display: inline-flex;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            margin: 0;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .tags-container .tag {
+            flex-shrink: 0;
+        }
+        
+        .tags-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .tags-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        .tags-container::-webkit-scrollbar-thumb {
+            background: #bdc3c7;
+            border-radius: 4px;
+        }
+        
+        .tags-container::-webkit-scrollbar-thumb:hover {
+            background: #95a5a6;
+        }
+        
+        .global-search {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            border: 1px solid #dee2e6;
+            text-align: center;
+        }
+        
+        .global-search-form {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .global-search-box-wrapper {
+            position: relative;
+        }
+        
+        .global-search-box {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 24px;
+            padding: 0.5rem 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .global-search-box-wrapper:focus-within .global-search-box {
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+        
+        .global-search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            padding: 0.5rem;
+        }
+        
+        .global-search-box button {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.25rem;
+            color: #7f8c8d;
+        }
+        
+        .global-search-box button:hover {
+            color: #3498db;
+        }
+        
+        .search-suggestions {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-top: 0.5rem;
+            max-height: 400px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        
+        .suggestion-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.2s;
+        }
+        
+        .suggestion-item:last-child {
+            border-bottom: none;
+        }
+        
+        .suggestion-item:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .suggestion-type {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            background-color: #ecf0f1;
+            color: #7f8c8d;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            margin-right: 0.75rem;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .suggestion-text {
+            flex: 1;
+            font-size: 0.95rem;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            color: white;
+            margin: 0;
+        }
+        
+        .unit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .unit-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .unit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .unit-card h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        
+        .unit-card .tags {
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+        
+        .unit-card .tag {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.7rem;
+        }
+        
+        .chapter-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .chapter-list li {
+            margin-bottom: 1rem;
+        }
+        
+        .chapter-list a {
+            display: block;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-decoration: none;
+            color: inherit;
+            transition: background-color 0.3s;
+        }
+        
+        .chapter-list a:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/zh/" class="logo">投资学习平台</a>
+            <nav>
+                <a href="/zh/">首页</a>
+                <a href="/zh/search/">搜索</a>
+                <a href="/zh/tags/">标签</a>
+                <div class="lang-switcher">
+                    
+                        <a href="/en/unit1/valuation/" class="active">中文</a>
+                        <a href="/en/unit1/valuation/">English</a>
+                    
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        
+        
+        
+
+
+
+<div class="breadcrumb">
+    <a href="/zh/">首页</a> / 
+    <a href="/zh/unit1/">Unit 1: 挑选一家好公司</a> / 
+    估值方法（Valuation）
+</div>
+
+<h1>💵 估值方法（Valuation）</h1>
+
+<div class="tags">
+    
+    <a href="/zh/tags/valuation/" class="tag">valuation</a>
+    
+    <a href="/zh/tags/dcf/" class="tag">dcf</a>
+    
+    <a href="/zh/tags/pe-ratio/" class="tag">pe-ratio</a>
+    
+</div>
+
+<div class="content">
+    <h1>常见基础面分析&估值方法</h1>
+    
+    <h2>3.1 📊 每股收益（EPS, Earnings Per Share）</h2>
+    
+    <h3>1. 定义与公式</h3>
+    <ul>
+        <li><strong>公式</strong>：</li>
+    </ul>
+    <figure>
+        <img src="/images/unit1/valuation/image.png" alt="EPS公式" style="max-width: 672px;">
+    </figure>
+    <ul>
+        <li>简单理解：EPS 代表公司每一股股票为股东赚到的利润。</li>
+    </ul>
+    
+    <h3>2. 为什么重要？</h3>
+    <ul>
+        <li>EPS 是很多估值方法（如 <strong>P/E 市盈率</strong>）的基础。</li>
+        <li>高 EPS 表示公司赚钱能力强。</li>
+        <li>持续增长的 EPS 说明公司盈利在稳定扩大。</li>
+    </ul>
+    
+    <h3>3. 使用场景</h3>
+    <ul>
+        <li>投资者经常用 EPS 与股价比较，判断股票是否"贵"或"便宜"。</li>
+        <li>分析 EPS 的趋势比单一年更重要（例如过去 5 年 EPS 是不是逐年增长）。</li>
+    </ul>
+    
+    <h3>4. 行业差异</h3>
+    <ul>
+        <li><strong>消费必需品</strong>：EPS 稳定但增长缓慢。</li>
+        <li><strong>科技行业</strong>：EPS 可能波动大，但增长潜力更高。</li>
+        <li><strong>金融业</strong>：EPS 会受利率和经济周期影响</li>
+    </ul>
+    
+    <h2>3.2 📈 盈利增长率（Earnings Growth Rate）</h2>
+    
+    <h3>1. 定义与公式</h3>
+    <ul>
+        <li><strong>公式</strong>：</li>
+    </ul>
+    <figure>
+        <img src="/images/unit1/valuation/image%201.png" alt="盈利增长率公式" style="max-width: 768px;">
+    </figure>
+    <ul>
+        <li>它表示公司利润的增长速度。</li>
+    </ul>
+    
+    <h3>2. 为什么重要？</h3>
+    <ul>
+        <li>决定公司未来价值。即使当前利润不大，只要增长率高，也可能是好投资。</li>
+        <li><strong>PEG 比率</strong> 就是把 P/E 和增长率结合，用来判断估值是否合理。</li>
+    </ul>
+    
+    <h3>3. 使用场景</h3>
+    <ul>
+        <li>成长型公司（如英伟达、Meta）通常以高增长率吸引投资者。</li>
+        <li>成熟公司（如可口可乐）增长率较低，但胜在稳定。</li>
+    </ul>
+    
+    <h3>4. 行业差异</h3>
+    <ul>
+        <li><strong>科技股</strong>：增长率可能 >20%，但波动大。</li>
+        <li><strong>消费必需品</strong>：增长率通常 <10%，但抗风险。</li>
+        <li><strong>金融业</strong>：增长率与经济周期、利率环境密切相关。</li>
+    </ul>
+    
+    <h2>📝 总结</h2>
+    <ul>
+        <li><strong>EPS</strong> = 每股赚的钱 → 反映当下公司赚钱能力。</li>
+        <li><strong>盈利增长率</strong> = 利润增速 → 反映未来成长潜力。</li>
+        <li>投资时，要同时看 <strong>EPS 的水平</strong> 和 <strong>增长率的趋势</strong>。</li>
+        <li>👉 举例：英伟达 EPS 高 + 增长率快 → 高估值有合理性。</li>
+        <li>可口可乐 EPS 稳定 + 增长率低 → 适合防御性投资。</li>
+    </ul>
+    
+    <h2>3.3a 📊 市盈率（P/E, Price to Earnings Ratio）</h2>
+    
+    <h3>1. 定义与公式</h3>
+    <ul>
+        <li><strong>公式</strong>：</li>
+    </ul>
+    <figure>
+        <img src="/images/unit1/valuation/image%202.png" alt="P/E公式" style="max-width: 528px;">
+    </figure>
+    <ul>
+        <li>表示投资者为公司当前每 1 元盈利愿意支付多少股价。</li>
+    </ul>
+    
+    <h3>2. 为什么重要？</h3>
+    <ul>
+        <li>P/E 是最常见的估值指标。</li>
+        <li>能快速判断公司是"便宜"还是"昂贵"。</li>
+    </ul>
+    
+    <h3>3. 使用场景</h3>
+    <ul>
+        <li>成熟行业、盈利稳定的公司最适合用 P/E。</li>
+        <li>如果公司亏损或盈利大幅波动，P/E 就不太准确。</li>
+    </ul>
+    
+    <h3>4. 行业差异</h3>
+    <ul>
+        <li><strong>消费必需品</strong>：P/E 常见 15–25 倍。</li>
+        <li><strong>科技成长股</strong>：P/E 可能 25–40 倍甚至更高。</li>
+        <li><strong>银行金融</strong>：P/E 偏低，通常 10–15 倍。</li>
+    </ul>
+    
+    <p>优点：简单直观，最常见。</p>
+    <p>缺点：盈利波动大时，P/E 会失真。不适合亏损的公司。</p>
+    
+    <h2>3.3b 📊 市净率（P/B, Price to Book Ratio）</h2>
+    
+    <h3>1. 定义与公式</h3>
+    <ul>
+        <li><strong>公式</strong>：</li>
+    </ul>
+    <figure>
+        <img src="/images/unit1/valuation/image%203.png" alt="P/B公式" style="max-width: 528px;">
+    </figure>
+    <ul>
+        <li>表示股价相对于公司账面价值的倍数。</li>
+    </ul>
+    
+    <h3>2. 为什么重要？</h3>
+    <ul>
+        <li>能反映市场对公司资产价值的认可度。</li>
+        <li>如果 P/B < 1，说明股价可能低于公司账面价值（可能被低估，或市场认为资产质量差）。</li>
+    </ul>
+    
+    <h3>3. 使用场景</h3>
+    <ul>
+        <li>特别适合 <strong>银行、保险、地产</strong> 这类资产驱动型公司。</li>
+        <li>对轻资产的科技公司，P/B 参考价值有限。</li>
+    </ul>
+    
+    <h3>4. 行业差异</h3>
+    <ul>
+        <li><strong>银行业</strong>：常见 P/B 在 1–2 倍之间，高 ROE 银行享有溢价。</li>
+        <li><strong>制造业/周期股</strong>：P/B 常见 1–3 倍。</li>
+        <li><strong>科技/平台型公司</strong>：P/B 偏高，不适合单独作为估值依据。</li>
+    </ul>
+    
+    <h2>3.4 📊 PEG 比率（Price/Earnings to Growth）</h2>
+    
+    <h3>1. 定义与公式</h3>
+    <ul>
+        <li><strong>公式</strong>：</li>
+    </ul>
+    <figure>
+        <img src="/images/unit1/valuation/image%204.png" alt="PEG公式" style="max-width: 432px;">
+    </figure>
+    <ul>
+        <li>将估值与公司盈利增速结合考虑。</li>
+    </ul>
+    
+    <h3>2. 为什么重要？</h3>
+    <ul>
+        <li>单看 P/E，高成长公司可能显得"贵"；PEG 可以衡量增长是否值得溢价。</li>
+        <li>一般认为 PEG ≈ 1 是合理估值。</li>
+    </ul>
+    
+    <h3>3. 使用场景</h3>
+    <ul>
+        <li>特别适合 <strong>高成长公司</strong>（如英伟达、Meta、谷歌）。</li>
+        <li>用来对比同一行业内的公司增长与估值匹配程度。</li>
+    </ul>
+    
+    <h3>4. 行业差异</h3>
+    <ul>
+        <li><strong>科技行业</strong>：PEG 常常高于 1，但如果增长率很高仍然合理。</li>
+        <li><strong>消费必需品</strong>：增长低，PEG 常高于 2，说明估值偏贵但稳定。</li>
+        <li><strong>金融业</strong>：增长与经济周期相关，PEG 要结合宏观环境解读。</li>
+    </ul>
+    
+    <h2>3.5 投资者常见误区</h2>
+    <ul>
+        <li>❌ 误解 1：P/E 高 = 一定贵。
+            <ul>
+                <li>→ 正解：高成长公司合理地享受高 P/E。</li>
+            </ul>
+        </li>
+        <li>❌ 误解 2：DCF 算出来就是准确价值。
+            <ul>
+                <li>→ 正解：DCF 对增长率和折现率非常敏感，是一种"区间判断"，而非唯一答案。</li>
+            </ul>
+        </li>
+        <li>❌ 误解 3：所有行业都能用同一个估值方法。
+            <ul>
+                <li>→ 正解：银行看 P/B，科技公司看 P/E + PEG，初创企业多看 DCF 假设。</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+    <h3>相关章节</h3>
+    <ul class="chapter-list">
+        
+            
+            <li>
+                <a href="/zh/unit1/fundamental-analysis/">
+                    📊 基本面分析（Fundamental Analysis）
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/zh/unit1/financial-statements/">
+                    📑 财务报表与核心指标
+                </a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a href="/zh/unit1/economic-moats/">
+                    🏰 护城河与行业壁垒
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/zh/unit1/investment-methodology/">
+                    📈 投资方法论
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/zh/unit1/indices-returns/">
+                    🌍 世界主要指数与历史回报
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/zh/unit1/entrepreneurship-investment/">
+                    🏭 创业与投资的结合
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/zh/unit1/case-studies/">
+                    📘 历史案例与启发
+                </a>
+            </li>
+            
+        
+    </ul>
+</div>
+
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 投资学习平台</p>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,151 @@
+---
+layout: base.njk
+title: 
+lang: en
+permalink: /en/unit0/
+unit: unit0
+---
+
+{% set unit = units | findBy("id", "unit0") %}
+
+<h1>{{ unit.icon }} {{ unit.title[lang] }}</h1>
+<p>{{ unit.description[lang] }}</p>
+
+<div class="tags">
+    {% for tag in unit.tags %}
+    <a href="/{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+    {% endfor %}
+</div>
+
+<div class="content">
+    <p>This is a 30-minute video shared by Ray Dalio on YouTube after the 2008 US financial crisis, 'How The Economic Machine Works', which has been viewed over 5 million times.</p>
+    
+    <p>Bill Gates' recommendation for this video:</p>
+    
+    <blockquote>
+        "This knowledge would help everyone as investors and citizens. Watching it for 30 minutes is a worthwhile investment."
+    </blockquote>
+    
+    <h2>YouTube Links</h2>
+    <blockquote>
+        English Version: <a href="https://www.youtube.com/watch?v=PHe0bXAIuk0">https://www.youtube.com/watch?v=PHe0bXAIuk0</a><br>
+        Chinese Version: <a href="https://www.youtube.com/watch?v=rFV7wdEX-Mo">https://www.youtube.com/watch?v=rFV7wdEX-Mo</a>
+    </blockquote>
+    
+    <h2>The Economy Works Like a Simple Machine</h2>
+    <p>The economy may seem complex, but it actually works like a simple machine. The economy consists of a few simple parts and many simple transactions, driven by human nature, creating three main forces of economic development.</p>
+    
+    <h2>Three Main Forces of Economic Development</h2>
+    <p>Productivity growth, short-term debt cycle, and long-term debt cycle.</p>
+    
+    <h2>Transactions</h2>
+    <ol>
+        <li>Transactions consist of buyers and sellers
+            <ul>
+                <li>Buyers spend: Money and Credit</li>
+                <li>Sellers provide: Goods, Services, and Financial Assets</li>
+            </ul>
+        </li>
+        <li>Money spent + Credit spent = Total Spending, which drives economic development.</li>
+        <li>Total Spending / Total Quantity = Price</li>
+    </ol>
+    
+    <h2>Market Participants</h2>
+    <p>Individuals, businesses, banks, and governments.</p>
+    <p>The government is the largest buyer and seller because it has:</p>
+    <ul>
+        <li>Central government that controls income (adjusts taxes)</li>
+        <li>Central bank that controls spending (adjusts interest rates, issues currency)</li>
+    </ul>
+    
+    <h2>Credit</h2>
+    <ol>
+        <li>Credit is the most important part of the economy because it is the biggest and most vulnerable part.</li>
+        <li>Credit can increase spending, and spending drives economic development.</li>
+        <li>Credit is not always bad:
+            <ul>
+                <li>If credit is only used for consumption without sufficient future income to repay debt, it is not conducive to economic development.</li>
+                <li>If credit is used to improve production, increase income, and can repay debt in the future while improving life, it promotes economic development.</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h2>Economic Cycles</h2>
+    <ul>
+        <li>Productivity improvement is relatively slow; credit can increase spending in the short term.</li>
+        <li>Due to human nature, borrowing occurs, creating economic cycles.</li>
+    </ul>
+    
+    <h3>Short-term Credit Cycle</h3>
+    <p>The short-term credit cycle typically lasts 5-8 years.</p>
+    <p>Borrowers: Credit growth process</p>
+    <ul>
+        <li>Credit increases one person's spending while increasing others' income</li>
+        <li>As income increases, the ability to repay increases, creditworthiness improves, and credit increases again</li>
+    </ul>
+    <blockquote>If debt cannot be repaid, it can be resolved by selling collateral</blockquote>
+    
+    <p>Lenders: Central bank adjustments</p>
+    <ul>
+        <li>As credit increases, spending increases, but productivity growth is limited, leading to price increases and <strong>Inflation</strong>.</li>
+        <li>The central bank raises interest rates, credit decreases, spending decreases, income falls, prices drop, <strong>Deflation</strong> occurs, until <strong>Recession</strong>.</li>
+        <li>The central bank lowers interest rates, reverse adjustment, and so on.</li>
+    </ul>
+    
+    <h3>Long-term Credit Cycle</h3>
+    <p>The long-term credit cycle typically takes 75-100 years.</p>
+    <p>1. Due to human nature's love of spending and focus on the short term, people borrow too much for consumption, income continues to increase, assets continue to increase, and credit continues to increase.</p>
+    <blockquote>Why? Because everyone thinks things are going great. People are just focus on what's been happening lately.</blockquote>
+    
+    <p>2. Too much credit in the market, debt growth gradually exceeds income growth, bubbles become too large, until borrowers cannot repay.</p>
+    
+    <p>3. Unable to repay, can only sell assets, which will cause stock markets, housing prices and other assets to plummet.</p>
+    
+    <p>4. Less consumption, less income, less wealth, less credit, less lending... vicious cycle...</p>
+    
+    <p>5. Different from recession, during deleveraging, due to excessive debt burden, when the central bank lowers interest rates to 0, it still cannot solve the problem.</p>
+    <blockquote>
+        This appears similar to a recession. But the difference here is that interest rates can't be lower to save the day.
+        <p>Note: Deleveraging can also be translated as debt reduction, the process of reducing market lending.</p>
+    </blockquote>
+    
+    <p>6. Borrowers realize that the money lent cannot be repaid, stop lending, borrowers stop borrowing, economic development is hindered, and may eventually lead to economic crisis.</p>
+    
+    <h2>Four Methods of Deleveraging</h2>
+    
+    <h3>1. Cut Spending</h3>
+    <p>To reduce debt, people reduce spending, but this may cause income to fall faster, debt burden becomes more severe, companies cut costs, unemployment rises, wages fall...</p>
+    
+    <h3>2. Reduce Debt</h3>
+    <p>When borrowers cannot repay, people worry that deposits in banks cannot be returned, rush to withdraw from banks, and banks do not have enough money.</p>
+    <p>Large numbers of borrowers default, leading to depression, people realize asset bubbles. People don't want assets to disappear, lenders and borrowers agree to debt restructuring, borrowers repay less money, repay later, or repay at lower interest rates.</p>
+    <p>After debt reduction, income decreases faster, which will increase debt burden again.</p>
+    
+    <h3>3. Wealth Redistribution</h3>
+    <p>Income reduction leads to reduced government tax revenue; on the other hand, rising unemployment requires more government spending subsidies.</p>
+    <p>The government has a fiscal deficit and can only increase taxes or borrow. Since most people's income has declined, they can only tax the rich and subsidize the poor, which is equivalent to wealth redistribution.</p>
+    <p>If the economy continues to be depressed, it may intensify class resentment, leading to social unrest and even change.</p>
+    
+    <h3>4. Print Money</h3>
+    <p>The central bank prints money, buys financial assets and government bonds (equivalent to the central bank lending to the government), the government provides more employment opportunities, and stimulates economic recovery.</p>
+    
+    <h3>Summary</h3>
+    <p>1. The first three methods will cause deflation, while printing money will cause inflation. If a perfect balance (A Beautiful Deleveraging) can be achieved, there will be no severe inflation.</p>
+    
+    <p>2. Printing money increases monetary spending while reducing credit spending, making total spending stable, and prices can be stable.</p>
+    <blockquote>
+        Money spent + Credit spent = Total Spending<br>
+        Total Spending / Total Quantity = Price
+    </blockquote>
+    
+    <p>3. To reverse the situation, the central bank must print the right amount of money: on the one hand, print enough money so that income increases faster than debt increases, so that debt can be repaid; on the other hand, do not print too much money to avoid hyperinflation.</p>
+    
+    <h2>Three Rules of Thumb</h2>
+    <p>Finally, the author gives three very wise rules of thumb:</p>
+    <ol>
+        <li>Don't let debt grow faster than income.</li>
+        <li>Don't let income grow faster than productivity.</li>
+        <li>Do everything possible to improve productivity.</li>
+    </ol>
+</div>
+

@@ -1,0 +1,120 @@
+---
+layout: base.njk
+title: 
+lang: en
+permalink: /en/unit1/
+unit: unit1
+---
+
+{% set unit = units | findBy("id", "unit1") %}
+
+<h1>{{ unit.icon }} {{ unit.title[lang] }}</h1>
+<p>{{ unit.description[lang] }}</p>
+
+<div class="tags">
+    {% for tag in unit.tags %}
+    <a href="/{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+    {% endfor %}
+</div>
+
+<h2>📖 Core Questions of Investment</h2>
+<ul>
+    <li>The essence of investment is <strong>giving up consumption today → getting more returns in the future</strong>.</li>
+    <li>Successful investment = finding quality companies that can <strong>generate cash flow in the long term</strong>.</li>
+    <li>Failed investment = chasing hot spots, speculating on concepts, and eventually stock prices return to value.</li>
+</ul>
+
+<h2>💡 Theory of Value Investing</h2>
+<ul>
+    <li><strong>Value Investing</strong> was first proposed by Benjamin Graham, who is known as the "Father of Security Analysis".
+        <ul>
+            <li>Core theory:
+                <ol>
+                    <li><strong>Company = Business</strong>, buying stocks is equivalent to buying part of the business.</li>
+                    <li><strong>Price vs Value</strong>: Market prices fluctuate daily, but the long-term value of companies is relatively stable.</li>
+                    <li><strong>Margin of Safety</strong>: Only when the price is far below the value is it worth buying.</li>
+                </ol>
+            </li>
+        </ul>
+    </li>
+    <li>Buffett improved on Graham's foundation:
+        <ul>
+            <li>Not only buy at low prices, but also buy "good companies" → deep moats, strong cash flow, and long-term growth.</li>
+        </ul>
+    </li>
+</ul>
+
+<blockquote>
+    📌 Summary: Value investing is not about chasing short-term ups and downs, but about selecting companies that "can continue to make money" and holding them for the long term.
+</blockquote>
+
+<h2>📈 Returns from Long-term Holding of Quality Companies</h2>
+<ul>
+    <li><strong>S&P 500</strong> → Average annualized return of <strong>8–10%</strong> over the past 100 years.</li>
+    <li>If you start investing $10,000 at age 20 and retire at 65:
+        <ul>
+            <li>Annualized <strong>10%</strong> → Final amount exceeds <strong>$1,000,000</strong>.</li>
+        </ul>
+    </li>
+    <li><strong>Buffett Case</strong>:
+        <ul>
+            <li>From 1965–2022, Berkshire Hathaway's annualized return was <strong>19.8%</strong>, far exceeding the S&P.</li>
+        </ul>
+    </li>
+    <li><strong>Individual Stock Example</strong>:
+        <ul>
+            <li>Buying Apple stock for $10,000 in 1997 → Today exceeds <strong>$7 million</strong>.</li>
+        </ul>
+    </li>
+</ul>
+
+<p>👉 Note: Picking a truly good company and holding it for the long term can yield returns far exceeding the market and inflation.</p>
+
+<h2>⚠️ Common Reasons for Investment Failure</h2>
+<ol>
+    <li><strong>Blind Following</strong>: Chasing rising and falling prices, buying at highs.
+        <ul>
+            <li>Case: Bitcoin frenzy in 2017, many people entered at high prices, then halved.</li>
+        </ul>
+    </li>
+    <li><strong>Only Looking at Themes, Not Fundamentals</strong>:
+        <ul>
+            <li>Case: Among new energy concept stocks, many small companies had no profits and eventually delisted.</li>
+        </ul>
+    </li>
+    <li><strong>Excessive Use of Leverage</strong>:
+        <ul>
+            <li>Case: Chinese stock "explosion wave" in 2021, many funds were liquidated due to excessive leverage.</li>
+        </ul>
+    </li>
+    <li><strong>Short-term Speculation</strong>:
+        <ul>
+            <li>The market is a "voting machine" in the short term and a "weighing machine" in the long term. (Graham's famous saying)</li>
+        </ul>
+    </li>
+    <li><strong>Ignoring Industry Life Cycle</strong>:
+        <ul>
+            <li>Case: Kodak was eliminated in the digital camera era.</li>
+        </ul>
+    </li>
+</ol>
+
+<h2>🎯 Course Objectives</h2>
+<ul>
+    <li>Learn how to <strong>screen quality companies</strong> like Buffett.</li>
+    <li>Master <strong>financial statement interpretation</strong>, <strong>valuation methods</strong>, and <strong>moat analysis</strong>.</li>
+    <li>Understand the difference between <strong>index investing vs active investing</strong>.</li>
+    <li>Not only know how to pick companies, but also reverse from the <strong>entrepreneur's perspective</strong>: what kind of companies can be recognized by investors.</li>
+</ul>
+
+<h2>Chapter List</h2>
+<ul class="chapter-list">
+{% for chapter in unit.chapters %}
+    <li>
+        <a href="/{{ lang }}/{{ unit.id }}/{{ chapter.slug }}/">
+            <strong>{{ chapter.icon }} {{ chapter.title[lang] }}</strong>
+        </a>
+    </li>
+{% endfor %}
+</ul>
+

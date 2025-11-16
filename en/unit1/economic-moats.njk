@@ -1,0 +1,282 @@
+---
+layout: base.njk
+title: 
+lang: en
+permalink: /en/unit1/economic-moats/
+unit: unit1
+chapter: chapter4
+---
+
+{% set unit = units | findBy("id", "unit1") %}
+{% set chapter = unit.chapters | findBy("id", "chapter4") %}
+
+<div class="breadcrumb">
+    <a href="/{{ lang }}/">Home</a> / 
+    <a href="/{{ lang }}/{{ unit.id }}/">{{ unit.title[lang] }}</a> / 
+    {{ chapter.title[lang] }}
+</div>
+
+<h1>{{ chapter.icon }} {{ chapter.title[lang] }}</h1>
+
+<div class="tags">
+    {% for tag in chapter.tags %}
+    <a href="/{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+    {% endfor %}
+</div>
+
+<div class="content">
+    <h2>4.1 What is an Economic Moat?</h2>
+    <ul>
+        <li>Concept from <strong>Warren Buffett</strong>: Like medieval castles, companies need moats to protect themselves from being easily breached by competitors.</li>
+        <li><strong>The wider and deeper the moat, the longer a company can maintain its competitive advantage.</strong></li>
+        <li>Companies without moats, even if they grow quickly in the short term, will soon be imitated and surpassed.</li>
+    </ul>
+    
+    <p>👉 <strong>Examples</strong>：</p>
+    <ul>
+        <li><strong>Apple</strong>: Moat is the ecosystem (iPhone + Mac + iCloud + App Store).</li>
+        <li><strong>Nokia</strong>: Was once a mobile phone giant, but the moat wasn't deep enough, was disrupted by iPhone.</li>
+    </ul>
+    
+    <h2>4.2 Five Common Types of Moats</h2>
+    
+    <h3>🏷 1. Brand Power</h3>
+    <ul>
+        <li><strong>Definition</strong>: Consumers are willing to pay more for the brand.</li>
+        <li><strong>Examples</strong>：
+            <ul>
+                <li>Coca-Cola: The formula isn't secret, but brand value has sustained it for over 100 years.</li>
+                <li>Louis Vuitton: Bag production costs aren't high, but brand premium is extremely high.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>🌐 2. Network Effects</h3>
+    <ul>
+        <li><strong>Definition</strong>: The more users, the more valuable the product.</li>
+        <li><strong>Examples</strong>：
+            <ul>
+                <li>Meta: All your friends are using it → you must use it too.</li>
+                <li>Visa / Mastercard: The more merchants and users, the greater the network value.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>🔄 3. Switching Costs</h3>
+    <ul>
+        <li><strong>Definition</strong>: Once users adopt the product, switching to another product is troublesome or costly.</li>
+        <li><strong>Examples</strong>：
+            <ul>
+                <li>Adobe Photoshop: Designers' workflows are all on Adobe, very hard to switch.</li>
+                <li>Microsoft Office: Word / Excel have become industry standards.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>💲 4. Cost Advantage</h3>
+    <ul>
+        <li><strong>Definition</strong>: The company can produce or provide services cheaper than others.</li>
+        <li><strong>Examples</strong>：
+            <ul>
+                <li>Costco: Through scale and bargaining power, forces suppliers to lower prices.</li>
+                <li>Pinduoduo: Direct supply chain to factories, cheaper than other e-commerce platforms.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>📜 5. Legal / Patent Barriers</h3>
+    <ul>
+        <li><strong>Definition</strong>: Laws, patents, licenses protect the company's position.</li>
+        <li><strong>Examples</strong>：
+            <ul>
+                <li>Pfizer: Patent drugs prevent competitors from copying.</li>
+                <li>Kweichow Moutai: Geographic indication and brand protection, almost no competitors.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>4.3 Case Comparison: Netflix vs Disney+</h2>
+    
+    <h3>Netflix</h3>
+    <ul>
+        <li>Moat: Recommendation algorithm, original content library, user habits.</li>
+        <li>Risk: High content costs, easily imitated.</li>
+    </ul>
+    
+    <h3>Disney+</h3>
+    <ul>
+        <li>Moat: IP (Disney, Marvel, Star Wars), century-old brand accumulation.</li>
+        <li>Risk: Slow digital transformation, but IP library is extremely strong.</li>
+    </ul>
+    
+    <p>👉 <strong>Investment Insight</strong>：</p>
+    <ul>
+        <li>Netflix is more like a "tech company", relying on algorithms and subscription model.</li>
+        <li>Disney is more like an "IP giant", supported by moats.</li>
+        <li><strong>Different moats in competition → different valuation logic.</strong></li>
+    </ul>
+    
+    <h2>4.4 Common Investor Misconceptions</h2>
+    <ul>
+        <li>❌ Misconception 1: High growth = must succeed.
+            <ul>
+                <li>→ Correct: Without a moat, growth cannot be sustained long-term.</li>
+            </ul>
+        </li>
+        <li>❌ Misconception 2: Moats last forever.
+            <ul>
+                <li>→ Correct: Moats can be weakened by technological innovation (e.g., Nokia defeated by iPhone).</li>
+            </ul>
+        </li>
+        <li>❌ Misconception 3: Moat = high profits.
+            <ul>
+                <li>→ Correct: Moats protect profits, not guarantee profits.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>4.5 Why Moats Matter More Than Growth</h2>
+    <ul>
+        <li>A company can grow rapidly in the short term with "new concepts", but if the moat isn't deep enough, it will soon be imitated by competitors.</li>
+        <li>Only companies with <strong>long-term moats</strong> can survive 5, 10, or even 50 years later.</li>
+    </ul>
+    
+    <p>👉 Buffett: "A good company is one that can make money even without a genius CEO managing it."</p>
+    
+    <h2>4.6 Company Moat Analysis</h2>
+    
+    <h3>🏦 SoFi (Fintech)</h3>
+    <ul>
+        <li><strong>Moat Type</strong>: User ecosystem + regulatory barriers</li>
+        <li><strong>How Built</strong>：
+            <ul>
+                <li>Built a "financial supermarket": One app covers loans, investments, bank accounts.</li>
+                <li>Young users start with student loans, then gradually use credit cards, stock investments → long-term stickiness.</li>
+                <li>Has banking license (regulatory moat), making it more stable than general fintech companies.</li>
+            </ul>
+        </li>
+        <li><strong>Risk</strong>: Competitors (Chime, Robinhood) are also competing for users, moat is still forming.</li>
+    </ul>
+    
+    <h3>🌐 Meta (Facebook, Instagram, WhatsApp)</h3>
+    <ul>
+        <li><strong>Moat Type</strong>: Network effects</li>
+        <li><strong>How Built</strong>：
+            <ul>
+                <li>The more people use it, the more valuable the social platform → strong "friend circle effect".</li>
+                <li>Advertising data advantage: Controls social and consumption behavior data of billions of people.</li>
+                <li>Large-scale acquisitions: Instagram, WhatsApp → bought competitors.</li>
+            </ul>
+        </li>
+        <li><strong>Risk</strong>: Young people moving to TikTok, moat is being challenged.</li>
+    </ul>
+    
+    <h3>💻 Nvidia</h3>
+    <ul>
+        <li><strong>Moat Type</strong>: Technological advantage + ecosystem lock-in</li>
+        <li><strong>How Built</strong>：
+            <ul>
+                <li>Leading GPU technology, CUDA software ecosystem becomes industry standard.</li>
+                <li>AI companies training models almost all depend on Nvidia hardware → high switching costs.</li>
+                <li>High R&D investment + patent barriers.</li>
+            </ul>
+        </li>
+        <li><strong>Risk</strong>: AMD, Intel catching up, but difficult to shake CUDA ecosystem in short term.</li>
+    </ul>
+    
+    <h3>💳 Visa</h3>
+    <ul>
+        <li><strong>Moat Type</strong>: Network effects + switching costs</li>
+        <li><strong>How Built</strong>：
+            <ul>
+                <li>Tens of millions of merchants globally + billions of users, stronger with more users.</li>
+                <li>"Bilateral network effects" between users and merchants.</li>
+                <li>Highly standardized payment system, making it difficult for banks and merchants to switch.</li>
+            </ul>
+        </li>
+        <li><strong>Risk</strong>: Blockchain and digital payments (like Alipay, USDC stablecoin) may weaken traditional credit card model.</li>
+    </ul>
+    
+    <h3>🏭 TSMC</h3>
+    <ul>
+        <li><strong>Moat Type</strong>: Cost advantage + technological barriers</li>
+        <li><strong>How Built</strong>：
+            <ul>
+                <li>World's only company that can mass-produce 3nm chips → technological barrier.</li>
+                <li>Scale effects: The larger the foundry, the lower the cost.</li>
+                <li>Customer lock-in: Apple, Qualcomm, Nvidia all depend on TSMC → extremely high switching costs.</li>
+            </ul>
+        </li>
+        <li><strong>Risk</strong>: Geopolitical risk (Taiwan situation).</li>
+    </ul>
+    
+    <h3>🔍 Google (Alphabet)</h3>
+    <ul>
+        <li><strong>Moat Type</strong>: Network effects + data advantage</li>
+        <li><strong>How Built</strong>：
+            <ul>
+                <li>Search engine occupies 90% of global market → more users, more accurate algorithms, more profitable ads.</li>
+                <li>Advertising ecosystem (YouTube, Search Ads) bound to Android system.</li>
+                <li>AI and cloud computing expand the moat.</li>
+            </ul>
+        </li>
+        <li><strong>Risk</strong>: Generative AI like ChatGPT may change search patterns.</li>
+    </ul>
+    
+    <h3>🚗 Tesla</h3>
+    <ul>
+        <li><strong>Moat Type</strong>: Brand + data + vertical integration</li>
+        <li><strong>How Built</strong>：
+            <ul>
+                <li>First-mover advantage in electric vehicles, Tesla = synonym for EV (brand moat).</li>
+                <li>Autonomous driving data: Collected the world's most real driving data → technological lead.</li>
+                <li>Vertical integration: Batteries + Gigafactories, reducing costs.</li>
+            </ul>
+        </li>
+        <li><strong>Risk</strong>: Competitors (BYD, Volkswagen) catching up quickly, moat under pressure.</li>
+    </ul>
+    
+    <h2>🎯 Activity</h2>
+    <ol>
+        <li>Discussion:
+            <ul>
+                <li>Choose a company you frequently use (e.g., Spotify, Uber, Airbnb).</li>
+                <li>Write down what type of moat it has? Is it deep enough?</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h2>4.8 Summary</h2>
+    <ul>
+        <li>Each company has different moat types, but the common point is: <strong>moats make it difficult for competitors to surpass</strong>.</li>
+        <li>Before investing, ask yourself:
+            <ol>
+                <li>What type of moat does this company have?</li>
+                <li>How long can this moat hold?</li>
+                <li>Will risk factors weaken the moat?</li>
+            </ol>
+        </li>
+    </ul>
+    
+    <h2>📘 Conclusion</h2>
+    <ul>
+        <li>Moats are the <strong>key to long-term success</strong> for companies.</li>
+        <li>Five major moats: Brand, Network Effects, Switching Costs, Cost Advantage, Legal Barriers.</li>
+        <li>When investing, ask: <strong>If this company succeeds, can its moat protect it for 10+ years?</strong></li>
+    </ul>
+</div>
+
+<div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+    <h3>Related Chapters</h3>
+    <ul class="chapter-list">
+        {% for ch in unit.chapters %}
+            {% if ch.id != chapter.id %}
+            <li>
+                <a href="/{{ lang }}/{{ unit.id }}/{{ ch.slug }}/">
+                    {{ ch.icon }} {{ ch.title[lang] }}
+                </a>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

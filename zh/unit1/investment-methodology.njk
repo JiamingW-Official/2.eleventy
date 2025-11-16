@@ -1,0 +1,200 @@
+---
+layout: base.njk
+title: 
+lang: zh
+permalink: /zh/unit1/investment-methodology/
+unit: unit1
+chapter: chapter5
+---
+
+{% set unit = units | findBy("id", "unit1") %}
+{% set chapter = unit.chapters | findBy("id", "chapter5") %}
+
+<div class="breadcrumb">
+    <a href="/{{ lang }}/">首页</a> / 
+    <a href="/{{ lang }}/{{ unit.id }}/">{{ unit.title[lang] }}</a> / 
+    {{ chapter.title[lang] }}
+</div>
+
+<h1>{{ chapter.icon }} {{ chapter.title[lang] }}</h1>
+
+<div class="tags">
+    {% for tag in chapter.tags %}
+    <a href="/{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+    {% endfor %}
+</div>
+
+<div class="content">
+    <h2>5.1 投资的三种主要流派</h2>
+    
+    <h3>📌 价值投资（Value Investing）</h3>
+    <ul>
+        <li><strong>代表人物</strong>：格雷厄姆、巴菲特。</li>
+        <li><strong>核心思想</strong>：
+            <ol>
+                <li>股票 = 生意的一部分。</li>
+                <li>用低于真实价值的价格买入 → 安全边际。</li>
+            </ol>
+        </li>
+        <li><strong>案例</strong>：
+            <ul>
+                <li>巴菲特买可口可乐（Coca-Cola），几十年不卖，依靠品牌护城河持续获得高回报。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>📌 成长投资（Growth Investing）</h3>
+    <ul>
+        <li><strong>代表人物</strong>：彼得·林奇、凯茜·伍德。</li>
+        <li><strong>核心思想</strong>：
+            <ol>
+                <li>买高速成长的公司，即使估值高也愿意支付溢价。</li>
+                <li>重点是未来盈利，而不是当下财报。</li>
+            </ol>
+        </li>
+        <li><strong>案例</strong>：
+            <ul>
+                <li>早期买入 Amazon 或 Tesla → 短期 P/E 高得离谱，但长期回报惊人。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>📌 指数投资（Passive Investing）</h3>
+    <ul>
+        <li><strong>代表人物</strong>：约翰·博格（Vanguard 创始人）。</li>
+        <li><strong>核心思想</strong>：
+            <ol>
+                <li>不要去选股，直接买整个市场（指数基金、ETF）。</li>
+                <li>长期下来，大多数主动基金都跑不赢指数。</li>
+            </ol>
+        </li>
+        <li><strong>案例</strong>：
+            <ul>
+                <li>标普 500 指数过去 100 年年化回报率 ~8–10%。</li>
+                <li>绝大多数人长期持有指数基金，比选股更稳定。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>5.2 Alpha 与 Beta</h2>
+    
+    <h3>📌 Beta（β）</h3>
+    <ul>
+        <li>衡量：股票或基金相对于大盘的波动性。</li>
+        <li><strong>公式</strong>：β=市场收益的方差协方差(资产收益,市场收益)
+            <figure>
+                <img src="/images/unit1/investment-methodology/image.png" alt="Beta公式" style="max-width: 288px;">
+            </figure>
+        </li>
+        <li><strong>直观解释</strong>：
+            <ul>
+                <li>β = 1：和大盘同步。</li>
+                <li>β > 1：波动比大盘更大（高风险，高潜在回报）。</li>
+                <li>β < 1：比大盘更稳健。</li>
+            </ul>
+        </li>
+        <li><strong>案例</strong>：
+            <ul>
+                <li>公用事业公司（Utility） → β < 1</li>
+                <li>科技股（Nvidia、Tesla） → β > 1</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h3>📌 Alpha（α）</h3>
+    <ul>
+        <li>衡量：主动投资者相对于大盘的"超额回报"。</li>
+        <li><strong>公式</strong>：α=实际收益率−(无风险利率+β×(市场收益率−无风险利率))</li>
+        <li><strong>直观解释</strong>：
+            <ul>
+                <li>α = 0：和大盘表现一样。</li>
+                <li>α > 0：跑赢大盘。</li>
+                <li>α < 0：跑输大盘。</li>
+            </ul>
+        </li>
+        <li><strong>案例</strong>：
+            <ul>
+                <li>假设标普 500 年回报率 10%，你的基金经理拿到 12%，Alpha = +2%。</li>
+                <li>但数据统计显示：<strong>90% 的基金经理长期跑不赢大盘</strong>。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>5.3 主动 vs 被动投资</h2>
+    <ul>
+        <li><strong>主动投资（Active Investing）</strong>
+            <ul>
+                <li>追求 Alpha（跑赢大盘）。</li>
+                <li>优点：如果选对了，可以大幅跑赢市场。</li>
+                <li>缺点：难度极高，大多数人跑输大盘。</li>
+            </ul>
+        </li>
+        <li><strong>被动投资（Passive Investing）</strong>
+            <ul>
+                <li>跟随 Beta（市场平均回报）。</li>
+                <li>优点：稳定、省时、费率低。</li>
+                <li>缺点：不会获得"超额收益"，只能享受市场平均水平。</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>5.4 案例分析</h2>
+    
+    <h3>巴菲特的长期价值投资</h3>
+    <ul>
+        <li>投资 Coca-Cola → 30 多年年化回报 > 12%。</li>
+        <li>巴菲特的结论：普通投资者买指数基金，比追基金经理更好。</li>
+    </ul>
+    
+    <h3>特斯拉的成长投资</h3>
+    <ul>
+        <li>2010 年 IPO → $17/股</li>
+        <li>2021 年 → 超过 $1000/股</li>
+        <li>投资者靠"成长故事"获得超额回报，但风险极高。</li>
+    </ul>
+    
+    <h3>指数基金的长期胜利</h3>
+    <ul>
+        <li>过去 30 年，美国主动基金中 <strong>超过 85%</strong> 跑输标普 500。</li>
+        <li>指数基金（Vanguard S&P 500 ETF） → 年化 ~10%。</li>
+    </ul>
+    
+    <h2>🎯 Activity</h2>
+    <ol>
+        <li>打开 Moomoo，搜索 <code>VOO</code>（Vanguard S&P 500 ETF）。
+            <ul>
+                <li>记录过去 10 年的年化回报。</li>
+                <li>和你熟悉的一只股票（比如 Tesla）对比。</li>
+            </ul>
+        </li>
+        <li>思考：
+            <ul>
+                <li>你更倾向于 <strong>稳定的指数投资</strong>，还是 <strong>搏一搏的成长股</strong>？</li>
+                <li>为什么？</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h2>📘 小总结</h2>
+    <ul>
+        <li>投资方法有三种：价值、成长、指数。</li>
+        <li><strong>Beta</strong> → 代表市场波动，<strong>Alpha</strong> → 主动投资超额回报。</li>
+        <li>长期来看，大部分人跑不赢大盘 → 指数投资更适合普通投资者。</li>
+        <li>但如果能找到护城河深的成长公司，长期持有也能获得惊人回报。</li>
+    </ul>
+</div>
+
+<div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+    <h3>相关章节</h3>
+    <ul class="chapter-list">
+        {% for ch in unit.chapters %}
+            {% if ch.id != chapter.id %}
+            <li>
+                <a href="/{{ lang }}/{{ unit.id }}/{{ ch.slug }}/">
+                    {{ ch.icon }} {{ ch.title[lang] }}
+                </a>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

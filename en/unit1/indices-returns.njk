@@ -1,0 +1,257 @@
+---
+layout: base.njk
+title: 
+lang: en
+permalink: /en/unit1/indices-returns/
+unit: unit1
+chapter: chapter6
+---
+
+{% set unit = units | findBy("id", "unit1") %}
+{% set chapter = unit.chapters | findBy("id", "chapter6") %}
+
+<div class="breadcrumb">
+    <a href="/{{ lang }}/">Home</a> / 
+    <a href="/{{ lang }}/{{ unit.id }}/">{{ unit.title[lang] }}</a> / 
+    {{ chapter.title[lang] }}
+</div>
+
+<h1>{{ chapter.icon }} {{ chapter.title[lang] }}</h1>
+
+<div class="tags">
+    {% for tag in chapter.tags %}
+    <a href="/{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+    {% endfor %}
+</div>
+
+<div class="content">
+    <h2>6.1 What is an Index?</h2>
+    <ul>
+        <li><strong>Definition</strong>: An index is a "basket" used to measure the overall performance of a group of stocks.</li>
+        <li><strong>Function</strong>：
+            <ol>
+                <li>Investors commonly use it to judge overall market movements.</li>
+                <li>Can directly invest in the entire market through index funds (ETFs).</li>
+            </ol>
+        </li>
+        <li><strong>Analogy</strong>：
+            <ul>
+                <li>Single stock = one dish</li>
+                <li>Stock index = entire menu (market average level)</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>6.2 Three Major US Indices</h2>
+    
+    <table class="simple-table">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Components</th>
+                <th>Characteristics</th>
+                <th>Historical Returns</th>
+                <th>Suitable For</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Dow Jones Industrial Average (DJIA)</strong></td>
+                <td>30 blue-chip stocks</td>
+                <td>Established large companies, mainly industrial/financial</td>
+                <td>Long-term annualized ~5–7%</td>
+                <td>Conservative investors</td>
+            </tr>
+            <tr>
+                <td><strong>S&P 500</strong></td>
+                <td>500 large companies</td>
+                <td>Best represents US economy</td>
+                <td>Long-term annualized ~8–10%</td>
+                <td>Long-term investors</td>
+            </tr>
+            <tr>
+                <td><strong>Nasdaq Composite</strong></td>
+                <td>3000+ companies</td>
+                <td>High tech stock weighting</td>
+                <td>Long-term annualized ~10–12%, high volatility</td>
+                <td>Tech growth enthusiasts</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <p>👉 <strong>Example</strong>：</p>
+    <ul>
+        <li>2008 Financial Crisis → all three indices crashed.</li>
+        <li>2010–2021 Tech Bull Market → Nasdaq far outperformed S&P.</li>
+    </ul>
+    
+    <h2>6.3 Other Major Global Indices</h2>
+    
+    <table class="simple-table">
+        <thead>
+            <tr>
+                <th>Region</th>
+                <th>Index</th>
+                <th>Characteristics</th>
+                <th>Risk</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>🇭🇰 Hong Kong</td>
+                <td>Hang Seng Index (HSI)</td>
+                <td>High financial & real estate weighting, volatility affected by policy</td>
+                <td>High volatility, high policy risk</td>
+            </tr>
+            <tr>
+                <td>🇨🇳 China</td>
+                <td>Shanghai Composite Index (SSE)</td>
+                <td>Large SOEs, banks, energy companies</td>
+                <td>Policy-driven</td>
+            </tr>
+            <tr>
+                <td>🇯🇵 Japan</td>
+                <td>Nikkei 225</td>
+                <td>Manufacturing & tech (Sony, Toyota)</td>
+                <td>Japan's long-term deflation</td>
+            </tr>
+            <tr>
+                <td>🌍 Global</td>
+                <td>MSCI World Index</td>
+                <td>Covers 23 developed markets, 1600+ companies</td>
+                <td>Global diversification, affected by USD fluctuations</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <p>👉 <strong>Investment Insight</strong>：</p>
+    <ul>
+        <li>US market is most suitable for long-term holding → stable growth + strong innovation capability.</li>
+        <li>Emerging markets (China, Hong Kong) → high volatility, need caution.</li>
+        <li>Global indices (MSCI) → diversify risk, suitable for conservative investors.</li>
+    </ul>
+    
+    <h2>📌 Extension: Chinese A-Shares and ChiNext</h2>
+    
+    <h2>🀄 What are A-Shares?</h2>
+    <ul>
+        <li><strong>Definition</strong>: A-shares are stocks <strong>listed in mainland China, denominated and traded in RMB</strong>.</li>
+        <li><strong>Name Origin</strong>：
+            <ul>
+                <li>China's securities market was originally divided into <strong>A-shares (RMB)</strong> and <strong>B-shares (foreign currency, USD/HKD denominated)</strong>.</li>
+                <li>A-shares = market for local investors (mainly mainland Chinese residents).</li>
+                <li>B-shares = early channel for foreigners to invest in China (now less significant).</li>
+            </ul>
+        </li>
+        <li><strong>Main Exchanges</strong>：
+            <ul>
+                <li>Shanghai Stock Exchange (SSE)</li>
+                <li>Shenzhen Stock Exchange (SZSE)</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <p>👉 Can be understood as: A-shares are "domestic RMB stocks", distinguished from international markets like Hong Kong stocks and US stocks.</p>
+    
+    <h2>🚀 What is ChiNext?</h2>
+    <ul>
+        <li><strong>Definition</strong>: ChiNext is China's <strong>high-growth enterprise financing platform</strong>, mainly listing tech, innovation, and growth companies.</li>
+        <li><strong>Characteristics</strong>：
+            <ul>
+                <li>Established in 2009, similar to US <strong>Nasdaq</strong>.</li>
+                <li>Suitable for smaller but promising companies.</li>
+                <li>Higher risk, but also greater return potential.</li>
+            </ul>
+        </li>
+        <li><strong>Exchange</strong>: On <strong>Shenzhen Stock Exchange (SZSE)</strong>.</li>
+    </ul>
+    
+    <p>👉 ChiNext can be seen as China's "innovation testing ground", providing investors opportunities to invest in small growth stocks.</p>
+    
+    <h2>6.4 Historical Return Comparison</h2>
+    <ul>
+        <li><strong>S&P 500</strong>：
+            <ul>
+                <li>1928–2023 → annualized return ~9.8%</li>
+                <li>Amazing compound effect: Long-term holding $10,000 → over a million</li>
+            </ul>
+        </li>
+        <li><strong>Nasdaq</strong>：
+            <ul>
+                <li>1990–2023 → annualized return ~11%+</li>
+                <li>But 2000 dot-com bubble dropped 70%</li>
+            </ul>
+        </li>
+        <li><strong>Hang Seng Index</strong>：
+            <ul>
+                <li>1987–2023 → annualized return ~5%</li>
+                <li>High volatility, affected by Chinese economy and policy.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <p>👉 <strong>Key Conclusion</strong>：</p>
+    <ul>
+        <li><strong>US market → most stable long-term return source</strong></li>
+        <li><strong>Emerging markets → opportunities, but higher risk</strong></li>
+        <li><strong>Global diversification → balance growth and risk</strong></li>
+    </ul>
+    
+    <h2>6.5 Common Investor Misconceptions</h2>
+    <ul>
+        <li>❌ Misconception 1: Index investing has no returns.
+            <ul>
+                <li>→ Correct: Indices have long-term annualized ~8–10%, exceeding most active funds.</li>
+            </ul>
+        </li>
+        <li>❌ Misconception 2: Investing in only one country is safest.
+            <ul>
+                <li>→ Correct: Geopolitical and policy risks exist, global diversification is more stable.</li>
+            </ul>
+        </li>
+        <li>❌ Misconception 3: Indices = no risk.
+            <ul>
+                <li>→ Correct: Short-term volatility is still severe (e.g., 2008 financial crisis S&P dropped 40%+).</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>🎯 Activity</h2>
+    <ol>
+        <li>Task:
+            <ul>
+                <li>Open Moomoo, search <code>VOO</code> (S&P 500 ETF), <code>QQQ</code> (Nasdaq ETF), <code>EWH</code> (Hong Kong ETF).</li>
+                <li>Record returns over the past 5 years.</li>
+            </ul>
+        </li>
+        <li>Discussion:
+            <ul>
+                <li>If you could only choose one index to invest in, which would you choose? Why?</li>
+                <li>Do you prefer <strong>stable compound interest</strong> or <strong>high-risk high-return</strong>?</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h2>📘 Summary</h2>
+    <ul>
+        <li><strong>Three major US indices</strong> → most important reference standards.</li>
+        <li><strong>Other indices (Hong Kong, China, Japan, Global)</strong> → provide diversification opportunities.</li>
+        <li><strong>Historical experience</strong> → S&P 500 long-term return rate ~10%, is the "gold standard" for wealth accumulation.</li>
+        <li>Index investing ≠ no risk, but long-term, it's one of the most stable investment methods.</li>
+    </ul>
+</div>
+
+<div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+    <h3>Related Chapters</h3>
+    <ul class="chapter-list">
+        {% for ch in unit.chapters %}
+            {% if ch.id != chapter.id %}
+            <li>
+                <a href="/{{ lang }}/{{ unit.id }}/{{ ch.slug }}/">
+                    {{ ch.icon }} {{ ch.title[lang] }}
+                </a>
+            </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

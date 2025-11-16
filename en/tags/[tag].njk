@@ -1,0 +1,48 @@
+---
+layout: base.njk
+title: 
+lang: en
+permalink: /en/tags/{{ tag.id }}/
+pagination:
+  data: tags
+  alias: tag
+  size: 1
+---
+
+<div class="breadcrumb">
+    <a href="/{{ lang }}/">Home</a> / 
+    <a href="/{{ lang }}/tags/">Tags</a> / 
+    {{ tag.name }}
+</div>
+
+<h1>Tag: {{ tag.name }}</h1>
+
+{% if tag.units.length > 0 %}
+<h2>Related Units</h2>
+<div class="unit-grid">
+    {% for unit in tag.units %}
+    <a href="/{{ lang }}/{{ unit.id }}/" class="unit-card">
+        <h2>{{ unit.icon }} {{ unit.title[lang] }}</h2>
+        <p>{{ unit.description[lang] }}</p>
+    </a>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% if tag.chapters.length > 0 %}
+<h2>Related Chapters</h2>
+<ul class="chapter-list">
+    {% for chapter in tag.chapters %}
+    <li>
+        <a href="/{{ lang }}/{{ chapter.unitId }}/{{ chapter.slug }}/">
+            {{ chapter.icon }} {{ chapter.title[lang] }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if tag.units.length == 0 and tag.chapters.length == 0 %}
+<p>No related content found</p>
+{% endif %}
+

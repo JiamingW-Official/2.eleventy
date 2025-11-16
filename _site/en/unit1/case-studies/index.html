@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Learning Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: #34495e;
+        }
+        
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .lang-switcher a {
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .lang-switcher a.active {
+            background-color: #34495e;
+        }
+        
+        main {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            min-height: 60vh;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        
+        h3 {
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        ul, ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: #666;
+            font-style: italic;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+        
+        figure {
+            margin: 1.5rem 0;
+        }
+        
+        figcaption {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+            align-items: center;
+        }
+        
+        .tag {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            padding: 0.4rem 0.9rem;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+            border: 1px solid transparent;
+            line-height: 1.4;
+            min-height: 28px;
+            box-sizing: border-box;
+        }
+        
+        .tag:hover {
+            background-color: #3498db;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 6px rgba(52, 152, 219, 0.3);
+            border-color: #2980b9;
+        }
+        
+        .tag:visited {
+            color: #2c3e50;
+        }
+        
+        .tag:visited:hover {
+            color: white;
+        }
+        
+        .tag-search-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .tag-search-section h2 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .tag-search-section p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .tags-container {
+            max-height: 70px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 0.75rem 1rem;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .tags-container .tags {
+            display: inline-flex;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            margin: 0;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .tags-container .tag {
+            flex-shrink: 0;
+        }
+        
+        .tags-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .tags-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        .tags-container::-webkit-scrollbar-thumb {
+            background: #bdc3c7;
+            border-radius: 4px;
+        }
+        
+        .tags-container::-webkit-scrollbar-thumb:hover {
+            background: #95a5a6;
+        }
+        
+        .global-search {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            border: 1px solid #dee2e6;
+            text-align: center;
+        }
+        
+        .global-search-form {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .global-search-box-wrapper {
+            position: relative;
+        }
+        
+        .global-search-box {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 24px;
+            padding: 0.5rem 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .global-search-box-wrapper:focus-within .global-search-box {
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+        
+        .global-search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            padding: 0.5rem;
+        }
+        
+        .global-search-box button {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.25rem;
+            color: #7f8c8d;
+        }
+        
+        .global-search-box button:hover {
+            color: #3498db;
+        }
+        
+        .search-suggestions {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-top: 0.5rem;
+            max-height: 400px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        
+        .suggestion-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.2s;
+        }
+        
+        .suggestion-item:last-child {
+            border-bottom: none;
+        }
+        
+        .suggestion-item:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .suggestion-type {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            background-color: #ecf0f1;
+            color: #7f8c8d;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            margin-right: 0.75rem;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .suggestion-text {
+            flex: 1;
+            font-size: 0.95rem;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            color: white;
+            margin: 0;
+        }
+        
+        .unit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .unit-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .unit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .unit-card h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        
+        .unit-card .tags {
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+        
+        .unit-card .tag {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.7rem;
+        }
+        
+        .chapter-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .chapter-list li {
+            margin-bottom: 1rem;
+        }
+        
+        .chapter-list a {
+            display: block;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-decoration: none;
+            color: inherit;
+            transition: background-color 0.3s;
+        }
+        
+        .chapter-list a:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/en/" class="logo">Investment Learning Platform</a>
+            <nav>
+                <a href="/en/">Home</a>
+                <a href="/en/search/">Search</a>
+                <a href="/en/tags/">Tags</a>
+                <div class="lang-switcher">
+                    
+                        <a href="/zh/unit1/case-studies/">中文</a>
+                        <a href="/en/unit1/case-studies/" class="active">English</a>
+                    
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        
+        
+        
+
+
+
+<div class="breadcrumb">
+    <a href="/en/">Home</a> / 
+    <a href="/en/unit1/">Unit 1: How to Pick a Good Company</a> / 
+    Historical Cases and Insights
+</div>
+
+<h1>📘 Historical Cases and Insights</h1>
+
+<div class="tags">
+    
+    <a href="/en/tags/case-studies/" class="tag">case-studies</a>
+    
+    <a href="/en/tags/history/" class="tag">history</a>
+    
+    <a href="/en/tags/lessons/" class="tag">lessons</a>
+    
+</div>
+
+<div class="content">
+    <h2>8.1 Amazon's Rise</h2>
+    <ul>
+        <li><strong>Background</strong>：
+            <ul>
+                <li>IPO in 1997, primarily online book retail.</li>
+                <li>Long-term unprofitable, lost money for many years.</li>
+            </ul>
+        </li>
+        <li><strong>Problem</strong>：
+            <ul>
+                <li>Investors questioned: Was it an "internet bubble" or "future retail giant"?</li>
+            </ul>
+        </li>
+        <li><strong>Company Response</strong>：
+            <ul>
+                <li>Persisted in reinvestment, put profits into logistics, warehousing, and AWS cloud computing.</li>
+                <li>Built strong supply chain moat + cloud computing new growth point.</li>
+            </ul>
+        </li>
+        <li><strong>Investment Insight</strong>：
+            <ul>
+                <li><strong>Losses ≠ no value</strong>. Look at revenue growth in financial reports and future cash flow potential.</li>
+                <li>Long-term holding of quality growth stocks → amazing returns ($10,000 in 1997 → over $1,000,000 in 2023).</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8.2 Kodak's Decline</h2>
+    <ul>
+        <li><strong>Background</strong>：
+            <ul>
+                <li>Was global film giant, almost monopolized market 1970–1990.</li>
+                <li>Extremely high gross margins, top brand recognition.</li>
+            </ul>
+        </li>
+        <li><strong>Problem</strong>：
+            <ul>
+                <li>Digital camera technology emerged → Kodak invented it but didn't dare promote it (worried about cannibalizing film business).</li>
+            </ul>
+        </li>
+        <li><strong>Company Response</strong>：
+            <ul>
+                <li>Transformation failed, missed digital wave, finally bankrupt in 2012.</li>
+            </ul>
+        </li>
+        <li><strong>Investment Insight</strong>：
+            <ul>
+                <li>Moats don't mean forever safe. <strong>If industry trends change, companies must innovate.</strong></li>
+                <li>Industry lifecycle > individual company's will.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8.3 Nvidia's Turnaround</h2>
+    <ul>
+        <li><strong>Background</strong>：
+            <ul>
+                <li>1999–2010 mainly made graphics cards, gaming market.</li>
+                <li>Stock price flat long-term.</li>
+            </ul>
+        </li>
+        <li><strong>Problem</strong>：
+            <ul>
+                <li>GPU market ceiling limited, how to find new growth point?</li>
+            </ul>
+        </li>
+        <li><strong>Company Response</strong>：
+            <ul>
+                <li>Bet on CUDA platform, used GPUs for AI training and data centers.</li>
+                <li>From 2016, AI demand exploded, Nvidia became "AI chip king".</li>
+            </ul>
+        </li>
+        <li><strong>Investment Insight</strong>：
+            <ul>
+                <li><strong>Technological moat + industry trend</strong> = explosive growth.</li>
+                <li>Investors should see how companies seize new opportunities at inflection points.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8.4 Netflix's Transformation</h2>
+    <ul>
+        <li><strong>Background</strong>：
+            <ul>
+                <li>Founded 1997, initially DVD rental business.</li>
+                <li>Early 2000s: Competed with Blockbuster, market wasn't optimistic.</li>
+            </ul>
+        </li>
+        <li><strong>Problem</strong>：
+            <ul>
+                <li>Streaming technology emerged, DVD rental model would be obsolete.</li>
+            </ul>
+        </li>
+        <li><strong>Company Response</strong>：
+            <ul>
+                <li>Boldly transformed to streaming platform, invested in original content.</li>
+                <li>Built algorithm recommendation + subscription model moat.</li>
+            </ul>
+        </li>
+        <li><strong>Investment Insight</strong>：
+            <ul>
+                <li><strong>Dare to self-revolutionize</strong> to avoid being eliminated by the times.</li>
+                <li>Companies that successfully transform gain new valuation premiums.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8.5 Kweichow Moutai's Moat</h2>
+    <ul>
+        <li><strong>Background</strong>：
+            <ul>
+                <li>China's baijiu leader, limited production.</li>
+                <li>Gross margin > 90%, net margin ~50%.</li>
+            </ul>
+        </li>
+        <li><strong>Problem</strong>：
+            <ul>
+                <li>Many liquor companies, why can Moutai dominate the high-end market?</li>
+            </ul>
+        </li>
+        <li><strong>Company Response</strong>：
+            <ul>
+                <li>Scarcity (geographic indication + unique brewing process).</li>
+                <li>Strong brand premium → became "status symbol", not just a beverage.</li>
+            </ul>
+        </li>
+        <li><strong>Investment Insight</strong>：
+            <ul>
+                <li><strong>Brand moat</strong> can allow companies to maintain ultra-high margins.</li>
+                <li>Investors buy not the liquor, but the brand and culture.</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>8.6 Summary: Investment and Entrepreneurship Insights</h2>
+    <ol>
+        <li><strong>Amazon</strong> → Look at future cash flow and revenue growth, not just profits.</li>
+        <li><strong>Kodak</strong> → Moats can be destroyed by industry trends.</li>
+        <li><strong>Nvidia</strong> → Technological breakthrough + industry trend = explosive returns.</li>
+        <li><strong>Netflix</strong> → Self-revolution to sustain growth.</li>
+        <li><strong>Moutai</strong> → The power of brand moat.</li>
+    </ol>
+    
+    <p>👉 When investing, ask:</p>
+    <ul>
+        <li>Does this company have a long-term moat?</li>
+        <li>Can it adapt to industry trends?</li>
+        <li>Can it transform at critical moments?</li>
+    </ul>
+    
+    <h2>📘 Full Course Summary</h2>
+    <ul>
+        <li><strong>How to Pick Good Companies</strong>: Look at fundamentals, financial statements, valuation, moats, industry trends.</li>
+        <li><strong>Investment Methodology</strong>: Value investing, growth investing, index investing → Alpha and Beta.</li>
+        <li><strong>Global Markets</strong>: Three major US indices are investment benchmarks, emerging markets are more volatile.</li>
+        <li><strong>Combining Entrepreneurship and Investment</strong>: Investors evaluate companies, entrepreneurs should learn to build companies in reverse.</li>
+        <li><strong>Historical Cases</strong>: Long-term holding of quality companies can achieve compound miracles; ignoring trends and moats leads to company decline.</li>
+    </ul>
+</div>
+
+<div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #ddd;">
+    <h3>Related Chapters</h3>
+    <ul class="chapter-list">
+        
+            
+            <li>
+                <a href="/en/unit1/fundamental-analysis/">
+                    📊 Fundamental Analysis
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/en/unit1/financial-statements/">
+                    📑 Financial Statements and Key Metrics
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/en/unit1/valuation/">
+                    💵 Valuation Methods
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/en/unit1/economic-moats/">
+                    🏰 Economic Moats and Industry Barriers
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/en/unit1/investment-methodology/">
+                    📈 Investment Methodology
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/en/unit1/indices-returns/">
+                    🌍 Major World Indices and Historical Returns
+                </a>
+            </li>
+            
+        
+            
+            <li>
+                <a href="/en/unit1/entrepreneurship-investment/">
+                    🏭 Combining Entrepreneurship and Investment
+                </a>
+            </li>
+            
+        
+            
+        
+    </ul>
+</div>
+
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Investment Learning Platform</p>
+    </footer>
+</body>
+</html>
+

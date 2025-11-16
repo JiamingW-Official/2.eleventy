@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投资学习平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: #34495e;
+        }
+        
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .lang-switcher a {
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .lang-switcher a.active {
+            background-color: #34495e;
+        }
+        
+        main {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            min-height: 60vh;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        
+        h3 {
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        ul, ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            color: #666;
+            font-style: italic;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+        
+        figure {
+            margin: 1.5rem 0;
+        }
+        
+        figcaption {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .breadcrumb a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+            align-items: center;
+        }
+        
+        .tag {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            padding: 0.4rem 0.9rem;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+            border: 1px solid transparent;
+            line-height: 1.4;
+            min-height: 28px;
+            box-sizing: border-box;
+        }
+        
+        .tag:hover {
+            background-color: #3498db;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 6px rgba(52, 152, 219, 0.3);
+            border-color: #2980b9;
+        }
+        
+        .tag:visited {
+            color: #2c3e50;
+        }
+        
+        .tag:visited:hover {
+            color: white;
+        }
+        
+        .tag-search-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .tag-search-section h2 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .tag-search-section p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .tags-container {
+            max-height: 70px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 0.75rem 1rem;
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .tags-container .tags {
+            display: inline-flex;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            margin: 0;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .tags-container .tag {
+            flex-shrink: 0;
+        }
+        
+        .tags-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .tags-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        .tags-container::-webkit-scrollbar-thumb {
+            background: #bdc3c7;
+            border-radius: 4px;
+        }
+        
+        .tags-container::-webkit-scrollbar-thumb:hover {
+            background: #95a5a6;
+        }
+        
+        .global-search {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            border: 1px solid #dee2e6;
+            text-align: center;
+        }
+        
+        .global-search-form {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .global-search-box-wrapper {
+            position: relative;
+        }
+        
+        .global-search-box {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 24px;
+            padding: 0.5rem 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .global-search-box-wrapper:focus-within .global-search-box {
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+        
+        .global-search-box input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            padding: 0.5rem;
+        }
+        
+        .global-search-box button {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.25rem;
+            color: #7f8c8d;
+        }
+        
+        .global-search-box button:hover {
+            color: #3498db;
+        }
+        
+        .search-suggestions {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-top: 0.5rem;
+            max-height: 400px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        
+        .suggestion-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.2s;
+        }
+        
+        .suggestion-item:last-child {
+            border-bottom: none;
+        }
+        
+        .suggestion-item:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .suggestion-type {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            background-color: #ecf0f1;
+            color: #7f8c8d;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            margin-right: 0.75rem;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .suggestion-text {
+            flex: 1;
+            font-size: 0.95rem;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            color: white;
+            margin: 0;
+        }
+        
+        .unit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .unit-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .unit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .unit-card h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+        
+        .unit-card .tags {
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+        
+        .unit-card .tag {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.7rem;
+        }
+        
+        .chapter-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .chapter-list li {
+            margin-bottom: 1rem;
+        }
+        
+        .chapter-list a {
+            display: block;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-decoration: none;
+            color: inherit;
+            transition: background-color 0.3s;
+        }
+        
+        .chapter-list a:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/zh/" class="logo">投资学习平台</a>
+            <nav>
+                <a href="/zh/">首页</a>
+                <a href="/zh/search/">搜索</a>
+                <a href="/zh/tags/">标签</a>
+                <div class="lang-switcher">
+                    
+                        <a href="/en/unit0/" class="active">中文</a>
+                        <a href="/en/unit0/">English</a>
+                    
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        
+        
+        
+
+
+<h1>⚙️ Unit 0: 经济机器是如何运行的</h1>
+<p>这是2008年美国金融危机之后，Ray Dalio在Youtube上分享的30分钟视频《How The Economic Machine Works》《经济机器是如何运行的》，目前已经播放了五百多万次。</p>
+
+<div class="tags">
+    
+    <a href="/zh/tags/economics/" class="tag">economics</a>
+    
+    <a href="/zh/tags/finance/" class="tag">finance</a>
+    
+    <a href="/zh/tags/debt-cycle/" class="tag">debt-cycle</a>
+    
+    <a href="/zh/tags/economic-machine/" class="tag">economic-machine</a>
+    
+</div>
+
+<div class="content">
+    <p>这是2008年美国金融危机之后，Ray Dalio在Youtube上分享的30分钟视频《How The Economic Machine Works》《经济机器是如何运行的》，目前已经播放了五百多万次。</p>
+    
+    <p>比尔盖茨对这个视频的推荐语是这样的：</p>
+    
+    <blockquote>
+        "This knowledge would help everyone as investors and citizens. Watching it for 30 minutes is a worthwhile investment."
+        <p>这些知识对每个人都有帮助，无论是投资者还是普通人；看三十分钟本身就是一个值得的投资。</p>
+    </blockquote>
+    
+    <h2>YouTube链接</h2>
+    <blockquote>
+        英文原版 <a href="https://www.youtube.com/watch?v=PHe0bXAIuk0">https://www.youtube.com/watch?v=PHe0bXAIuk0</a><br>
+        中文版 <a href="https://www.youtube.com/watch?v=rFV7wdEX-Mo">https://www.youtube.com/watch?v=rFV7wdEX-Mo</a>
+    </blockquote>
+    
+    <h2>经济就像简单机器在运行</h2>
+    <p>经济看起来复杂，实际上就像简单机器在运行。经济由几个简单部分和大量简单的交易组成，在人类本性驱动下，产生经济发展的三股动力。</p>
+    
+    <h2>经济发展的三股动力</h2>
+    <p>生产率的提高、短期债务周期、长期债务周期。</p>
+    
+    <h2>交易（Transactions）</h2>
+    <ol>
+        <li>交易由买方（Buyer）和卖方（Seller）组成
+            <ul>
+                <li>买方支出：货币（Money）、信用（Credit）</li>
+                <li>卖方提供：商品（Goods）、服务（Services）、金融资产（Financial Assets）</li>
+            </ul>
+        </li>
+        <li>货币支出 + 信用支出 = 支出总额（Total Spending），支出总额驱动经济发展。</li>
+        <li>支出总额 / 产品总量（Total Quantity） = 价格（Price）</li>
+    </ol>
+    
+    <h2>市场的参与者</h2>
+    <p>个人、企业、银行和政府。</p>
+    <p>其中政府是最大买方和卖方。因为政府有：</p>
+    <ul>
+        <li>控制收入的中央政府（调节税收）</li>
+        <li>控制支出的中央银行（调节利率、发行货币）</li>
+    </ul>
+    
+    <h2>信贷（Credit）</h2>
+    <ol>
+        <li>信贷是经济中最重要的部分，因为信贷是经济中最大的（biggest）、也最脆弱的（vulnerable）部分。</li>
+        <li>信贷可以增加支出，而支出驱动经济发展。</li>
+        <li>信贷并不总是坏的：
+            <ul>
+                <li>如果信贷仅仅用于消费，而未来没有足够的收入偿还债务，就不利于经济发展。</li>
+                <li>如果信贷用于提高生产，增加了收入，未来能够还债，而且改善了生活，就促进了经济发展。</li>
+            </ul>
+        </li>
+    </ol>
+    
+    <h2>经济周期</h2>
+    <ul>
+        <li>生产率提高相对漫长；而信贷可在短期内增加支出。</li>
+        <li>由于人的本性，发生借贷，于是产生经济周期。</li>
+    </ul>
+    
+    <h3>短期信贷周期</h3>
+    <p>短期信贷周期通常为5-8年。</p>
+    <p>借款方：信贷增长过程</p>
+    <ul>
+        <li>信贷增加一个人的支出，同时增加了其他人的收入</li>
+        <li>收入增加，能还的越多，信用度越高，信贷又增加</li>
+    </ul>
+    <blockquote>债务如果无法偿还，可以通过出售抵押物来解决</blockquote>
+    
+    <p>贷款方：央行的调节</p>
+    <ul>
+        <li>信贷增加，支出增加，而生产率增长有限，导致物价上涨，<strong>通货膨胀</strong>（Inflation）。</li>
+        <li>央行提高利率，信贷减少，支出减少，收入下降，物价下跌，<strong>通货紧缩</strong>（Deflation），直到<strong>经济衰退</strong>（Recession）。</li>
+        <li>央行降低利率，反向调节，如此往复。</li>
+    </ul>
+    
+    <h3>长期信贷周期</h3>
+    <p>长期信贷周期通常需要75-100年。</p>
+    <p>1、由于人类本性爱花钱，且往往只关注短期，会借过多钱消费，收入不断增加，资产不断增加，信贷不断增加。</p>
+    <blockquote>Why? Because everyone thinks things are going great. People are just focus on what's been happening lately.</blockquote>
+    
+    <p>2、市场信贷过多，负债增长逐渐超过了收入增长，泡沫过大，直到借款人没法还债。</p>
+    
+    <p>3、没法还债，只能出售资产，又会导致股市、房价等资产暴跌。</p>
+    
+    <p>4、更少的消费，更少的收入，更少的财富，更少的信用，更少的贷款……恶性循环……</p>
+    
+    <p>5、和经济衰退（Recession）不同，去杠杆化（Deleveraging）过程中，由于债务负担过大，当央行把利率降低到0，仍然不能解决问题。</p>
+    <blockquote>
+        This appears similar to a recession. But the difference here is that interest rates can't be lower to save the day.
+        <p>备注：去杠杆化也可以翻译成减债，即减少市场贷款的过程。</p>
+    </blockquote>
+    
+    <p>6、借款人意识到借出的钱没法被偿还，不再贷款，借款人不再借款，经济发展受阻，最终可导致经济危机。</p>
+    
+    <h2>去杠杆（Deleveraging）的四个方法</h2>
+    
+    <h3>1、削减支出</h3>
+    <p>为了减少债务，人们减少支出，但是可能导致收入下降更快，债务负担更严重，企业削减成本，失业率提高、工资下降……</p>
+    
+    <h3>2、减少债务</h3>
+    <p>当借款人不能还债，人们担心在银行的存款不能被返还，纷纷从银行取款，而银行没有足够的钱。</p>
+    <p>大量借款人违约（Default），导致经济萧条（Depression），人们意识到资产泡沫。人们不希望资产消失，借贷双方同意债务重组（Debt Restructuring），借款人还更少的钱、更晚还钱，或以更低的利率还钱。</p>
+    <p>债务减少后，收入减少更快，又会增加债务负担。</p>
+    
+    <h3>3、财富再分配</h3>
+    <p>收入减少，导致政府税收减少；另一方面失业率升高，需要更多的政府支出补贴。</p>
+    <p>政府发生财政赤字（Deficit），只能增加税收或借钱。由于大部分人收入下降，只能给富人加税，补贴穷人，相当于财富再分配。</p>
+    <p>如果经济还是持续萧条，可能激化阶级怨恨，导致社会动荡，甚至变革。</p>
+    
+    <h3>4、发行货币</h3>
+    <p>央行发行货币，购买金融资产和政府债券（相当于央行借钱给政府），政府提供更多就业机会，刺激经济复苏。</p>
+    
+    <h3>总结</h3>
+    <p>1、前三种方法会引起通货紧缩，而发行货币会引起通货膨胀。如果能达到完美的平衡（A Beautiful Deleveraging），就不会产生严重通货膨胀。</p>
+    
+    <p>2、发行货币，使得货币支出增加，同时减少信用支出，使得支出总额稳定，物价就能稳定。</p>
+    <blockquote>
+        货币支出 + 信用支出 = 支出总额<br>
+        支出总额 / 产品总量 = 价格
+    </blockquote>
+    
+    <p>3、为了扭转局面，央行要发行正确数量的货币：一方面发行货币要足够多，使得收入增加比债务增加快，这样才能还债；另一方面不能发行过多货币，以免导致恶性通货膨胀。</p>
+    
+    <h2>三条经验法则</h2>
+    <p>最后作者给出了三条很有智慧的经验法则：</p>
+    <ol>
+        <li>不要让债务增速超过收入增速。</li>
+        <li>不要让收入增速超过生产率的增长。</li>
+        <li>尽一切努力提高生产率。</li>
+    </ol>
+</div>
+
+
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 投资学习平台</p>
+    </footer>
+</body>
+</html>
+
