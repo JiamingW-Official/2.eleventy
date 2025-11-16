@@ -60,10 +60,16 @@ function getSuggestions(query) {
         const searchableText = item.searchableText || '';
         
         if ((title.toLowerCase().includes(searchTerm) || searchableText.toLowerCase().includes(searchTerm)) && !seen.has(title)) {
+            let url = item.url[currentLang];
+            // Ensure URL has pathPrefix
+            const pathPrefix = '{{ pathPrefix }}';
+            if (url && !url.startsWith(pathPrefix)) {
+                url = pathPrefix + url.replace(/^\//, '');
+            }
             suggestions.push({
                 type: item.type,
                 text: title,
-                url: item.url[currentLang]
+                url: url
             });
             seen.add(title);
         }

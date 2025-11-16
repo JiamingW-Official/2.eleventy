@@ -542,6 +542,8 @@ function performSearch(query) {
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const query = urlParams.get('q');
+    const pathPrefix = '';
+    const lang = 'zh';
     
     if (query) {
         const results = performSearch(query);
@@ -552,10 +554,14 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             let html = '';
             results.forEach(item => {
-                const title = item.title['zh'] || item.title.zh || item.title.en;
-                const description = item.description ? (item.description['zh'] || item.description.zh || item.description.en) : '';
-                const url = item.url['zh'];
-                const typeLabel = item.type === 'unit' ? '单元' : '章节';
+                const title = item.title[lang] || item.title.zh || item.title.en;
+                const description = item.description ? (item.description[lang] || item.description.zh || item.description.en) : '';
+                let url = item.url[lang];
+                // Ensure URL has pathPrefix
+                if (url && !url.startsWith(pathPrefix)) {
+                    url = pathPrefix + url.replace(/^\//, '');
+                }
+                const typeLabel = item.type === 'unit' ? '单元' : item.type === 'chapter' ? '章节' : '页面';
                 
                 html += `
                     <div class="search-result-item">
@@ -564,7 +570,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         ${description ? `<p>${description}</p>` : ''}
                         ${item.tags && item.tags.length > 0 ? `
                             <div class="tags">
-                                ${item.tags.map(tag => `<a href="zh/tags/${tag}/" class="tag">${tag}</a>`).join('')}
+                                ${item.tags.map(tag => `<a href="${pathPrefix}${lang}/tags/${tag}/" class="tag">${tag}</a>`).join('')}
                             </div>
                         ` : ''}
                     </div>
