@@ -454,11 +454,11 @@
                 <a href="{{ pathPrefix }}{{ lang }}/tags/">{% if lang == 'zh' %}标签{% else %}Tags{% endif %}</a>
                 <div class="lang-switcher">
                     {% if lang == 'zh' %}
-                        <a href="{{ page.url | switchLang('zh', 'en') }}" class="active">中文</a>
-                        <a href="{{ page.url | switchLang('zh', 'en') }}">English</a>
+                        <a href="{{ pathPrefix }}en/" class="active">中文</a>
+                        <a href="{{ pathPrefix }}en/">English</a>
                     {% else %}
-                        <a href="{{ page.url | switchLang('en', 'zh') }}">中文</a>
-                        <a href="{{ page.url | switchLang('en', 'en') }}" class="active">English</a>
+                        <a href="{{ pathPrefix }}zh/">中文</a>
+                        <a href="{{ pathPrefix }}en/" class="active">English</a>
                     {% endif %}
                 </div>
             </nav>
