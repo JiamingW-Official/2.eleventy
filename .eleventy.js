@@ -26,13 +26,27 @@ module.exports = function(eleventyConfig) {
 
   // Add filter to switch language in URL
   eleventyConfig.addFilter("switchLang", function(url, currentLang, targetLang) {
-    if (!url) return `/${targetLang}/`;
+    const pathPrefix = process.env.GITHUB_REPOSITORY 
+      ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/` 
+      : (process.env.CI ? '/2.eleventy/' : '');
+    if (!url) return `${pathPrefix}${targetLang}/`;
     return url.replace(`/${currentLang}/`, `/${targetLang}/`);
   });
 
   // Add filter to dump data as JSON (for JavaScript)
   eleventyConfig.addFilter("dump", function(value) {
     return JSON.stringify(value);
+  });
+
+  // Add filter to add pathPrefix to URLs
+  eleventyConfig.addFilter("url", function(url) {
+    const pathPrefix = process.env.GITHUB_REPOSITORY 
+      ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/` 
+      : (process.env.CI ? '/2.eleventy/' : '');
+    if (!url) return pathPrefix;
+    // Remove leading slash if present, then add pathPrefix
+    const cleanUrl = url.startsWith('/') ? url.slice(1) : url;
+    return pathPrefix + cleanUrl;
   });
 
   return {

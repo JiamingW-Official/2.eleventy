@@ -447,11 +447,11 @@
 <body>
     <header>
         <div class="header-content">
-            <a href="/{{ lang }}/" class="logo">{{ site.title[lang] }}</a>
+            <a href="{{ pathPrefix }}{{ lang }}/" class="logo">{{ site.title[lang] }}</a>
             <nav>
-                <a href="/{{ lang }}/">{% if lang == 'zh' %}首页{% else %}Home{% endif %}</a>
-                <a href="/{{ lang }}/search/">{% if lang == 'zh' %}搜索{% else %}Search{% endif %}</a>
-                <a href="/{{ lang }}/tags/">{% if lang == 'zh' %}标签{% else %}Tags{% endif %}</a>
+                <a href="{{ pathPrefix }}{{ lang }}/">{% if lang == 'zh' %}首页{% else %}Home{% endif %}</a>
+                <a href="{{ pathPrefix }}{{ lang }}/search/">{% if lang == 'zh' %}搜索{% else %}Search{% endif %}</a>
+                <a href="{{ pathPrefix }}{{ lang }}/tags/">{% if lang == 'zh' %}标签{% else %}Tags{% endif %}</a>
                 <div class="lang-switcher">
                     {% if lang == 'zh' %}
                         <a href="{{ page.url | switchLang('zh', 'en') }}" class="active">中文</a>
