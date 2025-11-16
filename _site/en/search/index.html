@@ -447,15 +447,15 @@
 <body>
     <header>
         <div class="header-content">
-            <a href="en/" class="logo">Investment Learning Platform</a>
+            <a href="/2.eleventy/en/" class="logo">Investment Learning Platform</a>
             <nav>
-                <a href="en/">Home</a>
-                <a href="en/search/">Search</a>
-                <a href="en/tags/">Tags</a>
+                <a href="/2.eleventy/en/">Home</a>
+                <a href="/2.eleventy/en/search/">Search</a>
+                <a href="/2.eleventy/en/tags/">Tags</a>
                 <div class="lang-switcher">
                     
-                        <a href="zh/">中文</a>
-                        <a href="en/" class="active">English</a>
+                        <a href="/2.eleventy/zh/">中文</a>
+                        <a href="/2.eleventy/en/" class="active">English</a>
                     
                 </div>
             </nav>
@@ -469,7 +469,7 @@
 <h1>Search</h1>
 
 <div class="search-container">
-    <form action="en/search/" method="get" class="search-form">
+    <form action="/2.eleventy/en/search/" method="get" class="search-form">
         <div class="search-box">
             <input type="text" name="q" id="searchInput" value="" placeholder="Search tags, units, chapters..." autofocus>
             <button type="submit">🔍</button>
@@ -542,7 +542,7 @@ function performSearch(query) {
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const query = urlParams.get('q');
-    const pathPrefix = '';
+    const pathPrefix = '/2.eleventy/';
     const lang = 'en';
     
     if (query) {

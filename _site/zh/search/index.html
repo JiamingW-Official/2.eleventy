@@ -447,15 +447,15 @@
 <body>
     <header>
         <div class="header-content">
-            <a href="zh/" class="logo">投资学习平台</a>
+            <a href="/2.eleventy/zh/" class="logo">投资学习平台</a>
             <nav>
-                <a href="zh/">首页</a>
-                <a href="zh/search/">搜索</a>
-                <a href="zh/tags/">标签</a>
+                <a href="/2.eleventy/zh/">首页</a>
+                <a href="/2.eleventy/zh/search/">搜索</a>
+                <a href="/2.eleventy/zh/tags/">标签</a>
                 <div class="lang-switcher">
                     
-                        <a href="en/" class="active">中文</a>
-                        <a href="en/">English</a>
+                        <a href="/2.eleventy/en/" class="active">中文</a>
+                        <a href="/2.eleventy/en/">English</a>
                     
                 </div>
             </nav>
@@ -469,7 +469,7 @@
 <h1>搜索</h1>
 
 <div class="search-container">
-    <form action="zh/search/" method="get" class="search-form">
+    <form action="/2.eleventy/zh/search/" method="get" class="search-form">
         <div class="search-box">
             <input type="text" name="q" id="searchInput" value="" placeholder="搜索标签、单元、章节..." autofocus>
             <button type="submit">🔍</button>
@@ -542,7 +542,7 @@ function performSearch(query) {
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const query = urlParams.get('q');
-    const pathPrefix = '';
+    const pathPrefix = '/2.eleventy/';
     const lang = 'zh';
     
     if (query) {
