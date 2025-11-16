@@ -49,8 +49,10 @@ module.exports = function(eleventyConfig) {
     dataTemplateEngine: "njk",
     // GitHub Pages uses repository name as base path
     // If your repo is "2.eleventy", the site will be at /2.eleventy/
-    // Set pathPrefix to empty string if using custom domain
-    pathPrefix: process.env.GITHUB_REPOSITORY ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/` : ''
+    // Set pathPrefix based on environment variable or default to repo name
+    pathPrefix: process.env.GITHUB_REPOSITORY 
+      ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/` 
+      : (process.env.CI ? '/2.eleventy/' : '')
   };
 };
 
