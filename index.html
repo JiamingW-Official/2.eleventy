@@ -1,0 +1,23 @@
+---
+permalink: /index.html
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=/2.eleventy/zh/">
+    <link rel="canonical" href="/2.eleventy/zh/">
+    <title>投资学习平台 - Investment Learning Platform</title>
+    <script>
+        // Redirect to Chinese homepage
+        // Try to detect pathPrefix from current location
+        const pathPrefix = window.location.pathname.split('/').slice(0, -1).join('/') || '/2.eleventy';
+        window.location.href = pathPrefix + '/zh/';
+    </script>
+</head>
+<body>
+    <p>正在跳转到 <a href="/2.eleventy/zh/">中文首页</a>...</p>
+    <p>Redirecting to <a href="/2.eleventy/zh/">Chinese Homepage</a>...</p>
+</body>
+</html>
