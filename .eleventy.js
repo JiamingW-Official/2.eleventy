@@ -30,6 +30,7 @@ module.exports = function(eleventyConfig) {
       ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/` 
       : (process.env.CI ? '/2.eleventy/' : '');
     if (!url) return `${pathPrefix}${targetLang}/`;
+    // URL already contains pathPrefix, just replace the language part
     return url.replace(`/${currentLang}/`, `/${targetLang}/`);
   });
 
