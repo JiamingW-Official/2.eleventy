@@ -13,7 +13,7 @@ unit: unit1
 
 <div class="tags">
     {% for tag in unit.tags %}
-    <a href="/{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+    <a href="{{ pathPrefix }}{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
     {% endfor %}
 </div>
 
@@ -111,7 +111,7 @@ unit: unit1
 <ul class="chapter-list">
 {% for chapter in unit.chapters %}
     <li>
-        <a href="/{{ lang }}/{{ unit.id }}/{{ chapter.slug }}/">
+        <a href="{{ pathPrefix }}{{ lang }}/{{ unit.id }}/{{ chapter.slug }}/">
             <strong>{{ chapter.icon }} {{ chapter.title[lang] }}</strong>
         </a>
     </li>

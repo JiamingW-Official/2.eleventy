@@ -9,7 +9,7 @@ permalink: /en/
 <p>{{ site.description[lang] }}</p>
 
 <div class="global-search">
-    <form action="/{{ lang }}/search/" method="get" class="global-search-form">
+    <form action="{{ pathPrefix }}{{ lang }}/search/" method="get" class="global-search-form">
         <div class="global-search-box-wrapper">
             <div class="global-search-box">
                 <input type="text" name="q" id="mainSearchInput" placeholder="Search tags, units, chapters..." autofocus autocomplete="off">
@@ -21,7 +21,7 @@ permalink: /en/
     <div class="tags-container" style="margin-top: 1rem;">
         <div class="tags">
             {% for tag in tags %}
-            <a href="/{{ lang }}/tags/{{ tag.id }}/" class="tag">{{ tag.name }}</a>
+            <a href="{{ pathPrefix }}{{ lang }}/tags/{{ tag.id }}/" class="tag">{{ tag.name }}</a>
             {% endfor %}
         </div>
     </div>
@@ -47,7 +47,7 @@ function getSuggestions(query) {
             suggestions.push({
                 type: 'tag',
                 text: tag.name,
-                url: `/${lang}/tags/${tag.id}/`
+                url: `{{ pathPrefix }}${lang}/tags/${tag.id}/`
             });
             seen.add(tag.name);
         }
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="unit-grid">
 {% for unit in units %}
-    <a href="/{{ lang }}/{{ unit.id }}/" class="unit-card">
+    <a href="{{ pathPrefix }}{{ lang }}/{{ unit.id }}/" class="unit-card">
         <h2>{{ unit.icon }} {{ unit.title[lang] }}</h2>
         <p>{{ unit.description[lang] }}</p>
     </a>

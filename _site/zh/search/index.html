@@ -469,7 +469,7 @@
 <h1>搜索</h1>
 
 <div class="search-container">
-    <form action="/zh/search/" method="get" class="search-form">
+    <form action="zh/search/" method="get" class="search-form">
         <div class="search-box">
             <input type="text" name="q" id="searchInput" value="" placeholder="搜索标签、单元、章节..." autofocus>
             <button type="submit">🔍</button>
@@ -564,7 +564,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         ${description ? `<p>${description}</p>` : ''}
                         ${item.tags && item.tags.length > 0 ? `
                             <div class="tags">
-                                ${item.tags.map(tag => `<a href="/zh/tags/${tag}/" class="tag">${tag}</a>`).join('')}
+                                ${item.tags.map(tag => `<a href="zh/tags/${tag}/" class="tag">${tag}</a>`).join('')}
                             </div>
                         ` : ''}
                     </div>

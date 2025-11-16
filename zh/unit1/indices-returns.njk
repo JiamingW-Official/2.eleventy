@@ -11,8 +11,8 @@ chapter: chapter6
 {% set chapter = unit.chapters | findBy("id", "chapter6") %}
 
 <div class="breadcrumb">
-    <a href="/{{ lang }}/">首页</a> / 
-    <a href="/{{ lang }}/{{ unit.id }}/">{{ unit.title[lang] }}</a> / 
+    <a href="{{ pathPrefix }}{{ lang }}/">首页</a> / 
+    <a href="{{ pathPrefix }}{{ lang }}/{{ unit.id }}/">{{ unit.title[lang] }}</a> / 
     {{ chapter.title[lang] }}
 </div>
 
@@ -20,7 +20,7 @@ chapter: chapter6
 
 <div class="tags">
     {% for tag in chapter.tags %}
-    <a href="/{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+    <a href="{{ pathPrefix }}{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
     {% endfor %}
 </div>
 
@@ -247,7 +247,7 @@ chapter: chapter6
         {% for ch in unit.chapters %}
             {% if ch.id != chapter.id %}
             <li>
-                <a href="/{{ lang }}/{{ unit.id }}/{{ ch.slug }}/">
+                <a href="{{ pathPrefix }}{{ lang }}/{{ unit.id }}/{{ ch.slug }}/">
                     {{ ch.icon }} {{ ch.title[lang] }}
                 </a>
             </li>

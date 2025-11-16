@@ -17,7 +17,7 @@ permalink: /zh/tags/
     <div class="tags-container">
         <div class="tags">
             {% for tag in tags %}
-            <a href="/{{ lang }}/tags/{{ tag.id }}/" class="tag">{{ tag.name }}</a>
+            <a href="{{ pathPrefix }}{{ lang }}/tags/{{ tag.id }}/" class="tag">{{ tag.name }}</a>
             {% endfor %}
         </div>
     </div>

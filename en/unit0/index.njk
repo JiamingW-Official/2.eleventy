@@ -13,7 +13,7 @@ unit: unit0
 
 <div class="tags">
     {% for tag in unit.tags %}
-    <a href="/{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
+    <a href="{{ pathPrefix }}{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
     {% endfor %}
 </div>
 

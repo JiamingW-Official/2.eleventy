@@ -469,7 +469,7 @@
 <h1>Search</h1>
 
 <div class="search-container">
-    <form action="/en/search/" method="get" class="search-form">
+    <form action="en/search/" method="get" class="search-form">
         <div class="search-box">
             <input type="text" name="q" id="searchInput" value="" placeholder="Search tags, units, chapters..." autofocus>
             <button type="submit">🔍</button>
@@ -564,7 +564,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         ${description ? `<p>${description}</p>` : ''}
                         ${item.tags && item.tags.length > 0 ? `
                             <div class="tags">
-                                ${item.tags.map(tag => `<a href="/en/tags/${tag}/" class="tag">${tag}</a>`).join('')}
+                                ${item.tags.map(tag => `<a href="en/tags/${tag}/" class="tag">${tag}</a>`).join('')}
                             </div>
                         ` : ''}
                     </div>

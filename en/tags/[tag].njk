@@ -10,8 +10,8 @@ pagination:
 ---
 
 <div class="breadcrumb">
-    <a href="/{{ lang }}/">Home</a> / 
-    <a href="/{{ lang }}/tags/">Tags</a> / 
+    <a href="{{ pathPrefix }}{{ lang }}/">Home</a> / 
+    <a href="{{ pathPrefix }}{{ lang }}/tags/">Tags</a> / 
     {{ tag.name }}
 </div>
 
@@ -21,7 +21,7 @@ pagination:
 <h2>Related Units</h2>
 <div class="unit-grid">
     {% for unit in tag.units %}
-    <a href="/{{ lang }}/{{ unit.id }}/" class="unit-card">
+    <a href="{{ pathPrefix }}{{ lang }}/{{ unit.id }}/" class="unit-card">
         <h2>{{ unit.icon }} {{ unit.title[lang] }}</h2>
         <p>{{ unit.description[lang] }}</p>
     </a>
@@ -34,7 +34,7 @@ pagination:
 <ul class="chapter-list">
     {% for chapter in tag.chapters %}
     <li>
-        <a href="/{{ lang }}/{{ chapter.unitId }}/{{ chapter.slug }}/">
+        <a href="{{ pathPrefix }}{{ lang }}/{{ chapter.unitId }}/{{ chapter.slug }}/">
             {{ chapter.icon }} {{ chapter.title[lang] }}
         </a>
     </li>
