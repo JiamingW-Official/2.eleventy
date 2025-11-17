@@ -20,12 +20,10 @@ permalink: /zh/glossary/
             {% for term in topicGroup.terms %}
             <div class="glossary-term" id="{{ term.id }}" data-en="{{ term.en | lower }}" data-zh="{{ term.zh }}">
                 <div class="term-header">
-                    <span class="term-en">{{ term.en }}</span>
-                    <span class="term-zh">{{ term.zh }}</span>
+                    <span class="term-name">{{ term.zh }}</span>
                 </div>
                 <div class="term-description">
-                    <p><strong>中文：</strong>{{ term.description.zh }}</p>
-                    <p><strong>English：</strong>{{ term.description.en }}</p>
+                    <p>{{ term.description.zh }}</p>
                 </div>
             </div>
             {% endfor %}
@@ -124,23 +122,15 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .term-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 1rem;
     padding-bottom: 0.75rem;
     border-bottom: 1px solid #f0f0f0;
 }
 
-.term-en {
+.term-name {
     font-size: 1.25rem;
     font-weight: 600;
     color: #2c3e50;
-}
-
-.term-zh {
-    font-size: 1.1rem;
-    color: #7f8c8d;
 }
 
 .term-description p {
