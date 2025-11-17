@@ -1,0 +1,552 @@
+---
+layout: base.njk
+title: 知识测验
+lang: zh
+permalink: /zh/quiz/
+---
+
+<div class="content" id="chapterContent">
+    <h1>📝 知识测验</h1>
+    <p>测试你对投资、经济和公司分析的理解。每道题都有深度，需要仔细思考。</p>
+    
+    <div id="quizContainer" style="max-width: 900px; margin: 0 auto;">
+        <!-- Quiz selection -->
+        <div id="quizSelection" class="quiz-selection">
+            <h2>选择测验主题</h2>
+            <div class="topic-buttons">
+                <button class="topic-btn" data-topic="all">全部题目 (30题)</button>
+                <button class="topic-btn" data-topic="fundamental-analysis">基本面分析</button>
+                <button class="topic-btn" data-topic="financial-statements">财务报表</button>
+                <button class="topic-btn" data-topic="valuation">估值方法</button>
+                <button class="topic-btn" data-topic="economic-moats">经济护城河</button>
+                <button class="topic-btn" data-topic="investment-strategy">投资策略</button>
+                <button class="topic-btn" data-topic="market-indices">市场与指数</button>
+                <button class="topic-btn" data-topic="economics">经济学</button>
+            </div>
+        </div>
+        
+        <!-- Quiz interface -->
+        <div id="quizInterface" class="quiz-interface" style="display: none;">
+            <div class="quiz-progress">
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+                <p id="progressText">题目 1 / 10</p>
+            </div>
+            
+            <div class="quiz-question">
+                <h2 id="questionText"></h2>
+                <div id="optionsContainer" class="options-container"></div>
+            </div>
+            
+            <div id="answerResult" class="answer-result" style="display: none;">
+                <div id="resultIcon"></div>
+                <h3 id="resultTitle"></h3>
+                <div id="explanationText" class="explanation-text"></div>
+                <button id="nextButton" class="next-button">下一题</button>
+            </div>
+        </div>
+        
+        <!-- Quiz results -->
+        <div id="quizResults" class="quiz-results" style="display: none;">
+            <h2>🎉 测验完成！</h2>
+            <div class="score-display">
+                <div class="score-circle">
+                    <span id="scoreNumber">0</span>
+                    <span class="score-total">/ 10</span>
+                </div>
+                <p id="scorePercentage">0%</p>
+            </div>
+            <div id="resultsDetails" class="results-details"></div>
+            <div class="quiz-actions">
+                <button id="restartButton" class="restart-button">重新开始</button>
+                <button id="selectTopicButton" class="select-topic-button">选择其他主题</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.quiz-selection {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.topic-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.topic-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.topic-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.quiz-interface {
+    margin-top: 2rem;
+}
+
+.quiz-progress {
+    margin-bottom: 2rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #3498db;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+#progressText {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.quiz-question {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.quiz-question h2 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.option-btn {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    background-color: #f8f9fa;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.option-btn:hover {
+    background-color: #e9ecef;
+    border-color: #3498db;
+}
+
+.option-btn.selected {
+    background-color: #e3f2fd;
+    border-color: #3498db;
+}
+
+.option-btn.correct {
+    background-color: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+}
+
+.option-btn.incorrect {
+    background-color: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+}
+
+.option-btn.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.answer-result {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+#resultIcon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#resultTitle {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+.explanation-text {
+    text-align: left;
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: #495057;
+}
+
+.next-button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.next-button:hover {
+    background-color: #2980b9;
+}
+
+.quiz-results {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.score-display {
+    margin: 2rem 0;
+}
+
+.score-circle {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.score-total {
+    font-size: 2rem;
+    color: #666;
+}
+
+#scorePercentage {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.results-details {
+    text-align: left;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.result-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-item.correct {
+    color: #28a745;
+}
+
+.result-item.incorrect {
+    color: #dc3545;
+}
+
+.quiz-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.restart-button, .select-topic-button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.restart-button {
+    background-color: #3498db;
+    color: white;
+}
+
+.restart-button:hover {
+    background-color: #2980b9;
+}
+
+.select-topic-button {
+    background-color: #6c757d;
+    color: white;
+}
+
+.select-topic-button:hover {
+    background-color: #5a6268;
+}
+</style>
+
+<script>
+const quizData = {{ quiz | dump | safe }};
+const lang = '{{ lang }}';
+
+let currentQuiz = [];
+let currentQuestionIndex = 0;
+let userAnswers = [];
+let currentTopic = 'all';
+
+// Topic names
+const topicNames = {
+    'all': '全部题目',
+    'fundamental-analysis': '基本面分析',
+    'financial-statements': '财务报表',
+    'valuation': '估值方法',
+    'economic-moats': '经济护城河',
+    'investment-strategy': '投资策略',
+    'market-indices': '市场与指数',
+    'economics': '经济学'
+};
+
+function shuffleArray(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+
+function selectTopic(topic) {
+    currentTopic = topic;
+    let questions = quizData;
+    
+    if (topic !== 'all') {
+        questions = quizData.filter(q => q.topic === topic);
+    }
+    
+    // Shuffle and take 10 questions
+    currentQuiz = shuffleArray(questions).slice(0, 10);
+    currentQuestionIndex = 0;
+    userAnswers = [];
+    
+    document.getElementById('quizSelection').style.display = 'none';
+    document.getElementById('quizInterface').style.display = 'block';
+    document.getElementById('quizResults').style.display = 'none';
+    
+    showQuestion();
+}
+
+function showQuestion() {
+    const question = currentQuiz[currentQuestionIndex];
+    const questionText = document.getElementById('questionText');
+    const optionsContainer = document.getElementById('optionsContainer');
+    const answerResult = document.getElementById('answerResult');
+    const progressText = document.getElementById('progressText');
+    const progressFill = document.getElementById('progressFill');
+    
+    // Hide answer result
+    answerResult.style.display = 'none';
+    
+    // Update progress
+    const progress = ((currentQuestionIndex + 1) / currentQuiz.length) * 100;
+    progressFill.style.width = progress + '%';
+    progressText.textContent = `题目 ${currentQuestionIndex + 1} / ${currentQuiz.length}`;
+    
+    // Show question
+    questionText.textContent = question.question[lang];
+    
+    // Clear and create options
+    optionsContainer.innerHTML = '';
+    
+    // Add three options
+    question.options[lang].forEach((option, index) => {
+        const button = document.createElement('button');
+        button.className = 'option-btn';
+        button.textContent = `${String.fromCharCode(65 + index)}. ${option}`;
+        button.dataset.index = index;
+        button.onclick = () => selectOption(index);
+        optionsContainer.appendChild(button);
+    });
+    
+    // Add "不知道" option
+    const dontKnowButton = document.createElement('button');
+    dontKnowButton.className = 'option-btn';
+    dontKnowButton.textContent = 'D. 不知道';
+    dontKnowButton.dataset.index = -1;
+    dontKnowButton.onclick = () => selectOption(-1);
+    optionsContainer.appendChild(dontKnowButton);
+}
+
+function selectOption(selectedIndex) {
+    const question = currentQuiz[currentQuestionIndex];
+    const options = document.querySelectorAll('.option-btn');
+    
+    // Disable all options
+    options.forEach(btn => {
+        btn.disabled = true;
+        btn.classList.remove('selected');
+    });
+    
+    // Mark selected option
+    const selectedBtn = Array.from(options).find(btn => parseInt(btn.dataset.index) === selectedIndex);
+    if (selectedBtn) {
+        selectedBtn.classList.add('selected');
+    }
+    
+    // Mark correct answer
+    const correctBtn = Array.from(options).find(btn => parseInt(btn.dataset.index) === question.correct);
+    if (correctBtn) {
+        correctBtn.classList.add('correct');
+    }
+    
+    // Mark incorrect if wrong
+    if (selectedIndex !== question.correct && selectedIndex !== -1) {
+        if (selectedBtn) {
+            selectedBtn.classList.add('incorrect');
+        }
+    }
+    
+    // Store answer
+    const isCorrect = selectedIndex === question.correct;
+    userAnswers.push({
+        questionIndex: currentQuestionIndex,
+        selected: selectedIndex,
+        correct: question.correct,
+        isCorrect: isCorrect
+    });
+    
+    // Show result after a short delay
+    setTimeout(() => {
+        showAnswerResult(isCorrect);
+    }, 500);
+}
+
+function showAnswerResult(isCorrect) {
+    const question = currentQuiz[currentQuestionIndex];
+    const answerResult = document.getElementById('answerResult');
+    const resultIcon = document.getElementById('resultIcon');
+    const resultTitle = document.getElementById('resultTitle');
+    const explanationText = document.getElementById('explanationText');
+    
+    // Set icon and title
+    if (isCorrect) {
+        resultIcon.textContent = '✅';
+        resultTitle.textContent = '回答正确！';
+        resultTitle.style.color = '#28a745';
+    } else {
+        resultIcon.textContent = '❌';
+        resultTitle.textContent = '回答错误';
+        resultTitle.style.color = '#dc3545';
+    }
+    
+    // Set explanation (this will be processed by term marking script)
+    explanationText.innerHTML = question.explanation[lang];
+    
+    // Show result
+    answerResult.style.display = 'block';
+    
+    // Scroll to result
+    answerResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function nextQuestion() {
+    currentQuestionIndex++;
+    
+    if (currentQuestionIndex < currentQuiz.length) {
+        showQuestion();
+        // Scroll to top
+        document.getElementById('quizInterface').scrollIntoView({ behavior: 'smooth' });
+    } else {
+        showResults();
+    }
+}
+
+function showResults() {
+    const correctCount = userAnswers.filter(a => a.isCorrect).length;
+    const totalQuestions = currentQuiz.length;
+    const percentage = Math.round((correctCount / totalQuestions) * 100);
+    
+    document.getElementById('quizInterface').style.display = 'none';
+    document.getElementById('quizResults').style.display = 'block';
+    
+    document.getElementById('scoreNumber').textContent = correctCount;
+    document.getElementById('scorePercentage').textContent = `正确率: ${percentage}%`;
+    
+    // Show details
+    const resultsDetails = document.getElementById('resultsDetails');
+    resultsDetails.innerHTML = '<h3>答题详情：</h3>';
+    
+    userAnswers.forEach((answer, index) => {
+        const question = currentQuiz[index];
+        const item = document.createElement('div');
+        item.className = `result-item ${answer.isCorrect ? 'correct' : 'incorrect'}`;
+        item.innerHTML = `
+            <strong>题目 ${index + 1}:</strong> ${answer.isCorrect ? '✅ 正确' : '❌ 错误'}<br>
+            <span style="font-size: 0.9rem; color: #666;">${question.question[lang]}</span>
+        `;
+        resultsDetails.appendChild(item);
+    });
+    
+    // Scroll to results
+    document.getElementById('quizResults').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Event listeners
+document.addEventListener('DOMContentLoaded', function() {
+    // Topic selection buttons
+    document.querySelectorAll('.topic-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            selectTopic(this.dataset.topic);
+        });
+    });
+    
+    // Next button
+    document.getElementById('nextButton').addEventListener('click', nextQuestion);
+    
+    // Restart button
+    document.getElementById('restartButton').addEventListener('click', function() {
+        selectTopic(currentTopic);
+    });
+    
+    // Select topic button
+    document.getElementById('selectTopicButton').addEventListener('click', function() {
+        document.getElementById('quizSelection').style.display = 'block';
+        document.getElementById('quizInterface').style.display = 'none';
+        document.getElementById('quizResults').style.display = 'none';
+    });
+});
+</script>
+
