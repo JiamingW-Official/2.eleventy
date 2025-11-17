@@ -715,36 +715,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Mark terms when DOM is ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', function() {
-                if (window.location.pathname.includes('/glossary/')) {
-                    // On glossary page, only mark terms in description paragraphs, not in term names
-                    const descriptions = document.querySelectorAll('.term-description');
-                    descriptions.forEach(desc => markTermsInElement(desc));
-                } else if (window.location.pathname.includes('/quiz/')) {
-                    // On quiz page, only mark terms in explanation text, not in questions or options
-                    const explanationText = document.querySelector('.explanation-text');
-                    if (explanationText) markTermsInElement(explanationText);
-                } else {
-                    // On other pages, mark terms in content
-                    const content = document.querySelector('.content, #chapterContent');
-                    if (content) markTermsInElement(content);
-                }
-            });
-        } else {
+        function initTermMarking() {
             if (window.location.pathname.includes('/glossary/')) {
-                // On glossary page, only mark terms in description paragraphs
                 const descriptions = document.querySelectorAll('.term-description');
                 descriptions.forEach(desc => markTermsInElement(desc));
             } else if (window.location.pathname.includes('/quiz/')) {
-                // On quiz page, only mark terms in explanation text, not in questions or options
                 const explanationText = document.querySelector('.explanation-text');
                 if (explanationText) markTermsInElement(explanationText);
             } else {
-                // On other pages, mark terms in content
                 const content = document.querySelector('.content, #chapterContent');
                 if (content) markTermsInElement(content);
             }
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initTermMarking);
+        } else {
+            initTermMarking();
         }
     })();
     </script>
