@@ -9,7 +9,7 @@ permalink: /zh/quiz/
     <h1>📝 知识测验</h1>
     <p>测试你对投资、经济和公司分析的理解。每道题都有深度，需要仔细思考。</p>
     
-    <div id="quizContainer" style="max-width: 900px; margin: 0 auto;">
+    <div id="quizContainer" style="max-width: 1400px; margin: 0 auto;">
         <!-- Quiz selection -->
         <div id="quizSelection" class="quiz-selection">
             <h2>选择测验主题</h2>
@@ -33,16 +33,22 @@ permalink: /zh/quiz/
                 <p id="progressText">题目 1 / 10</p>
             </div>
             
-            <div class="quiz-question">
-                <h2 id="questionText"></h2>
-                <div id="optionsContainer" class="options-container"></div>
-            </div>
-            
-            <div id="answerResult" class="answer-result" style="display: none;">
-                <div id="resultIcon"></div>
-                <h3 id="resultTitle"></h3>
-                <div id="explanationText" class="explanation-text"></div>
-                <button id="nextButton" class="next-button">下一题</button>
+            <div class="quiz-layout">
+                <div class="quiz-left">
+                    <div class="quiz-question">
+                        <h2 id="questionText"></h2>
+                        <div id="optionsContainer" class="options-container"></div>
+                    </div>
+                </div>
+                
+                <div id="answerResult" class="quiz-right" style="display: none;">
+                    <div class="answer-result">
+                        <div id="resultIcon"></div>
+                        <h3 id="resultTitle"></h3>
+                        <div id="explanationText" class="explanation-text"></div>
+                        <button id="nextButton" class="next-button">下一题</button>
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -104,6 +110,26 @@ permalink: /zh/quiz/
     margin-bottom: 2rem;
 }
 
+.quiz-layout {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    min-height: 500px;
+}
+
+.quiz-left {
+    flex: 0 0 60%;
+    width: 60%;
+}
+
+.quiz-right {
+    flex: 0 0 40%;
+    width: 40%;
+    position: sticky;
+    top: 100px;
+    align-self: flex-start;
+}
+
 .progress-bar {
     width: 100%;
     height: 8px;
@@ -131,7 +157,6 @@ permalink: /zh/quiz/
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    margin-bottom: 2rem;
 }
 
 .quiz-question h2 {
@@ -191,6 +216,8 @@ permalink: /zh/quiz/
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     text-align: center;
+    position: sticky;
+    top: 100px;
 }
 
 #resultIcon {
@@ -480,9 +507,6 @@ function showAnswerResult(isCorrect) {
             window.markTermsInElement(explanationText);
         }
     }, 100);
-    
-    // Scroll to result
-    answerResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 function nextQuestion() {
@@ -490,8 +514,6 @@ function nextQuestion() {
     
     if (currentQuestionIndex < currentQuiz.length) {
         showQuestion();
-        // Scroll to top
-        document.getElementById('quizInterface').scrollIntoView({ behavior: 'smooth' });
     } else {
         showResults();
     }
