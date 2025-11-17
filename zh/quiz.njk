@@ -478,6 +478,13 @@ function showAnswerResult(isCorrect) {
     // Show result
     answerResult.style.display = 'block';
     
+    // Trigger term marking for explanation text after a short delay
+    setTimeout(() => {
+        if (window.markTermsInElement && typeof window.markTermsInElement === 'function') {
+            window.markTermsInElement(explanationText);
+        }
+    }, 100);
+    
     // Scroll to result
     answerResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
