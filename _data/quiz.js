@@ -2261,6 +2261,1985 @@ module.exports = [
       zh: "使用多个估值倍数（如P/E、EV/EBITDA、P/B、P/S）的原因：1) 不同倍数反映不同的价值驱动因素：P/E反映盈利，EV/EBITDA反映经营利润，P/B反映资产，P/S反映收入；2) 单一倍数可能有局限性，综合使用可以提供更全面的视角；3) 不同倍数可以相互验证，提高估值的可靠性；4) 对于不同类型的公司，不同倍数的适用性不同。",
       en: "Reasons for using multiple valuation multiples (such as P/E, EV/EBITDA, P/B, P/S): 1) Different multiples reflect different value drivers: P/E reflects earnings, EV/EBITDA reflects operating profit, P/B reflects assets, P/S reflects revenue; 2) A single multiple may have limitations, and comprehensive use can provide a more comprehensive perspective; 3) Different multiples can verify each other, improving valuation reliability; 4) For different types of companies, the applicability of different multiples varies."
     }
+  },
+  // Economic Moats - Additional questions to reach 20
+  {
+    id: 91,
+    topic: "economic-moats",
+    question: {
+      zh: "以下哪个是'规模经济'（Economies of Scale）作为经济护城河的核心特征？",
+      en: "What is the core characteristic of 'Economies of Scale' as an economic moat?"
+    },
+    options: {
+      zh: [
+        "公司规模越大越好",
+        "随着产量增加，单位成本下降，形成成本优势，新进入者难以竞争",
+        "规模经济没有作用"
+      ],
+      en: [
+        "Larger company size is always better",
+        "As production volume increases, unit costs decrease, creating cost advantages that make it difficult for new entrants to compete",
+        "Economies of scale have no effect"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "规模经济的核心是：随着产量增加，固定成本被分摊到更多产品上，单位成本下降。这使得大公司能够以更低的价格销售产品，新进入者由于规模小、成本高，难以竞争。规模经济在制造业、零售业等行业中特别重要。但规模过大也可能导致效率下降（规模不经济）。",
+      en: "The core of economies of scale is: as production volume increases, fixed costs are spread over more products, reducing unit costs. This allows large companies to sell products at lower prices, making it difficult for new entrants with small scale and high costs to compete. Economies of scale are particularly important in industries such as manufacturing and retail. However, excessive scale may also lead to efficiency decline (diseconomies of scale)."
+    }
+  },
+  {
+    id: 92,
+    topic: "economic-moats",
+    question: {
+      zh: "'品牌护城河'（Brand Moat）最强大的特征是什么？",
+      en: "What is the strongest characteristic of a 'Brand Moat'?"
+    },
+    options: {
+      zh: [
+        "品牌知名度高",
+        "品牌能够影响消费者购买决策，让消费者愿意支付溢价，并且难以被替代",
+        "品牌名称好听"
+      ],
+      en: [
+        "High brand awareness",
+        "The brand can influence consumer purchasing decisions, make consumers willing to pay a premium, and is difficult to replace",
+        "The brand name sounds good"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "强大的品牌护城河不仅仅是知名度，而是：1) 能够影响消费者购买决策；2) 消费者愿意为品牌支付溢价；3) 品牌难以被替代，具有情感连接和信任；4) 品牌代表质量和一致性。例如，可口可乐、苹果等品牌不仅知名度高，更重要的是消费者对品牌的信任和忠诚度。",
+      en: "A strong brand moat is not just awareness, but: 1) Can influence consumer purchasing decisions; 2) Consumers are willing to pay a premium for the brand; 3) The brand is difficult to replace, with emotional connection and trust; 4) The brand represents quality and consistency. For example, brands like Coca-Cola and Apple not only have high awareness, but more importantly, consumer trust and loyalty to the brand."
+    }
+  },
+  {
+    id: 93,
+    topic: "economic-moats",
+    question: {
+      zh: "在评估公司的经济护城河时，以下哪个指标最能反映护城河的强度？",
+      en: "When evaluating a company's economic moat, which metric best reflects the strength of the moat?"
+    },
+    options: {
+      zh: [
+        "市场份额",
+        "长期维持高ROE、高毛利率的能力，以及抵御竞争、保持定价能力的时间长度",
+        "股价表现"
+      ],
+      en: [
+        "Market share",
+        "The ability to maintain high ROE and high gross margins over the long term, and the duration of resisting competition and maintaining pricing power",
+        "Stock price performance"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "评估护城河强度需要关注：1) 长期维持高ROE的能力（反映盈利能力和竞争优势的持续性）；2) 高毛利率的稳定性（反映定价能力）；3) 抵御竞争的时间长度（护城河是否可持续）；4) 保持定价能力（能否持续提价而不失去客户）。这些指标比市场份额更能反映护城河的真实强度。",
+      en: "Assessing moat strength requires attention to: 1) The ability to maintain high ROE over the long term (reflecting profitability and sustainability of competitive advantages); 2) Stability of high gross margins (reflecting pricing power); 3) Duration of resisting competition (whether the moat is sustainable); 4) Maintaining pricing power (whether prices can be raised continuously without losing customers). These metrics better reflect the true strength of the moat than market share."
+    }
+  },
+  {
+    id: 94,
+    topic: "economic-moats",
+    question: {
+      zh: "'监管护城河'（Regulatory Moat）作为经济护城河，其特点是什么？",
+      en: "What are the characteristics of 'Regulatory Moat' as an economic moat?"
+    },
+    options: {
+      zh: [
+        "监管总是坏事",
+        "通过政府许可、牌照、专利等监管壁垒，限制新进入者，形成垄断或寡头竞争",
+        "监管护城河不持久"
+      ],
+      en: [
+        "Regulation is always bad",
+        "Through regulatory barriers such as government licenses, permits, patents, etc., restrict new entrants, creating monopoly or oligopoly competition",
+        "Regulatory moats are not durable"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "监管护城河通过政府监管、许可、牌照、专利等形成进入壁垒，限制新进入者。例如，银行需要银行牌照、电信需要频谱许可、医药需要FDA批准。这种护城河通常很强大，因为新进入者需要获得监管批准，但风险是监管政策可能变化。监管护城河在金融、公用事业、医药等行业中常见。",
+      en: "Regulatory moats create entry barriers through government regulation, licenses, permits, patents, etc., restricting new entrants. For example, banks need banking licenses, telecommunications need spectrum permits, pharmaceuticals need FDA approval. This type of moat is usually very strong because new entrants need regulatory approval, but the risk is that regulatory policies may change. Regulatory moats are common in industries such as finance, utilities, and pharmaceuticals."
+    }
+  },
+  {
+    id: 95,
+    topic: "economic-moats",
+    question: {
+      zh: "一家公司的护城河正在被削弱，以下哪个信号最能说明这一点？",
+      en: "A company's moat is being eroded. Which signal best indicates this?"
+    },
+    options: {
+      zh: [
+        "股价下跌",
+        "毛利率持续下降、市场份额流失、新竞争对手进入、客户流失率增加",
+        "收入增长放缓"
+      ],
+      en: [
+        "Stock price decline",
+        "Gross margins continuously declining, market share loss, new competitors entering, increasing customer churn rate",
+        "Revenue growth slowing"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "护城河被削弱的信号包括：1) 毛利率持续下降（定价能力减弱）；2) 市场份额流失（竞争优势减弱）；3) 新竞争对手进入（进入壁垒降低）；4) 客户流失率增加（客户粘性下降）。这些信号比股价下跌更能直接反映护城河的变化，因为股价可能受多种因素影响。",
+      en: "Signs of moat erosion include: 1) Continuously declining gross margins (weakening pricing power); 2) Market share loss (weakening competitive advantages); 3) New competitors entering (lower entry barriers); 4) Increasing customer churn rate (declining customer stickiness). These signals more directly reflect changes in the moat than stock price decline, as stock prices may be affected by various factors."
+    }
+  },
+  {
+    id: 96,
+    topic: "economic-moats",
+    question: {
+      zh: "'成本优势护城河'（Cost Advantage Moat）最可能来自哪里？",
+      en: "Where is 'Cost Advantage Moat' most likely to come from?"
+    },
+    options: {
+      zh: [
+        "降低员工工资",
+        "规模经济、专有技术、地理位置优势、或独特的资源获取渠道",
+        "减少研发投入"
+      ],
+      en: [
+        "Reducing employee wages",
+        "Economies of scale, proprietary technology, geographic advantages, or unique resource access channels",
+        "Reducing R&D investment"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "成本优势护城河通常来自：1) 规模经济（大产量降低单位成本）；2) 专有技术（更高效的生产工艺）；3) 地理位置优势（接近原材料或市场）；4) 独特的资源获取渠道（如低成本原材料）。这些优势难以被竞争对手复制，形成持久的成本优势。单纯降低工资通常不可持续，且可能影响产品质量。",
+      en: "Cost advantage moats usually come from: 1) Economies of scale (large production volume reduces unit costs); 2) Proprietary technology (more efficient production processes); 3) Geographic advantages (proximity to raw materials or markets); 4) Unique resource access channels (such as low-cost raw materials). These advantages are difficult for competitors to replicate, creating lasting cost advantages. Simply reducing wages is usually unsustainable and may affect product quality."
+    }
+  },
+  {
+    id: 97,
+    topic: "economic-moats",
+    question: {
+      zh: "在评估网络效应护城河时，以下哪个因素最重要？",
+      en: "When evaluating network effect moats, which factor is most important?"
+    },
+    options: {
+      zh: [
+        "用户总数",
+        "网络效应的强度（用户增加对价值提升的影响）、用户粘性、以及竞争对手建立替代网络的难度",
+        "平台收入"
+      ],
+      en: [
+        "Total number of users",
+        "The strength of network effects (impact of user growth on value increase), user stickiness, and the difficulty for competitors to build alternative networks",
+        "Platform revenue"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "评估网络效应护城河需要关注：1) 网络效应强度：用户增加对每个用户价值提升的影响有多大；2) 用户粘性：用户是否难以离开平台；3) 替代难度：竞争对手建立替代网络的难度。用户总数只是表面指标，更重要的是网络效应的质量和可持续性。",
+      en: "Evaluating network effect moats requires attention to: 1) Network effect strength: How much does user growth impact the value for each user; 2) User stickiness: Whether users find it difficult to leave the platform; 3) Substitution difficulty: The difficulty for competitors to build alternative networks. Total number of users is only a surface metric; more important is the quality and sustainability of network effects."
+    }
+  },
+  {
+    id: 98,
+    topic: "economic-moats",
+    question: {
+      zh: "'数据护城河'（Data Moat）作为新型护城河，其核心价值是什么？",
+      en: "What is the core value of 'Data Moat' as a new type of moat?"
+    },
+    options: {
+      zh: [
+        "拥有大量数据",
+        "通过数据积累形成更好的产品和服务，数据越多产品越好，形成正向循环，竞争对手难以复制",
+        "数据可以出售"
+      ],
+      en: [
+        "Having a large amount of data",
+        "Through data accumulation, form better products and services. The more data, the better the product, creating a positive feedback loop that competitors find difficult to replicate",
+        "Data can be sold"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "数据护城河的核心是：1) 数据积累能够改善产品和服务（如推荐算法、个性化服务）；2) 更好的产品吸引更多用户，产生更多数据；3) 形成正向循环，数据优势不断强化；4) 竞争对手难以获得相同质量和数量的数据。例如，Google的搜索算法、Netflix的推荐系统都受益于数据护城河。",
+      en: "The core of data moats is: 1) Data accumulation can improve products and services (such as recommendation algorithms, personalized services); 2) Better products attract more users, generating more data; 3) Creating a positive feedback loop where data advantages continuously strengthen; 4) Competitors find it difficult to obtain data of the same quality and quantity. For example, Google's search algorithms and Netflix's recommendation systems benefit from data moats."
+    }
+  },
+  {
+    id: 99,
+    topic: "economic-moats",
+    question: {
+      zh: "一家公司声称拥有'渠道护城河'，这意味着什么？",
+      en: "A company claims to have a 'Distribution Channel Moat'. What does this mean?"
+    },
+    options: {
+      zh: [
+        "公司有很多销售渠道",
+        "公司控制了关键的分销渠道，新进入者难以获得相同的渠道资源，形成进入壁垒",
+        "渠道越多越好"
+      ],
+      en: [
+        "The company has many sales channels",
+        "The company controls key distribution channels, making it difficult for new entrants to obtain the same channel resources, creating entry barriers",
+        "More channels are always better"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "渠道护城河是指公司控制了关键的分销渠道（如零售网络、供应链、合作伙伴关系），新进入者难以获得相同的渠道资源。例如，可口可乐的全球分销网络、苹果的零售店和授权经销商网络。这种护城河的价值在于：1) 确保产品能够到达消费者；2) 形成规模优势；3) 限制竞争对手的渠道选择。",
+      en: "Distribution channel moat refers to the company controlling key distribution channels (such as retail networks, supply chains, partner relationships), making it difficult for new entrants to obtain the same channel resources. For example, Coca-Cola's global distribution network, Apple's retail stores and authorized dealer networks. The value of this moat lies in: 1) Ensuring products can reach consumers; 2) Creating scale advantages; 3) Limiting competitors' channel choices."
+    }
+  },
+  {
+    id: 100,
+    topic: "economic-moats",
+    question: {
+      zh: "在评估护城河的可持续性时，以下哪个因素最重要？",
+      en: "When evaluating the sustainability of a moat, which factor is most important?"
+    },
+    options: {
+      zh: [
+        "当前的盈利能力",
+        "护城河是否能够抵御技术变革、监管变化、消费者偏好变化等外部冲击，以及是否能够自我强化",
+        "市场份额大小"
+      ],
+      en: [
+        "Current profitability",
+        "Whether the moat can resist external shocks such as technological changes, regulatory changes, consumer preference changes, and whether it can self-reinforce",
+        "Market share size"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "评估护城河可持续性需要关注：1) 能否抵御外部冲击：技术变革、监管变化、消费者偏好变化；2) 是否能够自我强化：护城河是否随着时间推移变得更强大（如网络效应、品牌）；3) 竞争对手复制的难度。可持续的护城河应该能够适应变化并持续提供竞争优势，而不仅仅是当前的优势。",
+      en: "Assessing moat sustainability requires attention to: 1) Ability to resist external shocks: technological changes, regulatory changes, consumer preference changes; 2) Whether it can self-reinforce: Whether the moat becomes stronger over time (such as network effects, brands); 3) Difficulty for competitors to replicate. A sustainable moat should be able to adapt to changes and continuously provide competitive advantages, not just current advantages."
+    }
+  },
+  {
+    id: 101,
+    topic: "economic-moats",
+    question: {
+      zh: "'平台护城河'（Platform Moat）的核心特征是什么？",
+      en: "What is the core characteristic of a 'Platform Moat'?"
+    },
+    options: {
+      zh: [
+        "平台用户多",
+        "平台连接多方（如买家和卖家、开发者和用户），形成多边网络效应，各方相互依赖，难以被替代",
+        "平台功能多"
+      ],
+      en: [
+        "The platform has many users",
+        "The platform connects multiple parties (such as buyers and sellers, developers and users), creating multi-sided network effects where parties depend on each other and are difficult to replace",
+        "The platform has many features"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "平台护城河的核心是多边网络效应：平台连接多方参与者（如Uber连接司机和乘客、App Store连接开发者和用户），各方相互依赖。更多买家吸引更多卖家，更多卖家吸引更多买家，形成正向循环。这种多边网络效应使得平台难以被替代，因为任何一方离开都会影响其他方。",
+      en: "The core of platform moats is multi-sided network effects: the platform connects multiple parties (such as Uber connecting drivers and passengers, App Store connecting developers and users), where parties depend on each other. More buyers attract more sellers, more sellers attract more buyers, creating a positive feedback loop. This multi-sided network effect makes the platform difficult to replace, as any party leaving would affect others."
+    }
+  },
+  {
+    id: 102,
+    topic: "economic-moats",
+    question: {
+      zh: "在比较两家公司的护城河时，以下哪个做法最合理？",
+      en: "When comparing the moats of two companies, which approach is most reasonable?"
+    },
+    options: {
+      zh: [
+        "只比较市场份额",
+        "综合分析护城河的类型、强度、可持续性，以及公司在行业中的竞争地位",
+        "只比较股价"
+      ],
+      en: [
+        "Only compare market share",
+        "Comprehensively analyze the type, strength, and sustainability of moats, as well as the company's competitive position in the industry",
+        "Only compare stock prices"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "比较护城河需要多维度分析：1) 护城河类型：品牌、网络效应、成本优势、转换成本等；2) 强度：能否维持高ROE、高毛利率；3) 可持续性：能否抵御外部冲击；4) 竞争地位：在行业中的相对位置。不同类型、不同行业的护城河难以直接比较，需要结合具体情况分析。",
+      en: "Comparing moats requires multi-dimensional analysis: 1) Moat type: Brand, network effects, cost advantages, switching costs, etc.; 2) Strength: Whether it can maintain high ROE and high gross margins; 3) Sustainability: Whether it can resist external shocks; 4) Competitive position: Relative position in the industry. Moats of different types and industries are difficult to compare directly and need to be analyzed in conjunction with specific circumstances."
+    }
+  },
+  {
+    id: 103,
+    topic: "economic-moats",
+    question: {
+      zh: "一家公司的护城河从'强'变为'中等'，这可能意味着什么？",
+      en: "A company's moat has changed from 'strong' to 'moderate'. What might this indicate?"
+    },
+    options: {
+      zh: [
+        "公司盈利能力下降",
+        "公司可能面临竞争加剧、技术变革、或消费者偏好变化，护城河正在被削弱，需要关注竞争优势的可持续性",
+        "这是正常现象，无需关注"
+      ],
+      en: [
+        "The company's profitability has declined",
+        "The company may be facing intensified competition, technological changes, or consumer preference changes. The moat is being eroded, and attention should be paid to the sustainability of competitive advantages",
+        "This is normal and requires no attention"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "护城河从强变弱通常表明：1) 竞争加剧，新进入者或现有竞争对手正在削弱公司的竞争优势；2) 技术变革，新技术可能使现有护城河失效；3) 消费者偏好变化，品牌或产品可能不再受欢迎；4) 监管变化，监管壁垒可能降低。这需要密切关注，因为护城河是长期投资价值的重要基础。",
+      en: "A moat weakening from strong usually indicates: 1) Intensified competition, new entrants or existing competitors are eroding the company's competitive advantages; 2) Technological changes, new technologies may render existing moats ineffective; 3) Consumer preference changes, brands or products may no longer be popular; 4) Regulatory changes, regulatory barriers may be lowered. This requires close attention, as moats are an important foundation for long-term investment value."
+    }
+  },
+  {
+    id: 104,
+    topic: "economic-moats",
+    question: {
+      zh: "'生态系统护城河'（Ecosystem Moat）的特点是什么？",
+      en: "What are the characteristics of an 'Ecosystem Moat'?"
+    },
+    options: {
+      zh: [
+        "公司业务多元化",
+        "公司构建了相互关联的产品和服务生态系统，用户一旦进入生态系统，转换成本很高，形成强大的锁定效应",
+        "生态系统越大越好"
+      ],
+      en: [
+        "The company has diversified businesses",
+        "The company has built an interconnected ecosystem of products and services. Once users enter the ecosystem, switching costs are high, creating strong lock-in effects",
+        "Larger ecosystems are always better"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "生态系统护城河是指公司构建了相互关联的产品和服务生态系统（如苹果的硬件、软件、服务生态系统），用户一旦进入，转换成本很高。例如，使用iPhone的用户可能使用iCloud、App Store、Apple Music等，这些服务相互关联，离开生态系统的成本很高。这种护城河通过提高转换成本形成强大的客户锁定。",
+      en: "Ecosystem moat refers to the company building an interconnected ecosystem of products and services (such as Apple's hardware, software, and services ecosystem). Once users enter, switching costs are high. For example, iPhone users may use iCloud, App Store, Apple Music, etc. These services are interconnected, making it costly to leave the ecosystem. This moat creates strong customer lock-in by increasing switching costs."
+    }
+  },
+  {
+    id: 105,
+    topic: "economic-moats",
+    question: {
+      zh: "在评估护城河时，'无形资产'（Intangible Assets）作为护城河，主要包括哪些？",
+      en: "When evaluating moats, what do 'Intangible Assets' as moats mainly include?"
+    },
+    options: {
+      zh: [
+        "只有品牌",
+        "品牌、专利、专有技术、客户关系、数据等，这些资产难以复制，形成竞争优势",
+        "只有专利"
+      ],
+      en: [
+        "Only brands",
+        "Brands, patents, proprietary technology, customer relationships, data, etc. These assets are difficult to replicate and create competitive advantages",
+        "Only patents"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "无形资产作为护城河包括：1) 品牌：消费者信任和忠诚度；2) 专利：技术保护；3) 专有技术：独特的生产工艺或技术；4) 客户关系：长期建立的信任和合作关系；5) 数据：积累的用户数据和行为数据。这些资产在财务报表中可能没有被充分反映，但它们是公司价值的重要组成部分，难以被竞争对手复制。",
+      en: "Intangible assets as moats include: 1) Brands: Consumer trust and loyalty; 2) Patents: Technology protection; 3) Proprietary technology: Unique production processes or technologies; 4) Customer relationships: Long-established trust and cooperative relationships; 5) Data: Accumulated user data and behavioral data. These assets may not be fully reflected in financial statements, but they are important components of company value and difficult for competitors to replicate."
+    }
+  },
+  {
+    id: 106,
+    topic: "economic-moats",
+    question: {
+      zh: "一家公司拥有强大的护城河，但ROE持续下降。这可能说明什么？",
+      en: "A company has a strong moat, but ROE continues to decline. What might this indicate?"
+    },
+    options: {
+      zh: [
+        "护城河没有作用",
+        "公司可能面临行业增长放缓、竞争加剧、或管理问题，即使有护城河，也需要关注盈利能力的可持续性",
+        "ROE下降是正常的"
+      ],
+      en: [
+        "The moat has no effect",
+        "The company may be facing industry growth slowdown, intensified competition, or management issues. Even with a moat, attention should be paid to the sustainability of profitability",
+        "ROE decline is normal"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "即使拥有强大的护城河，ROE持续下降可能表明：1) 行业增长放缓，整体盈利能力下降；2) 竞争加剧，即使有护城河，竞争压力也在增加；3) 管理问题，公司可能没有充分利用护城河；4) 护城河可能正在被削弱。护城河不是万能的，它只能提供相对优势，不能完全消除行业或管理风险。",
+      en: "Even with a strong moat, continuously declining ROE may indicate: 1) Industry growth slowdown, overall profitability decline; 2) Intensified competition, even with a moat, competitive pressure is increasing; 3) Management issues, the company may not be fully utilizing the moat; 4) The moat may be eroding. Moats are not omnipotent; they can only provide relative advantages and cannot completely eliminate industry or management risks."
+    }
+  },
+  {
+    id: 107,
+    topic: "economic-moats",
+    question: {
+      zh: "在评估护城河时，'先发优势'（First-Mover Advantage）是否总是有效的护城河？",
+      en: "When evaluating moats, is 'First-Mover Advantage' always an effective moat?"
+    },
+    options: {
+      zh: [
+        "是的，先发优势总是有效的",
+        "不一定，先发优势只有在能够转化为持续竞争优势（如网络效应、品牌、规模经济）时才有效，否则可能被后来者超越",
+        "先发优势没有用"
+      ],
+      en: [
+        "Yes, first-mover advantage is always effective",
+        "Not necessarily. First-mover advantage is only effective when it can be transformed into sustainable competitive advantages (such as network effects, brands, economies of scale), otherwise it may be surpassed by latecomers",
+        "First-mover advantage is useless"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "先发优势本身不是护城河，只有当它能够转化为持续竞争优势时才有效。例如，如果先发优势能够转化为网络效应（如Facebook）、品牌优势（如可口可乐）、规模经济，那么它是有效的。但如果后来者能够通过更好的技术、更好的执行超越先发者，先发优势就会失效。历史上很多先发者都被后来者超越。",
+      en: "First-mover advantage itself is not a moat; it is only effective when it can be transformed into sustainable competitive advantages. For example, if first-mover advantage can be transformed into network effects (like Facebook), brand advantages (like Coca-Cola), or economies of scale, then it is effective. However, if latecomers can surpass first movers through better technology or better execution, first-mover advantage becomes ineffective. Historically, many first movers have been surpassed by latecomers."
+    }
+  },
+  {
+    id: 108,
+    topic: "economic-moats",
+    question: {
+      zh: "在评估公司的护城河时，以下哪个组合最能全面反映护城河状况？",
+      en: "When evaluating a company's moat, which combination best comprehensively reflects the moat condition?"
+    },
+    options: {
+      zh: [
+        "只看市场份额",
+        "综合分析护城河类型、强度指标（ROE、毛利率）、可持续性指标（抵御竞争的时间、自我强化能力）、以及竞争地位",
+        "只看股价表现"
+      ],
+      en: [
+        "Only look at market share",
+        "Comprehensively analyze moat type, strength metrics (ROE, gross margin), sustainability metrics (duration of resisting competition, self-reinforcement capability), and competitive position",
+        "Only look at stock price performance"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "全面评估护城河需要：1) 护城河类型：识别公司拥有哪些类型的护城河；2) 强度指标：ROE、毛利率的水平和稳定性；3) 可持续性指标：能否长期抵御竞争、是否能够自我强化；4) 竞争地位：在行业中的相对位置。单一指标无法全面反映护城河状况，需要综合判断。",
+      en: "Comprehensive moat evaluation requires: 1) Moat type: Identify what types of moats the company has; 2) Strength metrics: Level and stability of ROE and gross margins; 3) Sustainability metrics: Whether it can resist competition long-term and self-reinforce; 4) Competitive position: Relative position in the industry. A single metric cannot comprehensively reflect moat condition and requires comprehensive judgment."
+    }
+  },
+  {
+    id: 109,
+    topic: "economic-moats",
+    question: {
+      zh: "'供应链护城河'（Supply Chain Moat）的特点是什么？",
+      en: "What are the characteristics of a 'Supply Chain Moat'?"
+    },
+    options: {
+      zh: [
+        "公司有很多供应商",
+        "公司控制了关键的上游资源或建立了高效的供应链网络，形成成本优势或供应保障，竞争对手难以复制",
+        "供应链越长越好"
+      ],
+      en: [
+        "The company has many suppliers",
+        "The company controls key upstream resources or has built an efficient supply chain network, creating cost advantages or supply security that competitors find difficult to replicate",
+        "Longer supply chains are always better"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "供应链护城河是指公司通过控制关键上游资源（如原材料、关键零部件）或建立高效的供应链网络，形成成本优势或供应保障。例如，特斯拉控制电池供应链、苹果控制关键零部件供应。这种护城河的价值在于：1) 确保供应稳定；2) 获得成本优势；3) 限制竞争对手的供应选择。",
+      en: "Supply chain moat refers to the company creating cost advantages or supply security by controlling key upstream resources (such as raw materials, key components) or building efficient supply chain networks. For example, Tesla controls the battery supply chain, Apple controls key component supplies. The value of this moat lies in: 1) Ensuring supply stability; 2) Gaining cost advantages; 3) Limiting competitors' supply choices."
+    }
+  },
+  {
+    id: 110,
+    topic: "economic-moats",
+    question: {
+      zh: "在评估护城河时，'文化护城河'（Cultural Moat）指的是什么？",
+      en: "When evaluating moats, what does 'Cultural Moat' refer to?"
+    },
+    options: {
+      zh: [
+        "公司有企业文化",
+        "公司建立了独特的组织文化（如创新文化、客户至上文化），这种文化难以复制，能够持续产生竞争优势",
+        "文化护城河不重要"
+      ],
+      en: [
+        "The company has corporate culture",
+        "The company has established a unique organizational culture (such as innovation culture, customer-first culture) that is difficult to replicate and can continuously generate competitive advantages",
+        "Cultural moats are not important"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "文化护城河是指公司建立了独特的组织文化（如亚马逊的客户至上、Netflix的创新文化），这种文化：1) 难以被竞争对手复制；2) 能够持续产生竞争优势（如持续创新、卓越执行）；3) 影响员工行为和决策；4) 形成组织能力。虽然文化难以量化，但它是很多优秀公司长期成功的重要因素。",
+      en: "Cultural moat refers to the company establishing a unique organizational culture (such as Amazon's customer obsession, Netflix's innovation culture). This culture: 1) Is difficult for competitors to replicate; 2) Can continuously generate competitive advantages (such as continuous innovation, excellent execution); 3) Influences employee behavior and decisions; 4) Forms organizational capabilities. Although culture is difficult to quantify, it is an important factor in the long-term success of many excellent companies."
+    }
+  },
+  // Investment Strategy - Additional questions to reach 20
+  {
+    id: 111,
+    topic: "investment-strategy",
+    question: {
+      zh: "在价值投资中，'安全边际'（Margin of Safety）的作用是什么？",
+      en: "In value investing, what is the role of 'Margin of Safety'?"
+    },
+    options: {
+      zh: [
+        "没有作用",
+        "提供缓冲空间，即使估值有误差或市场波动，也能降低投资风险，提高投资成功的概率",
+        "安全边际越大越好，没有上限"
+      ],
+      en: [
+        "No role",
+        "Provides a buffer, even if valuation has errors or market fluctuations, it can reduce investment risk and increase the probability of investment success",
+        "Larger margin of safety is always better, no upper limit"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "安全边际是价值投资的核心概念，指以低于内在价值的价格买入。它的作用：1) 提供缓冲空间，即使估值有误差，也能降低风险；2) 应对市场波动，即使股价进一步下跌，仍有安全垫；3) 提高投资成功的概率。但安全边际也要适度，过大的安全边际可能意味着公司存在严重问题。",
+      en: "Margin of safety is a core concept in value investing, referring to buying at prices below intrinsic value. Its role: 1) Provides a buffer, even if valuation has errors, it can reduce risk; 2) Copes with market fluctuations, even if stock prices fall further, there is still a safety cushion; 3) Increases the probability of investment success. However, margin of safety should also be moderate; an excessively large margin of safety may indicate serious problems with the company."
+    }
+  },
+  {
+    id: 112,
+    topic: "investment-strategy",
+    question: {
+      zh: "在构建投资组合时，'过度分散'（Over-Diversification）的问题是什么？",
+      en: "When constructing an investment portfolio, what is the problem with 'Over-Diversification'?"
+    },
+    options: {
+      zh: [
+        "没有问题，分散越多越好",
+        "过度分散可能导致：1) 无法深入了解每家公司；2) 稀释了优质投资的影响；3) 投资组合表现接近市场平均，难以超越市场",
+        "分散投资总是好的"
+      ],
+      en: [
+        "No problem, more diversification is always better",
+        "Over-diversification may lead to: 1) Inability to deeply understand each company; 2) Diluting the impact of quality investments; 3) Portfolio performance approaching market average, difficult to outperform the market",
+        "Diversification is always good"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "过度分散的问题：1) 无法深入了解：持有太多股票，无法深入研究每家公司；2) 稀释影响：即使找到优质投资，由于占比小，对整体组合影响有限；3) 接近市场：过度分散的投资组合表现会接近市场平均，难以超越市场。适度分散（如10-20只优质股票）既能降低风险，又能保持集中度优势。",
+      en: "Problems with over-diversification: 1) Inability to understand deeply: Holding too many stocks makes it impossible to deeply research each company; 2) Diluting impact: Even if quality investments are found, due to small proportions, their impact on the overall portfolio is limited; 3) Approaching market: Over-diversified portfolios will perform close to market average, difficult to outperform. Moderate diversification (such as 10-20 quality stocks) can both reduce risk and maintain concentration advantages."
+    }
+  },
+  {
+    id: 113,
+    topic: "investment-strategy",
+    question: {
+      zh: "在价值投资中，'长期持有'（Long-term Holding）的重要性是什么？",
+      en: "In value investing, what is the importance of 'Long-term Holding'?"
+    },
+    options: {
+      zh: [
+        "没有重要性",
+        "价值投资基于公司内在价值，价值实现需要时间。长期持有可以：1) 让公司价值充分体现；2) 减少交易成本；3) 避免短期市场波动的影响；4) 享受复利效应",
+        "持有时间越长越好"
+      ],
+      en: [
+        "No importance",
+        "Value investing is based on intrinsic value, and value realization takes time. Long-term holding can: 1) Allow company value to fully manifest; 2) Reduce transaction costs; 3) Avoid the impact of short-term market fluctuations; 4) Enjoy the compounding effect",
+        "Longer holding period is always better"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "长期持有在价值投资中的重要性：1) 价值实现需要时间：公司内在价值的提升和市场价格向价值的回归都需要时间；2) 减少交易成本：频繁交易会产生手续费、税费；3) 避免短期波动：短期市场波动是噪音，长期持有可以忽略；4) 复利效应：长期持有优质公司可以享受复利增长。但长期持有不等于永远持有，当公司基本面恶化或价格远高于价值时应该卖出。",
+      en: "The importance of long-term holding in value investing: 1) Value realization takes time: The improvement of company intrinsic value and the convergence of market price to value both require time; 2) Reduce transaction costs: Frequent trading generates fees and taxes; 3) Avoid short-term fluctuations: Short-term market fluctuations are noise, long-term holding can ignore them; 4) Compounding effect: Long-term holding of quality companies can enjoy compound growth. However, long-term holding does not mean holding forever; when company fundamentals deteriorate or price is far above value, one should sell."
+    }
+  },
+  {
+    id: 114,
+    topic: "investment-strategy",
+    question: {
+      zh: "在价值投资中，什么时候应该卖出股票？",
+      en: "In value investing, when should stocks be sold?"
+    },
+    options: {
+      zh: [
+        "永远不卖",
+        "当：1) 公司基本面恶化，护城河被削弱；2) 股价远高于内在价值；3) 发现更好的投资机会；4) 投资逻辑发生变化",
+        "股价一涨就卖"
+      ],
+      en: [
+        "Never sell",
+        "When: 1) Company fundamentals deteriorate, moat is eroded; 2) Stock price is far above intrinsic value; 3) Better investment opportunities are found; 4) Investment thesis changes",
+        "Sell as soon as stock price rises"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "价值投资者应该在以下情况卖出：1) 基本面恶化：公司护城河被削弱、竞争优势丧失、财务状况恶化；2) 价格远高于价值：股价已经充分反映甚至高估了公司价值；3) 更好的机会：发现更具吸引力的投资机会，需要资金；4) 投资逻辑变化：当初买入的理由不再成立。价值投资不是永远持有，而是基于价值判断的买卖决策。",
+      en: "Value investors should sell in the following situations: 1) Fundamentals deteriorate: Company moat is eroded, competitive advantages are lost, financial condition deteriorates; 2) Price far above value: Stock price already fully reflects or even overvalues company value; 3) Better opportunities: More attractive investment opportunities are found, funds are needed; 4) Investment thesis changes: The original reasons for buying no longer hold. Value investing is not holding forever, but buy/sell decisions based on value judgment."
+    }
+  },
+  {
+    id: 115,
+    topic: "investment-strategy",
+    question: {
+      zh: "在投资中，'情绪控制'（Emotional Control）的重要性是什么？",
+      en: "In investing, what is the importance of 'Emotional Control'?"
+    },
+    options: {
+      zh: [
+        "没有重要性",
+        "市场情绪波动很大，投资者容易受贪婪、恐惧等情绪影响做出错误决策。情绪控制可以：1) 避免追涨杀跌；2) 坚持投资原则；3) 在别人恐惧时贪婪，在别人贪婪时恐惧",
+        "情绪对投资没有影响"
+      ],
+      en: [
+        "No importance",
+        "Market sentiment fluctuates greatly, and investors are easily influenced by emotions such as greed and fear to make wrong decisions. Emotional control can: 1) Avoid chasing rising prices and selling in panic; 2) Adhere to investment principles; 3) Be greedy when others are fearful, and fearful when others are greedy",
+        "Emotions have no impact on investing"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "情绪控制在投资中的重要性：1) 避免追涨杀跌：市场情绪高涨时容易追高，情绪恐慌时容易杀跌；2) 坚持原则：情绪容易让人偏离投资原则和策略；3) 逆向思维：在别人恐惧时（市场下跌）买入，在别人贪婪时（市场上涨）保持谨慎；4) 理性决策：基于基本面而非情绪做决策。情绪控制是成功投资的关键因素之一。",
+      en: "The importance of emotional control in investing: 1) Avoid chasing rising prices and selling in panic: High market sentiment makes it easy to chase highs, panic makes it easy to sell in panic; 2) Adhere to principles: Emotions easily make people deviate from investment principles and strategies; 3) Contrarian thinking: Buy when others are fearful (market decline), remain cautious when others are greedy (market rise); 4) Rational decisions: Make decisions based on fundamentals rather than emotions. Emotional control is one of the key factors for successful investing."
+    }
+  },
+  {
+    id: 116,
+    topic: "investment-strategy",
+    question: {
+      zh: "在价值投资中，'能力圈'（Circle of Competence）的概念是什么？",
+      en: "In value investing, what is the concept of 'Circle of Competence'?"
+    },
+    options: {
+      zh: [
+        "没有这个概念",
+        "投资者真正理解和熟悉的领域。在能力圈内投资，能够更好地评估公司价值、识别风险、做出理性决策",
+        "能力圈越大越好"
+      ],
+      en: [
+        "No such concept",
+        "Areas that investors truly understand and are familiar with. Investing within the circle of competence allows better assessment of company value, risk identification, and rational decision-making",
+        "Larger circle of competence is always better"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "能力圈是指投资者真正理解和熟悉的领域。在能力圈内投资：1) 能够更好地评估公司价值；2) 能够识别风险；3) 能够做出理性决策。投资不了解的领域容易做出错误判断。巴菲特强调'只投资自己理解的业务'。能力圈可以逐步扩大，但需要持续学习和研究。重要的是诚实面对自己的能力边界。",
+      en: "Circle of competence refers to areas that investors truly understand and are familiar with. Investing within the circle of competence: 1) Can better assess company value; 2) Can identify risks; 3) Can make rational decisions. Investing in unfamiliar areas makes it easy to make wrong judgments. Buffett emphasizes 'only invest in businesses you understand.' The circle of competence can be gradually expanded, but requires continuous learning and research. What's important is to be honest about one's own boundaries."
+    }
+  },
+  {
+    id: 117,
+    topic: "investment-strategy",
+    question: {
+      zh: "在投资中，'集中投资'（Concentrated Investing）和'分散投资'（Diversified Investing）应该如何平衡？",
+      en: "In investing, how should 'Concentrated Investing' and 'Diversified Investing' be balanced?"
+    },
+    options: {
+      zh: [
+        "只集中投资",
+        "适度集中：将资金集中在最看好的优质公司（如5-15只），既能降低风险，又能保持集中度优势，获得超越市场的回报",
+        "只分散投资"
+      ],
+      en: [
+        "Only concentrated investing",
+        "Moderate concentration: Concentrate funds in the most favored quality companies (such as 5-15 stocks), which can both reduce risk and maintain concentration advantages, achieving market-beating returns",
+        "Only diversified investing"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "平衡集中和分散：1) 适度集中：将资金集中在最看好的优质公司（如5-15只），既能降低单一公司风险，又能保持集中度优势；2) 避免过度集中：过度集中（如1-3只）风险太大；3) 避免过度分散：过度分散（如50+只）会稀释优质投资的影响。适度集中（10-20只优质股票）是较好的平衡。",
+      en: "Balancing concentration and diversification: 1) Moderate concentration: Concentrate funds in the most favored quality companies (such as 5-15 stocks), which can both reduce single-company risk and maintain concentration advantages; 2) Avoid over-concentration: Over-concentration (such as 1-3 stocks) is too risky; 3) Avoid over-diversification: Over-diversification (such as 50+ stocks) will dilute the impact of quality investments. Moderate concentration (10-20 quality stocks) is a better balance."
+    }
+  },
+  {
+    id: 118,
+    topic: "investment-strategy",
+    question: {
+      zh: "在价值投资中，'内在价值'（Intrinsic Value）应该如何估算？",
+      en: "In value investing, how should 'Intrinsic Value' be estimated?"
+    },
+    options: {
+      zh: [
+        "只看当前股价",
+        "使用多种方法综合估算：DCF模型、相对估值法、资产价值法等，结合公司基本面、增长前景、竞争优势等因素",
+        "只看市盈率"
+      ],
+      en: [
+        "Only look at current stock price",
+        "Use multiple methods for comprehensive estimation: DCF model, relative valuation methods, asset value methods, etc., combined with company fundamentals, growth prospects, competitive advantages, and other factors",
+        "Only look at P/E ratio"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "估算内在价值应该：1) 使用多种方法：DCF模型（现金流折现）、相对估值法（P/E、P/B等）、资产价值法（清算价值）等；2) 结合基本面：公司财务状况、盈利能力、增长前景；3) 考虑竞争优势：护城河、行业地位；4) 保守估算：使用保守假设，留出安全边际。内在价值不是精确数值，而是一个合理范围。",
+      en: "Estimating intrinsic value should: 1) Use multiple methods: DCF model (cash flow discounting), relative valuation methods (P/E, P/B, etc.), asset value methods (liquidation value), etc.; 2) Combine fundamentals: Company financial condition, profitability, growth prospects; 3) Consider competitive advantages: Moats, industry position; 4) Conservative estimation: Use conservative assumptions, leave margin of safety. Intrinsic value is not a precise number, but a reasonable range."
+    }
+  },
+  {
+    id: 119,
+    topic: "investment-strategy",
+    question: {
+      zh: "在投资中，'市场时机'（Market Timing）的重要性是什么？",
+      en: "In investing, what is the importance of 'Market Timing'?"
+    },
+    options: {
+      zh: [
+        "市场时机最重要，应该频繁交易",
+        "市场时机很难把握，价值投资者应该关注公司价值而非市场时机。但可以在市场极度高估或低估时适度调整仓位",
+        "必须准确预测市场"
+      ],
+      en: [
+        "Market timing is most important, should trade frequently",
+        "Market timing is difficult to master. Value investors should focus on company value rather than market timing. However, positions can be moderately adjusted when the market is extremely overvalued or undervalued",
+        "Must accurately predict the market"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市场时机的重要性：1) 很难把握：准确预测市场短期走势几乎不可能；2) 价值投资关注价值：应该关注公司内在价值，而非市场时机；3) 长期持有：通过长期持有优质公司，可以忽略短期市场波动；4) 适度调整：可以在市场极度高估时减少仓位，极度低估时增加仓位，但这是基于估值而非预测。",
+      en: "The importance of market timing: 1) Difficult to master: Accurately predicting short-term market movements is almost impossible; 2) Value investing focuses on value: Should focus on company intrinsic value rather than market timing; 3) Long-term holding: Through long-term holding of quality companies, short-term market fluctuations can be ignored; 4) Moderate adjustment: Can reduce positions when the market is extremely overvalued, increase positions when extremely undervalued, but this is based on valuation rather than prediction."
+    }
+  },
+  {
+    id: 120,
+    topic: "investment-strategy",
+    question: {
+      zh: "在价值投资中，'复利效应'（Compounding Effect）的重要性是什么？",
+      en: "In value investing, what is the importance of the 'Compounding Effect'?"
+    },
+    options: {
+      zh: [
+        "没有重要性",
+        "复利是长期财富增长的关键。通过长期持有优质公司，让利润再投资，可以实现指数级增长。时间越长，复利效应越明显",
+        "复利只适用于短期"
+      ],
+      en: [
+        "No importance",
+        "Compounding is the key to long-term wealth growth. By long-term holding of quality companies and reinvesting profits, exponential growth can be achieved. The longer the time, the more obvious the compounding effect",
+        "Compounding only applies in the short term"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "复利效应的重要性：1) 指数级增长：复利让财富呈指数级增长，时间越长效果越明显；2) 长期持有：通过长期持有优质公司，让利润再投资，享受复利；3) 避免频繁交易：频繁交易会中断复利过程；4) 时间价值：时间是复利的朋友，越早开始投资，复利效应越明显。巴菲特说：'人生就像滚雪球，重要的是找到很湿的雪和很长的坡。'",
+      en: "The importance of compounding effect: 1) Exponential growth: Compounding makes wealth grow exponentially, the longer the time, the more obvious the effect; 2) Long-term holding: Through long-term holding of quality companies, reinvest profits to enjoy compounding; 3) Avoid frequent trading: Frequent trading interrupts the compounding process; 4) Time value: Time is a friend of compounding; the earlier you start investing, the more obvious the compounding effect. Buffett said: 'Life is like a snowball. The important thing is finding wet snow and a really long hill.'"
+    }
+  },
+  {
+    id: 121,
+    topic: "investment-strategy",
+    question: {
+      zh: "在投资中，'逆向投资'（Contrarian Investing）的核心思想是什么？",
+      en: "In investing, what is the core idea of 'Contrarian Investing'?"
+    },
+    options: {
+      zh: [
+        "总是与市场相反",
+        "在市场极度悲观、价格低于价值时买入，在市场极度乐观、价格高于价值时卖出或保持谨慎。基于价值判断而非情绪",
+        "逆向投资总是对的"
+      ],
+      en: [
+        "Always opposite to the market",
+        "Buy when the market is extremely pessimistic and prices are below value, sell or remain cautious when the market is extremely optimistic and prices are above value. Based on value judgment rather than emotions",
+        "Contrarian investing is always right"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "逆向投资的核心：1) 基于价值：不是盲目与市场相反，而是基于价值判断；2) 极度悲观时买入：市场恐慌时，优质公司可能被低估，是买入机会；3) 极度乐观时谨慎：市场狂热时，价格可能高估，应该谨慎或卖出；4) 独立思考：不随波逐流，基于自己的分析做决策。'在别人恐惧时贪婪，在别人贪婪时恐惧'。",
+      en: "The core of contrarian investing: 1) Based on value: Not blindly opposite to the market, but based on value judgment; 2) Buy when extremely pessimistic: When the market panics, quality companies may be undervalued, presenting buying opportunities; 3) Be cautious when extremely optimistic: When the market is euphoric, prices may be overvalued, should be cautious or sell; 4) Independent thinking: Don't follow the crowd, make decisions based on your own analysis. 'Be greedy when others are fearful, and fearful when others are greedy.'"
+    }
+  },
+  {
+    id: 122,
+    topic: "investment-strategy",
+    question: {
+      zh: "在价值投资中，'护城河'（Moat）和'估值'（Valuation）哪个更重要？",
+      en: "In value investing, which is more important: 'Moat' or 'Valuation'?"
+    },
+    options: {
+      zh: [
+        "只看估值",
+        "两者都重要，但理想情况是：以合理价格买入拥有强大护城河的优质公司。护城河决定长期价值，估值决定买入时机",
+        "只看护城河"
+      ],
+      en: [
+        "Only look at valuation",
+        "Both are important, but ideally: Buy quality companies with strong moats at reasonable prices. Moats determine long-term value, valuation determines entry timing",
+        "Only look at moats"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "护城河和估值都重要：1) 护城河决定长期价值：强大的护城河能够保护公司长期盈利，是长期投资价值的基础；2) 估值决定买入时机：即使有强大护城河，如果价格过高，也不是好的投资；3) 理想组合：以合理价格买入拥有强大护城河的优质公司；4) 平衡：需要平衡护城河的质量和估值的合理性。",
+      en: "Both moats and valuation are important: 1) Moats determine long-term value: Strong moats can protect long-term company profitability and are the foundation of long-term investment value; 2) Valuation determines entry timing: Even with strong moats, if the price is too high, it's not a good investment; 3) Ideal combination: Buy quality companies with strong moats at reasonable prices; 4) Balance: Need to balance the quality of moats and the reasonableness of valuation."
+    }
+  },
+  {
+    id: 123,
+    topic: "investment-strategy",
+    question: {
+      zh: "在投资中，'风险管理'（Risk Management）的核心是什么？",
+      en: "In investing, what is the core of 'Risk Management'?"
+    },
+    options: {
+      zh: [
+        "避免所有风险",
+        "识别、评估和管理风险，而不是避免所有风险。通过分散投资、安全边际、深入研究和长期持有来管理风险",
+        "风险越大越好"
+      ],
+      en: [
+        "Avoid all risks",
+        "Identify, assess, and manage risks rather than avoid all risks. Manage risks through diversification, margin of safety, in-depth research, and long-term holding",
+        "Higher risk is always better"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "风险管理的核心：1) 识别风险：了解投资面临的各种风险（公司风险、行业风险、市场风险）；2) 评估风险：评估风险的大小和概率；3) 管理风险：通过分散投资、安全边际、深入研究、长期持有等方式管理风险；4) 不是避免风险：投资必然有风险，关键是管理而非避免。风险管理是成功投资的重要组成部分。",
+      en: "The core of risk management: 1) Identify risks: Understand various risks faced by investments (company risk, industry risk, market risk); 2) Assess risks: Assess the magnitude and probability of risks; 3) Manage risks: Manage risks through diversification, margin of safety, in-depth research, long-term holding, etc.; 4) Not avoiding risks: Investment necessarily involves risks; the key is management rather than avoidance. Risk management is an important component of successful investing."
+    }
+  },
+  {
+    id: 124,
+    topic: "investment-strategy",
+    question: {
+      zh: "在价值投资中，'耐心'（Patience）的重要性是什么？",
+      en: "In value investing, what is the importance of 'Patience'?"
+    },
+    options: {
+      zh: [
+        "没有重要性",
+        "价值实现需要时间，市场可能需要很长时间才能认识到公司价值。耐心可以：1) 等待价值实现；2) 避免频繁交易；3) 享受复利效应；4) 避免情绪化决策",
+        "耐心就是永远不卖"
+      ],
+      en: [
+        "No importance",
+        "Value realization takes time, and the market may take a long time to recognize company value. Patience can: 1) Wait for value realization; 2) Avoid frequent trading; 3) Enjoy the compounding effect; 4) Avoid emotional decisions",
+        "Patience means never selling"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "耐心在价值投资中的重要性：1) 价值实现需要时间：市场可能需要很长时间才能认识到公司价值；2) 避免频繁交易：耐心持有，避免因短期波动而频繁交易；3) 享受复利：长期持有优质公司，享受复利增长；4) 避免情绪化：耐心可以避免因市场波动而做出情绪化决策。巴菲特说：'股票市场是财富从没有耐心的人转移到有耐心的人的工具。'",
+      en: "The importance of patience in value investing: 1) Value realization takes time: The market may take a long time to recognize company value; 2) Avoid frequent trading: Patient holding, avoid frequent trading due to short-term fluctuations; 3) Enjoy compounding: Long-term holding of quality companies, enjoy compound growth; 4) Avoid emotional decisions: Patience can avoid making emotional decisions due to market fluctuations. Buffett said: 'The stock market is a device for transferring money from the impatient to the patient.'"
+    }
+  },
+  {
+    id: 125,
+    topic: "investment-strategy",
+    question: {
+      zh: "在投资中，'独立思考'（Independent Thinking）的重要性是什么？",
+      en: "In investing, what is the importance of 'Independent Thinking'?"
+    },
+    options: {
+      zh: [
+        "没有重要性，应该跟随市场",
+        "市场经常出错，投资者应该基于自己的研究和分析做决策，而不是盲目跟随市场情绪或他人意见。独立思考可以：1) 发现被市场低估的机会；2) 避免从众心理；3) 坚持投资原则",
+        "独立思考就是总是与市场相反"
+      ],
+      en: [
+        "No importance, should follow the market",
+        "Markets are often wrong. Investors should make decisions based on their own research and analysis rather than blindly following market sentiment or others' opinions. Independent thinking can: 1) Discover opportunities undervalued by the market; 2) Avoid herd mentality; 3) Adhere to investment principles",
+        "Independent thinking means always opposite to the market"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "独立思考的重要性：1) 市场经常出错：市场情绪可能导致价格偏离价值；2) 发现机会：通过独立思考，可以发现被市场低估的机会；3) 避免从众：不随波逐流，基于自己的分析做决策；4) 坚持原则：在市场波动时，独立思考有助于坚持投资原则。但独立思考不等于固执，应该保持开放心态，不断学习和改进。",
+      en: "The importance of independent thinking: 1) Markets are often wrong: Market sentiment may cause prices to deviate from value; 2) Discover opportunities: Through independent thinking, opportunities undervalued by the market can be discovered; 3) Avoid herd mentality: Don't follow the crowd, make decisions based on your own analysis; 4) Adhere to principles: During market fluctuations, independent thinking helps adhere to investment principles. However, independent thinking does not mean stubbornness; one should maintain an open mind and continuously learn and improve."
+    }
+  },
+  {
+    id: 126,
+    topic: "investment-strategy",
+    question: {
+      zh: "在价值投资中，'买入并持有'（Buy and Hold）策略适用于所有情况吗？",
+      en: "In value investing, does the 'Buy and Hold' strategy apply to all situations?"
+    },
+    options: {
+      zh: [
+        "是的，买入后永远持有",
+        "不是，买入并持有适用于优质公司，但当公司基本面恶化、价格远高于价值、或发现更好机会时，应该卖出",
+        "买入并持有没有用"
+      ],
+      en: [
+        "Yes, hold forever after buying",
+        "No, buy and hold applies to quality companies, but should sell when company fundamentals deteriorate, price is far above value, or better opportunities are found",
+        "Buy and hold is useless"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "买入并持有不是永远持有：1) 适用于优质公司：对于拥有强大护城河、持续成长的优质公司，买入并持有是好的策略；2) 需要定期评估：应该定期评估公司基本面和估值；3) 应该卖出的情况：公司基本面恶化、价格远高于价值、发现更好机会、投资逻辑变化；4) 动态调整：根据情况动态调整持仓。买入并持有是策略，不是教条。",
+      en: "Buy and hold does not mean holding forever: 1) Applies to quality companies: For quality companies with strong moats and continuous growth, buy and hold is a good strategy; 2) Requires regular assessment: Should regularly assess company fundamentals and valuation; 3) Situations to sell: Company fundamentals deteriorate, price is far above value, better opportunities are found, investment thesis changes; 4) Dynamic adjustment: Dynamically adjust positions according to circumstances. Buy and hold is a strategy, not a dogma."
+    }
+  },
+  {
+    id: 127,
+    topic: "investment-strategy",
+    question: {
+      zh: "在投资中，'成本平均法'（Dollar-Cost Averaging）的作用是什么？",
+      en: "In investing, what is the role of 'Dollar-Cost Averaging'?"
+    },
+    options: {
+      zh: [
+        "没有作用",
+        "通过定期定额投资，可以在市场波动中平均成本，降低市场时机选择的风险，适合长期投资",
+        "成本平均法总是最好的策略"
+      ],
+      en: [
+        "No role",
+        "Through regular fixed-amount investing, costs can be averaged during market fluctuations, reducing the risk of market timing, suitable for long-term investing",
+        "Dollar-cost averaging is always the best strategy"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "成本平均法的作用：1) 平均成本：通过定期定额投资，可以在市场波动中平均买入成本；2) 降低时机风险：不需要准确预测市场时机；3) 纪律投资：强制定期投资，避免情绪影响；4) 适合长期：适合长期投资策略。但成本平均法也有局限性：如果市场持续上涨，可能错过一次性买入的机会；如果市场持续下跌，可能持续亏损。",
+      en: "The role of dollar-cost averaging: 1) Average costs: Through regular fixed-amount investing, average purchase costs during market fluctuations; 2) Reduce timing risk: No need to accurately predict market timing; 3) Disciplined investing: Forces regular investing, avoiding emotional influence; 4) Suitable for long-term: Suitable for long-term investment strategies. However, dollar-cost averaging also has limitations: If the market continues to rise, may miss one-time buying opportunities; if the market continues to fall, may continue to lose money."
+    }
+  },
+  {
+    id: 128,
+    topic: "investment-strategy",
+    question: {
+      zh: "在价值投资中，'质量优先'（Quality First）还是'价格优先'（Price First）？",
+      en: "In value investing, is it 'Quality First' or 'Price First'?"
+    },
+    options: {
+      zh: [
+        "只看价格",
+        "质量优先，但价格也要合理。宁愿以合理价格买入优质公司，也不要以低价买入劣质公司。优质公司的长期回报通常更好",
+        "只看质量"
+      ],
+      en: [
+        "Only look at price",
+        "Quality first, but price should also be reasonable. Prefer buying quality companies at reasonable prices rather than buying poor companies at low prices. Quality companies usually have better long-term returns",
+        "Only look at quality"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "质量优先，但价格也要合理：1) 质量优先：优质公司（强大护城河、优秀管理、持续成长）的长期回报通常更好；2) 价格要合理：即使优质公司，如果价格过高，也不是好投资；3) 避免价值陷阱：低价买入劣质公司可能是价值陷阱；4) 理想组合：以合理价格买入优质公司。巴菲特说：'以合理价格买入优质公司，胜过以低价买入普通公司。'",
+      en: "Quality first, but price should also be reasonable: 1) Quality first: Quality companies (strong moats, excellent management, continuous growth) usually have better long-term returns; 2) Price should be reasonable: Even quality companies, if prices are too high, are not good investments; 3) Avoid value traps: Buying poor companies at low prices may be value traps; 4) Ideal combination: Buy quality companies at reasonable prices. Buffett said: 'It's far better to buy a wonderful company at a fair price than a fair company at a wonderful price.'"
+    }
+  },
+  {
+    id: 129,
+    topic: "investment-strategy",
+    question: {
+      zh: "在投资中，'学习能力'（Learning Ability）的重要性是什么？",
+      en: "In investing, what is the importance of 'Learning Ability'?"
+    },
+    options: {
+      zh: [
+        "没有重要性",
+        "投资是一个持续学习的过程。市场在变化，公司、行业、经济环境都在变化。持续学习可以：1) 扩大能力圈；2) 适应市场变化；3) 提高投资技能；4) 发现新机会",
+        "学习一次就够了"
+      ],
+      en: [
+        "No importance",
+        "Investing is a continuous learning process. Markets change, companies, industries, and economic environments all change. Continuous learning can: 1) Expand the circle of competence; 2) Adapt to market changes; 3) Improve investment skills; 4) Discover new opportunities",
+        "Learning once is enough"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "学习能力的重要性：1) 持续学习：投资是持续学习的过程，市场、公司、行业都在变化；2) 扩大能力圈：通过学习，可以扩大投资能力圈，发现更多机会；3) 适应变化：市场环境在变化，需要不断学习适应；4) 提高技能：持续学习可以提高分析能力、判断能力。巴菲特和芒格都是终身学习者，他们强调阅读和学习的重要性。",
+      en: "The importance of learning ability: 1) Continuous learning: Investing is a continuous learning process; markets, companies, and industries are all changing; 2) Expand circle of competence: Through learning, can expand investment circle of competence and discover more opportunities; 3) Adapt to changes: Market environment is changing, need to continuously learn and adapt; 4) Improve skills: Continuous learning can improve analytical and judgment abilities. Buffett and Munger are both lifelong learners, emphasizing the importance of reading and learning."
+    }
+  },
+  // Market & Indices - Additional questions to reach 20
+  {
+    id: 130,
+    topic: "market-indices",
+    question: {
+      zh: "市场指数的'市值加权'（Market-Cap Weighted）和'等权重'（Equal-Weighted）的区别是什么？",
+      en: "What is the difference between 'Market-Cap Weighted' and 'Equal-Weighted' market indices?"
+    },
+    options: {
+      zh: [
+        "没有区别",
+        "市值加权指数中，大市值公司对指数影响更大；等权重指数中，所有成分股权重相同。等权重指数更能反映小公司的表现",
+        "只有市值加权"
+      ],
+      en: [
+        "No difference",
+        "In market-cap weighted indices, large-cap companies have greater impact on the index; in equal-weighted indices, all constituent stocks have the same weight. Equal-weighted indices better reflect the performance of small companies",
+        "Only market-cap weighted"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市值加权指数中，大市值公司（如苹果、微软）对指数的影响远大于小公司。等权重指数中，所有成分股权重相同（如每只股票1%），更能反映小公司的表现。例如，S&P 500是市值加权的，如果大公司上涨，即使小公司下跌，指数也可能上涨。等权重指数更能反映市场的平均表现。",
+      en: "In market-cap weighted indices, large-cap companies (such as Apple, Microsoft) have far greater impact on the index than small companies. In equal-weighted indices, all constituent stocks have the same weight (such as 1% per stock), better reflecting the performance of small companies. For example, the S&P 500 is market-cap weighted; if large companies rise, even if small companies fall, the index may still rise. Equal-weighted indices better reflect the average market performance."
+    }
+  },
+  {
+    id: 131,
+    topic: "market-indices",
+    question: {
+      zh: "在分析市场指数时，'指数基金'（Index Fund）和'主动管理基金'（Active Fund）的主要区别是什么？",
+      en: "When analyzing market indices, what is the main difference between 'Index Funds' and 'Active Funds'?"
+    },
+    options: {
+      zh: [
+        "没有区别",
+        "指数基金被动跟踪指数，费用低；主动管理基金试图超越指数，费用高。长期来看，大多数主动基金难以持续超越指数",
+        "只有主动基金"
+      ],
+      en: [
+        "No difference",
+        "Index funds passively track indices with low fees; active funds try to outperform indices with high fees. Long-term, most active funds find it difficult to consistently outperform indices",
+        "Only active funds"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "指数基金被动跟踪市场指数（如S&P 500），费用低（通常0.1-0.5%），目标是获得与指数相同的回报。主动管理基金由基金经理主动选股，试图超越指数，费用高（通常1-2%）。长期来看，大多数主动基金难以持续超越指数，因为：1) 高费用侵蚀回报；2) 市场效率；3) 选股难度。",
+      en: "Index funds passively track market indices (such as S&P 500) with low fees (usually 0.1-0.5%), aiming to achieve the same returns as the index. Active funds are actively managed by fund managers trying to outperform indices with high fees (usually 1-2%). Long-term, most active funds find it difficult to consistently outperform indices because: 1) High fees erode returns; 2) Market efficiency; 3) Difficulty in stock selection."
+    }
+  },
+  {
+    id: 132,
+    topic: "market-indices",
+    question: {
+      zh: "市场指数的'再平衡'（Rebalancing）是什么意思？",
+      en: "What does 'Rebalancing' of market indices mean?"
+    },
+    options: {
+      zh: [
+        "没有意义",
+        "定期调整指数成分股和权重，确保指数能够准确反映市场状况。成分股可能因市值变化、公司合并、破产等原因被替换",
+        "再平衡就是改变指数计算方法"
+      ],
+      en: [
+        "No meaning",
+        "Regularly adjust index constituent stocks and weights to ensure the index accurately reflects market conditions. Constituent stocks may be replaced due to market cap changes, company mergers, bankruptcies, etc.",
+        "Rebalancing means changing the index calculation method"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "指数再平衡是指定期调整指数成分股和权重：1) 成分股调整：因市值变化、公司合并、破产、不符合标准等原因，成分股可能被替换；2) 权重调整：因市值变化，各成分股的权重会自然调整（市值加权）或定期调整（等权重）；3) 保持代表性：确保指数能够准确反映市场状况。",
+      en: "Index rebalancing refers to regularly adjusting index constituent stocks and weights: 1) Constituent stock adjustments: Due to market cap changes, company mergers, bankruptcies, not meeting standards, etc., constituent stocks may be replaced; 2) Weight adjustments: Due to market cap changes, weights of constituent stocks will naturally adjust (market-cap weighted) or be regularly adjusted (equal-weighted); 3) Maintain representativeness: Ensure the index accurately reflects market conditions."
+    }
+  },
+  {
+    id: 133,
+    topic: "market-indices",
+    question: {
+      zh: "在分析市场时，'市场效率假说'（Efficient Market Hypothesis）的核心观点是什么？",
+      en: "When analyzing markets, what is the core view of the 'Efficient Market Hypothesis'?"
+    },
+    options: {
+      zh: [
+        "市场总是错误的",
+        "市场能够快速、准确地反映所有可用信息，股价已经反映了所有公开信息，因此很难通过分析获得超额回报",
+        "市场效率假说没有用"
+      ],
+      en: [
+        "Markets are always wrong",
+        "Markets can quickly and accurately reflect all available information, stock prices already reflect all public information, so it's difficult to achieve excess returns through analysis",
+        "Efficient Market Hypothesis is useless"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市场效率假说的核心是：市场能够快速、准确地反映所有可用信息，股价已经反映了所有公开信息。这意味着：1) 很难通过分析获得超额回报；2) 股价波动是随机的；3) 主动管理难以持续超越市场。但市场效率假说也有争议，价值投资者认为市场并不总是有效的，存在定价错误的机会。",
+      en: "The core of the Efficient Market Hypothesis is: Markets can quickly and accurately reflect all available information, and stock prices already reflect all public information. This means: 1) It's difficult to achieve excess returns through analysis; 2) Stock price movements are random; 3) Active management finds it difficult to consistently outperform the market. However, the Efficient Market Hypothesis is also controversial; value investors believe markets are not always efficient and there are pricing error opportunities."
+    }
+  },
+  {
+    id: 134,
+    topic: "market-indices",
+    question: {
+      zh: "在分析市场时，'市场情绪'（Market Sentiment）对股价的影响是什么？",
+      en: "When analyzing markets, what is the impact of 'Market Sentiment' on stock prices?"
+    },
+    options: {
+      zh: [
+        "没有影响",
+        "市场情绪可能导致股价短期偏离内在价值，但长期来看，股价会回归价值。情绪波动是短期因素，价值是长期因素",
+        "情绪决定一切"
+      ],
+      en: [
+        "No impact",
+        "Market sentiment may cause stock prices to deviate from intrinsic value in the short term, but long-term, stock prices will return to value. Sentiment fluctuations are short-term factors, value is a long-term factor",
+        "Sentiment determines everything"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市场情绪的影响：1) 短期影响：情绪可能导致股价短期偏离内在价值（过度乐观时高估，过度悲观时低估）；2) 长期回归：长期来看，股价会回归内在价值；3) 提供机会：情绪波动可能提供买入或卖出机会；4) 噪音：对于长期投资者，情绪波动是噪音，应该关注价值而非情绪。'市场是投票机，但长期是称重机'。",
+      en: "The impact of market sentiment: 1) Short-term impact: Sentiment may cause stock prices to deviate from intrinsic value in the short term (overvalued when overly optimistic, undervalued when overly pessimistic); 2) Long-term convergence: Long-term, stock prices will converge to intrinsic value; 3) Provide opportunities: Sentiment fluctuations may provide buying or selling opportunities; 4) Noise: For long-term investors, sentiment fluctuations are noise; should focus on value rather than sentiment. 'The market is a voting machine, but in the long run, it's a weighing machine.'"
+    }
+  },
+  {
+    id: 135,
+    topic: "market-indices",
+    question: {
+      zh: "在分析市场时，'市场周期'（Market Cycle）的特点是什么？",
+      en: "When analyzing markets, what are the characteristics of 'Market Cycles'?"
+    },
+    options: {
+      zh: [
+        "市场没有周期",
+        "市场会经历牛市、熊市、调整等不同阶段，每个阶段有不同的特征。理解市场周期有助于投资决策，但很难准确预测周期转折点",
+        "市场周期可以准确预测"
+      ],
+      en: [
+        "Markets have no cycles",
+        "Markets go through different phases such as bull markets, bear markets, corrections, etc., each with different characteristics. Understanding market cycles helps investment decisions, but it's difficult to accurately predict cycle turning points",
+        "Market cycles can be accurately predicted"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市场周期的特点：1) 不同阶段：牛市（上涨）、熊市（下跌）、调整（短期下跌）、反弹（短期上涨）；2) 不同特征：每个阶段有不同的情绪、估值、交易量特征；3) 难以预测：虽然市场有周期，但很难准确预测转折点；4) 投资启示：理解周期有助于投资决策，但应该基于价值而非预测周期。",
+      en: "Characteristics of market cycles: 1) Different phases: Bull markets (rising), bear markets (falling), corrections (short-term declines), rebounds (short-term rises); 2) Different characteristics: Each phase has different sentiment, valuation, and trading volume characteristics; 3) Difficult to predict: Although markets have cycles, it's difficult to accurately predict turning points; 4) Investment implications: Understanding cycles helps investment decisions, but should be based on value rather than predicting cycles."
+    }
+  },
+  {
+    id: 136,
+    topic: "market-indices",
+    question: {
+      zh: "在分析市场时，'市场深度'（Market Depth）指的是什么？",
+      en: "When analyzing markets, what does 'Market Depth' refer to?"
+    },
+    options: {
+      zh: [
+        "市场下跌的深度",
+        "市场能够承受大额交易而不显著影响价格的能力。市场深度越大，大额交易对价格的影响越小",
+        "市场深度没有意义"
+      ],
+      en: [
+        "The depth of market decline",
+        "The market's ability to absorb large trades without significantly affecting prices. The greater the market depth, the smaller the impact of large trades on prices",
+        "Market depth is meaningless"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市场深度是指市场能够承受大额交易而不显著影响价格的能力。市场深度大意味着：1) 有足够的买卖盘；2) 大额交易不会导致价格大幅波动；3) 流动性好。市场深度小的市场，大额交易可能导致价格大幅波动。市场深度是衡量市场流动性的重要指标。",
+      en: "Market depth refers to the market's ability to absorb large trades without significantly affecting prices. Large market depth means: 1) Sufficient buy and sell orders; 2) Large trades won't cause significant price fluctuations; 3) Good liquidity. Markets with small depth may experience significant price fluctuations from large trades. Market depth is an important metric for measuring market liquidity."
+    }
+  },
+  {
+    id: 137,
+    topic: "market-indices",
+    question: {
+      zh: "在分析市场时，'市场波动性'（Market Volatility）增加，对投资者意味着什么？",
+      en: "When analyzing markets, what does increased 'Market Volatility' mean for investors?"
+    },
+    options: {
+      zh: [
+        "应该立即卖出",
+        "市场波动性增加可能带来风险和机会。对于长期价值投资者，波动可能提供以更低价格买入优质公司的机会",
+        "波动性增加总是坏事"
+      ],
+      en: [
+        "Should sell immediately",
+        "Increased market volatility may bring risks and opportunities. For long-term value investors, volatility may provide opportunities to buy quality companies at lower prices",
+        "Increased volatility is always bad"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市场波动性增加的影响：1) 风险增加：价格波动更大，短期风险增加；2) 可能带来机会：对于长期价值投资者，如果公司内在价值没有变化，价格下跌可能提供买入机会；3) 情绪影响：波动可能引发恐慌或贪婪；4) 长期视角：对于长期投资者，短期波动是噪音，应该关注公司价值。",
+      en: "The impact of increased market volatility: 1) Increased risk: Larger price fluctuations, increased short-term risk; 2) May bring opportunities: For long-term value investors, if company intrinsic value hasn't changed, price declines may provide buying opportunities; 3) Emotional impact: Volatility may trigger panic or greed; 4) Long-term perspective: For long-term investors, short-term volatility is noise; should focus on company value."
+    }
+  },
+  {
+    id: 138,
+    topic: "market-indices",
+    question: {
+      zh: "在分析市场时，'市场集中度'（Market Concentration）指的是什么？",
+      en: "When analyzing markets, what does 'Market Concentration' refer to?"
+    },
+    options: {
+      zh: [
+        "市场下跌的集中程度",
+        "少数大公司占市场总市值的比例。集中度高意味着少数大公司主导市场，它们的表现对整体市场影响很大",
+        "市场集中度没有意义"
+      ],
+      en: [
+        "The concentration of market decline",
+        "The proportion of total market capitalization accounted for by a few large companies. High concentration means a few large companies dominate the market, and their performance has a great impact on the overall market",
+        "Market concentration is meaningless"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市场集中度是指少数大公司占市场总市值的比例。例如，如果前10大公司占S&P 500总市值的30%，说明市场集中度较高。高集中度意味着：1) 少数大公司主导市场；2) 这些公司的表现对整体市场影响很大；3) 市场表现可能不能代表所有公司。了解市场集中度有助于理解市场结构和风险。",
+      en: "Market concentration refers to the proportion of total market capitalization accounted for by a few large companies. For example, if the top 10 companies account for 30% of the S&P 500's total market cap, it indicates high market concentration. High concentration means: 1) A few large companies dominate the market; 2) These companies' performance has a great impact on the overall market; 3) Market performance may not represent all companies. Understanding market concentration helps understand market structure and risks."
+    }
+  },
+  {
+    id: 139,
+    topic: "market-indices",
+    question: {
+      zh: "在分析市场时，'市场流动性'（Market Liquidity）的重要性是什么？",
+      en: "When analyzing markets, what is the importance of 'Market Liquidity'?"
+    },
+    options: {
+      zh: [
+        "没有重要性",
+        "流动性影响交易的便利性和成本。高流动性市场：1) 买卖容易；2) 交易成本低；3) 价格发现更准确。低流动性市场可能导致：1) 买卖困难；2) 交易成本高；3) 价格波动大",
+        "流动性越高越好"
+      ],
+      en: [
+        "No importance",
+        "Liquidity affects the convenience and cost of trading. High-liquidity markets: 1) Easy to buy and sell; 2) Low transaction costs; 3) More accurate price discovery. Low-liquidity markets may lead to: 1) Difficulty buying and selling; 2) High transaction costs; 3) Large price fluctuations",
+        "Higher liquidity is always better"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市场流动性的重要性：1) 交易便利性：高流动性市场买卖容易，低流动性市场可能难以成交；2) 交易成本：高流动性市场买卖价差小，交易成本低；3) 价格发现：高流动性市场价格发现更准确；4) 价格波动：低流动性市场，大额交易可能导致价格大幅波动。流动性是市场健康的重要指标。",
+      en: "The importance of market liquidity: 1) Trading convenience: High-liquidity markets are easy to trade, low-liquidity markets may be difficult to execute; 2) Transaction costs: High-liquidity markets have small bid-ask spreads and low transaction costs; 3) Price discovery: High-liquidity markets have more accurate price discovery; 4) Price fluctuations: In low-liquidity markets, large trades may cause significant price fluctuations. Liquidity is an important indicator of market health."
+    }
+  },
+  {
+    id: 140,
+    topic: "market-indices",
+    question: {
+      zh: "在分析市场时，'市场估值'（Market Valuation）如何影响投资决策？",
+      en: "When analyzing markets, how does 'Market Valuation' affect investment decisions?"
+    },
+    options: {
+      zh: [
+        "没有影响",
+        "市场整体估值水平（如整体P/E比率）可以反映市场是否高估或低估。高估值时应该谨慎，低估值时可能有更多机会，但更重要的是关注个股价值",
+        "只看市场估值就够了"
+      ],
+      en: [
+        "No impact",
+        "Overall market valuation levels (such as overall P/E ratio) can reflect whether the market is overvalued or undervalued. Should be cautious when valuations are high, may have more opportunities when valuations are low, but more important is to focus on individual stock value",
+        "Only looking at market valuation is enough"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市场估值的影响：1) 整体水平：市场整体估值可以反映市场是否高估或低估；2) 投资启示：高估值时应该谨慎，低估值时可能有更多机会；3) 个股更重要：即使市场整体高估，也可能有个股被低估；4) 长期视角：市场估值是参考，但更重要的是关注个股的内在价值。",
+      en: "The impact of market valuation: 1) Overall level: Overall market valuation can reflect whether the market is overvalued or undervalued; 2) Investment implications: Should be cautious when valuations are high, may have more opportunities when valuations are low; 3) Individual stocks more important: Even if the overall market is overvalued, there may be undervalued individual stocks; 4) Long-term perspective: Market valuation is a reference, but more important is to focus on individual stock intrinsic value."
+    }
+  },
+  {
+    id: 141,
+    topic: "market-indices",
+    question: {
+      zh: "在分析市场时，'市场情绪指标'（Market Sentiment Indicators）的作用是什么？",
+      en: "When analyzing markets, what is the role of 'Market Sentiment Indicators'?"
+    },
+    options: {
+      zh: [
+        "没有作用",
+        "帮助识别市场情绪是否过度乐观或悲观，可能提供逆向投资的机会。但情绪指标只是参考，应该结合基本面分析",
+        "情绪指标决定一切"
+      ],
+      en: [
+        "No role",
+        "Help identify whether market sentiment is overly optimistic or pessimistic, may provide contrarian investment opportunities. However, sentiment indicators are only references and should be combined with fundamental analysis",
+        "Sentiment indicators determine everything"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市场情绪指标的作用：1) 识别情绪：帮助识别市场是否过度乐观或悲观；2) 逆向机会：极端情绪可能提供逆向投资机会；3) 只是参考：情绪指标只是参考，不能单独使用；4) 结合基本面：应该结合基本面分析，基于价值做决策。常见的情绪指标包括：VIX恐慌指数、投资者情绪调查、融资融券比例等。",
+      en: "The role of market sentiment indicators: 1) Identify sentiment: Help identify whether the market is overly optimistic or pessimistic; 2) Contrarian opportunities: Extreme sentiment may provide contrarian investment opportunities; 3) Only references: Sentiment indicators are only references and cannot be used alone; 4) Combine fundamentals: Should be combined with fundamental analysis, make decisions based on value. Common sentiment indicators include: VIX fear index, investor sentiment surveys, margin trading ratios, etc."
+    }
+  },
+  {
+    id: 142,
+    topic: "market-indices",
+    question: {
+      zh: "在分析市场时，'市场宽度'（Market Breadth）指的是什么？",
+      en: "When analyzing markets, what does 'Market Breadth' refer to?"
+    },
+    options: {
+      zh: [
+        "市场下跌的宽度",
+        "参与上涨或下跌的股票数量。市场宽度好意味着多数股票上涨，市场宽度差意味着只有少数股票上涨（如只有大公司上涨）",
+        "市场宽度没有意义"
+      ],
+      en: [
+        "The width of market decline",
+        "The number of stocks participating in rises or falls. Good market breadth means most stocks are rising, poor market breadth means only a few stocks are rising (such as only large companies rising)",
+        "Market breadth is meaningless"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市场宽度是指参与上涨或下跌的股票数量。市场宽度好意味着：1) 多数股票上涨，市场健康；2) 上涨有广泛基础。市场宽度差意味着：1) 只有少数股票上涨（如只有大公司上涨）；2) 市场上涨可能不健康，缺乏广泛基础。市场宽度是衡量市场健康的重要指标。",
+      en: "Market breadth refers to the number of stocks participating in rises or falls. Good market breadth means: 1) Most stocks are rising, market is healthy; 2) Rises have a broad base. Poor market breadth means: 1) Only a few stocks are rising (such as only large companies rising); 2) Market rises may be unhealthy, lacking a broad base. Market breadth is an important metric for measuring market health."
+    }
+  },
+  {
+    id: 143,
+    topic: "market-indices",
+    question: {
+      zh: "在分析市场时，'市场趋势'（Market Trend）和'市场波动'（Market Volatility）的区别是什么？",
+      en: "When analyzing markets, what is the difference between 'Market Trend' and 'Market Volatility'?"
+    },
+    options: {
+      zh: [
+        "没有区别",
+        "市场趋势是价格的长期方向（上涨、下跌、横盘），市场波动是价格的短期波动幅度。趋势反映方向，波动反映不确定性",
+        "趋势和波动是一回事"
+      ],
+      en: [
+        "No difference",
+        "Market trend is the long-term direction of prices (rising, falling, sideways), market volatility is the short-term fluctuation magnitude of prices. Trend reflects direction, volatility reflects uncertainty",
+        "Trend and volatility are the same thing"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市场趋势和波动的区别：1) 趋势：价格的长期方向，如牛市（长期上涨）、熊市（长期下跌）；2) 波动：价格的短期波动幅度，反映不确定性；3) 关系：趋势中可以有很多波动，波动不影响长期趋势；4) 投资启示：长期投资者应该关注趋势（价值），短期波动是噪音。",
+      en: "The difference between market trend and volatility: 1) Trend: Long-term direction of prices, such as bull markets (long-term rising), bear markets (long-term falling); 2) Volatility: Short-term fluctuation magnitude of prices, reflecting uncertainty; 3) Relationship: Trends can have many fluctuations; fluctuations don't affect long-term trends; 4) Investment implications: Long-term investors should focus on trends (value), short-term volatility is noise."
+    }
+  },
+  {
+    id: 144,
+    topic: "market-indices",
+    question: {
+      zh: "在分析市场时，'市场效率'（Market Efficiency）对投资者的启示是什么？",
+      en: "When analyzing markets, what are the implications of 'Market Efficiency' for investors?"
+    },
+    options: {
+      zh: [
+        "没有启示",
+        "如果市场是高效的，主动管理难以持续超越市场，指数投资可能是更好的选择。但如果市场不完全高效，价值投资可能发现被低估的机会",
+        "市场总是高效的"
+      ],
+      en: [
+        "No implications",
+        "If markets are efficient, active management finds it difficult to consistently outperform the market, and index investing may be a better choice. However, if markets are not fully efficient, value investing may discover undervalued opportunities",
+        "Markets are always efficient"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市场效率的启示：1) 如果市场高效：主动管理难以持续超越市场，指数投资（低成本）可能是更好的选择；2) 如果市场不完全高效：可能存在定价错误，价值投资可能发现被低估的机会；3) 实际应用：大多数市场可能介于完全高效和完全低效之间，既有定价错误的机会，也有市场效率的约束。",
+      en: "Implications of market efficiency: 1) If markets are efficient: Active management finds it difficult to consistently outperform the market, index investing (low cost) may be a better choice; 2) If markets are not fully efficient: There may be pricing errors, value investing may discover undervalued opportunities; 3) Practical application: Most markets may be somewhere between fully efficient and fully inefficient, with both pricing error opportunities and market efficiency constraints."
+    }
+  },
+  {
+    id: 145,
+    topic: "market-indices",
+    question: {
+      zh: "在分析市场时，'市场结构'（Market Structure）指的是什么？",
+      en: "When analyzing markets, what does 'Market Structure' refer to?"
+    },
+    options: {
+      zh: [
+        "市场下跌的结构",
+        "市场的组织方式，包括：参与者类型（机构、散户）、交易机制、监管框架等。市场结构影响市场效率和流动性",
+        "市场结构没有意义"
+      ],
+      en: [
+        "The structure of market decline",
+        "The organization of markets, including: types of participants (institutions, retail investors), trading mechanisms, regulatory frameworks, etc. Market structure affects market efficiency and liquidity",
+        "Market structure is meaningless"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市场结构是指市场的组织方式：1) 参与者：机构投资者、散户投资者、做市商等；2) 交易机制：交易所、场外交易、电子交易等；3) 监管框架：监管规则、信息披露要求等。市场结构影响：1) 市场效率；2) 流动性；3) 价格发现；4) 投资者行为。了解市场结构有助于理解市场运作。",
+      en: "Market structure refers to how markets are organized: 1) Participants: Institutional investors, retail investors, market makers, etc.; 2) Trading mechanisms: Exchanges, over-the-counter trading, electronic trading, etc.; 3) Regulatory frameworks: Regulatory rules, disclosure requirements, etc. Market structure affects: 1) Market efficiency; 2) Liquidity; 3) Price discovery; 4) Investor behavior. Understanding market structure helps understand market operations."
+    }
+  },
+  {
+    id: 146,
+    topic: "market-indices",
+    question: {
+      zh: "在分析市场时，'市场周期'和'经济周期'的关系是什么？",
+      en: "When analyzing markets, what is the relationship between 'Market Cycles' and 'Economic Cycles'?"
+    },
+    options: {
+      zh: [
+        "没有关系",
+        "市场周期通常领先于经济周期。股市通常在经济增长之前上涨，在经济衰退之前下跌，因为股市反映的是对未来经济的预期",
+        "市场周期和经济周期完全同步"
+      ],
+      en: [
+        "No relationship",
+        "Market cycles usually lead economic cycles. Stock markets typically rise before economic growth and fall before economic recessions, because stock markets reflect expectations for future economic conditions",
+        "Market cycles and economic cycles are completely synchronized"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市场周期和经济周期的关系：1) 市场领先：股市通常领先于经济，因为股市反映的是对未来经济的预期；2) 提前反应：股市可能在经济增长之前上涨，在经济衰退之前下跌；3) 预期驱动：市场基于预期而非当前经济状况；4) 时间差：市场周期和经济周期有时间差，可能几个月到一年。",
+      en: "The relationship between market cycles and economic cycles: 1) Market leads: Stock markets usually lead the economy because stock markets reflect expectations for future economic conditions; 2) Anticipatory reaction: Stock markets may rise before economic growth and fall before economic recessions; 3) Expectation-driven: Markets are based on expectations rather than current economic conditions; 4) Time lag: There is a time lag between market cycles and economic cycles, possibly months to a year."
+    }
+  },
+  {
+    id: 147,
+    topic: "market-indices",
+    question: {
+      zh: "在分析市场时，'市场修正'（Market Correction）和'熊市'（Bear Market）的区别是什么？",
+      en: "When analyzing markets, what is the difference between a 'Market Correction' and a 'Bear Market'?"
+    },
+    options: {
+      zh: [
+        "没有区别",
+        "市场修正是短期下跌（通常10-20%），是正常调整；熊市是长期下跌（通常20%以上），持续时间更长。修正通常是健康的，熊市可能反映经济问题",
+        "修正和熊市是一回事"
+      ],
+      en: [
+        "No difference",
+        "Market correction is a short-term decline (usually 10-20%), a normal adjustment; bear market is a long-term decline (usually 20%+), lasting longer. Corrections are usually healthy, bear markets may reflect economic problems",
+        "Corrections and bear markets are the same thing"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市场修正和熊市的区别：1) 修正：短期下跌（通常10-20%），持续时间短（通常几个月），是正常调整；2) 熊市：长期下跌（通常20%以上），持续时间长（通常一年以上），可能反映经济衰退；3) 性质：修正是健康的调整，熊市可能反映严重的经济问题；4) 投资启示：修正可能是买入机会，熊市需要更谨慎。",
+      en: "The difference between market correction and bear market: 1) Correction: Short-term decline (usually 10-20%), short duration (usually months), a normal adjustment; 2) Bear market: Long-term decline (usually 20%+), long duration (usually a year or more), may reflect economic recession; 3) Nature: Corrections are healthy adjustments, bear markets may reflect serious economic problems; 4) Investment implications: Corrections may be buying opportunities, bear markets require more caution."
+    }
+  },
+  {
+    id: 148,
+    topic: "market-indices",
+    question: {
+      zh: "在分析市场时，'市场泡沫'（Market Bubble）的特征是什么？",
+      en: "When analyzing markets, what are the characteristics of a 'Market Bubble'?"
+    },
+    options: {
+      zh: [
+        "市场上涨",
+        "价格远高于内在价值、投资者情绪极度乐观、大量投机行为、估值指标处于历史高位。泡沫最终会破裂，价格会大幅下跌",
+        "市场泡沫是好事"
+      ],
+      en: [
+        "Market rising",
+        "Prices far above intrinsic value, extremely optimistic investor sentiment, large amounts of speculation, valuation metrics at historical highs. Bubbles eventually burst, prices will fall significantly",
+        "Market bubbles are good"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市场泡沫的特征：1) 价格高估：价格远高于内在价值；2) 情绪极端：投资者情绪极度乐观，认为价格会永远上涨；3) 投机盛行：大量投机行为，非理性投资；4) 估值极端：估值指标（如P/E）处于历史高位；5) 最终破裂：泡沫最终会破裂，价格会大幅下跌。识别泡沫有助于避免投资风险。",
+      en: "Characteristics of market bubbles: 1) Overvaluation: Prices far above intrinsic value; 2) Extreme sentiment: Extremely optimistic investor sentiment, believing prices will rise forever; 3) Speculation prevalent: Large amounts of speculation, irrational investing; 4) Extreme valuations: Valuation metrics (such as P/E) at historical highs; 5) Eventually burst: Bubbles eventually burst, prices will fall significantly. Identifying bubbles helps avoid investment risks."
+    }
+  },
+  {
+    id: 149,
+    topic: "market-indices",
+    question: {
+      zh: "在分析市场时，'市场底部'（Market Bottom）的特征是什么？",
+      en: "When analyzing markets, what are the characteristics of a 'Market Bottom'?"
+    },
+    options: {
+      zh: [
+        "市场上涨",
+        "价格可能低于价值、投资者情绪极度悲观、估值处于历史低位、交易量可能放大。但很难准确识别底部，应该基于价值而非预测底部",
+        "市场底部可以准确预测"
+      ],
+      en: [
+        "Market rising",
+        "Prices may be below value, extremely pessimistic investor sentiment, valuations at historical lows, trading volume may increase. However, it's difficult to accurately identify bottoms; should be based on value rather than predicting bottoms",
+        "Market bottoms can be accurately predicted"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市场底部的特征：1) 价格低估：价格可能低于内在价值；2) 情绪极端：投资者情绪极度悲观，认为价格会永远下跌；3) 估值低位：估值指标处于历史低位；4) 交易量：交易量可能放大（恐慌性抛售）。但很难准确识别底部，应该基于价值判断买入，而非试图预测底部。",
+      en: "Characteristics of market bottoms: 1) Undervaluation: Prices may be below intrinsic value; 2) Extreme sentiment: Extremely pessimistic investor sentiment, believing prices will fall forever; 3) Low valuations: Valuation metrics at historical lows; 4) Trading volume: Trading volume may increase (panic selling). However, it's difficult to accurately identify bottoms; should buy based on value judgment rather than trying to predict bottoms."
+    }
+  },
+  // Economics - Additional questions to reach 20
+  {
+    id: 150,
+    topic: "economics",
+    question: {
+      zh: "在经济学中，'GDP'（国内生产总值）和'GNP'（国民生产总值）的区别是什么？",
+      en: "In economics, what is the difference between 'GDP' (Gross Domestic Product) and 'GNP' (Gross National Product)?"
+    },
+    options: {
+      zh: [
+        "没有区别",
+        "GDP衡量国内生产的价值（无论生产者国籍），GNP衡量国民生产的价值（无论生产地点）。GDP = GNP + 来自国外的净收入",
+        "GDP总是大于GNP"
+      ],
+      en: [
+        "No difference",
+        "GDP measures the value of domestic production (regardless of producer nationality), GNP measures the value of national production (regardless of production location). GDP = GNP + Net income from abroad",
+        "GDP is always greater than GNP"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "GDP和GNP的区别：1) GDP（国内生产总值）：衡量在一国境内生产的最终产品和服务的价值，无论生产者是本国人还是外国人；2) GNP（国民生产总值）：衡量一国国民生产的最终产品和服务的价值，无论生产地点在国内还是国外；3) 关系：GDP = GNP + 来自国外的净收入。对于大多数国家，GDP和GNP差异不大。",
+      en: "The difference between GDP and GNP: 1) GDP (Gross Domestic Product): Measures the value of final goods and services produced within a country's borders, regardless of whether producers are nationals or foreigners; 2) GNP (Gross National Product): Measures the value of final goods and services produced by a country's nationals, regardless of production location; 3) Relationship: GDP = GNP + Net income from abroad. For most countries, the difference between GDP and GNP is small."
+    }
+  },
+  {
+    id: 151,
+    topic: "economics",
+    question: {
+      zh: "在经济学中，'通货膨胀'（Inflation）和'通货紧缩'（Deflation）对经济的影响是什么？",
+      en: "In economics, what are the impacts of 'Inflation' and 'Deflation' on the economy?"
+    },
+    options: {
+      zh: [
+        "都没有影响",
+        "适度通胀通常有利于经济增长（刺激消费和投资），但恶性通胀有害。通缩通常有害（抑制消费和投资，增加债务负担）",
+        "通胀和通缩都是好事"
+      ],
+      en: [
+        "Both have no impact",
+        "Moderate inflation usually benefits economic growth (stimulates consumption and investment), but hyperinflation is harmful. Deflation is usually harmful (suppresses consumption and investment, increases debt burden)",
+        "Both inflation and deflation are good"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "通胀和通缩的影响：1) 适度通胀（2-3%）：通常有利于经济增长，刺激消费和投资，降低实际债务负担；2) 恶性通胀：破坏经济稳定，货币贬值，储蓄价值下降；3) 通缩：通常有害，抑制消费和投资（预期价格下降），增加实际债务负担，可能导致经济衰退。央行通常目标是将通胀控制在适度水平。",
+      en: "The impacts of inflation and deflation: 1) Moderate inflation (2-3%): Usually benefits economic growth, stimulates consumption and investment, reduces real debt burden; 2) Hyperinflation: Destroys economic stability, currency devaluation, savings value decline; 3) Deflation: Usually harmful, suppresses consumption and investment (expecting price declines), increases real debt burden, may lead to economic recession. Central banks usually aim to keep inflation at moderate levels."
+    }
+  },
+  {
+    id: 152,
+    topic: "economics",
+    question: {
+      zh: "在经济学中，'货币政策'（Monetary Policy）和'财政政策'（Fiscal Policy）的区别是什么？",
+      en: "In economics, what is the difference between 'Monetary Policy' and 'Fiscal Policy'?"
+    },
+    options: {
+      zh: [
+        "没有区别",
+        "货币政策由央行执行（通过利率、货币供应量），财政政策由政府执行（通过税收、政府支出）。两者都用于调节经济，但工具和影响不同",
+        "只有货币政策"
+      ],
+      en: [
+        "No difference",
+        "Monetary policy is implemented by central banks (through interest rates, money supply), fiscal policy is implemented by governments (through taxes, government spending). Both are used to regulate the economy, but tools and impacts differ",
+        "Only monetary policy"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "货币政策和财政政策的区别：1) 执行者：货币政策由央行执行，财政政策由政府执行；2) 工具：货币政策通过利率、货币供应量、准备金率等；财政政策通过税收、政府支出、转移支付等；3) 影响：货币政策主要影响利率和货币供应，财政政策直接影响总需求；4) 时滞：货币政策时滞较短，财政政策时滞较长。两者通常配合使用。",
+      en: "The difference between monetary and fiscal policy: 1) Implementers: Monetary policy by central banks, fiscal policy by governments; 2) Tools: Monetary policy through interest rates, money supply, reserve requirements, etc.; fiscal policy through taxes, government spending, transfer payments, etc.; 3) Impact: Monetary policy mainly affects interest rates and money supply, fiscal policy directly affects aggregate demand; 4) Time lag: Monetary policy has shorter lags, fiscal policy has longer lags. Both are usually used together."
+    }
+  },
+  {
+    id: 153,
+    topic: "economics",
+    question: {
+      zh: "在经济学中，'失业率'（Unemployment Rate）如何影响经济？",
+      en: "In economics, how does the 'Unemployment Rate' affect the economy?"
+    },
+    options: {
+      zh: [
+        "没有影响",
+        "失业率影响：1) 消费能力（失业者消费减少）；2) 社会稳定性；3) 通胀压力（低失业率可能导致工资上涨和通胀）。自然失业率是正常现象，但过高失业率表明经济问题",
+        "失业率越低越好"
+      ],
+      en: [
+        "No impact",
+        "Unemployment rate affects: 1) Consumption capacity (unemployed consume less); 2) Social stability; 3) Inflation pressure (low unemployment may lead to wage increases and inflation). Natural unemployment rate is normal, but excessively high unemployment indicates economic problems",
+        "Lower unemployment rate is always better"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "失业率的影响：1) 消费能力：失业者收入减少，消费能力下降，影响总需求；2) 社会稳定性：高失业率可能导致社会不稳定；3) 通胀压力：低失业率可能导致劳动力短缺，工资上涨，推高通胀（菲利普斯曲线）；4) 自然失业率：存在自然失业率（摩擦性、结构性失业），这是正常现象。过高失业率表明经济衰退或结构性问题。",
+      en: "The impact of unemployment rate: 1) Consumption capacity: Unemployed have reduced income, consumption capacity declines, affecting aggregate demand; 2) Social stability: High unemployment may lead to social instability; 3) Inflation pressure: Low unemployment may lead to labor shortages, wage increases, pushing up inflation (Phillips Curve); 4) Natural unemployment rate: There is a natural unemployment rate (frictional, structural unemployment), which is normal. Excessively high unemployment indicates economic recession or structural problems."
+    }
+  },
+  {
+    id: 154,
+    topic: "economics",
+    question: {
+      zh: "在经济学中，'贸易逆差'（Trade Deficit）一定是不好的吗？",
+      en: "In economics, is a 'Trade Deficit' necessarily bad?"
+    },
+    options: {
+      zh: [
+        "是的，贸易逆差总是坏事",
+        "不一定。贸易逆差可能反映：1) 国内需求旺盛；2) 资本流入（外国投资）；3) 比较优势。但如果长期持续且规模过大，可能表明竞争力问题",
+        "贸易逆差总是好事"
+      ],
+      en: [
+        "Yes, trade deficit is always bad",
+        "Not necessarily. Trade deficit may reflect: 1) Strong domestic demand; 2) Capital inflows (foreign investment); 3) Comparative advantage. However, if it persists long-term and is excessively large, it may indicate competitiveness issues",
+        "Trade deficit is always good"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "贸易逆差不一定不好：1) 可能反映需求：国内需求旺盛，进口增加；2) 资本流入：贸易逆差可能伴随资本流入（外国投资），这可能是好事；3) 比较优势：进口具有比较优势的产品可能提高效率；4) 但需关注：如果长期持续且规模过大，可能表明竞争力问题、过度消费、或依赖外债。需要综合分析。",
+      en: "Trade deficit is not necessarily bad: 1) May reflect demand: Strong domestic demand, increased imports; 2) Capital inflows: Trade deficit may be accompanied by capital inflows (foreign investment), which may be good; 3) Comparative advantage: Importing products with comparative advantage may improve efficiency; 4) But need attention: If it persists long-term and is excessively large, it may indicate competitiveness issues, overconsumption, or dependence on foreign debt. Need comprehensive analysis."
+    }
+  },
+  {
+    id: 155,
+    topic: "economics",
+    question: {
+      zh: "在经济学中，'汇率'（Exchange Rate）如何影响经济？",
+      en: "In economics, how does the 'Exchange Rate' affect the economy?"
+    },
+    options: {
+      zh: [
+        "没有影响",
+        "汇率影响：1) 进出口（本币贬值促进出口，抑制进口）；2) 资本流动；3) 通胀（本币贬值推高进口商品价格）。汇率变动对不同行业影响不同",
+        "汇率越高越好"
+      ],
+      en: [
+        "No impact",
+        "Exchange rate affects: 1) Imports and exports (currency depreciation promotes exports, suppresses imports); 2) Capital flows; 3) Inflation (currency depreciation pushes up import prices). Exchange rate changes affect different industries differently",
+        "Higher exchange rate is always better"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "汇率的影响：1) 进出口：本币贬值使出口商品更便宜（促进出口），进口商品更贵（抑制进口）；2) 资本流动：汇率变动影响资本流动，影响投资和金融市场；3) 通胀：本币贬值推高进口商品价格，可能推高通胀；4) 行业差异：出口导向行业受益于本币贬值，依赖进口的行业受损。汇率是重要的经济调节工具。",
+      en: "The impact of exchange rates: 1) Imports and exports: Currency depreciation makes export goods cheaper (promotes exports), import goods more expensive (suppresses imports); 2) Capital flows: Exchange rate changes affect capital flows, affecting investment and financial markets; 3) Inflation: Currency depreciation pushes up import prices, may push up inflation; 4) Industry differences: Export-oriented industries benefit from currency depreciation, import-dependent industries suffer. Exchange rates are important economic adjustment tools."
+    }
+  },
+  {
+    id: 156,
+    topic: "economics",
+    question: {
+      zh: "在经济学中，'经济周期'（Business Cycle）的各个阶段是什么？",
+      en: "In economics, what are the stages of the 'Business Cycle'?"
+    },
+    options: {
+      zh: [
+        "只有增长和衰退",
+        "经济周期包括：扩张期（经济增长）、峰值（经济高点）、衰退期（经济收缩）、谷底（经济低点）。然后循环往复",
+        "经济周期没有阶段"
+      ],
+      en: [
+        "Only growth and recession",
+        "Business cycle includes: Expansion (economic growth), Peak (economic high point), Recession (economic contraction), Trough (economic low point). Then cycles repeat",
+        "Business cycle has no stages"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "经济周期的阶段：1) 扩张期：经济增长，就业增加，收入上升，消费和投资增加；2) 峰值：经济达到高点，可能出现过热迹象；3) 衰退期：经济收缩，就业减少，收入下降，消费和投资减少；4) 谷底：经济达到低点，然后开始复苏。经济周期是正常现象，但政府政策可以影响周期的幅度和持续时间。",
+      en: "Stages of the business cycle: 1) Expansion: Economic growth, employment increases, income rises, consumption and investment increase; 2) Peak: Economy reaches high point, may show signs of overheating; 3) Recession: Economic contraction, employment decreases, income declines, consumption and investment decrease; 4) Trough: Economy reaches low point, then begins recovery. Business cycles are normal, but government policies can affect the amplitude and duration of cycles."
+    }
+  },
+  {
+    id: 157,
+    topic: "economics",
+    question: {
+      zh: "在经济学中，'供给侧'（Supply Side）和'需求侧'（Demand Side）的区别是什么？",
+      en: "In economics, what is the difference between 'Supply Side' and 'Demand Side'?"
+    },
+    options: {
+      zh: [
+        "没有区别",
+        "供给侧关注生产能力、生产效率、供给成本等，需求侧关注消费、投资、政府支出等。供给侧政策通过提高生产效率促进增长，需求侧政策通过刺激需求促进增长",
+        "只有需求侧"
+      ],
+      en: [
+        "No difference",
+        "Supply side focuses on production capacity, production efficiency, supply costs, etc. Demand side focuses on consumption, investment, government spending, etc. Supply-side policies promote growth by improving production efficiency, demand-side policies promote growth by stimulating demand",
+        "Only demand side"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "供给侧和需求侧的区别：1) 供给侧：关注生产能力、生产效率、供给成本、技术进步等，供给侧政策（如减税、放松管制）通过提高生产效率促进增长；2) 需求侧：关注消费、投资、政府支出、净出口等，需求侧政策（如增加政府支出、减税）通过刺激需求促进增长；3) 两者配合：供给侧和需求侧政策通常配合使用，共同促进经济增长。",
+      en: "The difference between supply side and demand side: 1) Supply side: Focuses on production capacity, production efficiency, supply costs, technological progress, etc. Supply-side policies (such as tax cuts, deregulation) promote growth by improving production efficiency; 2) Demand side: Focuses on consumption, investment, government spending, net exports, etc. Demand-side policies (such as increasing government spending, tax cuts) promote growth by stimulating demand; 3) Both work together: Supply-side and demand-side policies are usually used together to promote economic growth."
+    }
+  },
+  {
+    id: 158,
+    topic: "economics",
+    question: {
+      zh: "在经济学中，'比较优势'（Comparative Advantage）的概念是什么？",
+      en: "In economics, what is the concept of 'Comparative Advantage'?"
+    },
+    options: {
+      zh: [
+        "没有这个概念",
+        "即使一国在所有产品上都不如另一国，只要在某些产品上的相对劣势较小，就应该专门生产这些产品并出口，通过贸易获得收益",
+        "比较优势就是绝对优势"
+      ],
+      en: [
+        "No such concept",
+        "Even if one country is inferior to another in all products, as long as its relative disadvantage is smaller in some products, it should specialize in producing and exporting these products, gaining benefits through trade",
+        "Comparative advantage is absolute advantage"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "比较优势的概念：1) 相对优势：即使一国在所有产品上都不如另一国（绝对劣势），只要在某些产品上的相对劣势较小，就应该专门生产这些产品；2) 贸易收益：通过专业化生产和贸易，两国都能获得收益；3) 与绝对优势的区别：绝对优势是生产成本的绝对比较，比较优势是机会成本的比较；4) 贸易基础：比较优势是国际贸易的基础理论。",
+      en: "The concept of comparative advantage: 1) Relative advantage: Even if one country is inferior to another in all products (absolute disadvantage), as long as its relative disadvantage is smaller in some products, it should specialize in producing these products; 2) Trade benefits: Through specialization and trade, both countries can benefit; 3) Difference from absolute advantage: Absolute advantage is absolute comparison of production costs, comparative advantage is comparison of opportunity costs; 4) Basis of trade: Comparative advantage is the fundamental theory of international trade."
+    }
+  },
+  {
+    id: 159,
+    topic: "economics",
+    question: {
+      zh: "在经济学中，'机会成本'（Opportunity Cost）的概念是什么？",
+      en: "In economics, what is the concept of 'Opportunity Cost'?"
+    },
+    options: {
+      zh: [
+        "没有这个概念",
+        "机会成本是为了获得某种东西而放弃的其他最佳选择的价值。在做决策时，应该考虑机会成本，而不仅仅是直接成本",
+        "机会成本就是直接成本"
+      ],
+      en: [
+        "No such concept",
+        "Opportunity cost is the value of the best alternative forgone to obtain something. When making decisions, should consider opportunity cost, not just direct costs",
+        "Opportunity cost is direct cost"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "机会成本的概念：1) 定义：为了获得某种东西而放弃的其他最佳选择的价值；2) 决策考虑：在做决策时，应该考虑机会成本，而不仅仅是直接成本；3) 资源稀缺：由于资源稀缺，选择一种用途意味着放弃其他用途；4) 投资应用：在投资中，机会成本是选择一种投资而放弃的其他最佳投资的回报。理解机会成本有助于做出更好的决策。",
+      en: "The concept of opportunity cost: 1) Definition: The value of the best alternative forgone to obtain something; 2) Decision consideration: When making decisions, should consider opportunity cost, not just direct costs; 3) Resource scarcity: Due to resource scarcity, choosing one use means giving up other uses; 4) Investment application: In investing, opportunity cost is the return of the best alternative investment forgone by choosing one investment. Understanding opportunity cost helps make better decisions."
+    }
+  },
+  {
+    id: 160,
+    topic: "economics",
+    question: {
+      zh: "在经济学中，'边际效用递减'（Diminishing Marginal Utility）的概念是什么？",
+      en: "In economics, what is the concept of 'Diminishing Marginal Utility'?"
+    },
+    options: {
+      zh: [
+        "没有这个概念",
+        "随着消费某种商品的数量增加，每增加一单位商品带来的额外满足感（边际效用）递减。这解释了为什么需求曲线向下倾斜",
+        "边际效用总是递增的"
+      ],
+      en: [
+        "No such concept",
+        "As the quantity of a good consumed increases, the additional satisfaction (marginal utility) from each additional unit decreases. This explains why demand curves slope downward",
+        "Marginal utility always increases"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "边际效用递减的概念：1) 定义：随着消费某种商品的数量增加，每增加一单位商品带来的额外满足感（边际效用）递减；2) 例子：第一块蛋糕带来很大满足，第二块满足感减少，第三块更少；3) 需求曲线：这解释了为什么需求曲线向下倾斜（价格越高，需求量越少）；4) 投资应用：在投资中，随着投资组合中某种资产增加，其边际贡献可能递减。",
+      en: "The concept of diminishing marginal utility: 1) Definition: As the quantity of a good consumed increases, the additional satisfaction (marginal utility) from each additional unit decreases; 2) Example: The first piece of cake brings great satisfaction, the second piece brings less satisfaction, the third even less; 3) Demand curve: This explains why demand curves slope downward (higher prices lead to lower quantities demanded); 4) Investment application: In investing, as a certain asset increases in a portfolio, its marginal contribution may diminish."
+    }
+  },
+  {
+    id: 161,
+    topic: "economics",
+    question: {
+      zh: "在经济学中，'外部性'（Externality）的概念是什么？",
+      en: "In economics, what is the concept of 'Externality'?"
+    },
+    options: {
+      zh: [
+        "没有这个概念",
+        "外部性是指经济活动对第三方产生的未计入市场价格的影响。正外部性（如教育）带来社会收益，负外部性（如污染）带来社会成本。政府可能需要干预以纠正外部性",
+        "外部性总是坏的"
+      ],
+      en: [
+        "No such concept",
+        "Externality refers to the impact of economic activities on third parties that is not reflected in market prices. Positive externalities (such as education) bring social benefits, negative externalities (such as pollution) bring social costs. Government may need to intervene to correct externalities",
+        "Externalities are always bad"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "外部性的概念：1) 定义：经济活动对第三方产生的未计入市场价格的影响；2) 正外部性：带来社会收益，如教育、研发，市场可能供给不足；3) 负外部性：带来社会成本，如污染、噪音，市场可能供给过多；4) 政府干预：政府可能需要通过税收、补贴、管制等方式纠正外部性，使市场更有效率。",
+      en: "The concept of externality: 1) Definition: The impact of economic activities on third parties that is not reflected in market prices; 2) Positive externality: Brings social benefits, such as education, R&D, market may under-supply; 3) Negative externality: Brings social costs, such as pollution, noise, market may over-supply; 4) Government intervention: Government may need to correct externalities through taxes, subsidies, regulations, etc., to make markets more efficient."
+    }
+  },
+  {
+    id: 162,
+    topic: "economics",
+    question: {
+      zh: "在经济学中，'公共物品'（Public Goods）的特征是什么？",
+      en: "In economics, what are the characteristics of 'Public Goods'?"
+    },
+    options: {
+      zh: [
+        "没有特征",
+        "公共物品具有非排他性（无法排除他人使用）和非竞争性（一人使用不影响他人使用）。由于市场无法有效提供，通常需要政府提供",
+        "公共物品就是私有物品"
+      ],
+      en: [
+        "No characteristics",
+        "Public goods have non-excludability (cannot exclude others from using) and non-rivalry (one person's use does not affect others' use). Since markets cannot efficiently provide them, usually require government provision",
+        "Public goods are private goods"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "公共物品的特征：1) 非排他性：无法排除他人使用，如国防、路灯；2) 非竞争性：一人使用不影响他人使用，如广播、知识；3) 市场失灵：由于无法收费或收费困难，市场无法有效提供公共物品；4) 政府提供：通常需要政府提供公共物品，通过税收融资。准公共物品（如教育、医疗）可能部分由政府提供。",
+      en: "Characteristics of public goods: 1) Non-excludability: Cannot exclude others from using, such as national defense, streetlights; 2) Non-rivalry: One person's use does not affect others' use, such as broadcasting, knowledge; 3) Market failure: Due to inability to charge or difficulty charging, markets cannot efficiently provide public goods; 4) Government provision: Usually require government provision of public goods, financed through taxes. Quasi-public goods (such as education, healthcare) may be partially provided by government."
+    }
+  },
+  {
+    id: 163,
+    topic: "economics",
+    question: {
+      zh: "在经济学中，'市场失灵'（Market Failure）的原因有哪些？",
+      en: "In economics, what are the causes of 'Market Failure'?"
+    },
+    options: {
+      zh: [
+        "没有原因",
+        "市场失灵的原因包括：外部性、公共物品、信息不对称、垄断等。当市场无法有效配置资源时，可能需要政府干预",
+        "市场总是有效的"
+      ],
+      en: [
+        "No causes",
+        "Causes of market failure include: externalities, public goods, information asymmetry, monopoly, etc. When markets cannot efficiently allocate resources, government intervention may be needed",
+        "Markets are always efficient"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市场失灵的原因：1) 外部性：经济活动对第三方的影响未计入价格；2) 公共物品：市场无法有效提供；3) 信息不对称：买卖双方信息不对等，导致逆向选择和道德风险；4) 垄断：市场力量集中，导致价格过高、产量过低；5) 政府干预：当市场失灵时，政府可能需要通过管制、税收、补贴等方式干预，提高市场效率。",
+      en: "Causes of market failure: 1) Externalities: Economic activities' impact on third parties not reflected in prices; 2) Public goods: Markets cannot efficiently provide; 3) Information asymmetry: Unequal information between buyers and sellers, leading to adverse selection and moral hazard; 4) Monopoly: Market power concentration, leading to high prices and low output; 5) Government intervention: When market failure occurs, government may need to intervene through regulation, taxes, subsidies, etc., to improve market efficiency."
+    }
+  },
+  {
+    id: 164,
+    topic: "economics",
+    question: {
+      zh: "在经济学中，'菲利普斯曲线'（Phillips Curve）描述了什么关系？",
+      en: "In economics, what relationship does the 'Phillips Curve' describe?"
+    },
+    options: {
+      zh: [
+        "没有关系",
+        "描述了失业率和通胀率之间的负相关关系：失业率低时，通胀率通常较高；失业率高时，通胀率通常较低。但长期来看，这种关系可能不成立",
+        "失业率和通胀率总是正相关"
+      ],
+      en: [
+        "No relationship",
+        "Describes a negative correlation between unemployment rate and inflation rate: When unemployment is low, inflation is usually high; when unemployment is high, inflation is usually low. However, this relationship may not hold in the long run",
+        "Unemployment and inflation are always positively correlated"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "菲利普斯曲线：1) 短期关系：描述了失业率和通胀率之间的负相关关系，失业率低时，劳动力市场紧张，工资上涨，推高通胀；2) 政策权衡：政府面临失业和通胀之间的权衡；3) 长期失效：长期来看，这种关系可能不成立，因为预期会调整；4) 实际应用：央行在制定货币政策时需要考虑这种关系，但也要考虑长期影响。",
+      en: "Phillips Curve: 1) Short-term relationship: Describes a negative correlation between unemployment rate and inflation rate. When unemployment is low, labor market is tight, wages rise, pushing up inflation; 2) Policy trade-off: Governments face a trade-off between unemployment and inflation; 3) Long-term invalidity: In the long run, this relationship may not hold because expectations adjust; 4) Practical application: Central banks need to consider this relationship when formulating monetary policy, but also consider long-term impacts."
+    }
+  },
+  {
+    id: 165,
+    topic: "economics",
+    question: {
+      zh: "在经济学中，'乘数效应'（Multiplier Effect）的概念是什么？",
+      en: "In economics, what is the concept of the 'Multiplier Effect'?"
+    },
+    options: {
+      zh: [
+        "没有这个概念",
+        "初始支出（如政府支出、投资）会通过连锁反应产生更大的总需求增加。乘数效应的大小取决于边际消费倾向",
+        "乘数效应总是1"
+      ],
+      en: [
+        "No such concept",
+        "Initial spending (such as government spending, investment) will generate a larger increase in total demand through chain reactions. The size of the multiplier effect depends on the marginal propensity to consume",
+        "Multiplier effect is always 1"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "乘数效应的概念：1) 定义：初始支出通过连锁反应产生更大的总需求增加；2) 机制：政府增加支出→收入增加→消费增加→收入进一步增加→消费进一步增加...；3) 乘数大小：取决于边际消费倾向（MPC），MPC越高，乘数越大；4) 政策意义：财政政策的效果可能大于初始支出，但也可能产生相反效果（如挤出效应）。",
+      en: "The concept of multiplier effect: 1) Definition: Initial spending generates a larger increase in total demand through chain reactions; 2) Mechanism: Government increases spending → income increases → consumption increases → income further increases → consumption further increases...; 3) Multiplier size: Depends on marginal propensity to consume (MPC), higher MPC means larger multiplier; 4) Policy significance: Fiscal policy effects may be greater than initial spending, but may also have opposite effects (such as crowding out)."
+    }
+  },
+  {
+    id: 166,
+    topic: "economics",
+    question: {
+      zh: "在经济学中，'流动性陷阱'（Liquidity Trap）是什么？",
+      en: "In economics, what is a 'Liquidity Trap'?"
+    },
+    options: {
+      zh: [
+        "没有这个概念",
+        "当利率已经很低（接近零）时，进一步降低利率无法刺激经济，因为人们更愿意持有现金而非投资。此时货币政策失效，需要财政政策",
+        "流动性陷阱总是好事"
+      ],
+      en: [
+        "No such concept",
+        "When interest rates are already very low (near zero), further lowering interest rates cannot stimulate the economy because people prefer holding cash rather than investing. At this point, monetary policy is ineffective and fiscal policy is needed",
+        "Liquidity trap is always good"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "流动性陷阱：1) 定义：当利率已经很低（接近零）时，进一步降低利率无法刺激经济；2) 原因：人们更愿意持有现金而非投资或消费，因为预期未来可能更差；3) 政策失效：此时货币政策失效，降低利率无法刺激需求；4) 解决方案：需要财政政策（增加政府支出）来刺激需求。这是凯恩斯经济学的重要概念。",
+      en: "Liquidity trap: 1) Definition: When interest rates are already very low (near zero), further lowering interest rates cannot stimulate the economy; 2) Reason: People prefer holding cash rather than investing or consuming because they expect the future may be worse; 3) Policy ineffectiveness: At this point, monetary policy is ineffective, lowering interest rates cannot stimulate demand; 4) Solution: Need fiscal policy (increasing government spending) to stimulate demand. This is an important concept in Keynesian economics."
+    }
+  },
+  {
+    id: 167,
+    topic: "economics",
+    question: {
+      zh: "在经济学中，'滞胀'（Stagflation）是什么？",
+      en: "In economics, what is 'Stagflation'?"
+    },
+    options: {
+      zh: [
+        "没有这个概念",
+        "滞胀是指经济停滞（高失业率、低增长）和通货膨胀同时发生。这是经济政策的两难困境，因为刺激经济的政策可能加剧通胀，抑制通胀的政策可能加剧经济停滞",
+        "滞胀总是好事"
+      ],
+      en: [
+        "No such concept",
+        "Stagflation refers to the simultaneous occurrence of economic stagnation (high unemployment, low growth) and inflation. This is an economic policy dilemma because policies to stimulate the economy may worsen inflation, while policies to curb inflation may worsen stagnation",
+        "Stagflation is always good"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "滞胀：1) 定义：经济停滞（高失业率、低增长）和通货膨胀同时发生；2) 困境：这是经济政策的两难困境，刺激经济的政策（如增加支出）可能加剧通胀，抑制通胀的政策（如提高利率）可能加剧经济停滞；3) 原因：可能由供给冲击（如石油危机）引起；4) 解决方案：需要供给侧政策（提高生产效率）和需求侧政策配合。",
+      en: "Stagflation: 1) Definition: Simultaneous occurrence of economic stagnation (high unemployment, low growth) and inflation; 2) Dilemma: This is an economic policy dilemma. Policies to stimulate the economy (such as increasing spending) may worsen inflation, while policies to curb inflation (such as raising interest rates) may worsen stagnation; 3) Causes: May be caused by supply shocks (such as oil crises); 4) Solutions: Need supply-side policies (improving production efficiency) and demand-side policies working together."
+    }
+  },
+  {
+    id: 168,
+    topic: "economics",
+    question: {
+      zh: "在经济学中，'购买力平价'（Purchasing Power Parity, PPP）的概念是什么？",
+      en: "In economics, what is the concept of 'Purchasing Power Parity (PPP)'?"
+    },
+    options: {
+      zh: [
+        "没有这个概念",
+        "购买力平价理论认为，长期来看，汇率应该调整到使相同的一篮子商品在不同国家具有相同的价格。PPP用于比较不同国家的实际生活水平和经济规模",
+        "购买力平价就是名义汇率"
+      ],
+      en: [
+        "No such concept",
+        "Purchasing Power Parity theory holds that in the long run, exchange rates should adjust so that the same basket of goods has the same price in different countries. PPP is used to compare actual living standards and economic size across countries",
+        "Purchasing Power Parity is the nominal exchange rate"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "购买力平价：1) 理论：长期来看，汇率应该调整到使相同的一篮子商品在不同国家具有相同的价格；2) 机制：如果一国商品更便宜，需求增加，货币升值，直到价格相等；3) 应用：PPP用于比较不同国家的实际生活水平和经济规模，比名义汇率更准确；4) 局限性：由于商品不可贸易、运输成本、关税等因素，PPP可能不完全成立。",
+      en: "Purchasing Power Parity: 1) Theory: In the long run, exchange rates should adjust so that the same basket of goods has the same price in different countries; 2) Mechanism: If goods in one country are cheaper, demand increases, currency appreciates until prices are equal; 3) Application: PPP is used to compare actual living standards and economic size across countries, more accurate than nominal exchange rates; 4) Limitations: Due to non-tradable goods, transportation costs, tariffs, etc., PPP may not fully hold."
+    }
+  },
+  {
+    id: 169,
+    topic: "economics",
+    question: {
+      zh: "在经济学中，'债务与GDP比率'（Debt-to-GDP Ratio）的重要性是什么？",
+      en: "In economics, what is the importance of the 'Debt-to-GDP Ratio'?"
+    },
+    options: {
+      zh: [
+        "没有重要性",
+        "债务与GDP比率衡量政府债务相对于经济规模的规模。比率过高可能表明：1) 偿债压力大；2) 财政可持续性问题；3) 可能影响经济增长和金融稳定。但也要考虑利率、经济增长率等因素",
+        "债务与GDP比率越高越好"
+      ],
+      en: [
+        "No importance",
+        "Debt-to-GDP ratio measures the size of government debt relative to economic size. Excessively high ratio may indicate: 1) High debt service pressure; 2) Fiscal sustainability issues; 3) May affect economic growth and financial stability. But also need to consider interest rates, economic growth rates, and other factors",
+        "Higher debt-to-GDP ratio is always better"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "债务与GDP比率的重要性：1) 衡量规模：衡量政府债务相对于经济规模的规模；2) 偿债压力：比率过高可能表明偿债压力大，需要更多税收或借款；3) 可持续性：可能影响财政可持续性，如果经济增长率低于利率，债务可能不可持续；4) 综合考虑：也要考虑利率、经济增长率、财政状况等因素。没有绝对的安全阈值，但过高比率需要关注。",
+      en: "The importance of debt-to-GDP ratio: 1) Measure size: Measures the size of government debt relative to economic size; 2) Debt service pressure: Excessively high ratio may indicate high debt service pressure, requiring more taxes or borrowing; 3) Sustainability: May affect fiscal sustainability. If economic growth rate is lower than interest rate, debt may be unsustainable; 4) Comprehensive consideration: Also need to consider interest rates, economic growth rates, fiscal conditions, and other factors. There is no absolute safe threshold, but excessively high ratios need attention."
+    }
   }
 ];
 
