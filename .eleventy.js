@@ -50,6 +50,19 @@ module.exports = function(eleventyConfig) {
     return pathPrefix + cleanUrl;
   });
 
+  // Add filter to encode image URLs (handle spaces in filenames)
+  eleventyConfig.addFilter("imageUrl", function(url) {
+    const pathPrefix = process.env.GITHUB_REPOSITORY 
+      ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/` 
+      : (process.env.CI ? '/2.eleventy/' : '');
+    if (!url) return pathPrefix;
+    // Remove leading slash if present
+    const cleanUrl = url.startsWith('/') ? url.slice(1) : url;
+    // Encode the URL properly (spaces become %20)
+    const encodedUrl = encodeURI(cleanUrl);
+    return pathPrefix + encodedUrl;
+  });
+
   // Add filter to mark terms in content
   eleventyConfig.addFilter("markTerms", function(content, glossary, lang, pathPrefix) {
     if (!content || !glossary || !Array.isArray(glossary)) return content;
