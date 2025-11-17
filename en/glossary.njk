@@ -5,31 +5,51 @@ lang: en
 permalink: /en/glossary/
 ---
 
-<h1>Glossary</h1>
-<p>Click on terms to view detailed definitions and explanations</p>
+<div class="glossary-container">
+    <aside class="glossary-nav">
+        <h3>Quick Navigation</h3>
+        <ul>
+            {% for topicGroup in glossaryByTopic %}
+            <li>
+                <a href="#{{ topicGroup.id }}">{{ topicGroup.name.en }}</a>
+                <ul>
+                    {% for term in topicGroup.terms %}
+                    <li><a href="#{{ term.id }}">{{ term.en }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </aside>
+    
+    <div class="glossary-main">
+        <h1>Glossary</h1>
+        <p>Click on terms to view detailed definitions and explanations</p>
 
-<div class="glossary-search">
-    <input type="text" id="glossarySearch" placeholder="Search terms..." style="width: 100%; padding: 0.75rem 1rem; font-size: 1rem; border: 2px solid #ddd; border-radius: 8px; margin-bottom: 2rem; box-sizing: border-box;">
-</div>
+        <div class="glossary-search">
+            <input type="text" id="glossarySearch" placeholder="Search terms..." style="width: 100%; padding: 0.75rem 1rem; font-size: 1rem; border: 2px solid #ddd; border-radius: 8px; margin-bottom: 2rem; box-sizing: border-box;">
+        </div>
 
-<div id="glossaryContent">
-{% for topicGroup in glossaryByTopic %}
-    <div class="glossary-topic" data-topic="{{ topicGroup.id }}">
-        <h2 id="{{ topicGroup.id }}">{{ topicGroup.name.en }}</h2>
-        <div class="glossary-terms">
-            {% for term in topicGroup.terms %}
-            <div class="glossary-term" id="{{ term.id }}" data-en="{{ term.en | lower }}" data-zh="{{ term.zh }}">
-                <div class="term-header">
-                    <span class="term-name">{{ term.en }}</span>
-                </div>
-                <div class="term-description">
-                    <p>{{ term.description.en }}</p>
+        <div id="glossaryContent">
+        {% for topicGroup in glossaryByTopic %}
+            <div class="glossary-topic" data-topic="{{ topicGroup.id }}">
+                <h2 id="{{ topicGroup.id }}">{{ topicGroup.name.en }}</h2>
+                <div class="glossary-terms">
+                    {% for term in topicGroup.terms %}
+                    <div class="glossary-term" id="{{ term.id }}" data-en="{{ term.en | lower }}" data-zh="{{ term.zh }}">
+                        <div class="term-header">
+                            <span class="term-name">{{ term.en }}</span>
+                        </div>
+                        <div class="term-description">
+                            <p>{{ term.description.en }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
-            {% endfor %}
+        {% endfor %}
         </div>
     </div>
-{% endfor %}
 </div>
 
 <script>
@@ -84,6 +104,85 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <style>
+.glossary-container {
+    display: flex;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.glossary-nav {
+    width: 250px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 100px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.glossary-nav h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.glossary-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.glossary-nav > ul > li {
+    margin-bottom: 1rem;
+}
+
+.glossary-nav > ul > li > a {
+    display: block;
+    font-weight: 600;
+    color: #3498db;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0.5rem;
+}
+
+.glossary-nav > ul > li > a:hover {
+    color: #2980b9;
+}
+
+.glossary-nav > ul > li > ul {
+    margin-left: 1rem;
+}
+
+.glossary-nav > ul > li > ul > li {
+    margin-bottom: 0.25rem;
+}
+
+.glossary-nav > ul > li > ul > li > a {
+    display: block;
+    color: #555;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.glossary-nav > ul > li > ul > li > a:hover {
+    background-color: #e9ecef;
+    color: #2c3e50;
+}
+
+.glossary-main {
+    flex: 1;
+    min-width: 0;
+}
+
 .glossary-search input:focus {
     outline: none;
     border-color: #3498db;
@@ -141,5 +240,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 .term-description strong {
     color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+    .glossary-container {
+        flex-direction: column;
+    }
+    
+    .glossary-nav {
+        width: 100%;
+        position: relative;
+        top: 0;
+        max-height: 300px;
+    }
 }
 </style>

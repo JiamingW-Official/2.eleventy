@@ -493,7 +493,6 @@
             <a href="zh/" class="logo">stratos lab</a>
             <nav>
                 <a href="zh/">首页</a>
-                <a href="zh/search/">搜索</a>
                 <a href="zh/glossary/">术语词汇表</a>
                 <div class="lang-switcher">
                     
@@ -830,47 +829,96 @@
                 textNodes.push(node);
             }
             
+            // Collect all text nodes first, then process
+            const processedText = new Map();
+            
             textNodes.forEach(textNode => {
                 let text = textNode.textContent;
-                let modified = false;
+                processedText.set(textNode, text);
+            });
+            
+            // Process each text node only once, avoiding nested matches
+            processedText.forEach((text, textNode) => {
                 let newHTML = text;
+                const matches = [];
                 
+                // Find all matches first
                 sortedTerms.forEach(term => {
                     const termDescription = lang === 'zh' ? term.description.zh : term.description.en;
-                    const escapedDescription = termDescription.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+                    const escapedDescription = termDescription.replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
                     
                     // Mark English terms (whole word)
                     const enRegex = new RegExp(`\\b${term.en.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
-                    newHTML = newHTML.replace(enRegex, (match) => {
-                        modified = true;
-                        return `<span class="term" data-term-id="${term.id}"><span class="term-link">${match}<span class="term-tooltip">${escapedDescription}</span></span></span>`;
-                    });
+                    let match;
+                    while ((match = enRegex.exec(text)) !== null) {
+                        matches.push({
+                            index: match.index,
+                            length: match[0].length,
+                            text: match[0],
+                            termId: term.id,
+                            description: escapedDescription
+                        });
+                    }
                     
                     // Mark Chinese terms
                     const zhRegex = new RegExp(term.zh.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
-                    newHTML = newHTML.replace(zhRegex, (match) => {
-                        modified = true;
-                        return `<span class="term" data-term-id="${term.id}"><span class="term-link">${match}<span class="term-tooltip">${escapedDescription}</span></span></span>`;
-                    });
+                    while ((match = zhRegex.exec(text)) !== null) {
+                        matches.push({
+                            index: match.index,
+                            length: match[0].length,
+                            text: match[0],
+                            termId: term.id,
+                            description: escapedDescription
+                        });
+                    }
                 });
                 
-                if (modified && newHTML !== text) {
+                // Sort matches by index, remove overlapping ones
+                matches.sort((a, b) => a.index - b.index);
+                const nonOverlapping = [];
+                let lastEnd = 0;
+                
+                matches.forEach(match => {
+                    if (match.index >= lastEnd) {
+                        nonOverlapping.push(match);
+                        lastEnd = match.index + match.length;
+                    }
+                });
+                
+                // Build new HTML from back to front to preserve indices
+                if (nonOverlapping.length > 0) {
+                    let result = '';
+                    let lastIndex = 0;
+                    
+                    nonOverlapping.forEach(match => {
+                        result += text.substring(lastIndex, match.index);
+                        result += `<span class="term" data-term-id="${match.termId}"><span class="term-link">${match.text}<span class="term-tooltip">${match.description}</span></span></span>`;
+                        lastIndex = match.index + match.length;
+                    });
+                    result += text.substring(lastIndex);
+                    
                     const wrapper = document.createElement('span');
-                    wrapper.innerHTML = newHTML;
+                    wrapper.innerHTML = result;
                     textNode.parentNode.replaceChild(wrapper, textNode);
                 }
             });
         }
         
-        // Mark terms when DOM is ready
+        // Mark terms when DOM is ready - exclude glossary page
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', function() {
-                const content = document.querySelector('.content, main, #chapterContent');
+                // Don't mark terms on glossary page
+                if (window.location.pathname.includes('/glossary/')) return;
+                
+                const content = document.querySelector('.content, #chapterContent');
                 if (content) markTermsInElement(content);
             });
         } else {
-            const content = document.querySelector('.content, main, #chapterContent');
-            if (content) markTermsInElement(content);
+            // Don't mark terms on glossary page
+            if (!window.location.pathname.includes('/glossary/')) {
+                const content = document.querySelector('.content, #chapterContent');
+                if (content) markTermsInElement(content);
+            }
         }
     })();
     </script>
