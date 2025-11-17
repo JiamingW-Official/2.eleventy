@@ -670,6 +670,9 @@ document.addEventListener('DOMContentLoaded', function() {
         function markTermsInElement(element) {
             if (!element) return;
             
+            // Make function available globally for quiz page
+            window.markTermsInElement = markTermsInElement;
+            
             // Process all text nodes
             const walker = document.createTreeWalker(
                 element,
@@ -680,9 +683,12 @@ document.addEventListener('DOMContentLoaded', function() {
                         const parent = node.parentElement;
                         if (parent && (
                             parent.tagName === 'SCRIPT' || 
-                            parent.tagName === 'STYLE' || 
+                            parent.tagName === 'STYLE' ||
                             parent.classList.contains('term') ||
-                            parent.closest('.term')
+                            parent.closest('.term') ||
+                            parent.classList.contains('option-btn') ||
+                            parent.closest('.quiz-question') ||
+                            parent.closest('.options-container')
                         )) {
                             return NodeFilter.FILTER_REJECT;
                         }
@@ -779,6 +785,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     // On glossary page, only mark terms in description paragraphs, not in term names
                     const descriptions = document.querySelectorAll('.term-description');
                     descriptions.forEach(desc => markTermsInElement(desc));
+                } else if (window.location.pathname.includes('/quiz/')) {
+                    // On quiz page, only mark terms in explanation text, not in questions or options
+                    const explanationText = document.querySelector('.explanation-text');
+                    if (explanationText) markTermsInElement(explanationText);
                 } else {
                     // On other pages, mark terms in content
                     const content = document.querySelector('.content, #chapterContent');
@@ -790,6 +800,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 // On glossary page, only mark terms in description paragraphs
                 const descriptions = document.querySelectorAll('.term-description');
                 descriptions.forEach(desc => markTermsInElement(desc));
+            } else if (window.location.pathname.includes('/quiz/')) {
+                // On quiz page, only mark terms in explanation text, not in questions or options
+                const explanationText = document.querySelector('.explanation-text');
+                if (explanationText) markTermsInElement(explanationText);
             } else {
                 // On other pages, mark terms in content
                 const content = document.querySelector('.content, #chapterContent');
