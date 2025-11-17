@@ -1259,6 +1259,507 @@ module.exports = [
       zh: "评估盈利可持续性需要关注：1) 竞争优势（护城河）- 能否抵御竞争；2) 行业地位 - 是否处于有利位置；3) 盈利来源多样性 - 是否过度依赖单一业务；4) 现金流转化能力 - 利润是否有现金支撑。这些因素决定了公司能否长期保持盈利，而不仅仅是当前时点的利润水平。",
       en: "Assessing profit sustainability requires attention to: 1) Competitive advantages (moats) - ability to resist competition; 2) Industry position - whether in a favorable position; 3) Diversity of profit sources - whether overly dependent on a single business; 4) Cash flow conversion capability - whether profits are supported by cash. These factors determine whether the company can maintain profits long-term, not just the profit level at the current point in time."
     }
+  },
+  // Financial Statements - Additional questions to reach 20
+  {
+    id: 51,
+    topic: "financial-statements",
+    question: {
+      zh: "在现金流量表中，以下哪个活动产生的现金流最能反映公司的核心经营能力？",
+      en: "In the cash flow statement, which activity's cash flow best reflects the company's core operational capability?"
+    },
+    options: {
+      zh: [
+        "投资活动现金流",
+        "经营活动现金流",
+        "筹资活动现金流"
+      ],
+      en: [
+        "Cash flow from investing activities",
+        "Cash flow from operating activities",
+        "Cash flow from financing activities"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "经营活动现金流最能反映公司的核心经营能力，因为它代表公司通过主营业务产生的现金流入和流出。健康的公司应该能够通过经营活动产生正现金流。投资活动现金流反映资本支出和投资，筹资活动现金流反映借款、还款、分红等，这些都不能直接反映核心经营能力。",
+      en: "Cash flow from operating activities best reflects the company's core operational capability, as it represents cash inflows and outflows generated through main business operations. Healthy companies should be able to generate positive cash flow from operating activities. Cash flow from investing activities reflects capital expenditures and investments, while cash flow from financing activities reflects borrowing, repayment, dividends, etc. These do not directly reflect core operational capability."
+    }
+  },
+  {
+    id: 52,
+    topic: "financial-statements",
+    question: {
+      zh: "一家公司的资产负债表显示'长期负债'大幅增加，但'固定资产'也大幅增加。这可能说明什么？",
+      en: "A company's balance sheet shows a significant increase in 'Long-term Debt' and also a significant increase in 'Fixed Assets'. What might this indicate?"
+    },
+    options: {
+      zh: [
+        "公司财务状况恶化",
+        "公司可能在进行资本扩张，通过长期借款投资于固定资产（如厂房、设备）",
+        "负债增加总是坏事"
+      ],
+      en: [
+        "The company's financial condition is deteriorating",
+        "The company may be undergoing capital expansion, investing in fixed assets (such as factories, equipment) through long-term borrowing",
+        "Increasing debt is always bad"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "长期负债和固定资产同时大幅增加，通常表明公司在进行资本扩张，通过长期借款投资于能够产生未来收益的固定资产。这可能是积极的信号（如果投资回报率高于借款成本），但也需要关注：1) 投资回报是否能够覆盖利息成本；2) 现金流能否支撑债务偿还；3) 投资是否合理。",
+      en: "A simultaneous significant increase in long-term debt and fixed assets usually indicates the company is undergoing capital expansion, investing in fixed assets that can generate future returns through long-term borrowing. This may be a positive signal (if the return on investment exceeds the borrowing cost), but attention should also be paid to: 1) Whether investment returns can cover interest costs; 2) Whether cash flow can support debt repayment; 3) Whether the investment is reasonable."
+    }
+  },
+  {
+    id: 53,
+    topic: "financial-statements",
+    question: {
+      zh: "在利润表中，'其他综合收益'（Other Comprehensive Income）与'净利润'（Net Income）的区别是什么？",
+      en: "In the income statement, what is the difference between 'Other Comprehensive Income' and 'Net Income'?"
+    },
+    options: {
+      zh: [
+        "没有区别，都是利润",
+        "净利润反映已实现的损益，其他综合收益反映未实现的损益（如可供出售金融资产公允价值变动）",
+        "其他综合收益更重要"
+      ],
+      en: [
+        "No difference, both are profits",
+        "Net income reflects realized gains and losses, while other comprehensive income reflects unrealized gains and losses (such as fair value changes of available-for-sale financial assets)",
+        "Other comprehensive income is more important"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "净利润反映已实现的、已确认的损益，直接影响股东权益。其他综合收益反映未实现的损益，如可供出售金融资产的公允价值变动、外币折算差额等，这些项目虽然影响股东权益，但不计入当期净利润。其他综合收益在特定条件下可能转为净利润（如资产出售时）。",
+      en: "Net income reflects realized and recognized gains and losses, directly affecting shareholders' equity. Other comprehensive income reflects unrealized gains and losses, such as fair value changes of available-for-sale financial assets, foreign currency translation differences, etc. Although these items affect shareholders' equity, they are not included in current period net income. Other comprehensive income may be converted to net income under certain conditions (such as when assets are sold)."
+    }
+  },
+  {
+    id: 54,
+    topic: "financial-statements",
+    question: {
+      zh: "一家公司的'预付款项'（Prepaid Expenses）大幅增加，这可能意味着什么？",
+      en: "If a company's 'Prepaid Expenses' increase significantly, what might this indicate?"
+    },
+    options: {
+      zh: [
+        "公司收入增加",
+        "公司可能提前支付了未来的费用（如租金、保险费），或者业务扩张导致预付款增加",
+        "预付款项是收入"
+      ],
+      en: [
+        "The company's revenue has increased",
+        "The company may have prepaid future expenses (such as rent, insurance), or business expansion has led to increased prepayments",
+        "Prepaid expenses are revenue"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "预付款项增加通常意味着公司提前支付了未来的费用，这会导致当期现金流减少，但未来期间的费用会减少。也可能是业务扩张导致需要提前支付更多费用（如新办公室租金、新设备保险等）。预付款项是资产，不是收入，它会在未来期间转为费用。",
+      en: "An increase in prepaid expenses usually means the company has prepaid future expenses, which reduces current period cash flow but will reduce future period expenses. It may also be due to business expansion requiring prepayment of more expenses (such as new office rent, new equipment insurance, etc.). Prepaid expenses are assets, not revenue, and will be converted to expenses in future periods."
+    }
+  },
+  {
+    id: 55,
+    topic: "financial-statements",
+    question: {
+      zh: "在分析公司的偿债能力时，以下哪个指标组合最全面？",
+      en: "When analyzing a company's solvency, which combination of metrics is most comprehensive?"
+    },
+    options: {
+      zh: [
+        "只看流动比率",
+        "综合分析流动比率、速动比率、债务股权比、利息覆盖倍数，以及现金流与债务的比率",
+        "只看总资产"
+      ],
+      en: [
+        "Only look at current ratio",
+        "Comprehensively analyze current ratio, quick ratio, debt-to-equity ratio, interest coverage ratio, and cash flow to debt ratio",
+        "Only look at total assets"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "全面评估偿债能力需要多维度分析：流动比率和速动比率反映短期偿债能力；债务股权比反映财务杠杆和长期偿债压力；利息覆盖倍数反映支付利息的能力；现金流与债务的比率反映用现金流偿还债务的能力。单一指标可能产生误导，需要综合判断。",
+      en: "Comprehensive assessment of solvency requires multi-dimensional analysis: current ratio and quick ratio reflect short-term solvency; debt-to-equity ratio reflects financial leverage and long-term debt pressure; interest coverage ratio reflects the ability to pay interest; cash flow to debt ratio reflects the ability to repay debt with cash flow. A single metric may be misleading and requires comprehensive judgment."
+    }
+  },
+  {
+    id: 56,
+    topic: "financial-statements",
+    question: {
+      zh: "一家公司的'应付账款周转天数'（Days Payable Outstanding, DPO）从30天增加到60天，这可能意味着什么？",
+      en: "If a company's Days Payable Outstanding (DPO) increases from 30 days to 60 days, what might this indicate?"
+    },
+    options: {
+      zh: [
+        "公司付款能力增强",
+        "公司可能延长了付款周期以改善现金流，或者与供应商的议价能力增强",
+        "DPO增加总是坏事"
+      ],
+      en: [
+        "The company's payment ability has improved",
+        "The company may have extended payment terms to improve cash flow, or its bargaining power with suppliers has increased",
+        "Increasing DPO is always bad"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "DPO增加意味着公司付款给供应商的时间变长，这可能表明：1) 公司为了改善现金流延长了付款周期；2) 公司与供应商的议价能力增强；3) 公司可能面临现金流压力。适度的DPO增加可以改善现金流，但过度延长可能损害供应商关系。",
+      en: "An increase in DPO means it takes longer for the company to pay suppliers, possibly indicating: 1) The company has extended payment terms to improve cash flow; 2) The company's bargaining power with suppliers has increased; 3) The company may be facing cash flow pressure. Moderate DPO increase can improve cash flow, but excessive extension may damage supplier relationships."
+    }
+  },
+  {
+    id: 57,
+    topic: "financial-statements",
+    question: {
+      zh: "在现金流量表中，'资本支出'（Capital Expenditures, CapEx）通常出现在哪个部分？",
+      en: "In the cash flow statement, in which section does 'Capital Expenditures (CapEx)' typically appear?"
+    },
+    options: {
+      zh: [
+        "经营活动现金流",
+        "投资活动现金流",
+        "筹资活动现金流"
+      ],
+      en: [
+        "Cash flow from operating activities",
+        "Cash flow from investing activities",
+        "Cash flow from financing activities"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "资本支出（CapEx）出现在投资活动现金流中，因为它是公司为了获得长期资产（如厂房、设备、无形资产）而进行的投资。资本支出是负数（现金流出），反映公司对未来的投资。自由现金流 = 经营活动现金流 - 资本支出，是评估公司价值的重要指标。",
+      en: "Capital expenditures (CapEx) appear in cash flow from investing activities, as they represent investments made by the company to acquire long-term assets (such as factories, equipment, intangible assets). Capital expenditures are negative (cash outflow), reflecting the company's investment in the future. Free cash flow = Operating cash flow - Capital expenditures, which is an important metric for evaluating company value."
+    }
+  },
+  {
+    id: 58,
+    topic: "financial-statements",
+    question: {
+      zh: "一家公司的'库存商品'（Finished Goods Inventory）大幅增加，但'原材料库存'（Raw Materials Inventory）减少。这可能说明什么？",
+      en: "A company's 'Finished Goods Inventory' increases significantly, but 'Raw Materials Inventory' decreases. What might this indicate?"
+    },
+    options: {
+      zh: [
+        "公司生产能力强",
+        "公司可能面临销售放缓，产品积压，同时减少原材料采购以控制库存",
+        "库存增加总是好事"
+      ],
+      en: [
+        "The company has strong production capability",
+        "The company may be facing slowing sales, product buildup, while reducing raw material purchases to control inventory",
+        "Increasing inventory is always good"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "成品库存增加但原材料库存减少，可能表明：1) 销售放缓，产品积压；2) 公司减少原材料采购以应对销售下降；3) 生产与销售不匹配。这需要关注销售趋势、库存周转率，以及是否存在产品过时或市场需求下降的风险。",
+      en: "An increase in finished goods inventory but a decrease in raw materials inventory may indicate: 1) Slowing sales, product buildup; 2) The company is reducing raw material purchases in response to declining sales; 3) Mismatch between production and sales. This requires attention to sales trends, inventory turnover ratio, and whether there are risks of product obsolescence or declining market demand."
+    }
+  },
+  {
+    id: 59,
+    topic: "financial-statements",
+    question: {
+      zh: "在分析公司的盈利质量时，'每股收益'（EPS）和'稀释每股收益'（Diluted EPS）的区别是什么？",
+      en: "When analyzing a company's earnings quality, what is the difference between 'Earnings Per Share (EPS)' and 'Diluted Earnings Per Share (Diluted EPS)'?"
+    },
+    options: {
+      zh: [
+        "没有区别",
+        "EPS基于当前流通股数，稀释EPS考虑了可能转换为股票的证券（如期权、可转债）对股本的稀释效应",
+        "稀释EPS总是更高"
+      ],
+      en: [
+        "No difference",
+        "EPS is based on current outstanding shares, while diluted EPS considers the dilutive effect on share capital of securities that may be converted to shares (such as options, convertible bonds)",
+        "Diluted EPS is always higher"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "EPS = 净利润 / 当前流通股数。稀释EPS考虑了可能转换为股票的证券（如股票期权、可转换债券、认股权证）对股本的稀释效应，使用假设转换后的总股数计算。稀释EPS通常低于或等于EPS，更能反映潜在的每股收益，是更保守的指标。",
+      en: "EPS = Net Income / Current Outstanding Shares. Diluted EPS considers the dilutive effect on share capital of securities that may be converted to shares (such as stock options, convertible bonds, warrants), calculated using the total shares assuming conversion. Diluted EPS is usually lower than or equal to EPS, better reflecting potential earnings per share and is a more conservative metric."
+    }
+  },
+  {
+    id: 60,
+    topic: "financial-statements",
+    question: {
+      zh: "一家公司的'累计折旧'（Accumulated Depreciation）持续增加，这可能意味着什么？",
+      en: "If a company's 'Accumulated Depreciation' continues to increase, what might this indicate?"
+    },
+    options: {
+      zh: [
+        "公司资产价值下降",
+        "公司可能持续进行资本支出，新增固定资产，导致累计折旧增加",
+        "累计折旧增加是坏事"
+      ],
+      en: [
+        "The company's asset value is declining",
+        "The company may be continuously making capital expenditures, adding new fixed assets, leading to increased accumulated depreciation",
+        "Increasing accumulated depreciation is bad"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "累计折旧增加通常意味着公司持续进行资本支出，新增固定资产，这些资产按会计政策计提折旧，导致累计折旧增加。这是正常的会计处理，反映资产的使用和消耗。累计折旧是固定资产的备抵账户，固定资产净值 = 原值 - 累计折旧。",
+      en: "An increase in accumulated depreciation usually means the company is continuously making capital expenditures, adding new fixed assets, and these assets are depreciated according to accounting policies, leading to increased accumulated depreciation. This is normal accounting treatment, reflecting asset usage and consumption. Accumulated depreciation is a contra account to fixed assets, and net fixed assets = original value - accumulated depreciation."
+    }
+  },
+  {
+    id: 61,
+    topic: "financial-statements",
+    question: {
+      zh: "在利润表中，'营业外收入'（Non-operating Income）大幅增加，这可能意味着什么？",
+      en: "If a company's 'Non-operating Income' increases significantly in the income statement, what might this indicate?"
+    },
+    options: {
+      zh: [
+        "公司主营业务盈利能力增强",
+        "公司可能通过非经营性活动（如资产出售、投资收益）增加利润，但这些收入通常不可持续",
+        "营业外收入比主营业务收入更重要"
+      ],
+      en: [
+        "The company's main business profitability has improved",
+        "The company may be increasing profits through non-operating activities (such as asset sales, investment gains), but these revenues are usually unsustainable",
+        "Non-operating income is more important than main business revenue"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "营业外收入大幅增加可能表明公司通过非经营性活动（如出售资产、投资收益、政府补贴）增加利润。虽然这能提升当期利润，但这些收入通常不可持续，不能反映公司的核心经营能力。分析时应该关注扣除非经常性损益后的净利润，更能反映公司的真实盈利能力。",
+      en: "A significant increase in non-operating income may indicate the company is increasing profits through non-operating activities (such as asset sales, investment gains, government subsidies). Although this can boost current period profits, these revenues are usually unsustainable and do not reflect the company's core operational capability. Analysis should focus on net income excluding non-recurring items, which better reflects the company's true profitability."
+    }
+  },
+  {
+    id: 62,
+    topic: "financial-statements",
+    question: {
+      zh: "一家公司的'短期借款'大幅增加，但'长期借款'减少。这可能说明什么？",
+      en: "A company's 'Short-term Debt' increases significantly, but 'Long-term Debt' decreases. What might this indicate?"
+    },
+    options: {
+      zh: [
+        "公司财务状况改善",
+        "公司可能将长期债务转为短期债务，或者用短期借款偿还长期债务，这可能增加短期偿债压力",
+        "短期借款比长期借款更好"
+      ],
+      en: [
+        "The company's financial condition has improved",
+        "The company may have converted long-term debt to short-term debt, or used short-term borrowing to repay long-term debt, which may increase short-term debt repayment pressure",
+        "Short-term debt is better than long-term debt"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "短期借款增加但长期借款减少，可能表明：1) 公司将长期债务转为短期债务；2) 用短期借款偿还长期债务；3) 短期借款成本可能更低。但这会增加短期偿债压力，如果公司现金流不足，可能面临流动性风险。需要关注公司的现金流状况和短期偿债能力。",
+      en: "An increase in short-term debt but a decrease in long-term debt may indicate: 1) The company has converted long-term debt to short-term debt; 2) Used short-term borrowing to repay long-term debt; 3) Short-term borrowing costs may be lower. However, this increases short-term debt repayment pressure, and if the company has insufficient cash flow, it may face liquidity risk. Attention should be paid to the company's cash flow condition and short-term solvency."
+    }
+  },
+  {
+    id: 63,
+    topic: "financial-statements",
+    question: {
+      zh: "在分析公司的资产质量时，以下哪个指标最能反映资产的实际价值？",
+      en: "When analyzing a company's asset quality, which metric best reflects the actual value of assets?"
+    },
+    options: {
+      zh: [
+        "总资产",
+        "净资产（股东权益）、以及资产减值准备、坏账准备等，反映资产的实际可回收价值",
+        "固定资产原值"
+      ],
+      en: [
+        "Total assets",
+        "Net assets (shareholders' equity), as well as asset impairment provisions, bad debt provisions, etc., reflecting the actual recoverable value of assets",
+        "Original value of fixed assets"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "评估资产质量需要关注资产的实际可回收价值，而不仅仅是账面价值。净资产（股东权益）反映了资产减去负债后的净值。资产减值准备、坏账准备等反映了资产可能存在的损失。需要关注：1) 资产是否存在减值风险；2) 应收账款的质量；3) 存货是否过时；4) 商誉是否合理。",
+      en: "Assessing asset quality requires attention to the actual recoverable value of assets, not just book value. Net assets (shareholders' equity) reflect the net value after subtracting liabilities from assets. Asset impairment provisions, bad debt provisions, etc. reflect potential losses in assets. Need to pay attention to: 1) Whether assets have impairment risks; 2) Quality of accounts receivable; 3) Whether inventory is obsolete; 4) Whether goodwill is reasonable."
+    }
+  },
+  {
+    id: 64,
+    topic: "financial-statements",
+    question: {
+      zh: "一家公司的'研发费用资本化'（R&D Capitalization）比例很高，这可能意味着什么？",
+      en: "If a company has a high proportion of 'R&D Capitalization', what might this indicate?"
+    },
+    options: {
+      zh: [
+        "公司研发能力强",
+        "公司可能通过将研发费用资本化来提升当期利润，但这可能高估资产、低估费用，需要关注资本化的合理性",
+        "研发费用资本化总是好事"
+      ],
+      en: [
+        "The company has strong R&D capability",
+        "The company may be boosting current period profits by capitalizing R&D expenses, but this may overestimate assets and underestimate expenses, requiring attention to the reasonableness of capitalization",
+        "R&D capitalization is always good"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "研发费用资本化可以将当期费用转为资产，提升当期利润。但需要关注：1) 资本化是否符合会计准则（通常只有满足特定条件的研发支出才能资本化）；2) 资本化的研发资产是否能够产生未来收益；3) 是否存在过度资本化以美化利润的情况。过度资本化可能高估资产、低估费用，影响财务数据的真实性。",
+      en: "R&D capitalization can convert current period expenses into assets, boosting current period profits. However, attention should be paid to: 1) Whether capitalization complies with accounting standards (usually only R&D expenditures meeting specific conditions can be capitalized); 2) Whether capitalized R&D assets can generate future returns; 3) Whether there is excessive capitalization to beautify profits. Excessive capitalization may overestimate assets and underestimate expenses, affecting the authenticity of financial data."
+    }
+  },
+  {
+    id: 65,
+    topic: "financial-statements",
+    question: {
+      zh: "在现金流量表中，'折旧和摊销'（Depreciation & Amortization）为什么会被加回到经营活动现金流中？",
+      en: "In the cash flow statement, why is 'Depreciation & Amortization' added back to operating cash flow?"
+    },
+    options: {
+      zh: [
+        "因为折旧是收入",
+        "因为折旧和摊销是非现金费用，在计算净利润时被扣除了，但实际没有现金流出，所以需要加回",
+        "因为折旧增加了现金流"
+      ],
+      en: [
+        "Because depreciation is revenue",
+        "Because depreciation and amortization are non-cash expenses that were deducted when calculating net income, but there was no actual cash outflow, so they need to be added back",
+        "Because depreciation increases cash flow"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "折旧和摊销是非现金费用，在利润表中减少了净利润，但实际上没有现金流出。在计算经营活动现金流时，需要将净利润调整为现金基础，因此需要将非现金费用（如折旧、摊销）加回。这样经营活动现金流 = 净利润 + 非现金费用 - 非现金收入 + 营运资金变化。",
+      en: "Depreciation and amortization are non-cash expenses that reduce net income in the income statement, but there is no actual cash outflow. When calculating operating cash flow, net income needs to be adjusted to a cash basis, so non-cash expenses (such as depreciation, amortization) need to be added back. Thus, operating cash flow = net income + non-cash expenses - non-cash income + working capital changes."
+    }
+  },
+  {
+    id: 66,
+    topic: "financial-statements",
+    question: {
+      zh: "一家公司的'少数股东权益'（Minority Interest）大幅增加，这可能意味着什么？",
+      en: "If a company's 'Minority Interest' increases significantly, what might this indicate?"
+    },
+    options: {
+      zh: [
+        "公司控制权下降",
+        "公司可能进行了更多非全资子公司的收购或投资，导致少数股东权益增加",
+        "少数股东权益增加总是坏事"
+      ],
+      en: [
+        "The company's control has declined",
+        "The company may have conducted more acquisitions or investments in non-wholly-owned subsidiaries, leading to increased minority interest",
+        "Increasing minority interest is always bad"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "少数股东权益增加通常意味着公司进行了更多非全资子公司的收购或投资，这些子公司的部分股权由其他股东持有。在合并报表中，子公司的全部资产和负债都纳入合并范围，但归属于少数股东的部分计入少数股东权益。需要关注这些子公司的盈利能力和对公司整体业绩的贡献。",
+      en: "An increase in minority interest usually means the company has conducted more acquisitions or investments in non-wholly-owned subsidiaries, where part of these subsidiaries' equity is held by other shareholders. In consolidated financial statements, all assets and liabilities of subsidiaries are included in the consolidation scope, but the portion attributable to minority shareholders is recorded as minority interest. Attention should be paid to the profitability of these subsidiaries and their contribution to the company's overall performance."
+    }
+  },
+  {
+    id: 67,
+    topic: "financial-statements",
+    question: {
+      zh: "在分析公司的财务健康状况时，'营运资金'（Working Capital）的变化趋势能说明什么？",
+      en: "When analyzing a company's financial health, what can the trend of 'Working Capital' changes indicate?"
+    },
+    options: {
+      zh: [
+        "营运资金变化没有意义",
+        "营运资金增加可能表明公司业务扩张、库存增加、应收账款增加，但也可能意味着资金占用增加、效率下降",
+        "营运资金越多越好"
+      ],
+      en: [
+        "Working capital changes are meaningless",
+        "An increase in working capital may indicate business expansion, inventory increase, accounts receivable increase, but may also mean increased capital tied up and declining efficiency",
+        "More working capital is always better"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "营运资金 = 流动资产 - 流动负债。营运资金增加可能表明：1) 业务扩张，需要更多营运资金支持；2) 库存或应收账款增加，资金占用增加；3) 营运效率可能下降。需要结合业务增长、库存周转率、应收账款周转率等指标分析，判断营运资金变化是否合理。",
+      en: "Working Capital = Current Assets - Current Liabilities. An increase in working capital may indicate: 1) Business expansion requiring more working capital support; 2) Inventory or accounts receivable increase, increased capital tied up; 3) Operational efficiency may be declining. Need to analyze in conjunction with business growth, inventory turnover ratio, accounts receivable turnover ratio, etc., to determine whether working capital changes are reasonable."
+    }
+  },
+  {
+    id: 68,
+    topic: "financial-statements",
+    question: {
+      zh: "一家公司的'资产减值损失'（Asset Impairment Loss）大幅增加，这可能意味着什么？",
+      en: "If a company's 'Asset Impairment Loss' increases significantly, what might this indicate?"
+    },
+    options: {
+      zh: [
+        "公司资产增加",
+        "公司可能面临资产价值下降（如商誉减值、存货减值、固定资产减值），反映资产质量下降或业务表现不佳",
+        "资产减值损失是好事"
+      ],
+      en: [
+        "The company's assets have increased",
+        "The company may be facing asset value decline (such as goodwill impairment, inventory impairment, fixed asset impairment), reflecting declining asset quality or poor business performance",
+        "Asset impairment loss is a good thing"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "资产减值损失大幅增加通常意味着公司资产的实际价值低于账面价值，可能的原因包括：1) 商誉减值（被收购业务表现不佳）；2) 存货减值（产品过时、价格下跌）；3) 固定资产减值（资产使用价值下降）。这反映资产质量下降或业务表现不佳，需要关注减值的原因和持续性。",
+      en: "A significant increase in asset impairment loss usually means the actual value of company assets is lower than book value, possible reasons include: 1) Goodwill impairment (acquired business performing poorly); 2) Inventory impairment (products obsolete, price decline); 3) Fixed asset impairment (asset usage value decline). This reflects declining asset quality or poor business performance, and attention should be paid to the reasons and sustainability of impairment."
+    }
+  },
+  {
+    id: 69,
+    topic: "financial-statements",
+    question: {
+      zh: "在利润表中，'营业收入'和'营业成本'的差额是什么？",
+      en: "In the income statement, what is the difference between 'Operating Revenue' and 'Operating Cost'?"
+    },
+    options: {
+      zh: [
+        "净利润",
+        "毛利润（Gross Profit），反映公司产品的定价能力和成本控制能力",
+        "营业利润"
+      ],
+      en: [
+        "Net income",
+        "Gross Profit, reflecting the company's product pricing power and cost control capability",
+        "Operating profit"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "营业收入 - 营业成本 = 毛利润。毛利润反映公司产品的定价能力和成本控制能力。毛利率 = 毛利润 / 营业收入，是评估公司盈利能力的重要指标。高毛利率通常表明公司有较强的定价能力或成本优势。毛利润还需要扣除营业费用、管理费用、财务费用等才能得到营业利润和净利润。",
+      en: "Operating Revenue - Operating Cost = Gross Profit. Gross profit reflects the company's product pricing power and cost control capability. Gross margin = Gross Profit / Operating Revenue, which is an important metric for assessing company profitability. High gross margin usually indicates the company has strong pricing power or cost advantages. Gross profit still needs to deduct operating expenses, administrative expenses, financial expenses, etc. to get operating profit and net income."
+    }
+  },
+  {
+    id: 70,
+    topic: "financial-statements",
+    question: {
+      zh: "一家公司的'递延所得税资产'（Deferred Tax Assets）大幅增加，这可能意味着什么？",
+      en: "If a company's 'Deferred Tax Assets' increases significantly, what might this indicate?"
+    },
+    options: {
+      zh: [
+        "公司需要缴纳更多税",
+        "公司可能出现了可抵扣暂时性差异（如亏损、资产减值），未来可以减少所得税支出",
+        "递延所得税资产是负债"
+      ],
+      en: [
+        "The company needs to pay more taxes",
+        "The company may have deductible temporary differences (such as losses, asset impairment), which can reduce future income tax expenses",
+        "Deferred tax assets are liabilities"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "递延所得税资产增加通常意味着公司出现了可抵扣暂时性差异，如：1) 税务亏损，未来可以抵扣盈利；2) 资产减值，未来可以抵扣；3) 费用确认时间差异。这些差异在未来可以减少所得税支出。递延所得税资产是资产，代表未来可以节省的税款。",
+      en: "An increase in deferred tax assets usually means the company has deductible temporary differences, such as: 1) Tax losses that can offset future profits; 2) Asset impairment that can be deducted in the future; 3) Timing differences in expense recognition. These differences can reduce future income tax expenses. Deferred tax assets are assets, representing future tax savings."
+    }
   }
 ];
 
