@@ -904,18 +904,26 @@
             });
         }
         
-        // Mark terms when DOM is ready - exclude glossary page
+        // Mark terms when DOM is ready
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', function() {
-                // Don't mark terms on glossary page
-                if (window.location.pathname.includes('/glossary/')) return;
-                
-                const content = document.querySelector('.content, #chapterContent');
-                if (content) markTermsInElement(content);
+                if (window.location.pathname.includes('/glossary/')) {
+                    // On glossary page, only mark terms in description paragraphs, not in term names
+                    const descriptions = document.querySelectorAll('.term-description');
+                    descriptions.forEach(desc => markTermsInElement(desc));
+                } else {
+                    // On other pages, mark terms in content
+                    const content = document.querySelector('.content, #chapterContent');
+                    if (content) markTermsInElement(content);
+                }
             });
         } else {
-            // Don't mark terms on glossary page
-            if (!window.location.pathname.includes('/glossary/')) {
+            if (window.location.pathname.includes('/glossary/')) {
+                // On glossary page, only mark terms in description paragraphs
+                const descriptions = document.querySelectorAll('.term-description');
+                descriptions.forEach(desc => markTermsInElement(desc));
+            } else {
+                // On other pages, mark terms in content
                 const content = document.querySelector('.content, #chapterContent');
                 if (content) markTermsInElement(content);
             }
