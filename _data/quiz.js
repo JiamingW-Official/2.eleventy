@@ -1760,6 +1760,507 @@ module.exports = [
       zh: "递延所得税资产增加通常意味着公司出现了可抵扣暂时性差异，如：1) 税务亏损，未来可以抵扣盈利；2) 资产减值，未来可以抵扣；3) 费用确认时间差异。这些差异在未来可以减少所得税支出。递延所得税资产是资产，代表未来可以节省的税款。",
       en: "An increase in deferred tax assets usually means the company has deductible temporary differences, such as: 1) Tax losses that can offset future profits; 2) Asset impairment that can be deducted in the future; 3) Timing differences in expense recognition. These differences can reduce future income tax expenses. Deferred tax assets are assets, representing future tax savings."
     }
+  },
+  // Valuation - Additional questions to reach 20
+  {
+    id: 71,
+    topic: "valuation",
+    question: {
+      zh: "在使用DCF模型估值时，'终值'（Terminal Value）的计算方法主要有哪两种？",
+      en: "When using a DCF model for valuation, what are the two main methods for calculating 'Terminal Value'?"
+    },
+    options: {
+      zh: [
+        "只有一种方法",
+        "永续增长模型（Gordon Growth Model）和退出倍数法（Exit Multiple Method）",
+        "只有市盈率法"
+      ],
+      en: [
+        "There is only one method",
+        "Perpetuity Growth Model (Gordon Growth Model) and Exit Multiple Method",
+        "Only P/E ratio method"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "终值计算主要有两种方法：1) 永续增长模型：假设公司以固定增长率永续增长，终值 = FCF(n+1) / (WACC - g)；2) 退出倍数法：假设公司在预测期末以某个倍数（如EV/EBITDA）出售，终值 = 预测期最后一年的EBITDA × 退出倍数。两种方法各有优缺点，通常需要同时使用并比较。",
+      en: "There are two main methods for calculating terminal value: 1) Perpetuity Growth Model: Assumes the company grows at a constant rate in perpetuity, Terminal Value = FCF(n+1) / (WACC - g); 2) Exit Multiple Method: Assumes the company is sold at a certain multiple (such as EV/EBITDA) at the end of the forecast period, Terminal Value = EBITDA in the last year of forecast period × Exit Multiple. Both methods have advantages and disadvantages, and usually need to be used together and compared."
+    }
+  },
+  {
+    id: 72,
+    topic: "valuation",
+    question: {
+      zh: "在使用P/E比率估值时，以下哪个因素最不应该被忽略？",
+      en: "When using P/E ratio for valuation, which factor should not be ignored?"
+    },
+    options: {
+      zh: [
+        "当前股价",
+        "公司的增长率、盈利质量、行业特点、以及P/E比率的历史水平",
+        "只看P/E比率本身"
+      ],
+      en: [
+        "Current stock price",
+        "The company's growth rate, earnings quality, industry characteristics, and historical levels of P/E ratio",
+        "Only look at the P/E ratio itself"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "使用P/E比率估值时，必须考虑：1) 增长率：高增长公司可以有更高的P/E；2) 盈利质量：盈利是否可持续、是否有现金支撑；3) 行业特点：不同行业有不同的合理P/E水平；4) 历史水平：当前P/E与历史平均水平的比较。孤立地看P/E比率容易产生误导，需要结合这些因素综合判断。",
+      en: "When using P/E ratio for valuation, must consider: 1) Growth rate: High-growth companies can have higher P/E; 2) Earnings quality: Whether earnings are sustainable and supported by cash; 3) Industry characteristics: Different industries have different reasonable P/E levels; 4) Historical levels: Comparison of current P/E with historical average. Looking at P/E ratio in isolation can be misleading and requires comprehensive judgment combining these factors."
+    }
+  },
+  {
+    id: 73,
+    topic: "valuation",
+    question: {
+      zh: "一家公司的EV/EBITDA比率为8，而同行业平均为12。这意味着什么？",
+      en: "A company has an EV/EBITDA ratio of 8, while the industry average is 12. What does this mean?"
+    },
+    options: {
+      zh: [
+        "该公司被高估了",
+        "相对于行业平均，该公司可能被低估了，或者其EBITDA质量、增长前景不如行业平均",
+        "EV/EBITDA比率越低越差"
+      ],
+      en: [
+        "The company is overvalued",
+        "Relative to the industry average, the company may be undervalued, or its EBITDA quality and growth prospects are inferior to the industry average",
+        "Lower EV/EBITDA ratio is worse"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "EV/EBITDA比率低于行业平均，可能表明：1) 公司被低估，存在投资机会；2) 公司的EBITDA质量较差（如资本支出需求高、盈利质量差）；3) 公司增长前景不如行业平均；4) 公司面临特定风险。需要结合公司的基本面、增长前景、盈利质量等因素综合分析，不能仅凭比率高低判断。",
+      en: "An EV/EBITDA ratio lower than the industry average may indicate: 1) The company is undervalued, presenting investment opportunities; 2) The company's EBITDA quality is poor (such as high capital expenditure requirements, poor earnings quality); 3) The company's growth prospects are inferior to the industry average; 4) The company faces specific risks. Need to comprehensively analyze in conjunction with the company's fundamentals, growth prospects, earnings quality, and other factors, cannot judge solely based on the ratio level."
+    }
+  },
+  {
+    id: 74,
+    topic: "valuation",
+    question: {
+      zh: "在使用DCF模型时，'加权平均资本成本'（WACC）的作用是什么？",
+      en: "When using a DCF model, what is the role of 'Weighted Average Cost of Capital (WACC)'?"
+    },
+    options: {
+      zh: [
+        "WACC没有作用",
+        "WACC是折现率，用于将未来现金流折现到现值，反映投资的风险和机会成本",
+        "WACC只用于计算债务成本"
+      ],
+      en: [
+        "WACC has no role",
+        "WACC is the discount rate used to discount future cash flows to present value, reflecting the risk and opportunity cost of the investment",
+        "WACC is only used to calculate debt cost"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "WACC是加权平均资本成本，代表公司所有资本来源（债务和股权）的平均成本。在DCF模型中，WACC作为折现率，用于将未来现金流折现到现值。WACC越高，未来现金流的现值越低，估值越低。WACC反映了投资的风险：风险越高，WACC越高。WACC = (E/V × Re) + (D/V × Rd × (1-Tc))，其中E是股权价值，D是债务价值，V是总价值。",
+      en: "WACC is the weighted average cost of capital, representing the average cost of all capital sources (debt and equity) of the company. In the DCF model, WACC is used as the discount rate to discount future cash flows to present value. The higher the WACC, the lower the present value of future cash flows, and the lower the valuation. WACC reflects investment risk: higher risk means higher WACC. WACC = (E/V × Re) + (D/V × Rd × (1-Tc)), where E is equity value, D is debt value, and V is total value."
+    }
+  },
+  {
+    id: 75,
+    topic: "valuation",
+    question: {
+      zh: "在使用相对估值法时，以下哪个做法是错误的？",
+      en: "When using relative valuation methods, which of the following practices is incorrect?"
+    },
+    options: {
+      zh: [
+        "与同行业、相似规模的公司进行比较",
+        "只比较单一指标，不考虑公司的增长前景、盈利质量、竞争优势等因素",
+        "考虑公司的生命周期阶段"
+      ],
+      en: [
+        "Compare with companies in the same industry and similar size",
+        "Only compare a single metric without considering the company's growth prospects, earnings quality, competitive advantages, and other factors",
+        "Consider the company's life cycle stage"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "相对估值法不能只看单一指标，必须综合考虑：1) 公司的增长前景：高增长公司可以有更高的估值倍数；2) 盈利质量：盈利是否可持续；3) 竞争优势：是否有护城河；4) 生命周期阶段：成长型、成熟型、衰退型公司有不同的合理倍数；5) 财务健康状况。单一指标比较容易产生误导。",
+      en: "Relative valuation methods cannot rely solely on a single metric, must comprehensively consider: 1) Company's growth prospects: High-growth companies can have higher valuation multiples; 2) Earnings quality: Whether earnings are sustainable; 3) Competitive advantages: Whether there are moats; 4) Life cycle stage: Growth, mature, and declining companies have different reasonable multiples; 5) Financial health. Single metric comparison can be misleading."
+    }
+  },
+  {
+    id: 76,
+    topic: "valuation",
+    question: {
+      zh: "在使用P/B比率估值时，以下哪种类型的公司P/B比率可能不太适用？",
+      en: "When using P/B ratio for valuation, for which type of company might the P/B ratio be less applicable?"
+    },
+    options: {
+      zh: [
+        "所有公司都适用",
+        "拥有大量无形资产（如品牌、技术、客户关系）的公司，因为账面价值可能严重低估公司价值",
+        "只有制造业公司"
+      ],
+      en: [
+        "Applicable to all companies",
+        "Companies with significant intangible assets (such as brands, technology, customer relationships), as book value may severely underestimate company value",
+        "Only manufacturing companies"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "P/B比率对拥有大量无形资产的公司可能不太适用，因为：1) 无形资产（如品牌价值、专利、技术、客户关系）在财务报表中可能没有被充分反映；2) 账面价值可能严重低估公司的真实价值；3) 这类公司的价值主要来自无形资产，而不是有形资产。P/B比率更适合重资产、有形资产较多的行业（如银行、房地产）。",
+      en: "P/B ratio may be less applicable to companies with significant intangible assets because: 1) Intangible assets (such as brand value, patents, technology, customer relationships) may not be fully reflected in financial statements; 2) Book value may severely underestimate the company's true value; 3) The value of such companies mainly comes from intangible assets rather than tangible assets. P/B ratio is more suitable for asset-heavy industries with more tangible assets (such as banks, real estate)."
+    }
+  },
+  {
+    id: 77,
+    topic: "valuation",
+    question: {
+      zh: "在使用DCF模型时，如果提高'永续增长率'（Terminal Growth Rate），估值结果会如何变化？",
+      en: "When using a DCF model, if the 'Terminal Growth Rate' is increased, how will the valuation result change?"
+    },
+    options: {
+      zh: [
+        "估值会下降",
+        "估值会上升，因为假设公司未来以更高速度增长，终值增加",
+        "估值不变"
+      ],
+      en: [
+        "Valuation will decrease",
+        "Valuation will increase, because assuming the company grows at a higher rate in the future, terminal value increases",
+        "Valuation remains unchanged"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "永续增长率提高，终值会增加，因为假设公司未来以更高速度永续增长。终值 = FCF(n+1) / (WACC - g)，其中g是永续增长率。g越大，分母越小，终值越大。但永续增长率通常应该接近长期GDP增长率或通胀率（通常2-3%），过高的永续增长率可能不现实。",
+      en: "An increase in terminal growth rate will increase terminal value, as it assumes the company will grow at a higher rate in perpetuity. Terminal Value = FCF(n+1) / (WACC - g), where g is the terminal growth rate. The larger g is, the smaller the denominator, and the larger the terminal value. However, terminal growth rate should usually be close to long-term GDP growth rate or inflation rate (usually 2-3%), and excessively high terminal growth rates may be unrealistic."
+    }
+  },
+  {
+    id: 78,
+    topic: "valuation",
+    question: {
+      zh: "在使用EV/Sales（企业价值/销售收入）比率估值时，以下哪个因素最重要？",
+      en: "When using EV/Sales (Enterprise Value/Sales) ratio for valuation, which factor is most important?"
+    },
+    options: {
+      zh: [
+        "只看EV/Sales比率本身",
+        "公司的盈利能力（毛利率、净利率）、增长前景，以及何时能够实现盈利",
+        "只关注销售收入"
+      ],
+      en: [
+        "Only look at the EV/Sales ratio itself",
+        "The company's profitability (gross margin, net margin), growth prospects, and when it can achieve profitability",
+        "Only focus on sales revenue"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "EV/Sales比率主要用于尚未盈利或盈利很少的公司（如成长型科技公司）。使用这个比率时，必须关注：1) 盈利能力：毛利率、净利率趋势，能否实现盈利；2) 增长前景：收入增长率是否可持续；3) 何时盈利：需要多长时间才能实现盈利。EV/Sales比率本身没有意义，必须结合这些因素判断。",
+      en: "EV/Sales ratio is mainly used for companies that are not yet profitable or have minimal profits (such as growth technology companies). When using this ratio, must pay attention to: 1) Profitability: Gross margin, net margin trends, whether profitability can be achieved; 2) Growth prospects: Whether revenue growth rate is sustainable; 3) When to profit: How long it will take to achieve profitability. The EV/Sales ratio itself is meaningless and must be judged in conjunction with these factors."
+    }
+  },
+  {
+    id: 79,
+    topic: "valuation",
+    question: {
+      zh: "在使用DCF模型时，'敏感性分析'（Sensitivity Analysis）的作用是什么？",
+      en: "When using a DCF model, what is the role of 'Sensitivity Analysis'?"
+    },
+    options: {
+      zh: [
+        "没有作用",
+        "分析关键假设（如增长率、折现率）变化对估值结果的影响，评估估值的可靠性和风险",
+        "只用于计算终值"
+      ],
+      en: [
+        "No role",
+        "Analyze the impact of changes in key assumptions (such as growth rate, discount rate) on valuation results, assess the reliability and risk of valuation",
+        "Only used to calculate terminal value"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "敏感性分析是DCF估值中的重要工具，用于：1) 分析关键假设（如增长率、折现率、终值增长率）变化对估值结果的影响；2) 识别对估值影响最大的假设；3) 评估估值的可靠性和风险范围；4) 提供估值的合理区间而非单一数值。这有助于投资者理解估值的不确定性和风险。",
+      en: "Sensitivity analysis is an important tool in DCF valuation, used to: 1) Analyze the impact of changes in key assumptions (such as growth rate, discount rate, terminal growth rate) on valuation results; 2) Identify assumptions that have the greatest impact on valuation; 3) Assess the reliability and risk range of valuation; 4) Provide a reasonable range of valuation rather than a single value. This helps investors understand the uncertainty and risk of valuation."
+    }
+  },
+  {
+    id: 80,
+    topic: "valuation",
+    question: {
+      zh: "在使用P/E比率估值时，'前瞻性P/E'（Forward P/E）和'历史P/E'（Trailing P/E）的区别是什么？",
+      en: "When using P/E ratio for valuation, what is the difference between 'Forward P/E' and 'Trailing P/E'?"
+    },
+    options: {
+      zh: [
+        "没有区别",
+        "前瞻性P/E使用未来12个月的预期盈利，历史P/E使用过去12个月的实际盈利。前瞻性P/E更能反映未来预期",
+        "只有历史P/E有用"
+      ],
+      en: [
+        "No difference",
+        "Forward P/E uses expected earnings for the next 12 months, while trailing P/E uses actual earnings for the past 12 months. Forward P/E better reflects future expectations",
+        "Only trailing P/E is useful"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "前瞻性P/E = 当前股价 / 未来12个月预期盈利，反映市场对公司未来盈利的预期。历史P/E = 当前股价 / 过去12个月实际盈利，反映基于历史业绩的估值。前瞻性P/E更能反映投资价值，因为它基于未来预期，但依赖于盈利预测的准确性。通常两者都需要关注，结合使用。",
+      en: "Forward P/E = Current Stock Price / Expected Earnings for Next 12 Months, reflecting market expectations for the company's future earnings. Trailing P/E = Current Stock Price / Actual Earnings for Past 12 Months, reflecting valuation based on historical performance. Forward P/E better reflects investment value as it is based on future expectations, but depends on the accuracy of earnings forecasts. Usually both need to be considered and used together."
+    }
+  },
+  {
+    id: 81,
+    topic: "valuation",
+    question: {
+      zh: "在使用相对估值法时，为什么需要选择'可比公司'（Comparable Companies）？",
+      en: "When using relative valuation methods, why is it necessary to select 'Comparable Companies'?"
+    },
+    options: {
+      zh: [
+        "不需要选择，可以随意比较",
+        "可比公司应该具有相似的业务模式、行业、规模、增长前景、盈利能力，这样才能进行有意义的比较",
+        "任何公司都可以比较"
+      ],
+      en: [
+        "No need to select, can compare randomly",
+        "Comparable companies should have similar business models, industries, size, growth prospects, and profitability, so that meaningful comparisons can be made",
+        "Any company can be compared"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "选择可比公司是相对估值法的关键。可比公司应该具有：1) 相似的业务模式；2) 同一行业或相关行业；3) 相似的规模；4) 相似的增长前景；5) 相似的盈利能力。只有选择真正可比的公司，估值倍数比较才有意义。选择不当的可比公司会导致估值错误。",
+      en: "Selecting comparable companies is key to relative valuation methods. Comparable companies should have: 1) Similar business models; 2) Same industry or related industries; 3) Similar size; 4) Similar growth prospects; 5) Similar profitability. Only by selecting truly comparable companies can valuation multiple comparisons be meaningful. Selecting inappropriate comparable companies will lead to valuation errors."
+    }
+  },
+  {
+    id: 82,
+    topic: "valuation",
+    question: {
+      zh: "在使用DCF模型时，'自由现金流'（Free Cash Flow）应该如何计算？",
+      en: "When using a DCF model, how should 'Free Cash Flow' be calculated?"
+    },
+    options: {
+      zh: [
+        "自由现金流 = 净利润",
+        "自由现金流 = 经营活动现金流 - 资本支出（CapEx）",
+        "自由现金流 = 营业收入"
+      ],
+      en: [
+        "Free cash flow = Net income",
+        "Free cash flow = Operating cash flow - Capital expenditures (CapEx)",
+        "Free cash flow = Operating revenue"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "自由现金流（FCF）= 经营活动现金流 - 资本支出（CapEx）。自由现金流代表公司可以自由支配的现金，用于偿还债务、支付股息、回购股票或进行新投资。这是DCF模型的核心输入，因为DCF模型估值的是公司未来自由现金流的现值。净利润不是现金流，不能直接用于DCF模型。",
+      en: "Free Cash Flow (FCF) = Operating Cash Flow - Capital Expenditures (CapEx). Free cash flow represents cash that the company can freely use to repay debt, pay dividends, repurchase shares, or make new investments. This is the core input of the DCF model, as the DCF model values the present value of the company's future free cash flows. Net income is not cash flow and cannot be directly used in the DCF model."
+    }
+  },
+  {
+    id: 83,
+    topic: "valuation",
+    question: {
+      zh: "在使用P/E比率估值时，如果一家公司的P/E比率远高于行业平均，以下哪个解释最合理？",
+      en: "When using P/E ratio for valuation, if a company's P/E ratio is much higher than the industry average, which explanation is most reasonable?"
+    },
+    options: {
+      zh: [
+        "公司一定被高估了",
+        "公司可能具有更高的增长潜力、更强的竞争优势、或更好的盈利质量，但也可能确实被高估",
+        "P/E比率高总是好事"
+      ],
+      en: [
+        "The company must be overvalued",
+        "The company may have higher growth potential, stronger competitive advantages, or better earnings quality, but may also be overvalued",
+        "High P/E ratio is always good"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "P/E比率远高于行业平均可能表明：1) 公司有更高的增长潜力，市场预期未来盈利大幅增长；2) 公司有更强的竞争优势（护城河），能够维持高盈利；3) 公司盈利质量更好；4) 公司确实被高估。需要结合公司的基本面、增长前景、盈利质量等因素综合分析，不能仅凭P/E比率高低判断。",
+      en: "A P/E ratio much higher than the industry average may indicate: 1) The company has higher growth potential, and the market expects significant future earnings growth; 2) The company has stronger competitive advantages (moats) and can maintain high profitability; 3) The company has better earnings quality; 4) The company is indeed overvalued. Need to comprehensively analyze in conjunction with the company's fundamentals, growth prospects, earnings quality, and other factors, cannot judge solely based on P/E ratio level."
+    }
+  },
+  {
+    id: 84,
+    topic: "valuation",
+    question: {
+      zh: "在使用DCF模型时，'预测期'（Forecast Period）通常应该设置为多长？",
+      en: "When using a DCF model, how long should the 'Forecast Period' typically be set?"
+    },
+    options: {
+      zh: [
+        "1年",
+        "通常5-10年，取决于公司的业务特点和可预测性，需要能够合理预测公司的发展阶段",
+        "20年"
+      ],
+      en: [
+        "1 year",
+        "Usually 5-10 years, depending on the company's business characteristics and predictability, need to be able to reasonably predict the company's development stage",
+        "20 years"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "预测期通常设置为5-10年，原因包括：1) 这个时间段内可以对公司的发展进行相对合理的预测；2) 能够覆盖公司的主要发展阶段（如快速增长期、成熟期）；3) 超过10年的预测通常不可靠。预测期的选择取决于公司的业务特点、行业稳定性、可预测性等因素。预测期结束后，使用终值来代表后续所有现金流。",
+      en: "The forecast period is usually set at 5-10 years, reasons include: 1) Within this time frame, relatively reasonable predictions can be made about the company's development; 2) Can cover the company's main development stages (such as rapid growth period, maturity period); 3) Forecasts beyond 10 years are usually unreliable. The choice of forecast period depends on the company's business characteristics, industry stability, predictability, and other factors. After the forecast period ends, terminal value is used to represent all subsequent cash flows."
+    }
+  },
+  {
+    id: 85,
+    topic: "valuation",
+    question: {
+      zh: "在使用EV/EBITDA比率估值时，为什么EBITDA比净利润更适合？",
+      en: "When using EV/EBITDA ratio for valuation, why is EBITDA more suitable than net income?"
+    },
+    options: {
+      zh: [
+        "没有区别",
+        "EBITDA排除了资本结构、税收、折旧摊销的影响，更能反映公司的核心经营盈利能力，便于不同公司之间的比较",
+        "EBITDA总是更高"
+      ],
+      en: [
+        "No difference",
+        "EBITDA excludes the impact of capital structure, taxes, and depreciation/amortization, better reflecting the company's core operational profitability and facilitating comparisons between different companies",
+        "EBITDA is always higher"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "EBITDA（息税折旧摊销前利润）排除了：1) 资本结构的影响（利息费用）；2) 税收的影响；3) 折旧和摊销（非现金费用，受会计政策影响）。这使得EBITDA更能反映公司的核心经营盈利能力，不受资本结构、税收政策、会计政策的影响，便于不同公司、不同行业之间的比较。但需要注意，EBITDA忽略了资本支出需求。",
+      en: "EBITDA (Earnings Before Interest, Taxes, Depreciation, and Amortization) excludes: 1) The impact of capital structure (interest expenses); 2) The impact of taxes; 3) Depreciation and amortization (non-cash expenses, affected by accounting policies). This makes EBITDA better reflect the company's core operational profitability, unaffected by capital structure, tax policies, or accounting policies, facilitating comparisons between different companies and industries. However, note that EBITDA ignores capital expenditure requirements."
+    }
+  },
+  {
+    id: 86,
+    topic: "valuation",
+    question: {
+      zh: "在使用相对估值法时，'中位数'（Median）和'平均值'（Mean）哪个更适合作为参考？",
+      en: "When using relative valuation methods, which is more suitable as a reference: 'Median' or 'Mean'?"
+    },
+    options: {
+      zh: [
+        "没有区别",
+        "中位数通常更适合，因为它不受极端值影响，更能反映可比公司的典型估值水平",
+        "平均值总是更好"
+      ],
+      en: [
+        "No difference",
+        "Median is usually more suitable because it is not affected by extreme values and better reflects the typical valuation level of comparable companies",
+        "Mean is always better"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "在使用相对估值法时，中位数通常比平均值更适合作为参考，因为：1) 中位数不受极端值影响，更能反映可比公司的典型估值水平；2) 如果可比公司中有个别公司估值异常高或低，平均值会被扭曲，而中位数不受影响；3) 中位数更能代表'中间水平'。但通常应该同时关注中位数、平均值、以及估值范围，综合判断。",
+      en: "When using relative valuation methods, median is usually more suitable than mean as a reference because: 1) Median is not affected by extreme values and better reflects the typical valuation level of comparable companies; 2) If there are individual companies with abnormally high or low valuations among comparable companies, the mean will be distorted, while the median is unaffected; 3) Median better represents the 'middle level'. However, usually should pay attention to both median, mean, and valuation range, and make comprehensive judgment."
+    }
+  },
+  {
+    id: 87,
+    topic: "valuation",
+    question: {
+      zh: "在使用DCF模型时，如果公司的'资本支出'（CapEx）预测不准确，会对估值产生什么影响？",
+      en: "When using a DCF model, if the company's 'Capital Expenditure (CapEx)' forecast is inaccurate, what impact will it have on valuation?"
+    },
+    options: {
+      zh: [
+        "没有影响",
+        "会直接影响自由现金流的计算，从而影响估值。高估CapEx会低估自由现金流和估值，低估CapEx会高估自由现金流和估值",
+        "只影响终值"
+      ],
+      en: [
+        "No impact",
+        "Will directly affect the calculation of free cash flow, thereby affecting valuation. Overestimating CapEx will underestimate free cash flow and valuation, underestimating CapEx will overestimate free cash flow and valuation",
+        "Only affects terminal value"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "资本支出（CapEx）是计算自由现金流的关键输入：FCF = 经营现金流 - CapEx。如果CapEx预测不准确：1) 高估CapEx：会低估自由现金流，从而低估公司估值；2) 低估CapEx：会高估自由现金流，从而高估公司估值。CapEx预测需要基于公司的历史资本支出、业务扩张计划、行业特点等因素，是DCF模型中的重要假设。",
+      en: "Capital expenditure (CapEx) is a key input for calculating free cash flow: FCF = Operating Cash Flow - CapEx. If CapEx forecast is inaccurate: 1) Overestimating CapEx: Will underestimate free cash flow, thereby underestimating company valuation; 2) Underestimating CapEx: Will overestimate free cash flow, thereby overestimating company valuation. CapEx forecasting needs to be based on the company's historical capital expenditures, business expansion plans, industry characteristics, and other factors, and is an important assumption in the DCF model."
+    }
+  },
+  {
+    id: 88,
+    topic: "valuation",
+    question: {
+      zh: "在使用P/S比率（市销率）估值时，以下哪个因素最重要？",
+      en: "When using P/S ratio (Price-to-Sales) for valuation, which factor is most important?"
+    },
+    options: {
+      zh: [
+        "只看P/S比率本身",
+        "公司的盈利能力（毛利率、净利率）、增长前景，以及收入质量（是否可持续、是否有现金支撑）",
+        "只关注销售收入"
+      ],
+      en: [
+        "Only look at the P/S ratio itself",
+        "The company's profitability (gross margin, net margin), growth prospects, and revenue quality (whether sustainable, whether supported by cash)",
+        "Only focus on sales revenue"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "P/S比率主要用于尚未盈利或盈利很少的公司。使用这个比率时，必须关注：1) 盈利能力：毛利率、净利率趋势，能否实现盈利；2) 增长前景：收入增长率是否可持续；3) 收入质量：收入是否可持续、是否有现金支撑、是否存在大量应收账款。P/S比率本身没有意义，必须结合这些因素判断。高P/S比率只有在高增长、高盈利潜力的情况下才合理。",
+      en: "P/S ratio is mainly used for companies that are not yet profitable or have minimal profits. When using this ratio, must pay attention to: 1) Profitability: Gross margin, net margin trends, whether profitability can be achieved; 2) Growth prospects: Whether revenue growth rate is sustainable; 3) Revenue quality: Whether revenue is sustainable, whether supported by cash, whether there are large amounts of accounts receivable. The P/S ratio itself is meaningless and must be judged in conjunction with these factors. High P/S ratio is only reasonable with high growth and high profit potential."
+    }
+  },
+  {
+    id: 89,
+    topic: "valuation",
+    question: {
+      zh: "在使用DCF模型时，'股权价值'（Equity Value）和'企业价值'（Enterprise Value）的关系是什么？",
+      en: "When using a DCF model, what is the relationship between 'Equity Value' and 'Enterprise Value'?"
+    },
+    options: {
+      zh: [
+        "没有关系",
+        "企业价值 = 股权价值 + 净债务（总债务 - 现金）。DCF模型通常先计算企业价值，然后减去净债务得到股权价值",
+        "股权价值总是大于企业价值"
+      ],
+      en: [
+        "No relationship",
+        "Enterprise Value = Equity Value + Net Debt (Total Debt - Cash). DCF model usually first calculates enterprise value, then subtracts net debt to get equity value",
+        "Equity value is always greater than enterprise value"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "企业价值（EV）代表整个公司的价值（包括债务和股权），股权价值代表股东权益的价值。关系是：EV = 股权价值 + 净债务（总债务 - 现金及现金等价物）。在DCF模型中，通常先计算企业价值（使用WACC折现自由现金流），然后减去净债务得到股权价值。股权价值除以流通股数得到每股价值。",
+      en: "Enterprise Value (EV) represents the value of the entire company (including debt and equity), while equity value represents the value of shareholders' equity. The relationship is: EV = Equity Value + Net Debt (Total Debt - Cash and Cash Equivalents). In the DCF model, enterprise value is usually calculated first (using WACC to discount free cash flows), then net debt is subtracted to get equity value. Equity value divided by outstanding shares gives value per share."
+    }
+  },
+  {
+    id: 90,
+    topic: "valuation",
+    question: {
+      zh: "在使用相对估值法时，为什么需要同时使用多个估值倍数？",
+      en: "When using relative valuation methods, why is it necessary to use multiple valuation multiples simultaneously?"
+    },
+    options: {
+      zh: [
+        "不需要，一个倍数就够了",
+        "不同倍数反映不同的价值驱动因素，综合使用可以提供更全面的估值视角，减少单一指标的局限性",
+        "只是为了复杂化"
+      ],
+      en: [
+        "Not necessary, one multiple is enough",
+        "Different multiples reflect different value drivers, and comprehensive use can provide a more comprehensive valuation perspective and reduce the limitations of a single metric",
+        "Just to complicate things"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "使用多个估值倍数（如P/E、EV/EBITDA、P/B、P/S）的原因：1) 不同倍数反映不同的价值驱动因素：P/E反映盈利，EV/EBITDA反映经营利润，P/B反映资产，P/S反映收入；2) 单一倍数可能有局限性，综合使用可以提供更全面的视角；3) 不同倍数可以相互验证，提高估值的可靠性；4) 对于不同类型的公司，不同倍数的适用性不同。",
+      en: "Reasons for using multiple valuation multiples (such as P/E, EV/EBITDA, P/B, P/S): 1) Different multiples reflect different value drivers: P/E reflects earnings, EV/EBITDA reflects operating profit, P/B reflects assets, P/S reflects revenue; 2) A single multiple may have limitations, and comprehensive use can provide a more comprehensive perspective; 3) Different multiples can verify each other, improving valuation reliability; 4) For different types of companies, the applicability of different multiples varies."
+    }
   }
 ];
 
