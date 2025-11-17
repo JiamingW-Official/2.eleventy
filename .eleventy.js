@@ -50,6 +50,64 @@ module.exports = function(eleventyConfig) {
     return pathPrefix + cleanUrl;
   });
 
+  // Add filter to mark terms in content
+  eleventyConfig.addFilter("markTerms", function(content, glossary, lang, pathPrefix) {
+    if (!content || !glossary || !Array.isArray(glossary)) return content;
+    
+    let markedContent = String(content);
+    
+    // Sort terms by length (longest first) to avoid partial matches
+    const sortedTerms = [...glossary].sort((a, b) => {
+      const aLen = Math.max(a.en.length, a.zh.length);
+      const bLen = Math.max(b.en.length, b.zh.length);
+      return bLen - aLen;
+    });
+    
+    sortedTerms.forEach(term => {
+      const termEn = term.en;
+      const termZh = term.zh;
+      const glossaryUrl = `${pathPrefix}${lang}/glossary/#${term.id}`;
+      
+      // Mark English terms (case-insensitive, whole word)
+      const enRegex = new RegExp(`\\b${termEn.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+      markedContent = markedContent.replace(enRegex, (match, offset) => {
+        // Check if already inside HTML tags
+        const before = markedContent.substring(Math.max(0, offset - 100), offset);
+        const after = markedContent.substring(offset + match.length, offset + match.length + 100);
+        
+        // Don't mark if inside HTML tags
+        const openTags = (before.match(/<[^>]*>/g) || []).length;
+        const closeTags = (before.match(/<\/[^>]*>/g) || []).length;
+        const isInTag = openTags > closeTags;
+        
+        if (isInTag || before.includes('class="term') || before.includes('href=')) {
+          return match;
+        }
+        
+        return `<span class="term" data-term-id="${term.id}"><a href="${glossaryUrl}" class="term-link">${match}</a></span>`;
+      });
+      
+      // Mark Chinese terms
+      const zhRegex = new RegExp(termZh.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+      markedContent = markedContent.replace(zhRegex, (match, offset) => {
+        const before = markedContent.substring(Math.max(0, offset - 100), offset);
+        const after = markedContent.substring(offset + match.length, offset + match.length + 100);
+        
+        const openTags = (before.match(/<[^>]*>/g) || []).length;
+        const closeTags = (before.match(/<\/[^>]*>/g) || []).length;
+        const isInTag = openTags > closeTags;
+        
+        if (isInTag || before.includes('class="term') || before.includes('href=')) {
+          return match;
+        }
+        
+        return `<span class="term" data-term-id="${term.id}"><a href="${glossaryUrl}" class="term-link">${match}</a></span>`;
+      });
+    });
+    
+    return markedContent;
+  });
+
   return {
     dir: {
       input: ".",

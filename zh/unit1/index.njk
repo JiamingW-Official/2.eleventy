@@ -11,11 +11,6 @@ unit: unit1
 <h1>{{ unit.icon }} {{ unit.title[lang] }}</h1>
 <p>{{ unit.description[lang] }}</p>
 
-<div class="tags">
-    {% for tag in unit.tags %}
-    <a href="{{ pathPrefix }}{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
-    {% endfor %}
-</div>
 
 <h2>📖 投资的核心问题</h2>
 <ul>

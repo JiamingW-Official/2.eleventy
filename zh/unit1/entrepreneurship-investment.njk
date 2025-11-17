@@ -18,11 +18,6 @@ chapter: chapter7
 
 <h1>{{ chapter.icon }} {{ chapter.title[lang] }}</h1>
 
-<div class="tags">
-    {% for tag in chapter.tags %}
-    <a href="{{ pathPrefix }}{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
-    {% endfor %}
-</div>
 
 <div class="content">
     <h2>7.1 投资人怎么看一家公司？</h2>

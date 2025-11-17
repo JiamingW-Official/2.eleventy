@@ -12,18 +12,16 @@ permalink: /zh/
     <form action="{{ pathPrefix }}{{ lang }}/search/" method="get" class="global-search-form">
         <div class="global-search-box-wrapper">
             <div class="global-search-box">
-                <input type="text" name="q" id="mainSearchInput" placeholder="搜索标签、单元、章节..." autofocus autocomplete="off">
+                <input type="text" name="q" id="mainSearchInput" placeholder="搜索单元、章节、术语..." autofocus autocomplete="off">
                 <button type="submit">🔍</button>
             </div>
             <div id="searchSuggestions" class="search-suggestions"></div>
         </div>
     </form>
-    <div class="tags-container" style="margin-top: 1rem;">
-        <div class="tags">
-            {% for tag in tags %}
-            <a href="{{ pathPrefix }}{{ lang }}/tags/{{ tag.id }}/" class="tag">{{ tag.name }}</a>
-            {% endfor %}
-        </div>
+    <div style="margin-top: 1rem; text-align: center;">
+        <a href="{{ pathPrefix }}{{ lang }}/glossary/" style="color: #3498db; text-decoration: none; font-weight: 500; font-size: 1.1rem;">
+            {% if lang == 'zh' %}浏览术语词汇表 →{% else %}Browse Glossary →{% endif %}
+        </a>
     </div>
 </div>
 
@@ -40,18 +38,23 @@ function getSuggestions(query) {
     const suggestions = [];
     const seen = new Set();
     
-    // Search in tags
-    tags.forEach(tag => {
-        if (tag.name.toLowerCase().includes(searchTerm) && !seen.has(tag.name)) {
-            const lang = '{{ lang }}';
-            suggestions.push({
-                type: 'tag',
-                text: tag.name,
-                url: `{{ pathPrefix }}${lang}/tags/${tag.id}/`
-            });
-            seen.add(tag.name);
-        }
-    });
+    // Search in glossary terms
+    const glossary = {{ glossary | dump | safe }};
+    if (glossary) {
+        glossary.forEach(term => {
+            const termEn = term.en.toLowerCase();
+            const termZh = term.zh.toLowerCase();
+            if ((termEn.includes(searchTerm) || termZh.includes(searchTerm)) && !seen.has(term.en)) {
+                const lang = '{{ lang }}';
+                suggestions.push({
+                    type: 'term',
+                    text: `${term.en} / ${term.zh}`,
+                    url: `{{ pathPrefix }}${lang}/glossary/#${term.id}`
+                });
+                seen.add(term.en);
+            }
+        });
+    }
     
     // Search in units and chapters
     const currentLang = '{{ lang }}';
@@ -97,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
         suggestionsDiv.style.display = 'block';
         const lang = '{{ lang }}';
         suggestionsDiv.innerHTML = suggestions.map(s => {
-            const typeLabel = s.type === 'tag' ? (lang === 'zh' ? '标签' : 'Tag') : 
+            const typeLabel = s.type === 'term' ? (lang === 'zh' ? '术语' : 'Term') :
                              s.type === 'unit' ? (lang === 'zh' ? '单元' : 'Unit') : 
                              (lang === 'zh' ? '章节' : 'Chapter');
             return `<a href="${s.url}" class="suggestion-item">

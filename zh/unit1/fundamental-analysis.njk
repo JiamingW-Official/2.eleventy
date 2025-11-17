@@ -18,13 +18,8 @@ chapter: chapter1
 
 <h1>{{ chapter.icon }} {{ chapter.title[lang] }}</h1>
 
-<div class="tags">
-    {% for tag in chapter.tags %}
-    <a href="{{ pathPrefix }}{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
-    {% endfor %}
-</div>
 
-<div class="content">
+<div class="content" id="chapterContent">
     <h2>1.1 为什么要看基本面而不是只看技术面</h2>
     
     <h3>📌 技术面（Technical Analysis）</h3>

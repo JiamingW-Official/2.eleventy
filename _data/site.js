@@ -1,7 +1,7 @@
 module.exports = {
   title: {
-    zh: "投资学习平台",
-    en: "Investment Learning Platform"
+    zh: "stratos lab",
+    en: "stratos lab"
   },
   description: {
     zh: "学习投资、经济、公司分析的专业知识",

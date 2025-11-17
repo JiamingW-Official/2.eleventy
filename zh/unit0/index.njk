@@ -11,11 +11,6 @@ unit: unit0
 <h1>{{ unit.icon }} {{ unit.title[lang] }}</h1>
 <p>{{ unit.description[lang] }}</p>
 
-<div class="tags">
-    {% for tag in unit.tags %}
-    <a href="{{ pathPrefix }}{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
-    {% endfor %}
-</div>
 
 <div class="content">
     <p>这是2008年美国金融危机之后，Ray Dalio在Youtube上分享的30分钟视频《How The Economic Machine Works》《经济机器是如何运行的》，目前已经播放了五百多万次。</p>

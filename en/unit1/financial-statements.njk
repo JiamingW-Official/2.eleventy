@@ -18,11 +18,6 @@ chapter: chapter2
 
 <h1>{{ chapter.icon }} {{ chapter.title[lang] }}</h1>
 
-<div class="tags">
-    {% for tag in chapter.tags %}
-    <a href="{{ pathPrefix }}{{ lang }}/tags/{{ tag }}/" class="tag">{{ tag }}</a>
-    {% endfor %}
-</div>
 
 <div class="content">
     <h2>2.1 Why is Tesla's P/E Ratio Much Higher Than Apple's?</h2>

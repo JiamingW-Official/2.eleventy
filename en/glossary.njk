@@ -1,0 +1,155 @@
+---
+layout: base.njk
+title: 
+lang: en
+permalink: /en/glossary/
+---
+
+<h1>Glossary</h1>
+<p>Click on terms to view detailed definitions and explanations</p>
+
+<div class="glossary-search">
+    <input type="text" id="glossarySearch" placeholder="Search terms..." style="width: 100%; padding: 0.75rem 1rem; font-size: 1rem; border: 2px solid #ddd; border-radius: 8px; margin-bottom: 2rem; box-sizing: border-box;">
+</div>
+
+<div id="glossaryContent">
+{% for topicGroup in glossaryByTopic %}
+    <div class="glossary-topic" data-topic="{{ topicGroup.id }}">
+        <h2 id="{{ topicGroup.id }}">{{ topicGroup.name.en }}</h2>
+        <div class="glossary-terms">
+            {% for term in topicGroup.terms %}
+            <div class="glossary-term" id="{{ term.id }}" data-en="{{ term.en | lower }}" data-zh="{{ term.zh }}">
+                <div class="term-header">
+                    <span class="term-en">{{ term.en }}</span>
+                    <span class="term-zh">{{ term.zh }}</span>
+                </div>
+                <div class="term-description">
+                    <p><strong>English：</strong>{{ term.description.en }}</p>
+                    <p><strong>中文：</strong>{{ term.description.zh }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('glossarySearch');
+    const terms = document.querySelectorAll('.glossary-term');
+    const topics = document.querySelectorAll('.glossary-topic');
+    
+    // Handle hash navigation
+    if (window.location.hash) {
+        const termId = window.location.hash.substring(1);
+        const termElement = document.getElementById(termId);
+        if (termElement) {
+            termElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            termElement.style.backgroundColor = '#fff3cd';
+            setTimeout(() => {
+                termElement.style.transition = 'background-color 1s';
+                termElement.style.backgroundColor = '';
+            }, 2000);
+        }
+    }
+    
+    searchInput.addEventListener('input', function(e) {
+        const searchTerm = e.target.value.toLowerCase().trim();
+        
+        if (!searchTerm) {
+            terms.forEach(term => term.style.display = 'block');
+            topics.forEach(topic => topic.style.display = 'block');
+            return;
+        }
+        
+        topics.forEach(topic => {
+            let topicHasResults = false;
+            const topicTerms = topic.querySelectorAll('.glossary-term');
+            
+            topicTerms.forEach(term => {
+                const en = term.dataset.en || '';
+                const zh = term.dataset.zh || '';
+                
+                if (en.includes(searchTerm) || zh.includes(searchTerm)) {
+                    term.style.display = 'block';
+                    topicHasResults = true;
+                } else {
+                    term.style.display = 'none';
+                }
+            });
+            
+            topic.style.display = topicHasResults ? 'block' : 'none';
+        });
+    });
+});
+</script>
+
+<style>
+.glossary-search input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.glossary-topic {
+    margin-bottom: 3rem;
+}
+
+.glossary-topic h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    scroll-margin-top: 80px;
+}
+
+.glossary-terms {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.glossary-term {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: box-shadow 0.3s, transform 0.2s, background-color 0.3s;
+    scroll-margin-top: 80px;
+}
+
+.glossary-term:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.term-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.term-en {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.term-zh {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+}
+
+.term-description p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+    color: #555;
+}
+
+.term-description strong {
+    color: #2c3e50;
+}
+</style>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>投资学习平台</title>
+    <title>stratos lab</title>
     <style>
         * {
             margin: 0;
@@ -221,21 +221,15 @@
         }
         
         .tags-container {
-            max-height: 70px;
-            overflow-x: auto;
-            overflow-y: hidden;
             padding: 0.75rem 1rem;
             background-color: white;
             border-radius: 8px;
             border: 1px solid #dee2e6;
-            white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
         }
         
         .tags-container .tags {
-            display: inline-flex;
-            flex-wrap: nowrap;
-            white-space: nowrap;
+            display: flex;
+            flex-wrap: wrap;
             margin: 0;
             gap: 0.5rem;
             align-items: center;
@@ -243,24 +237,6 @@
         
         .tags-container .tag {
             flex-shrink: 0;
-        }
-        
-        .tags-container::-webkit-scrollbar {
-            height: 8px;
-        }
-        
-        .tags-container::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 4px;
-        }
-        
-        .tags-container::-webkit-scrollbar-thumb {
-            background: #bdc3c7;
-            border-radius: 4px;
-        }
-        
-        .tags-container::-webkit-scrollbar-thumb:hover {
-            background: #95a5a6;
         }
         
         .global-search {
@@ -273,7 +249,7 @@
         }
         
         .global-search-form {
-            max-width: 600px;
+            max-width: 900px;
             margin: 0 auto;
             position: relative;
         }
@@ -375,12 +351,53 @@
             color: white;
             text-align: center;
             padding: 1.5rem 0;
-            margin-top: 3rem;
+            margin-top: auto;
+            position: relative;
         }
         
         footer p {
             color: white;
             margin: 0;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        main {
+            flex: 1;
+        }
+        
+        .term {
+            position: relative;
+            display: inline;
+        }
+        
+        .term-link {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px dashed #3498db;
+            transition: all 0.2s ease;
+            cursor: help;
+        }
+        
+        .term-link:hover {
+            border-bottom-color: #2980b9;
+            color: #3498db;
+            background-color: rgba(52, 152, 219, 0.1);
+            padding: 0 2px;
+            margin: 0 -2px;
+            border-radius: 2px;
+        }
+        
+        .term-link:visited {
+            color: inherit;
+        }
+        
+        .term-link:visited:hover {
+            color: #3498db;
         }
         
         .unit-grid {
@@ -447,15 +464,15 @@
 <body>
     <header>
         <div class="header-content">
-            <a href="/2.eleventy/zh/" class="logo">投资学习平台</a>
+            <a href="zh/" class="logo">stratos lab</a>
             <nav>
-                <a href="/2.eleventy/zh/">首页</a>
-                <a href="/2.eleventy/zh/search/">搜索</a>
-                <a href="/2.eleventy/zh/tags/">标签</a>
+                <a href="zh/">首页</a>
+                <a href="zh/search/">搜索</a>
+                <a href="zh/glossary/">术语词汇表</a>
                 <div class="lang-switcher">
                     
-                        <a href="/2.eleventy/en/" class="active">中文</a>
-                        <a href="/2.eleventy/en/">English</a>
+                        <a href="en/" class="active">中文</a>
+                        <a href="en/">English</a>
                     
                 </div>
             </nav>
@@ -478,59 +495,59 @@
     <div class="tags-container">
         <div class="tags">
             
-            <a href="/2.eleventy/zh/tags/accounting/" class="tag">accounting</a>
+            <a href="zh/tags/accounting/" class="tag">accounting</a>
             
-            <a href="/2.eleventy/zh/tags/barriers/" class="tag">barriers</a>
+            <a href="zh/tags/barriers/" class="tag">barriers</a>
             
-            <a href="/2.eleventy/zh/tags/case-studies/" class="tag">case-studies</a>
+            <a href="zh/tags/case-studies/" class="tag">case-studies</a>
             
-            <a href="/2.eleventy/zh/tags/competitive-advantage/" class="tag">competitive-advantage</a>
+            <a href="zh/tags/competitive-advantage/" class="tag">competitive-advantage</a>
             
-            <a href="/2.eleventy/zh/tags/dcf/" class="tag">dcf</a>
+            <a href="zh/tags/dcf/" class="tag">dcf</a>
             
-            <a href="/2.eleventy/zh/tags/debt-cycle/" class="tag">debt-cycle</a>
+            <a href="zh/tags/debt-cycle/" class="tag">debt-cycle</a>
             
-            <a href="/2.eleventy/zh/tags/economic-machine/" class="tag">economic-machine</a>
+            <a href="zh/tags/economic-machine/" class="tag">economic-machine</a>
             
-            <a href="/2.eleventy/zh/tags/economics/" class="tag">economics</a>
+            <a href="zh/tags/economics/" class="tag">economics</a>
             
-            <a href="/2.eleventy/zh/tags/entrepreneurship/" class="tag">entrepreneurship</a>
+            <a href="zh/tags/entrepreneurship/" class="tag">entrepreneurship</a>
             
-            <a href="/2.eleventy/zh/tags/finance/" class="tag">finance</a>
+            <a href="zh/tags/finance/" class="tag">finance</a>
             
-            <a href="/2.eleventy/zh/tags/financial-analysis/" class="tag">financial-analysis</a>
+            <a href="zh/tags/financial-analysis/" class="tag">financial-analysis</a>
             
-            <a href="/2.eleventy/zh/tags/financial-statements/" class="tag">financial-statements</a>
+            <a href="zh/tags/financial-statements/" class="tag">financial-statements</a>
             
-            <a href="/2.eleventy/zh/tags/fundamental-analysis/" class="tag">fundamental-analysis</a>
+            <a href="zh/tags/fundamental-analysis/" class="tag">fundamental-analysis</a>
             
-            <a href="/2.eleventy/zh/tags/history/" class="tag">history</a>
+            <a href="zh/tags/history/" class="tag">history</a>
             
-            <a href="/2.eleventy/zh/tags/indices/" class="tag">indices</a>
+            <a href="zh/tags/indices/" class="tag">indices</a>
             
-            <a href="/2.eleventy/zh/tags/investment/" class="tag">investment</a>
+            <a href="zh/tags/investment/" class="tag">investment</a>
             
-            <a href="/2.eleventy/zh/tags/investment-strategy/" class="tag">investment-strategy</a>
+            <a href="zh/tags/investment-strategy/" class="tag">investment-strategy</a>
             
-            <a href="/2.eleventy/zh/tags/lessons/" class="tag">lessons</a>
+            <a href="zh/tags/lessons/" class="tag">lessons</a>
             
-            <a href="/2.eleventy/zh/tags/market-history/" class="tag">market-history</a>
+            <a href="zh/tags/market-history/" class="tag">market-history</a>
             
-            <a href="/2.eleventy/zh/tags/methodology/" class="tag">methodology</a>
+            <a href="zh/tags/methodology/" class="tag">methodology</a>
             
-            <a href="/2.eleventy/zh/tags/metrics/" class="tag">metrics</a>
+            <a href="zh/tags/metrics/" class="tag">metrics</a>
             
-            <a href="/2.eleventy/zh/tags/moat/" class="tag">moat</a>
+            <a href="zh/tags/moat/" class="tag">moat</a>
             
-            <a href="/2.eleventy/zh/tags/pe-ratio/" class="tag">pe-ratio</a>
+            <a href="zh/tags/pe-ratio/" class="tag">pe-ratio</a>
             
-            <a href="/2.eleventy/zh/tags/returns/" class="tag">returns</a>
+            <a href="zh/tags/returns/" class="tag">returns</a>
             
-            <a href="/2.eleventy/zh/tags/startup/" class="tag">startup</a>
+            <a href="zh/tags/startup/" class="tag">startup</a>
             
-            <a href="/2.eleventy/zh/tags/valuation/" class="tag">valuation</a>
+            <a href="zh/tags/valuation/" class="tag">valuation</a>
             
-            <a href="/2.eleventy/zh/tags/value-investing/" class="tag">value-investing</a>
+            <a href="zh/tags/value-investing/" class="tag">value-investing</a>
             
         </div>
     </div>
@@ -567,8 +584,98 @@ document.addEventListener('DOMContentLoaded', function() {
 
     </main>
     
+    <script>
+    // Global term marking script
+    (function() {
+        const glossary = [{"id":"fundamental-analysis","en":"Fundamental Analysis","zh":"基本面分析","topic":"fundamental-analysis","description":{"en":"The analysis of a company's financial health, business model, and industry position to determine its intrinsic value.","zh":"通过分析公司的财务状况、商业模式和行业地位来判断其内在价值的方法。"}},{"id":"technical-analysis","en":"Technical Analysis","zh":"技术面分析","topic":"fundamental-analysis","description":{"en":"A method of evaluating securities by analyzing statistics generated by market activity, such as past prices and volume.","zh":"通过分析市场活动产生的统计数据（如历史价格和成交量）来评估证券的方法。"}},{"id":"income-statement","en":"Income Statement","zh":"利润表","topic":"financial-statements","description":{"en":"A financial statement that shows a company's revenues and expenses over a specific period, resulting in net income or loss.","zh":"显示公司在特定时期内的收入和支出，最终得出净利润或亏损的财务报表。"}},{"id":"balance-sheet","en":"Balance Sheet","zh":"资产负债表","topic":"financial-statements","description":{"en":"A financial statement that shows a company's assets, liabilities, and shareholders' equity at a specific point in time.","zh":"显示公司在特定时间点的资产、负债和股东权益的财务报表。"}},{"id":"cash-flow-statement","en":"Cash Flow Statement","zh":"现金流量表","topic":"financial-statements","description":{"en":"A financial statement that shows how changes in balance sheet accounts and income affect cash and cash equivalents.","zh":"显示资产负债表账户和收入的变化如何影响现金及现金等价物的财务报表。"}},{"id":"revenue","en":"Revenue","zh":"营业收入","topic":"financial-statements","description":{"en":"The total amount of money generated by a company from its business activities.","zh":"公司通过经营活动产生的总金额。"}},{"id":"gross-profit","en":"Gross Profit","zh":"毛利润","topic":"financial-statements","description":{"en":"Revenue minus the cost of goods sold (COGS).","zh":"营业收入减去营业成本（生产成本）。"}},{"id":"gross-profit-margin","en":"Gross Profit Margin","zh":"毛利率","topic":"financial-statements","description":{"en":"Gross profit divided by revenue, expressed as a percentage.","zh":"毛利润除以营业收入，以百分比表示。"}},{"id":"net-income","en":"Net Income","zh":"净利润","topic":"financial-statements","description":{"en":"Total revenue minus all expenses, taxes, and costs.","zh":"总收入减去所有费用、税收和成本后的利润。"}},{"id":"operating-income","en":"Operating Income","zh":"营业利润","topic":"financial-statements","description":{"en":"Income from a company's core business operations, excluding interest and taxes.","zh":"公司核心业务运营产生的收入，不包括利息和税收。"}},{"id":"eps","en":"EPS (Earnings Per Share)","zh":"每股收益","topic":"valuation","description":{"en":"A company's profit divided by the number of outstanding shares.","zh":"公司利润除以流通股数量。"}},{"id":"pe-ratio","en":"P/E Ratio (Price-to-Earnings)","zh":"市盈率","topic":"valuation","description":{"en":"The ratio of a company's share price to its earnings per share.","zh":"公司股价与每股收益的比率。"}},{"id":"peg-ratio","en":"PEG Ratio","zh":"PEG 比率","topic":"valuation","description":{"en":"P/E ratio divided by the earnings growth rate, used to determine if a stock is overvalued or undervalued.","zh":"市盈率除以盈利增长率，用于判断股票是否被高估或低估。"}},{"id":"dcf","en":"DCF (Discounted Cash Flow)","zh":"折现现金流","topic":"valuation","description":{"en":"A valuation method that estimates the value of an investment based on its expected future cash flows.","zh":"基于预期未来现金流来估算投资价值的估值方法。"}},{"id":"earnings-growth-rate","en":"Earnings Growth Rate","zh":"盈利增长率","topic":"valuation","description":{"en":"The rate at which a company's earnings are increasing over time.","zh":"公司盈利随时间增长的速度。"}},{"id":"economic-moat","en":"Economic Moat","zh":"护城河","topic":"economic-moats","description":{"en":"A competitive advantage that allows a company to maintain superior profitability over competitors.","zh":"使公司能够保持相对于竞争对手的卓越盈利能力的竞争优势。"}},{"id":"competitive-advantage","en":"Competitive Advantage","zh":"竞争优势","topic":"economic-moats","description":{"en":"Factors that allow a company to produce goods or services better or more cheaply than its competitors.","zh":"使公司能够比竞争对手更好或更便宜地生产商品或服务的因素。"}},{"id":"brand-power","en":"Brand Power","zh":"品牌优势","topic":"economic-moats","description":{"en":"The ability of a brand to command premium pricing and customer loyalty.","zh":"品牌能够获得溢价定价和客户忠诚度的能力。"}},{"id":"network-effects","en":"Network Effects","zh":"网络效应","topic":"economic-moats","description":{"en":"A phenomenon where a product or service becomes more valuable as more people use it.","zh":"随着使用人数的增加，产品或服务变得更有价值的现象。"}},{"id":"switching-costs","en":"Switching Costs","zh":"转换成本","topic":"economic-moats","description":{"en":"The costs that a customer incurs when switching from one product or service to another.","zh":"客户从一种产品或服务转换到另一种时产生的成本。"}},{"id":"value-investing","en":"Value Investing","zh":"价值投资","topic":"investment-strategy","description":{"en":"An investment strategy that involves buying securities that appear underpriced by some form of fundamental analysis.","zh":"通过某种形式的基本面分析，购买看似被低估的证券的投资策略。"}},{"id":"growth-investing","en":"Growth Investing","zh":"成长投资","topic":"investment-strategy","description":{"en":"An investment strategy focused on companies that are expected to grow at an above-average rate.","zh":"专注于预期以高于平均速度增长的公司的投资策略。"}},{"id":"index-investing","en":"Index Investing","zh":"指数投资","topic":"investment-strategy","description":{"en":"A passive investment strategy that seeks to replicate the performance of a market index.","zh":"寻求复制市场指数表现的被动投资策略。"}},{"id":"margin-of-safety","en":"Margin of Safety","zh":"安全边际","topic":"investment-strategy","description":{"en":"The difference between the intrinsic value of a security and its market price.","zh":"证券的内在价值与其市场价格之间的差额。"}},{"id":"alpha","en":"Alpha","zh":"阿尔法","topic":"investment-strategy","description":{"en":"A measure of performance on a risk-adjusted basis, representing the excess return of an investment relative to a benchmark.","zh":"风险调整后的表现衡量指标，代表投资相对于基准的超额回报。"}},{"id":"beta","en":"Beta","zh":"贝塔","topic":"investment-strategy","description":{"en":"A measure of a stock's volatility in relation to the overall market.","zh":"衡量股票相对于整体市场波动性的指标。"}},{"id":"index","en":"Index","zh":"指数","topic":"market-indices","description":{"en":"A statistical measure of change in a securities market, representing a portfolio of securities.","zh":"证券市场变化的统计衡量指标，代表一篮子证券。"}},{"id":"snp500","en":"S&P 500","zh":"标普 500","topic":"market-indices","description":{"en":"A stock market index that measures the stock performance of 500 large companies listed on US stock exchanges.","zh":"衡量在美国证券交易所上市的 500 家大公司股票表现的市场指数。"}},{"id":"dow-jones","en":"Dow Jones Industrial Average","zh":"道琼斯工业指数","topic":"market-indices","description":{"en":"A price-weighted average of 30 significant stocks traded on the New York Stock Exchange and NASDAQ.","zh":"在纽约证券交易所和纳斯达克交易的 30 只重要股票的价格加权平均值。"}},{"id":"nasdaq","en":"NASDAQ","zh":"纳斯达克","topic":"market-indices","description":{"en":"A global electronic marketplace for buying and selling securities, and the second-largest stock exchange in the world.","zh":"全球电子证券交易市场，世界第二大证券交易所。"}},{"id":"returns","en":"Returns","zh":"回报率","topic":"market-indices","description":{"en":"The gain or loss on an investment over a specified period, expressed as a percentage.","zh":"投资在特定时期内的收益或损失，以百分比表示。"}},{"id":"economics","en":"Economics","zh":"经济学","topic":"economics","description":{"en":"The social science that studies how individuals, businesses, and governments make choices about allocating resources.","zh":"研究个人、企业和政府如何做出资源配置选择的社会科学。"}},{"id":"debt-cycle","en":"Debt Cycle","zh":"债务周期","topic":"economics","description":{"en":"The recurring pattern of borrowing and repayment that affects economic growth and stability.","zh":"影响经济增长和稳定性的借贷和还款的循环模式。"}},{"id":"economic-machine","en":"Economic Machine","zh":"经济机器","topic":"economics","description":{"en":"A conceptual framework describing how the economy works through transactions, credit, and debt cycles.","zh":"描述经济如何通过交易、信贷和债务周期运作的概念框架。"}}];
+        const lang = 'zh';
+        const pathPrefix = '';
+        
+        if (!glossary || !Array.isArray(glossary)) return;
+        
+        // Sort terms by length (longest first) to avoid partial matches
+        const sortedTerms = [...glossary].sort((a, b) => {
+            const aLen = Math.max(a.en.length, a.zh.length);
+            const bLen = Math.max(b.en.length, b.zh.length);
+            return bLen - aLen;
+        });
+        
+        function markTermsInElement(element) {
+            if (!element) return;
+            
+            // Process all text nodes
+            const walker = document.createTreeWalker(
+                element,
+                NodeFilter.SHOW_TEXT,
+                {
+                    acceptNode: function(node) {
+                        // Skip script, style, and already marked terms
+                        const parent = node.parentElement;
+                        if (parent && (
+                            parent.tagName === 'SCRIPT' || 
+                            parent.tagName === 'STYLE' || 
+                            parent.classList.contains('term') ||
+                            parent.closest('.term')
+                        )) {
+                            return NodeFilter.FILTER_REJECT;
+                        }
+                        return NodeFilter.FILTER_ACCEPT;
+                    }
+                }
+            );
+            
+            const textNodes = [];
+            let node;
+            while (node = walker.nextNode()) {
+                textNodes.push(node);
+            }
+            
+            textNodes.forEach(textNode => {
+                let text = textNode.textContent;
+                let modified = false;
+                let newHTML = text;
+                
+                sortedTerms.forEach(term => {
+                    const glossaryUrl = `${pathPrefix}${lang}/glossary/#${term.id}`;
+                    
+                    // Mark English terms (whole word)
+                    const enRegex = new RegExp(`\\b${term.en.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+                    newHTML = newHTML.replace(enRegex, (match) => {
+                        modified = true;
+                        return `<span class="term" data-term-id="${term.id}"><a href="${glossaryUrl}" class="term-link">${match}</a></span>`;
+                    });
+                    
+                    // Mark Chinese terms
+                    const zhRegex = new RegExp(term.zh.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+                    newHTML = newHTML.replace(zhRegex, (match) => {
+                        modified = true;
+                        return `<span class="term" data-term-id="${term.id}"><a href="${glossaryUrl}" class="term-link">${match}</a></span>`;
+                    });
+                });
+                
+                if (modified && newHTML !== text) {
+                    const wrapper = document.createElement('span');
+                    wrapper.innerHTML = newHTML;
+                    textNode.parentNode.replaceChild(wrapper, textNode);
+                }
+            });
+        }
+        
+        // Mark terms when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                const content = document.querySelector('.content, main, #chapterContent');
+                if (content) markTermsInElement(content);
+            });
+        } else {
+            const content = document.querySelector('.content, main, #chapterContent');
+            if (content) markTermsInElement(content);
+        }
+    })();
+    </script>
+    
     <footer>
-        <p>&copy; 2024 投资学习平台</p>
+        <p>&copy; 2025 Jiaming Wang</p>
     </footer>
 </body>
 </html>

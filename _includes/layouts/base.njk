@@ -221,21 +221,15 @@
         }
         
         .tags-container {
-            max-height: 70px;
-            overflow-x: auto;
-            overflow-y: hidden;
             padding: 0.75rem 1rem;
             background-color: white;
             border-radius: 8px;
             border: 1px solid #dee2e6;
-            white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
         }
         
         .tags-container .tags {
-            display: inline-flex;
-            flex-wrap: nowrap;
-            white-space: nowrap;
+            display: flex;
+            flex-wrap: wrap;
             margin: 0;
             gap: 0.5rem;
             align-items: center;
@@ -243,24 +237,6 @@
         
         .tags-container .tag {
             flex-shrink: 0;
-        }
-        
-        .tags-container::-webkit-scrollbar {
-            height: 8px;
-        }
-        
-        .tags-container::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 4px;
-        }
-        
-        .tags-container::-webkit-scrollbar-thumb {
-            background: #bdc3c7;
-            border-radius: 4px;
-        }
-        
-        .tags-container::-webkit-scrollbar-thumb:hover {
-            background: #95a5a6;
         }
         
         .global-search {
@@ -273,7 +249,7 @@
         }
         
         .global-search-form {
-            max-width: 600px;
+            max-width: 900px;
             margin: 0 auto;
             position: relative;
         }
@@ -375,12 +351,53 @@
             color: white;
             text-align: center;
             padding: 1.5rem 0;
-            margin-top: 3rem;
+            margin-top: auto;
+            position: relative;
         }
         
         footer p {
             color: white;
             margin: 0;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        main {
+            flex: 1;
+        }
+        
+        .term {
+            position: relative;
+            display: inline;
+        }
+        
+        .term-link {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px dashed #3498db;
+            transition: all 0.2s ease;
+            cursor: help;
+        }
+        
+        .term-link:hover {
+            border-bottom-color: #2980b9;
+            color: #3498db;
+            background-color: rgba(52, 152, 219, 0.1);
+            padding: 0 2px;
+            margin: 0 -2px;
+            border-radius: 2px;
+        }
+        
+        .term-link:visited {
+            color: inherit;
+        }
+        
+        .term-link:visited:hover {
+            color: #3498db;
         }
         
         .unit-grid {
@@ -451,7 +468,7 @@
             <nav>
                 <a href="{{ pathPrefix }}{{ lang }}/">{% if lang == 'zh' %}首页{% else %}Home{% endif %}</a>
                 <a href="{{ pathPrefix }}{{ lang }}/search/">{% if lang == 'zh' %}搜索{% else %}Search{% endif %}</a>
-                <a href="{{ pathPrefix }}{{ lang }}/tags/">{% if lang == 'zh' %}标签{% else %}Tags{% endif %}</a>
+                <a href="{{ pathPrefix }}{{ lang }}/glossary/">{% if lang == 'zh' %}术语词汇表{% else %}Glossary{% endif %}</a>
                 <div class="lang-switcher">
                     {% if lang == 'zh' %}
                         <a href="{{ pathPrefix }}en/" class="active">中文</a>
@@ -475,8 +492,98 @@
         {{ content | safe }}
     </main>
     
+    <script>
+    // Global term marking script
+    (function() {
+        const glossary = {{ glossary | dump | safe }};
+        const lang = '{{ lang }}';
+        const pathPrefix = '{{ pathPrefix }}';
+        
+        if (!glossary || !Array.isArray(glossary)) return;
+        
+        // Sort terms by length (longest first) to avoid partial matches
+        const sortedTerms = [...glossary].sort((a, b) => {
+            const aLen = Math.max(a.en.length, a.zh.length);
+            const bLen = Math.max(b.en.length, b.zh.length);
+            return bLen - aLen;
+        });
+        
+        function markTermsInElement(element) {
+            if (!element) return;
+            
+            // Process all text nodes
+            const walker = document.createTreeWalker(
+                element,
+                NodeFilter.SHOW_TEXT,
+                {
+                    acceptNode: function(node) {
+                        // Skip script, style, and already marked terms
+                        const parent = node.parentElement;
+                        if (parent && (
+                            parent.tagName === 'SCRIPT' || 
+                            parent.tagName === 'STYLE' || 
+                            parent.classList.contains('term') ||
+                            parent.closest('.term')
+                        )) {
+                            return NodeFilter.FILTER_REJECT;
+                        }
+                        return NodeFilter.FILTER_ACCEPT;
+                    }
+                }
+            );
+            
+            const textNodes = [];
+            let node;
+            while (node = walker.nextNode()) {
+                textNodes.push(node);
+            }
+            
+            textNodes.forEach(textNode => {
+                let text = textNode.textContent;
+                let modified = false;
+                let newHTML = text;
+                
+                sortedTerms.forEach(term => {
+                    const glossaryUrl = `${pathPrefix}${lang}/glossary/#${term.id}`;
+                    
+                    // Mark English terms (whole word)
+                    const enRegex = new RegExp(`\\b${term.en.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+                    newHTML = newHTML.replace(enRegex, (match) => {
+                        modified = true;
+                        return `<span class="term" data-term-id="${term.id}"><a href="${glossaryUrl}" class="term-link">${match}</a></span>`;
+                    });
+                    
+                    // Mark Chinese terms
+                    const zhRegex = new RegExp(term.zh.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+                    newHTML = newHTML.replace(zhRegex, (match) => {
+                        modified = true;
+                        return `<span class="term" data-term-id="${term.id}"><a href="${glossaryUrl}" class="term-link">${match}</a></span>`;
+                    });
+                });
+                
+                if (modified && newHTML !== text) {
+                    const wrapper = document.createElement('span');
+                    wrapper.innerHTML = newHTML;
+                    textNode.parentNode.replaceChild(wrapper, textNode);
+                }
+            });
+        }
+        
+        // Mark terms when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                const content = document.querySelector('.content, main, #chapterContent');
+                if (content) markTermsInElement(content);
+            });
+        } else {
+            const content = document.querySelector('.content, main, #chapterContent');
+            if (content) markTermsInElement(content);
+        }
+    })();
+    </script>
+    
     <footer>
-        <p>&copy; 2024 {{ site.title[lang] }}</p>
+        <p>&copy; 2025 Jiaming Wang</p>
     </footer>
 </body>
 </html>

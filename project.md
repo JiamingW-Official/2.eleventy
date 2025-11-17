@@ -1,22 +1,22 @@
 ---
 layout: base.njk
-title: 项目
+title: Project
 lang: zh
 permalink: /zh/project/
 ---
 
-# 项目展示
+# Project
 
-这里展示了一些有趣的项目。
+This page showcases interesting projects.
 
-## 项目列表
+## Project List
 
-### 项目一
-这是一个示例项目的描述。你可以在这里添加更多关于项目的信息。
+### Project One
+Description of the first project.
 
-### 项目二
-另一个项目的介绍和说明。
+### Project Two
+Introduction and details of the second project.
 
-### 项目三
-第三个项目的详细信息。
+### Project Three
+Detailed information about the third project.
 
