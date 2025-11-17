@@ -14,14 +14,13 @@ permalink: /en/quiz/
         <div id="quizSelection" class="quiz-selection">
             <h2>Select Quiz Topic</h2>
             <div class="topic-buttons">
-                <button class="topic-btn" data-topic="all">All Questions (30)</button>
-                <button class="topic-btn" data-topic="fundamental-analysis">Fundamental Analysis</button>
-                <button class="topic-btn" data-topic="financial-statements">Financial Statements</button>
-                <button class="topic-btn" data-topic="valuation">Valuation</button>
-                <button class="topic-btn" data-topic="economic-moats">Economic Moats</button>
-                <button class="topic-btn" data-topic="investment-strategy">Investment Strategy</button>
-                <button class="topic-btn" data-topic="market-indices">Market & Indices</button>
-                <button class="topic-btn" data-topic="economics">Economics</button>
+                <button class="topic-btn" data-topic="fundamental-analysis">Fundamental Analysis (10)</button>
+                <button class="topic-btn" data-topic="financial-statements">Financial Statements (10)</button>
+                <button class="topic-btn" data-topic="valuation">Valuation (10)</button>
+                <button class="topic-btn" data-topic="economic-moats">Economic Moats (10)</button>
+                <button class="topic-btn" data-topic="investment-strategy">Investment Strategy (10)</button>
+                <button class="topic-btn" data-topic="market-indices">Market & Indices (10)</button>
+                <button class="topic-btn" data-topic="economics">Economics (10)</button>
             </div>
         </div>
         
@@ -339,13 +338,10 @@ function shuffleArray(array) {
 
 function selectTopic(topic) {
     currentTopic = topic;
-    let questions = quizData;
+    // Filter questions by topic
+    let questions = quizData.filter(q => q.topic === topic);
     
-    if (topic !== 'all') {
-        questions = quizData.filter(q => q.topic === topic);
-    }
-    
-    // Shuffle and take 10 questions
+    // Shuffle and take 10 questions randomly
     currentQuiz = shuffleArray(questions).slice(0, 10);
     currentQuestionIndex = 0;
     userAnswers = [];

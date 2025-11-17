@@ -757,6 +757,508 @@ module.exports = [
       zh: "'市场先生'是格雷厄姆提出的比喻，说明市场情绪波动很大，每天都会给出不同的报价，有时乐观（价格高），有时悲观（价格低）。聪明的投资者不应该被市场情绪左右，而应该利用市场先生的情绪波动，在价格低于价值时买入，在价格高于价值时卖出或持有。",
       en: "'Mr. Market' is a metaphor proposed by Graham, illustrating that market sentiment fluctuates greatly, offering different prices every day, sometimes optimistic (high prices), sometimes pessimistic (low prices). Smart investors should not be swayed by market sentiment, but should take advantage of Mr. Market's emotional fluctuations, buying when prices are below value, and selling or holding when prices are above value."
     }
+  },
+  // Additional questions to reach 20 per topic
+  // Fundamental Analysis - Questions 6-20
+  {
+    id: 31,
+    topic: "fundamental-analysis",
+    question: {
+      zh: "一家公司的营业利润率（Operating Margin）持续下降，但净利润率（Net Margin）保持稳定。最可能的原因是什么？",
+      en: "A company's Operating Margin continues to decline, but Net Margin remains stable. What is the most likely reason?"
+    },
+    options: {
+      zh: [
+        "公司运营效率提高",
+        "公司可能通过非经营性收入（如投资收益、资产出售）来弥补运营利润的下降",
+        "数据计算错误"
+      ],
+      en: [
+        "The company's operational efficiency has improved",
+        "The company may be offsetting declining operating profits through non-operating income (such as investment gains, asset sales)",
+        "Calculation error in the data"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "营业利润率下降但净利润率稳定，说明公司的核心业务盈利能力在下降，但通过非经营性活动（如投资收益、资产出售、政府补贴等）维持了整体利润。这种情况需要警惕，因为非经营性收入通常不可持续，核心业务的恶化才是真正的问题。",
+      en: "A decline in operating margin but stable net margin indicates that the company's core business profitability is declining, but overall profits are maintained through non-operating activities (such as investment gains, asset sales, government subsidies). This situation requires caution, as non-operating income is usually unsustainable, and the deterioration of core business is the real problem."
+    }
+  },
+  {
+    id: 32,
+    topic: "fundamental-analysis",
+    question: {
+      zh: "在分析公司时，以下哪个指标最能反映公司的盈利质量？",
+      en: "When analyzing a company, which metric best reflects the quality of earnings?"
+    },
+    options: {
+      zh: [
+        "净利润增长率",
+        "经营性现金流与净利润的比率",
+        "每股收益（EPS）"
+      ],
+      en: [
+        "Net income growth rate",
+        "Operating cash flow to net income ratio",
+        "Earnings per share (EPS)"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "经营性现金流与净利润的比率（CFO/NI）是衡量盈利质量的关键指标。如果这个比率接近或大于1，说明公司的利润有真实的现金支撑；如果远小于1，可能表明公司通过会计手段虚增利润，或者利润质量较差。高质量的盈利应该能够转化为现金流入。",
+      en: "The operating cash flow to net income ratio (CFO/NI) is a key metric for measuring earnings quality. If this ratio is close to or greater than 1, it indicates the company's profits are supported by real cash; if it's much less than 1, it may indicate the company is inflating profits through accounting methods, or the earnings quality is poor. High-quality earnings should be able to convert into cash inflows."
+    }
+  },
+  {
+    id: 33,
+    topic: "fundamental-analysis",
+    question: {
+      zh: "一家公司的资产周转率（Asset Turnover）为0.5，这意味着什么？",
+      en: "If a company has an Asset Turnover ratio of 0.5, what does this mean?"
+    },
+    options: {
+      zh: [
+        "公司每1元资产创造了0.5元收入，资产使用效率较低",
+        "公司资产使用效率很高",
+        "这个比率没有意义"
+      ],
+      en: [
+        "The company generates 0.5 yuan of revenue for every 1 yuan of assets, indicating low asset utilization efficiency",
+        "The company has very high asset utilization efficiency",
+        "This ratio is meaningless"
+      ]
+    },
+    correct: 0,
+    explanation: {
+      zh: "资产周转率 = 营业收入 / 平均总资产。比率为0.5意味着公司每1元资产只创造了0.5元收入，资产使用效率较低。这可能表明公司资产配置不当、产能过剩、或者处于重资产行业。通常资产周转率越高越好，但也要结合行业特点来看。",
+      en: "Asset Turnover = Revenue / Average Total Assets. A ratio of 0.5 means the company generates only 0.5 yuan of revenue for every 1 yuan of assets, indicating low asset utilization efficiency. This may indicate poor asset allocation, overcapacity, or that the company is in a capital-intensive industry. Generally, higher asset turnover is better, but it should be considered in conjunction with industry characteristics."
+    }
+  },
+  {
+    id: 34,
+    topic: "fundamental-analysis",
+    question: {
+      zh: "在比较两家公司的盈利能力时，以下哪个做法最合理？",
+      en: "When comparing the profitability of two companies, which approach is most reasonable?"
+    },
+    options: {
+      zh: [
+        "只比较净利润",
+        "综合考虑毛利率、净利率、ROE、ROA等多个指标，并结合行业特点",
+        "只比较股价"
+      ],
+      en: [
+        "Only compare net income",
+        "Comprehensively consider multiple metrics such as gross margin, net margin, ROE, ROA, combined with industry characteristics",
+        "Only compare stock prices"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "评估公司盈利能力需要多维度分析：毛利率反映产品定价能力，净利率反映整体盈利效率，ROE反映股东资金回报，ROA反映资产使用效率。不同行业有不同的合理水平，需要结合行业特点、公司规模、发展阶段等因素综合判断。单一指标容易产生误导。",
+      en: "Evaluating a company's profitability requires multi-dimensional analysis: gross margin reflects pricing power, net margin reflects overall profit efficiency, ROE reflects shareholder return, ROA reflects asset utilization efficiency. Different industries have different reasonable levels, and need to be judged comprehensively in conjunction with industry characteristics, company size, development stage, and other factors. A single metric can be misleading."
+    }
+  },
+  {
+    id: 35,
+    topic: "fundamental-analysis",
+    question: {
+      zh: "一家公司的EBITDA（息税折旧摊销前利润）持续增长，但自由现金流下降。这可能说明什么？",
+      en: "A company's EBITDA continues to grow, but free cash flow declines. What might this indicate?"
+    },
+    options: {
+      zh: [
+        "公司盈利能力增强",
+        "公司可能面临资本支出大幅增加、营运资金需求增长，或者税收、利息支出增加",
+        "EBITDA和自由现金流应该同向变化"
+      ],
+      en: [
+        "The company's profitability has improved",
+        "The company may be facing significant increases in capital expenditures, working capital requirements, or increases in taxes and interest expenses",
+        "EBITDA and free cash flow should move in the same direction"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "EBITDA增长但自由现金流下降，说明虽然经营利润（EBITDA）在增长，但公司需要更多的资本支出、营运资金投入，或者税收、利息支出增加，导致实际可自由支配的现金减少。这种情况在快速扩张的公司中很常见，需要关注现金流的可持续性。",
+      en: "EBITDA growth but declining free cash flow indicates that although operating profit (EBITDA) is growing, the company needs more capital expenditures, working capital investment, or faces increased taxes and interest expenses, resulting in less actual free cash. This is common in rapidly expanding companies and requires attention to cash flow sustainability."
+    }
+  },
+  {
+    id: 36,
+    topic: "fundamental-analysis",
+    question: {
+      zh: "在分析成长型公司时，以下哪个指标最重要？",
+      en: "When analyzing growth companies, which metric is most important?"
+    },
+    options: {
+      zh: [
+        "当前的市盈率",
+        "收入增长率、毛利率趋势、市场份额变化、以及现金消耗率",
+        "股息率"
+      ],
+      en: [
+        "Current P/E ratio",
+        "Revenue growth rate, gross margin trends, market share changes, and cash burn rate",
+        "Dividend yield"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "对于成长型公司，传统的估值指标（如P/E）可能不适用，因为公司可能还在亏损或盈利很少。更重要的是关注：收入增长率（是否持续高速增长）、毛利率趋势（是否改善）、市场份额（是否扩大）、以及现金消耗率（能否支撑到盈利）。这些指标更能反映公司的成长潜力和可持续性。",
+      en: "For growth companies, traditional valuation metrics (such as P/E) may not be applicable, as the company may still be losing money or have minimal profits. More important is to focus on: revenue growth rate (whether it's consistently growing rapidly), gross margin trends (whether improving), market share (whether expanding), and cash burn rate (whether it can sustain until profitability). These metrics better reflect the company's growth potential and sustainability."
+    }
+  },
+  {
+    id: 37,
+    topic: "fundamental-analysis",
+    question: {
+      zh: "一家公司的应收账款周转天数（Days Sales Outstanding, DSO）从30天增加到60天，这可能意味着什么？",
+      en: "If a company's Days Sales Outstanding (DSO) increases from 30 days to 60 days, what might this indicate?"
+    },
+    options: {
+      zh: [
+        "公司收款能力增强",
+        "公司可能面临客户付款延迟、信用政策放宽，或者销售质量下降",
+        "DSO增加是好事"
+      ],
+      en: [
+        "The company's collection ability has improved",
+        "The company may be facing delayed customer payments, relaxed credit policies, or declining sales quality",
+        "Increasing DSO is a good thing"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "DSO增加意味着公司收回应收账款的时间变长，可能表明：1) 客户付款能力下降或付款意愿降低；2) 公司为了促进销售放宽了信用政策；3) 销售质量下降（如向信用较差的客户销售）。这会导致资金占用增加、坏账风险上升，需要密切关注。",
+      en: "An increase in DSO means it takes longer for the company to collect receivables, possibly indicating: 1) Declining customer payment ability or willingness; 2) The company has relaxed credit policies to promote sales; 3) Declining sales quality (such as selling to customers with poor credit). This leads to increased capital tied up and rising bad debt risk, requiring close attention."
+    }
+  },
+  {
+    id: 38,
+    topic: "fundamental-analysis",
+    question: {
+      zh: "在分析周期性行业（如钢铁、化工）的公司时，以下哪个做法最重要？",
+      en: "When analyzing companies in cyclical industries (such as steel, chemicals), which approach is most important?"
+    },
+    options: {
+      zh: [
+        "只看当前季度的业绩",
+        "分析公司在行业周期不同阶段的盈利能力、成本控制能力，以及行业地位",
+        "忽略行业周期性"
+      ],
+      en: [
+        "Only look at current quarter performance",
+        "Analyze the company's profitability, cost control capabilities, and industry position at different stages of the industry cycle",
+        "Ignore industry cyclicality"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "周期性行业的公司业绩会随经济周期大幅波动。在行业景气时，所有公司都可能盈利；在行业低迷时，只有成本控制能力强、行业地位稳固的公司才能生存。因此，需要分析公司在周期不同阶段的表现，关注其成本结构、竞争优势、财务健康状况，而不是只看当前时点的业绩。",
+      en: "Companies in cyclical industries experience significant performance fluctuations with economic cycles. During industry booms, all companies may be profitable; during industry downturns, only companies with strong cost control and solid industry positions can survive. Therefore, it's necessary to analyze the company's performance at different stages of the cycle, focusing on cost structure, competitive advantages, and financial health, rather than just looking at current performance."
+    }
+  },
+  {
+    id: 39,
+    topic: "fundamental-analysis",
+    question: {
+      zh: "一家公司的研发费用（R&D）占收入的比例从5%下降到2%，这可能意味着什么？",
+      en: "If a company's R&D expenses as a percentage of revenue decrease from 5% to 2%, what might this indicate?"
+    },
+    options: {
+      zh: [
+        "公司创新能力增强",
+        "公司可能为了短期利润削减研发投入，这可能损害长期竞争力",
+        "研发费用越低越好"
+      ],
+      en: [
+        "The company's innovation capability has improved",
+        "The company may be cutting R&D investment for short-term profits, which could harm long-term competitiveness",
+        "Lower R&D expenses are better"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "研发费用下降可能表明公司为了提升短期利润而削减研发投入。虽然这能在短期内改善利润表，但可能损害公司的长期创新能力、产品竞争力，特别是在科技、医药等依赖创新的行业。投资者需要平衡短期业绩和长期竞争力，关注研发投入的绝对值和相对比例。",
+      en: "A decline in R&D expenses may indicate the company is cutting R&D investment to boost short-term profits. While this can improve the income statement in the short term, it may harm the company's long-term innovation capability and product competitiveness, especially in industries that rely on innovation like technology and pharmaceuticals. Investors need to balance short-term performance and long-term competitiveness, paying attention to both absolute and relative R&D investment."
+    }
+  },
+  {
+    id: 40,
+    topic: "fundamental-analysis",
+    question: {
+      zh: "在分析公司的竞争优势时，以下哪个指标最能反映公司的定价能力？",
+      en: "When analyzing a company's competitive advantages, which metric best reflects the company's pricing power?"
+    },
+    options: {
+      zh: [
+        "市场份额",
+        "毛利率及其稳定性、以及毛利率与行业平均水平的比较",
+        "员工数量"
+      ],
+      en: [
+        "Market share",
+        "Gross margin and its stability, as well as comparison with industry average",
+        "Number of employees"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "毛利率是反映公司定价能力的关键指标。高毛利率且稳定，说明公司能够以较高价格销售产品，可能拥有品牌优势、技术优势、或垄断地位。如果毛利率远高于行业平均，说明公司有更强的定价能力。毛利率的稳定性也很重要，波动大的毛利率可能表明竞争激烈、定价能力弱。",
+      en: "Gross margin is a key metric reflecting a company's pricing power. High and stable gross margins indicate the company can sell products at higher prices, possibly due to brand advantages, technological advantages, or monopoly positions. If gross margin is much higher than the industry average, it indicates stronger pricing power. The stability of gross margin is also important, as volatile gross margins may indicate intense competition and weak pricing power."
+    }
+  },
+  {
+    id: 41,
+    topic: "fundamental-analysis",
+    question: {
+      zh: "一家公司的营业费用率（Operating Expense Ratio）持续上升，但收入增长率也在上升。这可能说明什么？",
+      en: "A company's Operating Expense Ratio continues to rise, but revenue growth rate is also rising. What might this indicate?"
+    },
+    options: {
+      zh: [
+        "公司运营效率下降",
+        "公司可能处于扩张期，增加营销、研发等投入以推动增长，这是正常的",
+        "费用率上升总是坏事"
+      ],
+      en: [
+        "The company's operational efficiency is declining",
+        "The company may be in an expansion phase, increasing marketing, R&D, and other investments to drive growth, which is normal",
+        "Rising expense ratio is always bad"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "在收入快速增长期，费用率上升可能是正常的，因为公司需要增加营销投入获取客户、增加研发投入开发产品、增加人员支持业务扩张。关键是要看：1) 收入增长是否能覆盖费用增长；2) 费用增长是否带来可持续的收入增长；3) 随着规模扩大，费用率是否能够下降（规模效应）。",
+      en: "During rapid revenue growth, rising expense ratios may be normal, as the company needs to increase marketing investment to acquire customers, increase R&D investment to develop products, and add personnel to support business expansion. The key is to see: 1) Whether revenue growth can cover expense growth; 2) Whether expense growth leads to sustainable revenue growth; 3) Whether expense ratios can decline as scale increases (economies of scale)."
+    }
+  },
+  {
+    id: 42,
+    topic: "fundamental-analysis",
+    question: {
+      zh: "在分析公司的财务健康状况时，以下哪个组合最能全面反映公司状况？",
+      en: "When analyzing a company's financial health, which combination best comprehensively reflects the company's condition?"
+    },
+    options: {
+      zh: [
+        "只看净利润",
+        "综合分析盈利能力（ROE、ROA）、偿债能力（流动比率、债务股权比）、运营效率（资产周转率）、现金流状况（自由现金流）",
+        "只看股价"
+      ],
+      en: [
+        "Only look at net income",
+        "Comprehensively analyze profitability (ROE, ROA), solvency (current ratio, debt-to-equity ratio), operational efficiency (asset turnover), cash flow conditions (free cash flow)",
+        "Only look at stock price"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "全面评估公司财务健康需要多维度分析：盈利能力（ROE、ROA）反映公司赚钱能力；偿债能力（流动比率、债务股权比）反映公司财务风险；运营效率（资产周转率）反映资产使用效率；现金流状况（自由现金流）反映真实盈利质量和资金状况。单一指标无法全面反映公司状况。",
+      en: "Comprehensive assessment of a company's financial health requires multi-dimensional analysis: profitability (ROE, ROA) reflects the company's ability to make money; solvency (current ratio, debt-to-equity ratio) reflects financial risk; operational efficiency (asset turnover) reflects asset utilization efficiency; cash flow conditions (free cash flow) reflect true earnings quality and capital status. A single metric cannot comprehensively reflect the company's condition."
+    }
+  },
+  {
+    id: 43,
+    topic: "fundamental-analysis",
+    question: {
+      zh: "一家公司的毛利率很高（50%），但净利率很低（3%）。这可能说明什么？",
+      en: "A company has a high gross margin (50%) but low net margin (3%). What might this indicate?"
+    },
+    options: {
+      zh: [
+        "公司产品定价能力强，盈利能力优秀",
+        "公司虽然产品有定价优势，但运营费用（销售、管理、研发等）过高，或者财务费用、税收负担重",
+        "毛利率和净利率应该接近"
+      ],
+      en: [
+        "The company has strong pricing power and excellent profitability",
+        "Although the company's products have pricing advantages, operating expenses (sales, administration, R&D, etc.) are too high, or financial expenses and tax burdens are heavy",
+        "Gross margin and net margin should be close"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "高毛利率但低净利率，说明公司产品有定价优势（毛利率高），但运营效率可能存在问题：销售费用、管理费用、研发费用过高，或者财务费用、税收负担重，侵蚀了利润。这种情况需要分析各项费用的合理性，看是否有优化空间。",
+      en: "High gross margin but low net margin indicates the company's products have pricing advantages (high gross margin), but operational efficiency may be problematic: sales expenses, administrative expenses, R&D expenses are too high, or financial expenses and tax burdens are heavy, eroding profits. This situation requires analysis of the reasonableness of various expenses to see if there's room for optimization."
+    }
+  },
+  {
+    id: 44,
+    topic: "fundamental-analysis",
+    question: {
+      zh: "在分析公司时，'同店销售额增长'（Same-Store Sales Growth）这个指标主要用于哪个行业？",
+      en: "When analyzing companies, the metric 'Same-Store Sales Growth' is mainly used for which industry?"
+    },
+    options: {
+      zh: [
+        "所有行业",
+        "零售、餐饮等有实体门店的行业，用于区分内生增长和扩张增长",
+        "科技行业"
+      ],
+      en: [
+        "All industries",
+        "Industries with physical stores such as retail and restaurants, used to distinguish organic growth from expansion growth",
+        "Technology industry"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "同店销售额增长是指现有门店（开业一年以上）的销售额增长，排除了新开店的影响。这个指标主要用于零售、餐饮等有实体门店的行业，用于区分：1) 内生增长（同店增长）- 反映经营质量；2) 扩张增长（新开店）- 反映扩张速度。同店增长更能反映公司的真实经营能力和市场地位。",
+      en: "Same-store sales growth refers to sales growth at existing stores (open for more than one year), excluding the impact of new store openings. This metric is mainly used in industries with physical stores such as retail and restaurants, to distinguish: 1) Organic growth (same-store growth) - reflects operational quality; 2) Expansion growth (new store openings) - reflects expansion speed. Same-store growth better reflects the company's true operational capability and market position."
+    }
+  },
+  {
+    id: 45,
+    topic: "fundamental-analysis",
+    question: {
+      zh: "一家公司的'客户获取成本'（Customer Acquisition Cost, CAC）持续上升，这可能意味着什么？",
+      en: "If a company's Customer Acquisition Cost (CAC) continues to rise, what might this indicate?"
+    },
+    options: {
+      zh: [
+        "公司营销效率提高",
+        "公司可能面临市场竞争加剧、获客难度增加，或者营销策略效率下降",
+        "CAC上升总是好事"
+      ],
+      en: [
+        "The company's marketing efficiency has improved",
+        "The company may be facing intensified market competition, increased customer acquisition difficulty, or declining marketing strategy efficiency",
+        "Rising CAC is always good"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "CAC上升可能表明：1) 市场竞争加剧，需要更多投入才能获取客户；2) 目标市场饱和，获客难度增加；3) 营销策略效率下降。这会导致公司盈利能力下降，特别是对于依赖持续获客的订阅型、平台型公司。需要关注CAC与客户生命周期价值（LTV）的比率，确保LTV > CAC。",
+      en: "Rising CAC may indicate: 1) Intensified market competition, requiring more investment to acquire customers; 2) Target market saturation, increased customer acquisition difficulty; 3) Declining marketing strategy efficiency. This leads to declining profitability, especially for subscription-based or platform companies that rely on continuous customer acquisition. It's important to pay attention to the ratio of CAC to Customer Lifetime Value (LTV), ensuring LTV > CAC."
+    }
+  },
+  {
+    id: 46,
+    topic: "fundamental-analysis",
+    question: {
+      zh: "在分析科技公司时，以下哪个指标最能反映公司的用户增长质量？",
+      en: "When analyzing technology companies, which metric best reflects the quality of user growth?"
+    },
+    options: {
+      zh: [
+        "只看用户总数",
+        "综合分析用户增长率、用户活跃度（DAU/MAU）、用户留存率、以及单位用户价值（ARPU）",
+        "只看股价"
+      ],
+      en: [
+        "Only look at total number of users",
+        "Comprehensively analyze user growth rate, user activity (DAU/MAU), user retention rate, and average revenue per user (ARPU)",
+        "Only look at stock price"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "对于科技公司，用户增长质量比数量更重要。需要关注：1) 用户增长率（是否持续）；2) 用户活跃度（DAU/MAU比率，反映用户粘性）；3) 用户留存率（反映产品价值）；4) ARPU（反映变现能力）。高质量的用户增长应该带来活跃度提升、留存率提高、ARPU增长，而不仅仅是用户数量增加。",
+      en: "For technology companies, the quality of user growth is more important than quantity. Need to focus on: 1) User growth rate (whether sustained); 2) User activity (DAU/MAU ratio, reflecting user stickiness); 3) User retention rate (reflecting product value); 4) ARPU (reflecting monetization capability). High-quality user growth should bring increased activity, improved retention, and ARPU growth, not just an increase in user numbers."
+    }
+  },
+  {
+    id: 47,
+    topic: "fundamental-analysis",
+    question: {
+      zh: "一家公司的'递延收入'（Deferred Revenue）大幅增加，这可能意味着什么？",
+      en: "If a company's Deferred Revenue increases significantly, what might this indicate?"
+    },
+    options: {
+      zh: [
+        "公司收入下降",
+        "公司可能收到了大量预付款或订阅费，未来收入有保障，这是积极信号",
+        "递延收入是负债，增加是坏事"
+      ],
+      en: [
+        "The company's revenue is declining",
+        "The company may have received substantial prepayments or subscription fees, ensuring future revenue, which is a positive signal",
+        "Deferred revenue is a liability, so an increase is bad"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "递延收入增加通常意味着公司收到了客户预付款或订阅费，虽然这些收入尚未确认为当期收入，但表明：1) 客户对公司产品或服务有需求；2) 未来收入有保障；3) 现金流改善。这对于订阅型、软件服务型公司是积极的信号，反映了业务的可预测性和客户粘性。",
+      en: "An increase in deferred revenue usually means the company has received customer prepayments or subscription fees. Although these revenues have not yet been recognized as current period revenue, it indicates: 1) Customer demand for the company's products or services; 2) Future revenue is secured; 3) Cash flow improvement. This is a positive signal for subscription-based and software service companies, reflecting business predictability and customer stickiness."
+    }
+  },
+  {
+    id: 48,
+    topic: "fundamental-analysis",
+    question: {
+      zh: "在分析公司的竞争优势时，'市场份额'这个指标应该如何使用？",
+      en: "When analyzing a company's competitive advantages, how should the 'Market Share' metric be used?"
+    },
+    options: {
+      zh: [
+        "市场份额越高越好，应该只关注这个指标",
+        "需要结合行业增长、市场份额变化趋势、以及获得市场份额的成本来分析，不能孤立看待",
+        "市场份额没有意义"
+      ],
+      en: [
+        "Higher market share is better, should only focus on this metric",
+        "Need to analyze in conjunction with industry growth, market share change trends, and the cost of gaining market share, cannot be viewed in isolation",
+        "Market share is meaningless"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "市场份额需要结合多个因素分析：1) 行业增长：在增长行业中，即使市场份额不变，公司也能增长；在萎缩行业中，高市场份额可能意味着风险；2) 趋势：市场份额是上升还是下降；3) 成本：通过价格战、大量营销投入获得的市场份额可能不可持续。高质量的市场份额应该是在保持盈利能力的前提下获得的。",
+      en: "Market share needs to be analyzed in conjunction with multiple factors: 1) Industry growth: In growing industries, companies can grow even if market share remains unchanged; in shrinking industries, high market share may mean risk; 2) Trends: Whether market share is rising or falling; 3) Cost: Market share gained through price wars or heavy marketing investment may be unsustainable. High-quality market share should be gained while maintaining profitability."
+    }
+  },
+  {
+    id: 49,
+    topic: "fundamental-analysis",
+    question: {
+      zh: "一家公司的'商誉'（Goodwill）占总资产的比例很高（>30%），这可能意味着什么？",
+      en: "If a company's Goodwill accounts for a high proportion of total assets (>30%), what might this indicate?"
+    },
+    options: {
+      zh: [
+        "公司品牌价值很高",
+        "公司可能进行了大量并购，支付了较高溢价，存在商誉减值风险",
+        "商誉越高越好"
+      ],
+      en: [
+        "The company has very high brand value",
+        "The company may have conducted many acquisitions, paid high premiums, and faces goodwill impairment risk",
+        "Higher goodwill is better"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "高商誉通常意味着公司进行了大量并购，支付了高于被收购公司净资产价值的溢价。这存在风险：1) 如果被收购业务表现不佳，可能面临商誉减值，大幅影响利润；2) 可能表明公司过度支付了收购价格；3) 商誉不是真实资产，减值后无法恢复。需要关注被收购业务的整合情况和业绩表现。",
+      en: "High goodwill usually means the company has conducted many acquisitions, paying premiums above the net asset value of acquired companies. This poses risks: 1) If acquired businesses perform poorly, they may face goodwill impairment, significantly affecting profits; 2) May indicate the company overpaid for acquisitions; 3) Goodwill is not a real asset and cannot be recovered after impairment. Need to pay attention to the integration and performance of acquired businesses."
+    }
+  },
+  {
+    id: 50,
+    topic: "fundamental-analysis",
+    question: {
+      zh: "在分析公司的盈利可持续性时，以下哪个因素最重要？",
+      en: "When analyzing the sustainability of a company's profits, which factor is most important?"
+    },
+    options: {
+      zh: [
+        "当前的净利润",
+        "公司的竞争优势（护城河）、行业地位、盈利来源的多样性，以及盈利转化为现金流的能力",
+        "股价表现"
+      ],
+      en: [
+        "Current net income",
+        "The company's competitive advantages (moats), industry position, diversity of profit sources, and ability to convert profits into cash flow",
+        "Stock price performance"
+      ]
+    },
+    correct: 1,
+    explanation: {
+      zh: "评估盈利可持续性需要关注：1) 竞争优势（护城河）- 能否抵御竞争；2) 行业地位 - 是否处于有利位置；3) 盈利来源多样性 - 是否过度依赖单一业务；4) 现金流转化能力 - 利润是否有现金支撑。这些因素决定了公司能否长期保持盈利，而不仅仅是当前时点的利润水平。",
+      en: "Assessing profit sustainability requires attention to: 1) Competitive advantages (moats) - ability to resist competition; 2) Industry position - whether in a favorable position; 3) Diversity of profit sources - whether overly dependent on a single business; 4) Cash flow conversion capability - whether profits are supported by cash. These factors determine whether the company can maintain profits long-term, not just the profit level at the current point in time."
+    }
   }
 ];
 
