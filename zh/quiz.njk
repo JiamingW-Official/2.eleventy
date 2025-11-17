@@ -352,19 +352,7 @@ const lang = '{{ lang }}';
 let currentQuiz = [];
 let currentQuestionIndex = 0;
 let userAnswers = [];
-let currentTopic = 'all';
-
-// Topic names
-const topicNames = {
-    'all': '全部题目',
-    'fundamental-analysis': '基本面分析',
-    'financial-statements': '财务报表',
-    'valuation': '估值方法',
-    'economic-moats': '经济护城河',
-    'investment-strategy': '投资策略',
-    'market-indices': '市场与指数',
-    'economics': '经济学'
-};
+let currentTopic = '';
 
 function shuffleArray(array) {
     const shuffled = [...array];

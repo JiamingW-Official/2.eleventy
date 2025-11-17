@@ -9,7 +9,7 @@ permalink: /en/
 <p>{{ site.description[lang] }}</p>
 
 <div class="global-search">
-    <form action="{{ pathPrefix }}{{ lang }}/search/" method="get" class="global-search-form">
+    <form action="#" method="get" class="global-search-form" onsubmit="return false;">
         <div class="global-search-box-wrapper">
             <div class="global-search-box">
                 <input type="text" name="q" id="mainSearchInput" placeholder="Search units, chapters, terms..." autofocus autocomplete="off">
@@ -27,7 +27,6 @@ permalink: /en/
 
 <script>
 const searchIndex = {{ searchIndex | dump | safe }};
-const tags = {{ tags | dump | safe }};
 
 function getSuggestions(query) {
     if (!query || query.trim().length < 1) {
@@ -100,7 +99,9 @@ document.addEventListener('DOMContentLoaded', function() {
         suggestionsDiv.style.display = 'block';
         const lang = '{{ lang }}';
         suggestionsDiv.innerHTML = suggestions.map(s => {
-            const typeLabel = s.type === 'tag' ? 'Tag' : s.type === 'unit' ? 'Unit' : 'Chapter';
+            const typeLabel = s.type === 'term' ? (lang === 'zh' ? '术语' : 'Term') :
+                             s.type === 'unit' ? (lang === 'zh' ? '单元' : 'Unit') : 
+                             (lang === 'zh' ? '章节' : 'Chapter');
             return `<a href="${s.url}" class="suggestion-item">
                 <span class="suggestion-type">${typeLabel}</span>
                 <span class="suggestion-text">${s.text}</span>

@@ -9,7 +9,7 @@ permalink: /zh/
 <p>{{ site.description[lang] }}</p>
 
 <div class="global-search">
-    <form action="{{ pathPrefix }}{{ lang }}/search/" method="get" class="global-search-form">
+    <form action="#" method="get" class="global-search-form" onsubmit="return false;">
         <div class="global-search-box-wrapper">
             <div class="global-search-box">
                 <input type="text" name="q" id="mainSearchInput" placeholder="搜索单元、章节、术语..." autofocus autocomplete="off">
@@ -27,7 +27,6 @@ permalink: /zh/
 
 <script>
 const searchIndex = {{ searchIndex | dump | safe }};
-const tags = {{ tags | dump | safe }};
 
 function getSuggestions(query) {
     if (!query || query.trim().length < 1) {
